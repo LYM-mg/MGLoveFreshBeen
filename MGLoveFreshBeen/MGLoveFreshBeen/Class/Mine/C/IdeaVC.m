@@ -45,9 +45,9 @@
     [self.view addSubview:tipLabel];
 
     // 意见输入框
-    CGFloat height  = 300;
+    CGFloat height  = 200;
 #ifndef __IPHONE_4_0
-    height = 200;
+    height = 100;
 #endif
     LYMTextViewWithLabel *iderTextView = [[LYMTextViewWithLabel alloc] initWithFrame:CGRectMake(margin, CGRectGetMaxY(tipLabel.frame) + margin, MGSCREEN_width - 2 * margin, height)];
     iderTextView.backgroundColor = MGRGBColor(21, 221, 43);
@@ -55,6 +55,7 @@
     iderTextView.placeholderColor = MGRandomColor;
     [self.view addSubview:iderTextView];
     [self.iderTextView becomeFirstResponder];
+    self.iderTextView.scrollEnabled = YES;
     self.iderTextView.keyboardDismissMode = UIScrollViewKeyboardDismissModeOnDrag;
     self.iderTextView = iderTextView;
 }
