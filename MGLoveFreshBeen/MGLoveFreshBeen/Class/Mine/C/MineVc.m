@@ -25,6 +25,10 @@
 
 /** 数据源 */
 @property (nonatomic,strong) NSArray *mineData;
+
+/** 是否有人发布意见 */
+@property (nonatomic, assign) BOOL  iderVCSendIderSuccess;
+
 @end
 
 CGFloat headViewHeight = 150;
@@ -46,6 +50,11 @@ CGFloat headViewHeight = 150;
 #pragma mark - 生命周期
 - (void)viewDidLoad {
     [super viewDidLoad];
+    // 通知
+    [[NSNotificationCenter defaultCenter] addObserverForName:@"sendIdeaSussessNotification" object:nil queue:nil usingBlock:^(NSNotification * _Nonnull note) {
+        self.iderVCSendIderSuccess = YES;
+    }];
+    
     [self setUpHeaderView];
     
     [self setUpTableView];
@@ -54,6 +63,15 @@ CGFloat headViewHeight = 150;
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     [self.navigationController setNavigationBarHidden:YES];
+}
+
+- (void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    if (_iderVCSendIderSuccess) {
+        MGPS(@"客服🐯哥已经收到你的意见了,我们会改进的,放心吧~~")
+        _iderVCSendIderSuccess = false;
+    }
+
 }
 
 - (void)viewWillDisappear:(BOOL)animated{

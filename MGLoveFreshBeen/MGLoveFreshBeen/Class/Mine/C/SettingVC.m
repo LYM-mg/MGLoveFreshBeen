@@ -170,8 +170,4 @@
 }
 
 
-- (void)dealloc{
-    MGPS(@"delloc");
-}
-
 @end

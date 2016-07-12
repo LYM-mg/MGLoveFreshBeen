@@ -66,6 +66,7 @@
 		3AED5D7F1D357D9F0045CF64 /* HelpVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AED5D7E1D357D9F0045CF64 /* HelpVC.m */; settings = {ASSET_TAGS = (); }; };
 		3AED5D821D35802F0045CF64 /* QuestionVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AED5D811D35802F0045CF64 /* QuestionVC.m */; settings = {ASSET_TAGS = (); }; };
 		3AED5D851D3584E00045CF64 /* IdeaVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AED5D841D3584E00045CF64 /* IdeaVC.m */; settings = {ASSET_TAGS = (); }; };
+		3AED5D8C1D358A200045CF64 /* LYMTextViewWithLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AED5D8A1D358A200045CF64 /* LYMTextViewWithLabel.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -161,6 +162,8 @@
 		3AED5D811D35802F0045CF64 /* QuestionVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionVC.m; sourceTree = "<group>"; };
 		3AED5D831D3584E00045CF64 /* IdeaVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IdeaVC.h; sourceTree = "<group>"; };
 		3AED5D841D3584E00045CF64 /* IdeaVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IdeaVC.m; sourceTree = "<group>"; };
+		3AED5D891D358A200045CF64 /* LYMTextViewWithLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYMTextViewWithLabel.h; sourceTree = "<group>"; };
+		3AED5D8A1D358A200045CF64 /* LYMTextViewWithLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYMTextViewWithLabel.m; sourceTree = "<group>"; };
 		5C1D56701D76C2B738A1E4C1 /* libPods-MGLoveFreshBeen.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MGLoveFreshBeen.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C258C531C65765C7BF233187 /* Pods-MGLoveFreshBeen.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MGLoveFreshBeen.release.xcconfig"; path = "Pods/Target Support Files/Pods-MGLoveFreshBeen/Pods-MGLoveFreshBeen.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -339,6 +342,7 @@
 		3A64A1ED1D34D64300288490 /* Other */ = {
 			isa = PBXGroup;
 			children = (
+				3AED5D861D358A1F0045CF64 /* UITextView(附加placeholder功能) */,
 				3A64A22A1D350EF100288490 /* MJExtension */,
 				3A64A21B1D34EC8C00288490 /* UIView--Frame */,
 				3A64A1EE1D34D64300288490 /* C */,
@@ -532,6 +536,15 @@
 			path = image;
 			sourceTree = "<group>";
 		};
+		3AED5D861D358A1F0045CF64 /* UITextView(附加placeholder功能) */ = {
+			isa = PBXGroup;
+			children = (
+				3AED5D891D358A200045CF64 /* LYMTextViewWithLabel.h */,
+				3AED5D8A1D358A200045CF64 /* LYMTextViewWithLabel.m */,
+			);
+			path = "UITextView(附加placeholder功能)";
+			sourceTree = "<group>";
+		};
 		AE889D3491237DC59BD043D8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -719,6 +732,7 @@
 				3A64A2451D350EF100288490 /* NSObject+MJClass.m in Sources */,
 				3A64A2461D350EF100288490 /* NSObject+MJCoding.m in Sources */,
 				3A64A2001D34DEC500288490 /* TabBarVC.m in Sources */,
+				3AED5D8C1D358A200045CF64 /* LYMTextViewWithLabel.m in Sources */,
 				3A64A2431D350EF100288490 /* MJPropertyKey.m in Sources */,
 				3A64A2481D350EF100288490 /* NSObject+MJProperty.m in Sources */,
 				3AED5D7F1D357D9F0045CF64 /* HelpVC.m in Sources */,
