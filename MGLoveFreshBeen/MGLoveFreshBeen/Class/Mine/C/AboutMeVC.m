@@ -45,9 +45,9 @@
     static int i = 0;
     i++;
     if (i %2==1) {
-        [self setAnimationTransition:UIViewAnimationTransitionFlipFromLeft imageName:@"ming3.jpg"];
+        [self setAnimationTransition:UIViewAnimationTransitionCurlUp imageName:@"ming3.jpg"];
     }else{
-        [self setAnimationTransition:UIViewAnimationTransitionFlipFromRight imageName:@"ming1.jpg"];
+        [self setAnimationTransition:UIViewAnimationTransitionCurlDown imageName:@"ming1.jpg"];
     }
 }
 

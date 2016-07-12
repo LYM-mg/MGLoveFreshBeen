@@ -63,6 +63,9 @@
 		3AED5D781D3565F90045CF64 /* ming3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3AED5D761D3565F90045CF64 /* ming3.jpg */; settings = {ASSET_TAGS = (); }; };
 		3AED5D7B1D356C270045CF64 /* ming2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3AED5D791D356C270045CF64 /* ming2.jpg */; settings = {ASSET_TAGS = (); }; };
 		3AED5D7C1D356C270045CF64 /* ming4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3AED5D7A1D356C270045CF64 /* ming4.jpg */; settings = {ASSET_TAGS = (); }; };
+		3AED5D7F1D357D9F0045CF64 /* HelpVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AED5D7E1D357D9F0045CF64 /* HelpVC.m */; settings = {ASSET_TAGS = (); }; };
+		3AED5D821D35802F0045CF64 /* QuestionVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AED5D811D35802F0045CF64 /* QuestionVC.m */; settings = {ASSET_TAGS = (); }; };
+		3AED5D851D3584E00045CF64 /* IdeaVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AED5D841D3584E00045CF64 /* IdeaVC.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -152,6 +155,12 @@
 		3AED5D761D3565F90045CF64 /* ming3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ming3.jpg; sourceTree = "<group>"; };
 		3AED5D791D356C270045CF64 /* ming2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ming2.jpg; sourceTree = "<group>"; };
 		3AED5D7A1D356C270045CF64 /* ming4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ming4.jpg; sourceTree = "<group>"; };
+		3AED5D7D1D357D9F0045CF64 /* HelpVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelpVC.h; sourceTree = "<group>"; };
+		3AED5D7E1D357D9F0045CF64 /* HelpVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelpVC.m; sourceTree = "<group>"; };
+		3AED5D801D35802F0045CF64 /* QuestionVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionVC.h; sourceTree = "<group>"; };
+		3AED5D811D35802F0045CF64 /* QuestionVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionVC.m; sourceTree = "<group>"; };
+		3AED5D831D3584E00045CF64 /* IdeaVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IdeaVC.h; sourceTree = "<group>"; };
+		3AED5D841D3584E00045CF64 /* IdeaVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IdeaVC.m; sourceTree = "<group>"; };
 		5C1D56701D76C2B738A1E4C1 /* libPods-MGLoveFreshBeen.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MGLoveFreshBeen.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C258C531C65765C7BF233187 /* Pods-MGLoveFreshBeen.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MGLoveFreshBeen.release.xcconfig"; path = "Pods/Target Support Files/Pods-MGLoveFreshBeen/Pods-MGLoveFreshBeen.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -291,6 +300,12 @@
 				3AED5D4C1D353AFF0045CF64 /* AboutMeVC.xib */,
 				3AED5D4E1D3541E70045CF64 /* OrderVC.h */,
 				3AED5D4F1D3541E70045CF64 /* OrderVC.m */,
+				3AED5D7D1D357D9F0045CF64 /* HelpVC.h */,
+				3AED5D7E1D357D9F0045CF64 /* HelpVC.m */,
+				3AED5D801D35802F0045CF64 /* QuestionVC.h */,
+				3AED5D811D35802F0045CF64 /* QuestionVC.m */,
+				3AED5D831D3584E00045CF64 /* IdeaVC.h */,
+				3AED5D841D3584E00045CF64 /* IdeaVC.m */,
 			);
 			path = C;
 			sourceTree = "<group>";
@@ -691,11 +706,13 @@
 				3A64A2491D350EF100288490 /* NSString+MJExtension.m in Sources */,
 				3AED5D541D3542520045CF64 /* OrderCell.m in Sources */,
 				3A64A2421D350EF100288490 /* MJProperty.m in Sources */,
+				3AED5D851D3584E00045CF64 /* IdeaVC.m in Sources */,
 				3A64A2411D350EF100288490 /* MJFoundation.m in Sources */,
 				3AED5D741D354BCD0045CF64 /* OrderCellModel.m in Sources */,
 				3A64A1C91D34D4D200288490 /* main.m in Sources */,
 				3A64A2291D3504F700288490 /* MGButton.m in Sources */,
 				3AED5D501D3541E70045CF64 /* OrderVC.m in Sources */,
+				3AED5D821D35802F0045CF64 /* QuestionVC.m in Sources */,
 				3AED5D471D35306E0045CF64 /* AboutMeVC.m in Sources */,
 				3A64A2111D34E15400288490 /* ShopCarVC.m in Sources */,
 				3A64A2441D350EF100288490 /* MJPropertyType.m in Sources */,
@@ -704,6 +721,7 @@
 				3A64A2001D34DEC500288490 /* TabBarVC.m in Sources */,
 				3A64A2431D350EF100288490 /* MJPropertyKey.m in Sources */,
 				3A64A2481D350EF100288490 /* NSObject+MJProperty.m in Sources */,
+				3AED5D7F1D357D9F0045CF64 /* HelpVC.m in Sources */,
 				3A64A2141D34E16C00288490 /* MineVC.m in Sources */,
 				3A64A2031D34E0AE00288490 /* HomeVC.m in Sources */,
 				3A64A1F91D34D64300288490 /* AppDelegate.m in Sources */,

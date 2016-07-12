@@ -14,6 +14,9 @@
 #import "OrderVC.h"
 
 
+#import "HelpVC.h"
+#import "IdeaVC.h"
+
 
 @interface MineVC ()<UITableViewDataSource,UITableViewDelegate>
 
@@ -27,6 +30,7 @@
 CGFloat headViewHeight = 150;
 
 @implementation MineVC
+#pragma mark - lazy   数据源
 - (NSArray *)mineData{
     if (!_mineData) {
         _mineData = [NSArray array];
@@ -113,7 +117,7 @@ CGFloat headViewHeight = 150;
     }else if (section == 1){
         return 1;
     }else{
-        return 3;
+        return 2;
     }
 }
 
@@ -174,9 +178,9 @@ CGFloat headViewHeight = 150;
     
     } else if (2 == indexPath.section) { // 客服帮助
         if (0 == indexPath.row) {
-          
+           [self.navigationController pushViewController:[[HelpVC alloc] init] animated:YES];
         } else if (1 == indexPath.row) { // 意见反馈
-        
+            [self.navigationController pushViewController:[[IdeaVC alloc] init] animated:YES];
         }
     }
 }

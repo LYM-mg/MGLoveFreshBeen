@@ -80,6 +80,7 @@
     [self addSubview:_iconImageView];
     
     UILabel *phone = [[UILabel alloc] init];
+    [self addSubview:phone];
     self.phoneNum = phone;
     _phoneNum.text = @"18612348765";
     _phoneNum.font = [UIFont boldSystemFontOfSize:18];

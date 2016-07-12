@@ -13,7 +13,7 @@
 @interface SettingVC ()
 /** 用来做动画的View */
 @property (nonatomic,weak)  UIImageView *animationImage;
-@property (nonatomic,weak) UIImageView *otheranimationImage ;
+
 @end
 
 @implementation SettingVC
@@ -22,7 +22,7 @@
     [super viewDidLoad];
     self.title = @"关于作者";
     
-    self.view.backgroundColor = MGRGBColor(245, 245, 245);
+    self.view.backgroundColor = MGRGBColor(230, 230, 230);
     
     [self setUpUI];
 }
@@ -102,16 +102,13 @@
     
     
     // 动画animationImage
-    UIImageView *animationImage = [[UIImageView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(logoutView.frame) + 20, MGSCREEN_width, 300)];
+    UIImageView *animationImage = [[UIImageView alloc] initWithFrame:CGRectMake(MGSCREEN_width*0.1, CGRectGetMaxY(logoutView.frame) + 50, MGSCREEN_width*0.8, 300*0.8)];
     animationImage.userInteractionEnabled = YES;
     animationImage.image = [UIImage imageNamed:@"ming2.jpg"];
     self.animationImage = animationImage;
     [self.view addSubview:animationImage];
-    
-    UIImageView * otheranimationImage = [[UIImageView alloc] initWithFrame:self.animationImage.frame];
-    otheranimationImage.image = [UIImage imageNamed:@"ming4.jpg"];
-    self.otheranimationImage = otheranimationImage;
-    [self.view addSubview:otheranimationImage];
+    UITapGestureRecognizer *animationImageTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(animationImageTapClick:)];
+    [self.animationImage addGestureRecognizer:animationImageTap];
 }
 
 // 清除缓存
@@ -134,13 +131,42 @@
 
 
 #pragma mark - 动画
-- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
-    UITouch *touch = [touches anyObject];
-    if (touch.tapCount %2 == 0) {
-        [UIView transitionFromView:self.animationImage toView:self.otheranimationImage duration:1.0 options:UIViewAnimationOptionTransitionCrossDissolve completion:nil];
+
+- (void)animationImageTapClick:(UITapGestureRecognizer *)tap{
+    self.animationImage.userInteractionEnabled = NO;
+    static int i = 0;
+    i++;
+    if (i %2==1) {
+        // 以"嵌套动画的外层历时5s将视图透明度修改为0.2,嵌套动画的内层不继承外层动画的持续时长,将视图大小缩小一半,期间重复2.5次"为例,代码如下
+        [UIView beginAnimations:@"parent" context:nil];
+        [UIView setAnimationDuration:5.0f];
+        self.animationImage.alpha = 1.0f;
+        
+        [UIView beginAnimations:@"demo2" context:nil];
+        [UIView setAnimationDuration:1.0f];
+        [UIView setAnimationDelegate:self];
+        [UIView setAnimationRepeatCount:1];
+        [UIView setAnimationRepeatAutoreverses:NO];
+        [UIView setAnimationTransition:UIViewAnimationTransitionCurlDown forView:self.animationImage cache:YES];
+        self.animationImage.transform = CGAffineTransformMakeScale(1.2, 1.2);
+        self.animationImage.image = [UIImage imageNamed:@"ming4.jpg"];
+        [UIView commitAnimations];
+        
+        [UIView commitAnimations];
     }else{
-        [UIView transitionFromView:self.otheranimationImage toView:self.animationImage duration:1.0 options:UIViewAnimationOptionTransitionFlipFromRight completion:nil];
+        // 翻页效果
+        [UIView beginAnimations:@"FlipAni" context:nil];
+        [UIView setAnimationDuration:1.0];
+        [UIView setAnimationDelegate:self];
+        [UIView setAnimationRepeatCount:1];
+        [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
+        [UIView setAnimationTransition:UIViewAnimationTransitionFlipFromRight forView:self.animationImage cache:YES];
+        self.animationImage.image = [UIImage imageNamed:@"ming2.jpg"];
+        [UIView commitAnimations];
     }
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.4 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        self.animationImage.userInteractionEnabled = YES;
+    });
 }
 
 
