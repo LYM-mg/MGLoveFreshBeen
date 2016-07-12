@@ -40,7 +40,7 @@
     UILabel *tipLabel = [[UILabel alloc] initWithFrame:CGRectMake(margin, y, MGSCREEN_width - 2 * margin, 50)];
     tipLabel.text = @"你的批评和建议能帮助我们更好的完善产品,请留下你的宝贵意见!";
     tipLabel.numberOfLines = 2;
-    tipLabel.textColor = [UIColor blackColor];
+    tipLabel.textColor = MGRGBColor(255, 10, 10);
     tipLabel.font = MGFont(16);
     [self.view addSubview:tipLabel];
 
@@ -54,6 +54,8 @@
     iderTextView.placeholder = @"请输入宝贵意见(300字以内)";
     iderTextView.placeholderColor = MGRandomColor;
     [self.view addSubview:iderTextView];
+    [self.iderTextView becomeFirstResponder];
+    self.iderTextView.keyboardDismissMode = UIScrollViewKeyboardDismissModeOnDrag;
     self.iderTextView = iderTextView;
 }
 
@@ -87,7 +89,10 @@
 }
 
 
-#pragma mark - Navigation
+#pragma mark - touch
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    [self.view endEditing:YES];
+}
 
 
 @end
