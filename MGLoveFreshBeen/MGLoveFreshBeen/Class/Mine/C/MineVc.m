@@ -11,6 +11,7 @@
 #import "TableHeadView.h"
 
 #import "SettingVC.h"
+#import "OrderVC.h"
 
 
 
@@ -89,7 +90,8 @@ CGFloat headViewHeight = 150;
     
     /// 我的订单/优惠券/我的消息 回调
     tableHead.orderBtnClickBlock = ^{
-        
+        OrderVC *order = [[OrderVC alloc] init];
+        [self.navigationController pushViewController:order animated:YES];
     };
     tableHead.CouponBtnClickBlock = ^{
         

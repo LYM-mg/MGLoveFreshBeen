@@ -9,6 +9,7 @@
 #import "AboutMeVC.h"
 
 @interface AboutMeVC ()
+@property (weak, nonatomic) IBOutlet UIImageView *AboutMeIconView;
 
 @end
 
@@ -35,6 +36,40 @@
 
 - (IBAction)turnToJianshu:(UIButton *)btn {
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:btn.titleLabel.text]];
+}
+
+
+
+#pragma mark - 动画
+- (IBAction)aboutMeIconViewTapClick:(UITapGestureRecognizer *)tap {
+    static int i = 0;
+    i++;
+    if (i %2==1) {
+        [self setAnimationTransition:UIViewAnimationTransitionFlipFromLeft imageName:@"ming3.jpg"];
+    }else{
+        [self setAnimationTransition:UIViewAnimationTransitionFlipFromRight imageName:@"ming1.jpg"];
+    }
+}
+
+- (void)setAnimationTransition:(UIViewAnimationTransition)transition imageName:(NSString *)imageName{
+    [UIView beginAnimations:@"FlipAni" context:nil];
+    [UIView setAnimationDuration:1.0];
+    [UIView setAnimationDelegate:self];
+    [UIView setAnimationWillStartSelector:@selector(startAni:)];
+    [UIView setAnimationDidStopSelector:@selector(stopAni:)];
+    [UIView setAnimationRepeatCount:1];
+    [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
+    [UIView setAnimationTransition:transition forView:self.AboutMeIconView cache:YES];
+    self.AboutMeIconView.image = [UIImage imageNamed:imageName];
+    [UIView commitAnimations];
+}
+
+- (void)startAni:(NSString *)aniID{
+    MGPS(aniID);
+}
+
+- (void)stopAni:(NSString *)aniID{
+//    MGLogFunc;
 }
 
 @end

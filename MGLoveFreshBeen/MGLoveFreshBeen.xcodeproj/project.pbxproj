@@ -41,6 +41,28 @@
 		3AED5D471D35306E0045CF64 /* AboutMeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AED5D451D35306E0045CF64 /* AboutMeVC.m */; settings = {ASSET_TAGS = (); }; };
 		3AED5D4B1D3531300045CF64 /* 12.png in Resources */ = {isa = PBXBuildFile; fileRef = 3AED5D4A1D3531300045CF64 /* 12.png */; settings = {ASSET_TAGS = (); }; };
 		3AED5D4D1D353AFF0045CF64 /* AboutMeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AED5D4C1D353AFF0045CF64 /* AboutMeVC.xib */; settings = {ASSET_TAGS = (); }; };
+		3AED5D501D3541E70045CF64 /* OrderVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AED5D4F1D3541E70045CF64 /* OrderVC.m */; settings = {ASSET_TAGS = (); }; };
+		3AED5D541D3542520045CF64 /* OrderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AED5D521D3542520045CF64 /* OrderCell.m */; settings = {ASSET_TAGS = (); }; };
+		3AED5D551D3542520045CF64 /* OrderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AED5D531D3542520045CF64 /* OrderCell.xib */; settings = {ASSET_TAGS = (); }; };
+		3AED5D641D354AF50045CF64 /* 促销 in Resources */ = {isa = PBXBuildFile; fileRef = 3AED5D561D354AF50045CF64 /* 促销 */; settings = {ASSET_TAGS = (); }; };
+		3AED5D651D354AF50045CF64 /* 首页焦点按钮 in Resources */ = {isa = PBXBuildFile; fileRef = 3AED5D571D354AF50045CF64 /* 首页焦点按钮 */; settings = {ASSET_TAGS = (); }; };
+		3AED5D661D354AF50045CF64 /* 首页新鲜热卖 in Resources */ = {isa = PBXBuildFile; fileRef = 3AED5D581D354AF50045CF64 /* 首页新鲜热卖 */; settings = {ASSET_TAGS = (); }; };
+		3AED5D671D354AF50045CF64 /* 系统消息 in Resources */ = {isa = PBXBuildFile; fileRef = 3AED5D591D354AF50045CF64 /* 系统消息 */; settings = {ASSET_TAGS = (); }; };
+		3AED5D681D354AF50045CF64 /* AD in Resources */ = {isa = PBXBuildFile; fileRef = 3AED5D5A1D354AF50045CF64 /* AD */; settings = {ASSET_TAGS = (); }; };
+		3AED5D691D354AF50045CF64 /* Mine in Resources */ = {isa = PBXBuildFile; fileRef = 3AED5D5B1D354AF50045CF64 /* Mine */; settings = {ASSET_TAGS = (); }; };
+		3AED5D6A1D354AF50045CF64 /* MyAdress in Resources */ = {isa = PBXBuildFile; fileRef = 3AED5D5C1D354AF50045CF64 /* MyAdress */; settings = {ASSET_TAGS = (); }; };
+		3AED5D6B1D354AF50045CF64 /* MyCoupon in Resources */ = {isa = PBXBuildFile; fileRef = 3AED5D5D1D354AF50045CF64 /* MyCoupon */; settings = {ASSET_TAGS = (); }; };
+		3AED5D6C1D354AF50045CF64 /* MyOrders in Resources */ = {isa = PBXBuildFile; fileRef = 3AED5D5E1D354AF50045CF64 /* MyOrders */; settings = {ASSET_TAGS = (); }; };
+		3AED5D6D1D354AF50045CF64 /* Search in Resources */ = {isa = PBXBuildFile; fileRef = 3AED5D5F1D354AF50045CF64 /* Search */; settings = {ASSET_TAGS = (); }; };
+		3AED5D6E1D354AF50045CF64 /* SearchProduct in Resources */ = {isa = PBXBuildFile; fileRef = 3AED5D601D354AF50045CF64 /* SearchProduct */; settings = {ASSET_TAGS = (); }; };
+		3AED5D6F1D354AF50045CF64 /* supermarket in Resources */ = {isa = PBXBuildFile; fileRef = 3AED5D611D354AF50045CF64 /* supermarket */; settings = {ASSET_TAGS = (); }; };
+		3AED5D701D354AF50045CF64 /* SystemMessage in Resources */ = {isa = PBXBuildFile; fileRef = 3AED5D621D354AF50045CF64 /* SystemMessage */; settings = {ASSET_TAGS = (); }; };
+		3AED5D711D354AF50045CF64 /* UserMessage in Resources */ = {isa = PBXBuildFile; fileRef = 3AED5D631D354AF50045CF64 /* UserMessage */; settings = {ASSET_TAGS = (); }; };
+		3AED5D741D354BCD0045CF64 /* OrderCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AED5D731D354BCD0045CF64 /* OrderCellModel.m */; settings = {ASSET_TAGS = (); }; };
+		3AED5D771D3565F90045CF64 /* ming1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3AED5D751D3565F90045CF64 /* ming1.jpg */; settings = {ASSET_TAGS = (); }; };
+		3AED5D781D3565F90045CF64 /* ming3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3AED5D761D3565F90045CF64 /* ming3.jpg */; settings = {ASSET_TAGS = (); }; };
+		3AED5D7B1D356C270045CF64 /* ming2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3AED5D791D356C270045CF64 /* ming2.jpg */; settings = {ASSET_TAGS = (); }; };
+		3AED5D7C1D356C270045CF64 /* ming4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3AED5D7A1D356C270045CF64 /* ming4.jpg */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -105,6 +127,31 @@
 		3AED5D451D35306E0045CF64 /* AboutMeVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutMeVC.m; sourceTree = "<group>"; };
 		3AED5D4A1D3531300045CF64 /* 12.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 12.png; sourceTree = "<group>"; };
 		3AED5D4C1D353AFF0045CF64 /* AboutMeVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutMeVC.xib; sourceTree = "<group>"; };
+		3AED5D4E1D3541E70045CF64 /* OrderVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderVC.h; sourceTree = "<group>"; };
+		3AED5D4F1D3541E70045CF64 /* OrderVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderVC.m; sourceTree = "<group>"; };
+		3AED5D511D3542520045CF64 /* OrderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderCell.h; sourceTree = "<group>"; };
+		3AED5D521D3542520045CF64 /* OrderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderCell.m; sourceTree = "<group>"; };
+		3AED5D531D3542520045CF64 /* OrderCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OrderCell.xib; sourceTree = "<group>"; };
+		3AED5D561D354AF50045CF64 /* 促销 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "促销"; sourceTree = "<group>"; };
+		3AED5D571D354AF50045CF64 /* 首页焦点按钮 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "首页焦点按钮"; sourceTree = "<group>"; };
+		3AED5D581D354AF50045CF64 /* 首页新鲜热卖 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "首页新鲜热卖"; sourceTree = "<group>"; };
+		3AED5D591D354AF50045CF64 /* 系统消息 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "系统消息"; sourceTree = "<group>"; };
+		3AED5D5A1D354AF50045CF64 /* AD */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = AD; sourceTree = "<group>"; };
+		3AED5D5B1D354AF50045CF64 /* Mine */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Mine; sourceTree = "<group>"; };
+		3AED5D5C1D354AF50045CF64 /* MyAdress */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = MyAdress; sourceTree = "<group>"; };
+		3AED5D5D1D354AF50045CF64 /* MyCoupon */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = MyCoupon; sourceTree = "<group>"; };
+		3AED5D5E1D354AF50045CF64 /* MyOrders */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = MyOrders; sourceTree = "<group>"; };
+		3AED5D5F1D354AF50045CF64 /* Search */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Search; sourceTree = "<group>"; };
+		3AED5D601D354AF50045CF64 /* SearchProduct */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SearchProduct; sourceTree = "<group>"; };
+		3AED5D611D354AF50045CF64 /* supermarket */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = supermarket; sourceTree = "<group>"; };
+		3AED5D621D354AF50045CF64 /* SystemMessage */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SystemMessage; sourceTree = "<group>"; };
+		3AED5D631D354AF50045CF64 /* UserMessage */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = UserMessage; sourceTree = "<group>"; };
+		3AED5D721D354BCD0045CF64 /* OrderCellModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderCellModel.h; sourceTree = "<group>"; };
+		3AED5D731D354BCD0045CF64 /* OrderCellModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderCellModel.m; sourceTree = "<group>"; };
+		3AED5D751D3565F90045CF64 /* ming1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ming1.jpg; sourceTree = "<group>"; };
+		3AED5D761D3565F90045CF64 /* ming3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ming3.jpg; sourceTree = "<group>"; };
+		3AED5D791D356C270045CF64 /* ming2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ming2.jpg; sourceTree = "<group>"; };
+		3AED5D7A1D356C270045CF64 /* ming4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ming4.jpg; sourceTree = "<group>"; };
 		5C1D56701D76C2B738A1E4C1 /* libPods-MGLoveFreshBeen.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MGLoveFreshBeen.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C258C531C65765C7BF233187 /* Pods-MGLoveFreshBeen.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MGLoveFreshBeen.release.xcconfig"; path = "Pods/Target Support Files/Pods-MGLoveFreshBeen/Pods-MGLoveFreshBeen.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -242,6 +289,8 @@
 				3AED5D441D35306E0045CF64 /* AboutMeVC.h */,
 				3AED5D451D35306E0045CF64 /* AboutMeVC.m */,
 				3AED5D4C1D353AFF0045CF64 /* AboutMeVC.xib */,
+				3AED5D4E1D3541E70045CF64 /* OrderVC.h */,
+				3AED5D4F1D3541E70045CF64 /* OrderVC.m */,
 			);
 			path = C;
 			sourceTree = "<group>";
@@ -249,6 +298,8 @@
 		3A64A1EB1D34D64300288490 /* M */ = {
 			isa = PBXGroup;
 			children = (
+				3AED5D721D354BCD0045CF64 /* OrderCellModel.h */,
+				3AED5D731D354BCD0045CF64 /* OrderCellModel.m */,
 			);
 			path = M;
 			sourceTree = "<group>";
@@ -263,6 +314,9 @@
 				3A64A2251D34FF7000288490 /* TableHeadView.xib */,
 				3A64A2271D3504F700288490 /* MGButton.h */,
 				3A64A2281D3504F700288490 /* MGButton.m */,
+				3AED5D511D3542520045CF64 /* OrderCell.h */,
+				3AED5D521D3542520045CF64 /* OrderCell.m */,
+				3AED5D531D3542520045CF64 /* OrderCell.xib */,
 			);
 			path = V;
 			sourceTree = "<group>";
@@ -303,6 +357,20 @@
 		3A64A1F11D34D64300288490 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				3AED5D561D354AF50045CF64 /* 促销 */,
+				3AED5D571D354AF50045CF64 /* 首页焦点按钮 */,
+				3AED5D581D354AF50045CF64 /* 首页新鲜热卖 */,
+				3AED5D591D354AF50045CF64 /* 系统消息 */,
+				3AED5D5A1D354AF50045CF64 /* AD */,
+				3AED5D5B1D354AF50045CF64 /* Mine */,
+				3AED5D5C1D354AF50045CF64 /* MyAdress */,
+				3AED5D5D1D354AF50045CF64 /* MyCoupon */,
+				3AED5D5E1D354AF50045CF64 /* MyOrders */,
+				3AED5D5F1D354AF50045CF64 /* Search */,
+				3AED5D601D354AF50045CF64 /* SearchProduct */,
+				3AED5D611D354AF50045CF64 /* supermarket */,
+				3AED5D621D354AF50045CF64 /* SystemMessage */,
+				3AED5D631D354AF50045CF64 /* UserMessage */,
 				3AED5D491D3531300045CF64 /* image */,
 				3A64A1F31D34D64300288490 /* FocusURL.plist */,
 				3A64A1F41D34D64300288490 /* HelpPlist.plist */,
@@ -440,6 +508,10 @@
 		3AED5D491D3531300045CF64 /* image */ = {
 			isa = PBXGroup;
 			children = (
+				3AED5D751D3565F90045CF64 /* ming1.jpg */,
+				3AED5D791D356C270045CF64 /* ming2.jpg */,
+				3AED5D761D3565F90045CF64 /* ming3.jpg */,
+				3AED5D7A1D356C270045CF64 /* ming4.jpg */,
 				3AED5D4A1D3531300045CF64 /* 12.png */,
 			);
 			path = image;
@@ -523,14 +595,33 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3AED5D6A1D354AF50045CF64 /* MyAdress in Resources */,
+				3AED5D6F1D354AF50045CF64 /* supermarket in Resources */,
+				3AED5D7C1D356C270045CF64 /* ming4.jpg in Resources */,
 				3A64A1FC1D34D64300288490 /* MinePlist.plist in Resources */,
+				3AED5D6B1D354AF50045CF64 /* MyCoupon in Resources */,
 				3A64A2261D34FF7000288490 /* TableHeadView.xib in Resources */,
+				3AED5D6E1D354AF50045CF64 /* SearchProduct in Resources */,
+				3AED5D781D3565F90045CF64 /* ming3.jpg in Resources */,
+				3AED5D651D354AF50045CF64 /* 首页焦点按钮 in Resources */,
+				3AED5D681D354AF50045CF64 /* AD in Resources */,
 				3A64A1FB1D34D64300288490 /* HelpPlist.plist in Resources */,
+				3AED5D661D354AF50045CF64 /* 首页新鲜热卖 in Resources */,
 				3A64A1DA1D34D4D200288490 /* LaunchScreen.storyboard in Resources */,
+				3AED5D701D354AF50045CF64 /* SystemMessage in Resources */,
+				3AED5D6C1D354AF50045CF64 /* MyOrders in Resources */,
 				3AED5D4B1D3531300045CF64 /* 12.png in Resources */,
+				3AED5D7B1D356C270045CF64 /* ming2.jpg in Resources */,
+				3AED5D641D354AF50045CF64 /* 促销 in Resources */,
+				3AED5D711D354AF50045CF64 /* UserMessage in Resources */,
 				3A64A1D71D34D4D200288490 /* Assets.xcassets in Resources */,
 				3A64A1FA1D34D64300288490 /* FocusURL.plist in Resources */,
+				3AED5D6D1D354AF50045CF64 /* Search in Resources */,
 				3AED5D4D1D353AFF0045CF64 /* AboutMeVC.xib in Resources */,
+				3AED5D771D3565F90045CF64 /* ming1.jpg in Resources */,
+				3AED5D671D354AF50045CF64 /* 系统消息 in Resources */,
+				3AED5D551D3542520045CF64 /* OrderCell.xib in Resources */,
+				3AED5D691D354AF50045CF64 /* Mine in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -598,10 +689,13 @@
 				3A64A1D51D34D4D200288490 /* MGLoveFreshBeen.xcdatamodeld in Sources */,
 				3A64A2241D34FF1200288490 /* TableHeadView.m in Sources */,
 				3A64A2491D350EF100288490 /* NSString+MJExtension.m in Sources */,
+				3AED5D541D3542520045CF64 /* OrderCell.m in Sources */,
 				3A64A2421D350EF100288490 /* MJProperty.m in Sources */,
 				3A64A2411D350EF100288490 /* MJFoundation.m in Sources */,
+				3AED5D741D354BCD0045CF64 /* OrderCellModel.m in Sources */,
 				3A64A1C91D34D4D200288490 /* main.m in Sources */,
 				3A64A2291D3504F700288490 /* MGButton.m in Sources */,
+				3AED5D501D3541E70045CF64 /* OrderVC.m in Sources */,
 				3AED5D471D35306E0045CF64 /* AboutMeVC.m in Sources */,
 				3A64A2111D34E15400288490 /* ShopCarVC.m in Sources */,
 				3A64A2441D350EF100288490 /* MJPropertyType.m in Sources */,

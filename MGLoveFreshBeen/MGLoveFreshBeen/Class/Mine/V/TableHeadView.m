@@ -31,15 +31,21 @@
 }
 
 - (IBAction)orderBtnClick:(MGButton *)sender {
-    
+    if (_orderBtnClickBlock) {
+        self.orderBtnClickBlock();
+    }
 }
 
 - (IBAction)CouponBtnClick:(MGButton *)sender {
-    
+    if (_CouponBtnClickBlock) {
+         self.CouponBtnClickBlock();
+    }
 }
 
 - (IBAction)messageBtnClick:(MGButton *)sender {
-    
+    if (_messageBtnClickBlock) {
+        self.messageBtnClickBlock();
+    }
 }
 
 

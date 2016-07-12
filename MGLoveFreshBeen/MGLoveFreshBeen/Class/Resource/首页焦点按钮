@@ -1,0 +1,388 @@
+{
+"code": 0,
+"msg": "success",
+"reqid": "ed841281e81ace3139849485fe75b64c",
+"data": {
+"dealer": {
+"zchtid": "10309",
+"lat": "39.928171",
+"lng": "116.431065",
+"name": "菏光超市",
+"mobile": "13311493450",
+"own_mobile": "13311493450",
+"range": "0",
+"WorkBegin": "09:00",
+"WorkEnd": "23:00",
+"open": "09:00",
+"close": "23:00",
+"in_delivery_area": 1,
+"is_self": "0",
+"number": "0010012843",
+"address": "北京市东城区朝阳门内大街288号院2号楼1层",
+"first_dealer": "20",
+"parent_id": "3423",
+"cityid": "2",
+"_logid_reason": "距离",
+"order_base": "0",
+"isbig": "0",
+"balance_strategy_num": "15",
+"order_limit_status": "0",
+"order_limit": "15",
+"dealer_alias": "北京菏光综合超市",
+"is_pickup": "0",
+"status": "1",
+"distance": 0.51409143919455,
+"_distance": 0.51409143919455,
+"wx_is_qr": 0,
+"had_weixin_qrcode": false,
+"outofservice": 0,
+"bigids": "2,0",
+"self_dealer": 0,
+"message": "",
+"sysconf": {
+"not_freight": 100,
+"min_amount": 30
+},
+"business": [
+{
+"str": [
+{
+"day": "今天",
+"time": [
+"闪电送,及时达",
+"17:00-18:00",
+"18:00-19:00",
+"19:00-20:00",
+"20:00-21:00",
+"21:00-22:00",
+"22:00-23:00"
+],
+"dateid": 0
+},
+{
+"day": "明天",
+"time": [
+"09:00-10:00",
+"10:00-11:00",
+"11:00-12:00",
+"12:00-13:00",
+"13:00-14:00",
+"14:00-15:00",
+"15:00-16:00",
+"16:00-17:00",
+"17:00-18:00",
+"18:00-19:00",
+"19:00-20:00",
+"20:00-21:00",
+"21:00-22:00",
+"22:00-23:00"
+],
+"dateid": 1
+},
+{
+"day": "后天",
+"time": [
+"09:00-10:00",
+"10:00-11:00",
+"11:00-12:00",
+"12:00-13:00",
+"13:00-14:00",
+"14:00-15:00",
+"15:00-16:00",
+"16:00-17:00",
+"17:00-18:00",
+"18:00-19:00",
+"19:00-20:00",
+"20:00-21:00",
+"21:00-22:00",
+"22:00-23:00"
+],
+"dateid": 2
+}
+],
+"ext": "可预定",
+"id": 0,
+"title": "闪送超市"
+},
+{
+"str": [
+{
+"day": "明天",
+"time": [
+"10:00-20:00"
+],
+"dateid": 1
+}
+],
+"ext": "",
+"id": 1,
+"title": "新鲜预订"
+}
+],
+"timestamp": "1452501254",
+"pickup_time": "店铺当天营业时间内"
+},
+"navs": [
+{
+"id": 0,
+"name": "鲜蜂热卖",
+"type": "INDEX",
+"selected": 1
+},
+{
+"id": 1,
+"name": "闪送超市",
+"type": "CATEGORY",
+"jptype": 4,
+"selected": 0,
+"trackid": "shelf"
+}
+],
+"focus": [
+{
+"id": "20575",
+"name": "年货大集",
+"img": "http://img01.bqstatic.com/upload/activity/activity_v4_20575_1452217080_focus.jpg@90Q",
+"topimg": "http://img01.bqstatic.com/upload/activity/activity_v4_20575_1452217080_top.jpg@90Q",
+"jptype": "1",
+"sort": "1",
+"ext_params": {
+"cityid": "2",
+"bigids": "2,0",
+"activitygroup": "nianhuodaji"
+},
+"show_reload": "1",
+"hide_cart": "0",
+"trackid": "focus1|20575"
+},
+{
+"id": "20597",
+"name": "年货万人团",
+"img": "http://img01.bqstatic.com/upload/activity/activity_v4_20597_1452325598_focus.jpg@90Q",
+"topimg": "http://img01.bqstatic.com/upload/activity/activity_v4_20597_1452325598_top.jpg@90Q",
+"jptype": "1",
+"sort": "2",
+"ext_params": {
+"cityid": "2",
+"bigids": "2,0",
+"activitygroup": "nianhuowanrentuancirida"
+},
+"show_reload": "1",
+"hide_cart": "0",
+"trackid": "focus1|20597"
+},
+{
+"id": "20629",
+"name": "此乐事非彼乐视",
+"img": "http://img01.bqstatic.com/upload/activity/activity_v4_20629_1452324053_focus.jpg@90Q",
+"topimg": "http://img01.bqstatic.com/upload/activity/activity_v4_20629_1452324053_top.jpg@90Q",
+"jptype": "1",
+"sort": "3",
+"ext_params": {
+"cityid": "2",
+"bigids": "2,0",
+"activitygroup": "leshizhuanti"
+},
+"show_reload": "1",
+"hide_cart": "0",
+"trackid": "focus1|20629"
+},
+{
+"id": "20624",
+"name": "今时代果粒酸奶 新品上市",
+"img": "http://img01.bqstatic.com/upload/activity/activity_v4_20624_1452392276_focus.jpg@90Q",
+"topimg": "http://img01.bqstatic.com/upload/activity/activity_v4_20624_1452392276_top.jpg@90Q",
+"jptype": "1",
+"sort": "4",
+"ext_params": {
+"cityid": "2",
+"bigids": "2,0",
+"activitygroup": "jinshidai2"
+},
+"show_reload": "1",
+"hide_cart": "0",
+"trackid": "focus1|20624"
+},
+{
+"id": "20537",
+"name": "年终奖提前发",
+"img": "http://img01.bqstatic.com/upload/activity/activity_v4_20537_1452476149_focus.jpg@90Q",
+"topimg": "http://img01.bqstatic.com/upload/activity/activity_v4_20537_1452476149_top.jpg@90Q",
+"jptype": "1",
+"sort": "5",
+"ext_params": {
+"cityid": "2",
+"bigids": "2,0",
+"activitygroup": "nianzhongjiangtiqianfa"
+},
+"show_reload": "1",
+"hide_cart": "0",
+"trackid": "focus1|20537"
+}
+],
+"icons": [
+{
+"id": "20206",
+"name": "抽奖",
+"img": "http://img01.bqstatic.com/upload/activity/activity_v4_20206_1452163603_icon.jpg",
+"topimg": "http://img01.bqstatic.com/upload/activity/activity_v4_20206_1452163603_top.jpg",
+"jptype": "1",
+"sort": "1",
+"ext_params": {
+"cityid": "2",
+"bigids": "2,0",
+"activitygroup": "zhuanpan"
+},
+"show_reload": "1",
+"hide_cart": "1",
+"trackid": "icon1|20206",
+"customURL" : "http://m.beequick.cn/show/active?id=20206&locationHash=7ca258Avt44fDvvj2cZdEGf4nzjyAg95fITJXcnfccCKbDJW6SdFHgelg&zchtid=10309&location_time=1453779210&show_reload=1&hide_cart=1&activitygroup=zhuanpan&name=%E6%8A%BD%E5%A5%96&bigids=2%2C0&cityid=2&addrid=4825569&zchtauth=0660c8G2eHuPa14mhxZ%252FCS4sObBfhTVY9vm1%252BSnWminqivhA&__v=ios4.10&__d=d14ryS0MFUAhfrQ6rPJ9Gziisg%2F9Cf8CxgkzZw5AkPMbPcbv%2BpM4HpDJlnwAZPd5UyoGA15VrRjnhCT8VdSGZRr1hqySmO%2FA2k1rqKaujWCJ69O%2BOlzJ%2FM3c%2BEAqx14eK17f"
+},
+{
+"id": "20333",
+"name": "秒杀",
+"img": "http://img01.bqstatic.com/upload/activity/activity_v4_20333_1451871780_icon.jpg",
+"topimg": "http://img01.bqstatic.com/upload/activity/activity_v4_20333_1451871780_top.jpg",
+"jptype": "1",
+"sort": "2",
+"ext_params": {
+"cityid": "2",
+"bigids": "2,0",
+"activitygroup": "miaoshav3"
+},
+"show_reload": "1",
+"hide_cart": "0",
+"trackid": "icon1|20333",
+"customURL": "http://m.beequick.cn/show/active?id=20333&locationHash=b146d3x+aiKpFadVCXC8qKnvXJCNZvJTvO7fpxjIyClVRx9WEryjH6bEk&zchtid=10309&location_time=1453779210&show_reload=1&hide_cart=0&activitygroup=miaoshav3&name=%E7%A7%92%E6%9D%80&bigids=2%2C0&cityid=2&addrid=4825569&zchtauth=0660c8G2eHuPa14mhxZ%252FCS4sObBfhTVY9vm1%252BSnWminqivhA&__v=ios4.10&__d=d14ryS0MFUAhfrQ6rPJ9Gziisg%2F9Cf8CxgkzZw5AkPMbPcbv%2BpM4HpDJlnwAZPd5UyoGA15VrRjghCP%2BV9aEPxujif%2BZz%2BiQj0VnrKSqi2WPtoDqawuVqcnYqE98x14eK17f"
+},
+{
+"id": "20596",
+"name": "抢红包",
+"img": "http://img01.bqstatic.com/upload/activity/activity_v4_20596_1452250014_icon.jpg",
+"topimg": "http://img01.bqstatic.com/upload/activity/activity_v4_20596_1452250014_top.jpg",
+"jptype": "1",
+"sort": "3",
+"ext_params": {
+"cityid": "2",
+"bigids": "2,0",
+"activitygroup": "nianhuodajiyaoyiyao"
+},
+"show_reload": "1",
+"hide_cart": "1",
+"trackid": "icon1|20596",
+"customURL": "http://m.beequick.cn/show/active?id=20596&locationHash=44b55boMrSr4YSPl5TCiWVSVR4nh/I/JCT/7/1Q0QYVuEkpEdYZadOs0M&zchtid=10309&location_time=1453779210&show_reload=1&hide_cart=1&activitygroup=nianhuodajiyaoyiyao&name=%E6%8A%A2%E7%BA%A2%E5%8C%85&bigids=2%2C0&cityid=2&addrid=4825569&zchtauth=0660c8G2eHuPa14mhxZ%252FCS4sObBfhTVY9vm1%252BSnWminqivhA&__v=ios4.10&__d=d14ryS0MFUAhfrQ6rPJ9Gziisg%2F9Cf8CxgkzZw5AkPMbPcbv%2BpM4HpDJlnwAZPd5UyoGA15VrRjghCP%2BV9aEPxujif%2BZz%2BiQj0VnrKSqi2WPtoDqawuVqcnYqE98x14eK17f"
+},
+{
+"id": "20382",
+"name": "蜂抱团",
+"img": "http://img01.bqstatic.com/upload/activity/activity_v4_20382_1451896099_icon.jpg",
+"topimg": "http://img01.bqstatic.com/upload/activity/activity_v4_20382_1451896099_top.jpg",
+"jptype": "1",
+"sort": "4",
+"ext_params": {
+"cityid": "2",
+"bigids": "2,0",
+"activitygroup": "fengbaotuan"
+},
+"show_reload": "0",
+"hide_cart": "1",
+"trackid": "icon1|20382",
+"customURL": "http://m.beequick.cn/show/active?id=20382&locationHash=b146d3x+aiKpFadVCXC8qKnvXJCNZvJTvO7fpxjIyClVRx9WEryjH6bEk&zchtid=10309&location_time=1453779210&show_reload=0&hide_cart=1&activitygroup=fengbaotuan&name=%E8%9C%82%E6%8A%B1%E5%9B%A2&bigids=2%2C0&cityid=2&addrid=4825569&zchtauth=0660c8G2eHuPa14mhxZ%252FCS4sObBfhTVY9vm1%252BSnWminqivhA&__v=ios4.10&__d=d14ryS0MFUAhfrQ6rPJ9Gziisg%2F9Cf8CxgkzZw5AkPMbPcbv%2BpM4HpDJlnwAZPd5UyoGA15VrRjghCP%2BV9aEPxujif%2BZz%2BiQj0VnrKSqi2WPtoDqawuVqcnYqE98x14eK17f"
+}
+],
+"activities": [
+{
+"id": "20575",
+"name": "年货大集",
+"img": "http://img01.bqstatic.com/upload/activity/activity_v4_20575_1452217080_block.jpg@90Q",
+"topimg": "http://img01.bqstatic.com/upload/activity/activity_v4_20575_1452217080_top.jpg@90Q",
+"jptype": "1",
+"sort": 0,
+"ext_params": {
+"cityid": "2",
+"bigids": "2,0",
+"activitygroup": "nianhuodaji"
+},
+"show_reload": "1",
+"hide_cart": "0",
+"trackid": "focus1|20575",
+"mimg": "http://img01.bqstatic.com/upload/activity/activity_v4_20575_1452217080_mblock.jpg@90Q",
+"customURL": "https://github.com/ZhongTaoTian"
+},
+{
+"id": "20626",
+"name": "新鲜预订年货礼包",
+"img": "http://img01.bqstatic.com/upload/activity/activity_v4_20626_1452493235_block.jpg@90Q",
+"mimg": "http://img01.bqstatic.com/upload/activity/activity_v4_20626_1452493235_mblock.jpg@90Q",
+"topimg": "http://img01.bqstatic.com/upload/activity/activity_v4_20626_1452493235_top.jpg@90Q",
+"jptype": "1",
+"sort": "1",
+"ext_params": {
+"cityid": "2",
+"bigids": "2,0",
+"activitygroup": "ciridanianhuolibao"
+},
+"show_reload": "1",
+"hide_cart": "0",
+"trackid": "act1|20626",
+"customURL": "http://weibo.com/tianzhongtao"
+},
+{
+"id": "20580",
+"name": "鲜果盛宴",
+"img": "http://img01.bqstatic.com/upload/activity/activity_v4_20580_1452500736_block.jpg@90Q",
+"mimg": "http://img01.bqstatic.com/upload/activity/activity_v4_20580_1452500736_mblock.jpg@90Q",
+"topimg": "http://img01.bqstatic.com/upload/activity/activity_v4_20580_1452500736_top.jpg@90Q",
+"jptype": "1",
+"sort": "2",
+"ext_params": {
+"cityid": "2",
+"bigids": "2,0",
+"activitygroup": "xianguoshengyan"
+},
+"show_reload": "1",
+"hide_cart": "0",
+"trackid": "act1|20580",
+"customURL": "http://www.jianshu.com/users/5fe7513c7a57/latest_articles"
+},
+{
+"id": "20581",
+"name": "整箱购",
+"img": "http://img01.bqstatic.com/upload/activity/activity_v4_20581_1452324885_block.jpg@90Q",
+"mimg": "http://img01.bqstatic.com/upload/activity/activity_v4_20581_1452324885_mblock.jpg@90Q",
+"topimg": "http://img01.bqstatic.com/upload/activity/activity_v4_20581_1452324885_top.jpg@90Q",
+"jptype": "1",
+"sort": "10",
+"ext_params": {
+"cityid": "2",
+"bigids": "2,0",
+"activitygroup": "zhexiangyouli"
+},
+"show_reload": "1",
+"hide_cart": "0",
+"trackid": "act1|20581",
+"customURL": "http://www.jianshu.com/users/5fe7513c7a57/latest_articles"
+}
+],
+"cart_ids": [],
+"have_tmr": 1,
+"location_hash": "03fd86Ao/ZqRE02KjBLYi0c5GhWog0KRfeMXnJr6OUP5UqqMudzlH5r44",
+"pickup_time": "店铺当天营业时间内",
+"tmr_detail": {
+"id": "20283",
+"name": "新鲜预订",
+"img": "http://img01.bqstatic.com/upload/activity/activity_v4_20283_1451267814_icon.jpg",
+"topimg": "http://img01.bqstatic.com/upload/activity/activity_v4_20283_1451267814_top.jpg",
+"jptype": "1",
+"sort": "7",
+"ext_params": {
+"cityid": "2",
+"bigids": "2,0",
+"activitygroup": "xinxianyuding"
+},
+"show_reload": "1",
+"hide_cart": "0",
+"trackid": "tmr"
+}
+}
+}
