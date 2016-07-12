@@ -1,0 +1,55 @@
+//
+//  PrefixHeader.pch
+//  MGLoveFreshBeen
+//
+//  Created by ming on 16/7/12.
+//  Copyright © 2016年 ming. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+
+// 导航仪颜色
+#define KNavBarTiniColor [UIColor colorWithRed:174/255.0f green:42/255.0f blue:44/255.0f alpha:1]
+
+// 颜色
+/** 随机色 */
+#define KRGBColor(r,g,b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1.0]
+#define KRandomColor MGColor(arc4random_uniform(255),arc4random_uniform(255),arc4random_uniform(255))
+
+//字体
+#define KFont(x) [UIFont systemFontOfSize:x]
+#define KBoldFont(x) [UIFont boldSystemFontOfSize:x]
+
+//提醒框
+#define KPS(obj) [SVProgressHUD showSuccessWithStatus:obj];
+#define KPE(obj) [SVProgressHUD showErrorWithStatus:obj];
+
+//屏幕的高度和宽度
+#define KSCREEN_WIDTH [UIScreen mainScreen].bounds.size.width
+#define KSCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height
+//默认导航栏的高度
+#define KNavHeight 64
+
+
+
+// 快速创建弱指针
+#define weakSelf __weak typeof(self) weakSelf = self;
+
+
+
+
+//日志输出
+#ifdef DEBUG  //log
+#define MGLog(...) NSLog(__VA_ARGS__)
+// 方法输出
+#define MGLogFunc MGLog(@"%s", __func__)
+#else // 发布阶段-上线阶段:移除Log
+#define MGLogLog(...)
+#endif
+
+
+
+
+#endif /* PrefixHeader_pch */
