@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AboutMeVC">
+            <connections>
+                <outlet property="view" destination="7LM-Gt-jeo" id="AcR-cL-hZl"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="7LM-Gt-jeo">
+            <rect key="frame" x="0.0" y="44" width="320" height="436"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="12.png" translatesAutoresizingMaskIntoConstraints="NO" id="J8p-lc-i4L">
+                    <rect key="frame" x="30" y="15" width="260" height="150"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="150" id="1Bs-BU-bWe"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MG明明就是你" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qlb-Ta-gLI">
+                    <rect key="frame" x="30" y="175" width="260" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u2G-3p-zyK">
+                    <rect key="frame" x="10" y="346" width="300" height="30"/>
+                    <state key="normal" title="简书：http://www.jianshu.com/users/57b58a39b70e/latest_articles"/>
+                    <connections>
+                        <action selector="turnToJianshu:" destination="-1" eventType="touchUpInside" id="Pqp-Ac-ZyJ"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yDo-WV-HXj">
+                    <rect key="frame" x="10" y="301" width="300" height="30"/>
+                    <state key="normal" title="Github：https://github.com/LYM-mg"/>
+                    <connections>
+                        <action selector="turnToGithub:" destination="-1" eventType="touchUpInside" id="lmq-QO-TKf"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="要有梦想，哪怕不切实际" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aBf-Sj-67i">
+                    <rect key="frame" x="10" y="216" width="300" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="Qlb-Ta-gLI" firstAttribute="top" secondItem="J8p-lc-i4L" secondAttribute="bottom" constant="10" id="2hJ-Fw-C7f"/>
+                <constraint firstItem="J8p-lc-i4L" firstAttribute="top" secondItem="7LM-Gt-jeo" secondAttribute="top" constant="20" id="Dka-aQ-Xxg"/>
+                <constraint firstItem="Qlb-Ta-gLI" firstAttribute="trailing" secondItem="J8p-lc-i4L" secondAttribute="trailing" id="Dua-wF-1tL"/>
+                <constraint firstAttribute="bottom" secondItem="u2G-3p-zyK" secondAttribute="bottom" constant="60" id="Fcg-Ey-3ZZ"/>
+                <constraint firstItem="aBf-Sj-67i" firstAttribute="top" secondItem="Qlb-Ta-gLI" secondAttribute="bottom" constant="20" id="JcU-O2-Pco"/>
+                <constraint firstItem="aBf-Sj-67i" firstAttribute="leading" secondItem="7LM-Gt-jeo" secondAttribute="leading" constant="10" id="KkY-oi-0qi"/>
+                <constraint firstAttribute="trailing" secondItem="u2G-3p-zyK" secondAttribute="trailing" constant="10" id="ONs-5P-si0"/>
+                <constraint firstAttribute="trailing" secondItem="J8p-lc-i4L" secondAttribute="trailing" constant="30" id="T5b-Hb-uPm"/>
+                <constraint firstItem="u2G-3p-zyK" firstAttribute="leading" secondItem="yDo-WV-HXj" secondAttribute="leading" id="TOw-Et-OYX"/>
+                <constraint firstItem="J8p-lc-i4L" firstAttribute="top" secondItem="7LM-Gt-jeo" secondAttribute="top" constant="15" id="VUN-hI-tVh"/>
+                <constraint firstAttribute="trailing" secondItem="aBf-Sj-67i" secondAttribute="trailing" constant="10" id="cnH-CS-hqe"/>
+                <constraint firstItem="Qlb-Ta-gLI" firstAttribute="leading" secondItem="J8p-lc-i4L" secondAttribute="leading" id="fD3-cD-QMR"/>
+                <constraint firstItem="u2G-3p-zyK" firstAttribute="leading" secondItem="7LM-Gt-jeo" secondAttribute="leading" constant="10" id="jAs-6d-hng"/>
+                <constraint firstItem="u2G-3p-zyK" firstAttribute="width" secondItem="yDo-WV-HXj" secondAttribute="width" id="pO3-rA-xdK"/>
+                <constraint firstItem="J8p-lc-i4L" firstAttribute="leading" secondItem="7LM-Gt-jeo" secondAttribute="leading" constant="30" id="sc5-8L-UQG"/>
+                <constraint firstItem="u2G-3p-zyK" firstAttribute="top" secondItem="yDo-WV-HXj" secondAttribute="bottom" constant="15" id="wJ0-cv-M80"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="Dka-aQ-Xxg"/>
+                </mask>
+            </variation>
+            <point key="canvasLocation" x="525" y="313"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="12.png" width="79" height="80"/>
+    </resources>
+</document>

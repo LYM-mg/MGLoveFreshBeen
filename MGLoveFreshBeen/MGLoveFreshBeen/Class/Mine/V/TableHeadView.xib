@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="TableHeadView">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gr8-7o-m13" customClass="MGButton">
+                    <rect key="frame" x="10" y="0.0" width="117" height="70"/>
+                    <state key="normal" title="我的订单" image="v2_my_order_icon">
+                        <color key="titleColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="orderBtnClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="h7y-PH-SBQ"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e9q-OL-QUH" customClass="MGButton">
+                    <rect key="frame" x="129" y="0.0" width="117" height="70"/>
+                    <state key="normal" title="优惠券" image="v2_my_coupon_icon">
+                        <color key="titleColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="CouponBtnClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="QYx-d1-IwC"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="15D-KA-dO7" customClass="MGButton">
+                    <rect key="frame" x="248" y="0.0" width="117" height="70"/>
+                    <state key="normal" title="我的消息" image="v2_my_message_icon">
+                        <color key="titleColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="messageBtnClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="Qng-cn-KAe"/>
+                    </connections>
+                </button>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="EWT-C8-2K2" userLabel="line1">
+                    <rect key="frame" x="127" y="8" width="2" height="54"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MA7-o2-nGJ" userLabel="line2">
+                    <rect key="frame" x="246" y="8" width="2" height="54"/>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="gr8-7o-m13" secondAttribute="bottom" id="1ol-Md-Ck0"/>
+                <constraint firstAttribute="trailing" secondItem="15D-KA-dO7" secondAttribute="trailing" constant="10" id="2Mv-1X-85D"/>
+                <constraint firstItem="15D-KA-dO7" firstAttribute="leading" secondItem="e9q-OL-QUH" secondAttribute="trailing" constant="2" id="3FD-P0-ZyF"/>
+                <constraint firstAttribute="bottom" secondItem="MA7-o2-nGJ" secondAttribute="bottom" constant="8" id="3Uc-RP-w1P"/>
+                <constraint firstItem="15D-KA-dO7" firstAttribute="leading" secondItem="MA7-o2-nGJ" secondAttribute="trailing" id="Bis-Qt-gQ9"/>
+                <constraint firstItem="MA7-o2-nGJ" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="Bla-Kp-Twa"/>
+                <constraint firstItem="15D-KA-dO7" firstAttribute="leading" secondItem="EWT-C8-2K2" secondAttribute="trailing" id="CWC-Zj-4dd"/>
+                <constraint firstAttribute="bottom" secondItem="EWT-C8-2K2" secondAttribute="bottom" constant="8" id="H4c-bE-47B"/>
+                <constraint firstItem="EWT-C8-2K2" firstAttribute="leading" secondItem="gr8-7o-m13" secondAttribute="trailing" id="J2u-d2-VaP"/>
+                <constraint firstItem="15D-KA-dO7" firstAttribute="width" secondItem="gr8-7o-m13" secondAttribute="width" id="JXl-3e-fvF"/>
+                <constraint firstItem="e9q-OL-QUH" firstAttribute="leading" secondItem="EWT-C8-2K2" secondAttribute="trailing" id="JlQ-xj-QAC"/>
+                <constraint firstItem="gr8-7o-m13" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="Pxh-TH-6vk"/>
+                <constraint firstItem="EWT-C8-2K2" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="Qbw-bk-zi4"/>
+                <constraint firstItem="e9q-OL-QUH" firstAttribute="height" secondItem="gr8-7o-m13" secondAttribute="height" id="Qj6-xP-2fr"/>
+                <constraint firstItem="e9q-OL-QUH" firstAttribute="width" secondItem="gr8-7o-m13" secondAttribute="width" id="RS9-lW-04L"/>
+                <constraint firstItem="e9q-OL-QUH" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="XEC-oG-mlH"/>
+                <constraint firstItem="e9q-OL-QUH" firstAttribute="leading" secondItem="gr8-7o-m13" secondAttribute="trailing" constant="2" id="e3r-e6-V4q"/>
+                <constraint firstAttribute="bottom" secondItem="15D-KA-dO7" secondAttribute="bottom" id="jVA-ds-h5c"/>
+                <constraint firstItem="15D-KA-dO7" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="kKu-b6-QwY"/>
+                <constraint firstItem="MA7-o2-nGJ" firstAttribute="leading" secondItem="e9q-OL-QUH" secondAttribute="trailing" id="n3c-3Q-8sS"/>
+                <constraint firstItem="15D-KA-dO7" firstAttribute="height" secondItem="gr8-7o-m13" secondAttribute="height" id="nJl-kf-BYZ"/>
+                <constraint firstItem="gr8-7o-m13" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="uNg-VM-gDE"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="CWC-Zj-4dd"/>
+                </mask>
+            </variation>
+            <point key="canvasLocation" x="281.5" y="268"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="v2_my_coupon_icon" width="32" height="22"/>
+        <image name="v2_my_message_icon" width="32" height="22"/>
+        <image name="v2_my_order_icon" width="32" height="22"/>
+    </resources>
+</document>

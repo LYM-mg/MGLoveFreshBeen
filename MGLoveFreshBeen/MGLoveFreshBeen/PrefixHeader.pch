@@ -9,33 +9,45 @@
 #ifndef PrefixHeader_pch
 #define PrefixHeader_pch
 
+#ifdef __OBJC__
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+#import <AFNetworking/AFNetworking.h>
+#import <SDWebImage/UIImageView+WebCache.h>
+#import <SVProgressHUD/SVProgressHUD.h>
+#import "MJExtension.h"
+
+#import "UIView+Extension.h"
+
+#endif
+
 
 // 导航仪颜色
-#define KNavBarTiniColor [UIColor colorWithRed:174/255.0f green:42/255.0f blue:44/255.0f alpha:1]
+#define MGNavBarTiniColor [UIColor colorWithRed:174/255.0f green:42/255.0f blue:44/255.0f alpha:1]
 
 // 颜色
 /** 随机色 */
-#define KRGBColor(r,g,b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1.0]
-#define KRandomColor MGColor(arc4random_uniform(255),arc4random_uniform(255),arc4random_uniform(255))
+#define MGRGBColor(r,g,b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1.0]
+#define MGRandomColor MGRGBColor(arc4random_uniform(255),arc4random_uniform(255),arc4random_uniform(255))
 
 //字体
-#define KFont(x) [UIFont systemFontOfSize:x]
-#define KBoldFont(x) [UIFont boldSystemFontOfSize:x]
+#define MGFont(x) [UIFont systemFontOfSize:x]
+#define MGBoldFont(x) [UIFont boldSystemFontOfSize:x]
 
 //提醒框
-#define KPS(obj) [SVProgressHUD showSuccessWithStatus:obj];
-#define KPE(obj) [SVProgressHUD showErrorWithStatus:obj];
+#define MGPS(obj) [SVProgressHUD showSuccessWithStatus:obj];
+#define MGPE(obj) [SVProgressHUD showErrorWithStatus:obj];
 
 //屏幕的高度和宽度
-#define KSCREEN_WIDTH [UIScreen mainScreen].bounds.size.width
-#define KSCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height
+#define MGSCREEN_width [UIScreen mainScreen].bounds.size.width
+#define MGSCREEN_height [UIScreen mainScreen].bounds.size.height
 //默认导航栏的高度
-#define KNavHeight 64
+#define MGNavHeight 64
 
 
 
 // 快速创建弱指针
-#define weakSelf __weak typeof(self) weakSelf = self;
+#define __weakSelf (__weak typeof(self) weakSelf = self)
 
 
 
