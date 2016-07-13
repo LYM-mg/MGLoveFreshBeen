@@ -38,6 +38,11 @@
 		3A64A2471D350EF100288490 /* NSObject+MJKeyValue.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A64A23B1D350EF100288490 /* NSObject+MJKeyValue.m */; settings = {ASSET_TAGS = (); }; };
 		3A64A2481D350EF100288490 /* NSObject+MJProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A64A23D1D350EF100288490 /* NSObject+MJProperty.m */; settings = {ASSET_TAGS = (); }; };
 		3A64A2491D350EF100288490 /* NSString+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A64A23F1D350EF100288490 /* NSString+MJExtension.m */; settings = {ASSET_TAGS = (); }; };
+		3AADC9EC1D36018900DDEE87 /* questionCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AADC9EB1D36018900DDEE87 /* questionCellModel.m */; settings = {ASSET_TAGS = (); }; };
+		3AADC9EF1D36025F00DDEE87 /* QuestionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AADC9EE1D36025F00DDEE87 /* QuestionCell.m */; settings = {ASSET_TAGS = (); }; };
+		3AADC9F21D361DCA00DDEE87 /* QuestionSectionHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AADC9F11D361DCA00DDEE87 /* QuestionSectionHeader.m */; settings = {ASSET_TAGS = (); }; };
+		3AADC9F51D36A19200DDEE87 /* MessageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AADC9F41D36A19200DDEE87 /* MessageVC.m */; settings = {ASSET_TAGS = (); }; };
+		3AADC9F81D36A80300DDEE87 /* MessageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AADC9F71D36A80300DDEE87 /* MessageModel.m */; settings = {ASSET_TAGS = (); }; };
 		3AED5D471D35306E0045CF64 /* AboutMeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AED5D451D35306E0045CF64 /* AboutMeVC.m */; settings = {ASSET_TAGS = (); }; };
 		3AED5D4B1D3531300045CF64 /* 12.png in Resources */ = {isa = PBXBuildFile; fileRef = 3AED5D4A1D3531300045CF64 /* 12.png */; settings = {ASSET_TAGS = (); }; };
 		3AED5D4D1D353AFF0045CF64 /* AboutMeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AED5D4C1D353AFF0045CF64 /* AboutMeVC.xib */; settings = {ASSET_TAGS = (); }; };
@@ -127,6 +132,16 @@
 		3A64A23D1D350EF100288490 /* NSObject+MJProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+MJProperty.m"; sourceTree = "<group>"; };
 		3A64A23E1D350EF100288490 /* NSString+MJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MJExtension.h"; sourceTree = "<group>"; };
 		3A64A23F1D350EF100288490 /* NSString+MJExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MJExtension.m"; sourceTree = "<group>"; };
+		3AADC9EA1D36018900DDEE87 /* questionCellModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = questionCellModel.h; sourceTree = "<group>"; };
+		3AADC9EB1D36018900DDEE87 /* questionCellModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = questionCellModel.m; sourceTree = "<group>"; };
+		3AADC9ED1D36025F00DDEE87 /* QuestionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionCell.h; sourceTree = "<group>"; };
+		3AADC9EE1D36025F00DDEE87 /* QuestionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionCell.m; sourceTree = "<group>"; };
+		3AADC9F01D361DCA00DDEE87 /* QuestionSectionHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionSectionHeader.h; sourceTree = "<group>"; };
+		3AADC9F11D361DCA00DDEE87 /* QuestionSectionHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionSectionHeader.m; sourceTree = "<group>"; };
+		3AADC9F31D36A19200DDEE87 /* MessageVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageVC.h; sourceTree = "<group>"; };
+		3AADC9F41D36A19200DDEE87 /* MessageVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageVC.m; sourceTree = "<group>"; };
+		3AADC9F61D36A80300DDEE87 /* MessageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageModel.h; sourceTree = "<group>"; };
+		3AADC9F71D36A80300DDEE87 /* MessageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageModel.m; sourceTree = "<group>"; };
 		3AED5D441D35306E0045CF64 /* AboutMeVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutMeVC.h; sourceTree = "<group>"; };
 		3AED5D451D35306E0045CF64 /* AboutMeVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutMeVC.m; sourceTree = "<group>"; };
 		3AED5D4A1D3531300045CF64 /* 12.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 12.png; sourceTree = "<group>"; };
@@ -309,6 +324,8 @@
 				3AED5D811D35802F0045CF64 /* QuestionVC.m */,
 				3AED5D831D3584E00045CF64 /* IdeaVC.h */,
 				3AED5D841D3584E00045CF64 /* IdeaVC.m */,
+				3AADC9F31D36A19200DDEE87 /* MessageVC.h */,
+				3AADC9F41D36A19200DDEE87 /* MessageVC.m */,
 			);
 			path = C;
 			sourceTree = "<group>";
@@ -318,6 +335,10 @@
 			children = (
 				3AED5D721D354BCD0045CF64 /* OrderCellModel.h */,
 				3AED5D731D354BCD0045CF64 /* OrderCellModel.m */,
+				3AADC9EA1D36018900DDEE87 /* questionCellModel.h */,
+				3AADC9EB1D36018900DDEE87 /* questionCellModel.m */,
+				3AADC9F61D36A80300DDEE87 /* MessageModel.h */,
+				3AADC9F71D36A80300DDEE87 /* MessageModel.m */,
 			);
 			path = M;
 			sourceTree = "<group>";
@@ -335,6 +356,10 @@
 				3AED5D511D3542520045CF64 /* OrderCell.h */,
 				3AED5D521D3542520045CF64 /* OrderCell.m */,
 				3AED5D531D3542520045CF64 /* OrderCell.xib */,
+				3AADC9ED1D36025F00DDEE87 /* QuestionCell.h */,
+				3AADC9EE1D36025F00DDEE87 /* QuestionCell.m */,
+				3AADC9F01D361DCA00DDEE87 /* QuestionSectionHeader.h */,
+				3AADC9F11D361DCA00DDEE87 /* QuestionSectionHeader.m */,
 			);
 			path = V;
 			sourceTree = "<group>";
@@ -714,9 +739,12 @@
 				3A64A21A1D34E53200288490 /* MineHeadView.m in Sources */,
 				3A64A2471D350EF100288490 /* NSObject+MJKeyValue.m in Sources */,
 				3A64A21E1D34EC8C00288490 /* UIView+Extension.m in Sources */,
+				3AADC9F81D36A80300DDEE87 /* MessageModel.m in Sources */,
 				3A64A1D51D34D4D200288490 /* MGLoveFreshBeen.xcdatamodeld in Sources */,
 				3A64A2241D34FF1200288490 /* TableHeadView.m in Sources */,
+				3AADC9F51D36A19200DDEE87 /* MessageVC.m in Sources */,
 				3A64A2491D350EF100288490 /* NSString+MJExtension.m in Sources */,
+				3AADC9EF1D36025F00DDEE87 /* QuestionCell.m in Sources */,
 				3AED5D541D3542520045CF64 /* OrderCell.m in Sources */,
 				3A64A2421D350EF100288490 /* MJProperty.m in Sources */,
 				3AED5D851D3584E00045CF64 /* IdeaVC.m in Sources */,
@@ -734,8 +762,10 @@
 				3A64A2001D34DEC500288490 /* TabBarVC.m in Sources */,
 				3AED5D8C1D358A200045CF64 /* LYMTextViewWithLabel.m in Sources */,
 				3A64A2431D350EF100288490 /* MJPropertyKey.m in Sources */,
+				3AADC9EC1D36018900DDEE87 /* questionCellModel.m in Sources */,
 				3A64A2481D350EF100288490 /* NSObject+MJProperty.m in Sources */,
 				3AED5D7F1D357D9F0045CF64 /* HelpVC.m in Sources */,
+				3AADC9F21D361DCA00DDEE87 /* QuestionSectionHeader.m in Sources */,
 				3A64A2141D34E16C00288490 /* MineVC.m in Sources */,
 				3A64A2031D34E0AE00288490 /* HomeVC.m in Sources */,
 				3A64A1F91D34D64300288490 /* AppDelegate.m in Sources */,

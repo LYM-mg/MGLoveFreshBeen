@@ -4,37 +4,135 @@
 //
 //  Created by ming on 16/7/13.
 //  Copyright © 2016年 ming. All rights reserved.
-//
+// !
 
 #import "QuestionVC.h"
+#import "questionCellModel.h"
+#import "QuestionCell.h"
+#import "QuestionSectionHeader.h"
 
-@interface QuestionVC ()
+@interface QuestionVC ()<UITableViewDataSource,UITableViewDelegate>
+
+/** tableView */
+//@property (nonatomic,weak) UITableView *tableView;
+
+/** 问题数据源 */
+@property (nonatomic,strong) NSArray *questionData;
+
+/** 行高 */
+@property (nonatomic, assign) CGFloat cellHeight;
+
+/** Bool */
+@property (nonatomic, assign) BOOL isExpanded;
+
 
 @end
 
 @implementation QuestionVC
 
+static NSString *const KQuestionSectionHeader = @"KQuestionSectionHeader";
+
+#pragma mark - lazy
+- (NSArray *)questionData{
+    if (!_questionData) {
+        _questionData = [NSArray array];
+        NSString *path = [[NSBundle mainBundle] pathForResource:@"HelpPlist.plist" ofType: nil];
+        NSArray *arrayDict = [NSArray arrayWithContentsOfFile:path];
+        
+        NSMutableArray *questions = [NSMutableArray array];
+        for (NSDictionary *dict in arrayDict) {
+            questionCellModel *model = [questionCellModel questionModelWithDict:dict];
+            [questions addObject:model];
+        }
+        _questionData = questions;
+    }
+    return _questionData;
+}
+
+
+#pragma mark - 生命周期
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     self.title = @"常见问题";
     
     self.view.backgroundColor = [UIColor whiteColor];
+    
+    // 创建UI
+    [self setMianView];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+
+#pragma mark - 私有方法
+- (void)setMianView {
+//    UITableView *tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStyleGrouped];
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
+    self.tableView.backgroundColor = [UIColor whiteColor];
+//    self.tableView = tableView;
+//    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    self.tableView.rowHeight = UITableViewAutomaticDimension;
+    self.tableView.estimatedRowHeight = 44;
+
+    [self.tableView registerClass:[QuestionSectionHeader class] forHeaderFooterViewReuseIdentifier:KQuestionSectionHeader];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+#pragma mark - UITableViewDataSource
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return self.questionData.count;
 }
-*/
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    // 取得每一组的头部模型
+    questionCellModel *sectionModel = self.questionData[section];
+    
+    //                                      展开既有数据，未展开则没有数据
+    return sectionModel.isExpanded ? 1 : 0;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+//    static NSString *const KQuestionCellID = @"KQuestionCellID";
+//    QuestionCell *cell = [tableView dequeueReusableCellWithIdentifier:KQuestionCellID];
+//    if (!cell) {
+//        cell = [[QuestionCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:KQuestionCellID];
+//    }
+    QuestionCell *cell = [[QuestionCell alloc] init];
+    questionCellModel *model = self.questionData[indexPath.section];
+    cell.model = model;
+    
+    return cell;
+}
+
+
+#pragma mark - UITableViewDelegate
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{}
+
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+//    if (_cellHeight)  return _cellHeight;
+    
+    questionCellModel *model = self.questionData[indexPath.section];
+    
+    return [model cellHeight];
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+    return 44;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
+    QuestionSectionHeader *headerView = (QuestionSectionHeader *)[tableView dequeueReusableHeaderFooterViewWithIdentifier:KQuestionSectionHeader];
+   
+    __weak typeof(self) weakSelf = self;
+    headerView.sectionHeaderClickBlock = ^(BOOL isExpanded){
+        self.isExpanded = isExpanded;
+        
+        [weakSelf.tableView reloadSections:[NSIndexSet indexSetWithIndex:section] withRowAnimation:UITableViewRowAnimationAutomatic];
+    };
+
+    headerView.model = self.questionData[section];
+    return headerView;
+}
+
 
 @end

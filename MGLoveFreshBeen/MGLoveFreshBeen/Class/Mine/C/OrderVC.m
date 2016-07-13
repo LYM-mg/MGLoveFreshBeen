@@ -20,7 +20,7 @@
 @implementation OrderVC
 
 static NSString * const reuseIdentifier = @"Cell";
-
+#pragma mark - lazy
 - (NSArray *)orderData{
     if (!_orderData) {
         _orderData = [NSArray array];

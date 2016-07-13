@@ -12,6 +12,7 @@
 
 #import "SettingVC.h"
 #import "OrderVC.h"
+#import "MessageVC.h"
 
 
 #import "HelpVC.h"
@@ -67,7 +68,7 @@ CGFloat headViewHeight = 150;
 
 - (void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
-    if (_iderVCSendIderSuccess) {
+    if (_iderVCSendIderSuccess) { // 是否有人提交意见
         MGPS(@"客服🐯哥已经收到你的意见了,我们会改进的,放心吧~~")
         _iderVCSendIderSuccess = false;
     }
@@ -119,7 +120,8 @@ CGFloat headViewHeight = 150;
         
     };
     tableHead.messageBtnClickBlock = ^{
-        
+        MessageVC *message = [[MessageVC alloc] init];
+        [self.navigationController pushViewController:message animated:YES];
     };
 }
 

@@ -44,6 +44,9 @@
 //默认导航栏的高度
 #define MGNavHeight 64
 
+//默认间距
+#define MGMargin 10
+
 
 
 // 快速创建弱指针

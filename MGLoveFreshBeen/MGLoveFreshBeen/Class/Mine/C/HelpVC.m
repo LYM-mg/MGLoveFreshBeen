@@ -53,6 +53,7 @@
         cell.textLabel.text = @"客服电话";
         cell.detailTextLabel.text = @"13750526790";
     }else{
+        cell.accessoryType = UITableViewCellAccessoryDetailButton;
         cell.textLabel.text = @"常见问题";
     }
     
@@ -75,8 +76,8 @@
             [self.view addSubview:callWebview];
             
             /// 3.第三种打电话(这种方法也会回去到原来的程序里（注意这里的telprompt），也会弹出提示)
-            NSMutableString* str=[[NSMutableString alloc] initWithFormat:@"telprompt://%@",@"186xxxx6979"];
-            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:str]];
+//            NSMutableString* str=[[NSMutableString alloc] initWithFormat:@"telprompt://%@",@"186xxxx6979"];
+//            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:str]];
         }];
         
         UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {

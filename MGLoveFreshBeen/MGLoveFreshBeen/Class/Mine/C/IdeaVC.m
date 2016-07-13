@@ -54,8 +54,9 @@
     iderTextView.placeholder = @"请输入宝贵意见(300字以内)";
     iderTextView.placeholderColor = MGRandomColor;
     [self.view addSubview:iderTextView];
-    [self.iderTextView becomeFirstResponder];
+    [iderTextView becomeFirstResponder];
     self.iderTextView.scrollEnabled = YES;
+    self.iderTextView.scrollsToTop = YES;
     self.iderTextView.keyboardDismissMode = UIScrollViewKeyboardDismissModeOnDrag;
     self.iderTextView = iderTextView;
 }
@@ -75,7 +76,7 @@
         [SVProgressHUD showImage:[UIImage imageNamed:@"v2_orderSuccess"] status:@"妹子,说的太多了,👀看不完啊~"];
     } else {
         MGPE(@"发送中");
-        dispatch_time_t time = dispatch_time(DISPATCH_TIME_NOW, (1,0 * NSEC_PER_SEC));
+        dispatch_time_t time = dispatch_time(DISPATCH_TIME_NOW, (1.0 * NSEC_PER_SEC));
         dispatch_after(time, dispatch_get_main_queue(), ^{
             [self.navigationController popViewControllerAnimated:YES];
             [[NSNotificationCenter defaultCenter] postNotificationName:@"sendIdeaSussessNotification" object:self];
