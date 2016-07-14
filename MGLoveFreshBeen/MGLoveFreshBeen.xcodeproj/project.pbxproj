@@ -13,6 +13,8 @@
 		3A09CBB31D377C69007BD1FD /* MyAddressVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A09CBB21D377C69007BD1FD /* MyAddressVC.m */; settings = {ASSET_TAGS = (); }; };
 		3A09CBB61D378091007BD1FD /* MyAddressCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A09CBB51D378091007BD1FD /* MyAddressCell.m */; settings = {ASSET_TAGS = (); }; };
 		3A09CBB91D37870A007BD1FD /* EditAddressVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A09CBB81D37870A007BD1FD /* EditAddressVC.m */; settings = {ASSET_TAGS = (); }; };
+		3A09CBE21D37B106007BD1FD /* BaseController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A09CBE11D37B106007BD1FD /* BaseController.m */; settings = {ASSET_TAGS = (); }; };
+		3A09CBE61D37EF78007BD1FD /* MGGlobalConstant.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A09CBE51D37EF78007BD1FD /* MGGlobalConstant.m */; settings = {ASSET_TAGS = (); }; };
 		3A64A1C91D34D4D200288490 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A64A1C81D34D4D200288490 /* main.m */; };
 		3A64A1D51D34D4D200288490 /* MGLoveFreshBeen.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3A64A1D31D34D4D200288490 /* MGLoveFreshBeen.xcdatamodeld */; };
 		3A64A1D71D34D4D200288490 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A64A1D61D34D4D200288490 /* Assets.xcassets */; };
@@ -91,6 +93,10 @@
 		3A09CBB51D378091007BD1FD /* MyAddressCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyAddressCell.m; sourceTree = "<group>"; };
 		3A09CBB71D37870A007BD1FD /* EditAddressVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditAddressVC.h; sourceTree = "<group>"; };
 		3A09CBB81D37870A007BD1FD /* EditAddressVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditAddressVC.m; sourceTree = "<group>"; };
+		3A09CBE01D37B106007BD1FD /* BaseController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseController.h; sourceTree = "<group>"; };
+		3A09CBE11D37B106007BD1FD /* BaseController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseController.m; sourceTree = "<group>"; };
+		3A09CBE41D37EF78007BD1FD /* MGGlobalConstant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGGlobalConstant.h; sourceTree = "<group>"; };
+		3A09CBE51D37EF78007BD1FD /* MGGlobalConstant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGGlobalConstant.m; sourceTree = "<group>"; };
 		3A64A1C41D34D4D200288490 /* MGLoveFreshBeen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MGLoveFreshBeen.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A64A1C81D34D4D200288490 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		3A64A1D41D34D4D200288490 /* MGLoveFreshBeen.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MGLoveFreshBeen.xcdatamodel; sourceTree = "<group>"; };
@@ -246,6 +252,8 @@
 				3A64A1D31D34D4D200288490 /* MGLoveFreshBeen.xcdatamodeld */,
 				3A64A1C81D34D4D200288490 /* main.m */,
 				3A64A1FD1D34D78100288490 /* PrefixHeader.pch */,
+				3A09CBE41D37EF78007BD1FD /* MGGlobalConstant.h */,
+				3A09CBE51D37EF78007BD1FD /* MGGlobalConstant.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -301,6 +309,8 @@
 		3A64A1E61D34D64300288490 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				3A09CBE01D37B106007BD1FD /* BaseController.h */,
+				3A09CBE11D37B106007BD1FD /* BaseController.m */,
 				3A64A1E71D34D64300288490 /* AppDelegate.h */,
 				3A64A1E81D34D64300288490 /* AppDelegate.m */,
 				3A64A1FE1D34DEC500288490 /* TabBarVC.h */,
@@ -758,6 +768,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A09CBE61D37EF78007BD1FD /* MGGlobalConstant.m in Sources */,
 				3A64A20E1D34E14000288490 /* SuperMarketVC.m in Sources */,
 				3A64A2401D350EF100288490 /* MJExtensionConst.m in Sources */,
 				3A64A2211D34F5EF00288490 /* SettingVC.m in Sources */,
@@ -777,6 +788,7 @@
 				3AED5D851D3584E00045CF64 /* IdeaVC.m in Sources */,
 				3A64A2411D350EF100288490 /* MJFoundation.m in Sources */,
 				3AED5D741D354BCD0045CF64 /* OrderCellModel.m in Sources */,
+				3A09CBE21D37B106007BD1FD /* BaseController.m in Sources */,
 				3A64A1C91D34D4D200288490 /* main.m in Sources */,
 				3A64A2291D3504F700288490 /* MGButton.m in Sources */,
 				3AED5D501D3541E70045CF64 /* OrderVC.m in Sources */,

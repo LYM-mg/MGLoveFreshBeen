@@ -19,17 +19,22 @@
 #import "Masonry.h"
 
 #import "UIView+Extension.h"
-
+#import "BaseController.h"
+#import "MGGlobalConstant.h"
 #endif
 
-
-// 导航仪颜色
+//UI Common properties (color,gap...)
+//＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+// 导航背景色
 #define MGNavBarTiniColor [UIColor colorWithRed:174/255.0f green:42/255.0f blue:44/255.0f alpha:1]
 
 // 颜色
 /** 随机色 */
 #define MGRGBColor(r,g,b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1.0]
 #define MGRandomColor MGRGBColor(arc4random_uniform(255),arc4random_uniform(255),arc4random_uniform(255))
+
+/** 地址灰色字体 */
+#define payKGray MGRGBColor(146, 146, 146)
 
 //字体
 #define MGFont(x) [UIFont systemFontOfSize:x]
@@ -42,18 +47,20 @@
 //屏幕的高度和宽度
 #define MGSCREEN_width [UIScreen mainScreen].bounds.size.width
 #define MGSCREEN_height [UIScreen mainScreen].bounds.size.height
-//默认导航栏的高度
-#define MGNavHeight 64
-
-//默认间距
-#define MGMargin 10
 
 
+//判断是否为ios8
+#define ISIOS8 ([[UIDevice currentDevice].systemVersion floatValue] >= 8.0f)
+//iPhone4
+#define IS_IPHONE4 (([[UIScreen mainScreen] bounds].size.height == 480) ? YES : NO)
+//iPhone5
+#define iPhone5 ([UIScreen mainScreen].bounds.size.height == 568)
 
 // 快速创建弱指针
 #define __weakSelf (__weak typeof(self) weakSelf = self)
 
-
+/** 通知中心 */
+#define MGNotificationCenter [NSNotificationCenter defaultCenter]
 
 
 //日志输出

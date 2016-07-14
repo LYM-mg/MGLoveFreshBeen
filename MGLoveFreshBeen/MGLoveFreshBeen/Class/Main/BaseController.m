@@ -1,7 +1,6 @@
 
 #import "BaseController.h"
 
-#import "GuideView.h"
 @interface BaseController ()
 
 @end
@@ -12,7 +11,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.view.backgroundColor = VCBgColor;
     self.edgesForExtendedLayout = UIRectEdgeNone;
     self.page = 1;//默认为1
     
@@ -21,13 +19,8 @@
     tap.delegate=self;
     [self.view addGestureRecognizer:tap];
     
-    self.shareView = [ShareView sharedView];
-    self.shareView.delegate = self;
 }
-- (void)showGuideView{
 
-    self.guideView = [GuideView sharedGuideView];
-}
 - (void)viewWillAppear:(BOOL)animated{
 
     [super viewWillAppear:animated];
@@ -37,13 +30,8 @@
 
     [super viewWillDisappear:animated];
     [self.view endEditing:YES];
-    [self.shareView endAnimations];
 }
-#pragma uigesture delegate
-- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch
-{
-    return ![NSStringFromClass([touch.view class]) isEqualToString:@"UITableViewCellContentView"]&&![NSStringFromClass([touch.view class]) isEqualToString:@"CommentView"]&&![NSStringFromClass([touch.view class]) isEqualToString:@"ChatTextView"]&&![NSStringFromClass([touch.view class]) isEqualToString:@"GuideView"];
-}
+
 
 #pragma mark - Methods
 - (BaseController*)pushController:(Class)controller withInfo:(id)info
@@ -58,27 +46,27 @@
 {
     return [self pushController:controller withInfo:info withTitle:title withOther:other withModel:NO];
 }
-- (BaseController*)pushController:(Class)controller withInfo:(id)info withTitle:(NSString*)title withOther:(id)other withModel:(BOOL)isModel
+- (BaseController*)pushController:(Class)controller withInfo:(id)info withTitle:(NSString*)title withOther:(id)other withModel:(BOOL)animation
 {
-    MyLog(@"\n======\nUserInfo:%@\n=======\notherInfo %@\n=======\ncontroller:%@\n==\ntitle:%@\n===\n",info,other,controller,title);
+//    MGLog(@"\n======\nUserInfo:%@\n=======\notherInfo %@\n=======\ncontroller:%@\n==\ntitle:%@\n===\n",info,other,controller,title);
     BaseController *base = [[controller alloc] init];
     if ([(NSObject*)base respondsToSelector:@selector(setUserInfo:)]) {
         base.userInfo = info;
         base.otherInfo = other;
         base.title = title;
-        if (isModel) {
+        if (animation) {
             //base.isModel  = YES;
             CATransition *transition = [CATransition animation];
-            transition.duration = 0.3f;
+            transition.duration = 1.0f;
             transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionLinear];
-            transition.type = kCATransitionMoveIn;
-            transition.subtype = kCATransitionFromTop;
+            transition.type = kCATransitionFade;
+            transition.subtype = kCATransitionFromBottom;
             transition.delegate = self;
             [self.navigationController.view.layer addAnimation:transition forKey:nil];
         }
     }
     base.hidesBottomBarWhenPushed = YES;
-    [self.navigationController pushViewController:base animated:!isModel];
+    [self.navigationController pushViewController:base animated:animation];
     return base;
 }
 
@@ -93,13 +81,6 @@
 
 -(void)onTap{
     [self.view endEditing:YES];
-}
-
-#pragma mark - ShareViewDelegate
-- (void)shareBtnHandled:(NSInteger)tag{
-    
-    
-    
 }
 
 

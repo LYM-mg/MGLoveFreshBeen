@@ -113,7 +113,20 @@
 
 // 清除缓存
 - (void)cleanCacheTapClick{
-    MGPS(@"clean");
+    NSArray *searchPaths = NSSearchPathForDirectoriesInDomains(
+                                                               NSCachesDirectory,
+                                                               NSUserDomainMask,
+                                                               YES);
+    NSString *documentFolderPath = [searchPaths objectAtIndex:0];
+    NSArray *files = [[NSFileManager defaultManager] subpathsAtPath:documentFolderPath];
+    for (NSString *p in files) {
+        NSError *error;
+        NSString *Path = [documentFolderPath stringByAppendingPathComponent:p];
+        if ([[NSFileManager defaultManager] fileExistsAtPath:Path]) {
+            [[NSFileManager defaultManager] removeItemAtPath:Path error:&error];
+        }
+    }
+    MGPS(@"缓存已清除");
 }
 
 // 关于我

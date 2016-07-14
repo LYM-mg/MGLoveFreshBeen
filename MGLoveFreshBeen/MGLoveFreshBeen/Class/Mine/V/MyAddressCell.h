@@ -30,6 +30,10 @@
 
 @interface MyAddressCell : UITableViewCell
 
-+ (instancetype)myAddressCellWithTableView:(UITableView *)tableView;
+/** 地址模型 */
+@property (nonatomic,strong) AddressCellModel *addressModel;
+
+/** 快速创建cell的构造方法 */
++ (instancetype)myAddressCellWithTableView:(UITableView *)tableView withEditTapClick:(void(^)())block;
 
 @end
