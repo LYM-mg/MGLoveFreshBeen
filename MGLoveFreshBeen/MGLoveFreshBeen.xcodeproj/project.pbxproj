@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		0AC56EECE693106A7BF07F31 /* libPods-MGLoveFreshBeen.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C1D56701D76C2B738A1E4C1 /* libPods-MGLoveFreshBeen.a */; };
+		3A09CBAD1D3746D1007BD1FD /* MessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A09CBAC1D3746D1007BD1FD /* MessageCell.m */; settings = {ASSET_TAGS = (); }; };
+		3A09CBB01D377BD6007BD1FD /* MyShopVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A09CBAF1D377BD6007BD1FD /* MyShopVC.m */; settings = {ASSET_TAGS = (); }; };
+		3A09CBB31D377C69007BD1FD /* MyAddressVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A09CBB21D377C69007BD1FD /* MyAddressVC.m */; settings = {ASSET_TAGS = (); }; };
+		3A09CBB61D378091007BD1FD /* MyAddressCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A09CBB51D378091007BD1FD /* MyAddressCell.m */; settings = {ASSET_TAGS = (); }; };
+		3A09CBB91D37870A007BD1FD /* EditAddressVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A09CBB81D37870A007BD1FD /* EditAddressVC.m */; settings = {ASSET_TAGS = (); }; };
 		3A64A1C91D34D4D200288490 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A64A1C81D34D4D200288490 /* main.m */; };
 		3A64A1D51D34D4D200288490 /* MGLoveFreshBeen.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3A64A1D31D34D4D200288490 /* MGLoveFreshBeen.xcdatamodeld */; };
 		3A64A1D71D34D4D200288490 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A64A1D61D34D4D200288490 /* Assets.xcassets */; };
@@ -76,6 +81,16 @@
 
 /* Begin PBXFileReference section */
 		098776D3953F6391067D4977 /* Pods-MGLoveFreshBeen.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MGLoveFreshBeen.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MGLoveFreshBeen/Pods-MGLoveFreshBeen.debug.xcconfig"; sourceTree = "<group>"; };
+		3A09CBAB1D3746D1007BD1FD /* MessageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageCell.h; sourceTree = "<group>"; };
+		3A09CBAC1D3746D1007BD1FD /* MessageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageCell.m; sourceTree = "<group>"; };
+		3A09CBAE1D377BD6007BD1FD /* MyShopVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyShopVC.h; sourceTree = "<group>"; };
+		3A09CBAF1D377BD6007BD1FD /* MyShopVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyShopVC.m; sourceTree = "<group>"; };
+		3A09CBB11D377C69007BD1FD /* MyAddressVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyAddressVC.h; sourceTree = "<group>"; };
+		3A09CBB21D377C69007BD1FD /* MyAddressVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyAddressVC.m; sourceTree = "<group>"; };
+		3A09CBB41D378091007BD1FD /* MyAddressCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyAddressCell.h; sourceTree = "<group>"; };
+		3A09CBB51D378091007BD1FD /* MyAddressCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyAddressCell.m; sourceTree = "<group>"; };
+		3A09CBB71D37870A007BD1FD /* EditAddressVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditAddressVC.h; sourceTree = "<group>"; };
+		3A09CBB81D37870A007BD1FD /* EditAddressVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditAddressVC.m; sourceTree = "<group>"; };
 		3A64A1C41D34D4D200288490 /* MGLoveFreshBeen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MGLoveFreshBeen.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A64A1C81D34D4D200288490 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		3A64A1D41D34D4D200288490 /* MGLoveFreshBeen.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MGLoveFreshBeen.xcdatamodel; sourceTree = "<group>"; };
@@ -326,6 +341,12 @@
 				3AED5D841D3584E00045CF64 /* IdeaVC.m */,
 				3AADC9F31D36A19200DDEE87 /* MessageVC.h */,
 				3AADC9F41D36A19200DDEE87 /* MessageVC.m */,
+				3A09CBAE1D377BD6007BD1FD /* MyShopVC.h */,
+				3A09CBAF1D377BD6007BD1FD /* MyShopVC.m */,
+				3A09CBB11D377C69007BD1FD /* MyAddressVC.h */,
+				3A09CBB21D377C69007BD1FD /* MyAddressVC.m */,
+				3A09CBB71D37870A007BD1FD /* EditAddressVC.h */,
+				3A09CBB81D37870A007BD1FD /* EditAddressVC.m */,
 			);
 			path = C;
 			sourceTree = "<group>";
@@ -360,6 +381,10 @@
 				3AADC9EE1D36025F00DDEE87 /* QuestionCell.m */,
 				3AADC9F01D361DCA00DDEE87 /* QuestionSectionHeader.h */,
 				3AADC9F11D361DCA00DDEE87 /* QuestionSectionHeader.m */,
+				3A09CBAB1D3746D1007BD1FD /* MessageCell.h */,
+				3A09CBAC1D3746D1007BD1FD /* MessageCell.m */,
+				3A09CBB41D378091007BD1FD /* MyAddressCell.h */,
+				3A09CBB51D378091007BD1FD /* MyAddressCell.m */,
 			);
 			path = V;
 			sourceTree = "<group>";
@@ -746,6 +771,8 @@
 				3A64A2491D350EF100288490 /* NSString+MJExtension.m in Sources */,
 				3AADC9EF1D36025F00DDEE87 /* QuestionCell.m in Sources */,
 				3AED5D541D3542520045CF64 /* OrderCell.m in Sources */,
+				3A09CBB31D377C69007BD1FD /* MyAddressVC.m in Sources */,
+				3A09CBAD1D3746D1007BD1FD /* MessageCell.m in Sources */,
 				3A64A2421D350EF100288490 /* MJProperty.m in Sources */,
 				3AED5D851D3584E00045CF64 /* IdeaVC.m in Sources */,
 				3A64A2411D350EF100288490 /* MJFoundation.m in Sources */,
@@ -757,10 +784,12 @@
 				3AED5D471D35306E0045CF64 /* AboutMeVC.m in Sources */,
 				3A64A2111D34E15400288490 /* ShopCarVC.m in Sources */,
 				3A64A2441D350EF100288490 /* MJPropertyType.m in Sources */,
+				3A09CBB01D377BD6007BD1FD /* MyShopVC.m in Sources */,
 				3A64A2451D350EF100288490 /* NSObject+MJClass.m in Sources */,
 				3A64A2461D350EF100288490 /* NSObject+MJCoding.m in Sources */,
 				3A64A2001D34DEC500288490 /* TabBarVC.m in Sources */,
 				3AED5D8C1D358A200045CF64 /* LYMTextViewWithLabel.m in Sources */,
+				3A09CBB91D37870A007BD1FD /* EditAddressVC.m in Sources */,
 				3A64A2431D350EF100288490 /* MJPropertyKey.m in Sources */,
 				3AADC9EC1D36018900DDEE87 /* questionCellModel.m in Sources */,
 				3A64A2481D350EF100288490 /* NSObject+MJProperty.m in Sources */,
@@ -770,6 +799,7 @@
 				3A64A2031D34E0AE00288490 /* HomeVC.m in Sources */,
 				3A64A1F91D34D64300288490 /* AppDelegate.m in Sources */,
 				3A64A2171D34E23A00288490 /* NavigationVC.m in Sources */,
+				3A09CBB61D378091007BD1FD /* MyAddressCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

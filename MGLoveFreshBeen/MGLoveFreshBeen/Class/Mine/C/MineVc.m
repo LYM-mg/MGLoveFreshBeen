@@ -14,6 +14,9 @@
 #import "OrderVC.h"
 #import "MessageVC.h"
 
+#import "MyAddressVC.h"
+#import "MyShopVC.h"
+
 
 #import "HelpVC.h"
 #import "IdeaVC.h"
@@ -189,9 +192,9 @@ CGFloat headViewHeight = 150;
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     if (0 == indexPath.section) {
         if (0 == indexPath.row) { // 我的收获地址
-            
+             [self.navigationController pushViewController:[[MyAddressVC alloc] init] animated:YES];
         } else { // 我的店铺
-         
+            [self.navigationController pushViewController:[[MyShopVC alloc] init] animated:YES];
         }
     } else if (1 == indexPath.section) { // 把爱鲜蜂分享给好友
        

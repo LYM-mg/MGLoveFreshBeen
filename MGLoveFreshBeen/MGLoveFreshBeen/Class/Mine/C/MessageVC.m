@@ -8,6 +8,7 @@
 
 #import "MessageVC.h"
 #import "MessageModel.h"
+#import "MessageCell.h"
 
 enum {
   System = 0,
@@ -28,19 +29,20 @@ enum {
 
 @implementation MessageVC
 #pragma mark - lazy   数据源
-- (NSArray *)mineData{
+- (NSArray *)messageData{
     if (!_messageData) {
         _messageData = [NSArray array];
-        NSString *path = [[NSBundle mainBundle] pathForResource:@"SystemMessage" ofType: @"plist"];
+        NSString *path = [[NSBundle mainBundle] pathForResource:@"SystemMessage" ofType: nil];
         
         NSData *data = [NSData dataWithContentsOfFile:path];
         NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
-        
+        NSString *str = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+        [str stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
+
         _messageData = [MessageModel objectArrayWithKeyValuesArray:dict[@"data"]];
     }
     return _messageData;
 }
-
 
 #pragma mark - 声明周期
 - (void)viewDidLoad {
@@ -92,10 +94,10 @@ enum {
     [self.view addSubview:_rightnView];
     _rightnView.tableFooterView = [[UIView alloc] init];
     
-    UIImageView *backImageView = [[UIImageView alloc] init];
-    backImageView.center = CGPointMake(MGSCREEN_width * 0.5, MGSCREEN_height * 0.5);
-    backImageView.image = [UIImage imageNamed:@"v2_my_message_empty"];
+    UIImageView *backImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"v2_my_message_empty"]];
     [backImageView sizeToFit];
+    backImageView.center = CGPointMake(MGSCREEN_width * 0.5, MGSCREEN_height * 0.2);
+    
     [_rightnView addSubview:backImageView];
     UILabel *normalLabel = [[UILabel alloc] init];
     normalLabel.text = @"~~~并没有消息~~~";
@@ -132,12 +134,19 @@ enum {
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
-    if (cell==nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
-    }
-    cell.textLabel.text = [NSString stringWithFormat:@"ming-%ld",indexPath.row];
+    
+    MessageCell *cell = [MessageCell messageCellWitnTableView:tableView];
+    
+    cell.model = self.messageData[indexPath.row];
+    
     return  cell;
+}
+
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    MessageModel *model = _messageData[indexPath.row];
+
+    return model.cellHeight;
 }
 
 #pragma mark - 代理

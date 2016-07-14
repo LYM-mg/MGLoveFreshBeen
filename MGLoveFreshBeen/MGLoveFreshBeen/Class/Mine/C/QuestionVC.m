@@ -65,12 +65,10 @@ static NSString *const KQuestionSectionHeader = @"KQuestionSectionHeader";
 
 #pragma mark - 私有方法
 - (void)setMianView {
-//    UITableView *tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStyleGrouped];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     self.tableView.backgroundColor = [UIColor whiteColor];
-//    self.tableView = tableView;
-//    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.tableView.rowHeight = UITableViewAutomaticDimension;
     self.tableView.estimatedRowHeight = 44;
 
@@ -86,7 +84,7 @@ static NSString *const KQuestionSectionHeader = @"KQuestionSectionHeader";
     // 取得每一组的头部模型
     questionCellModel *sectionModel = self.questionData[section];
     
-    //                                      展开既有数据，未展开则没有数据
+    // 展开既有数据，未展开则没有数据
     return sectionModel.isExpanded ? 1 : 0;
 }
 
@@ -97,8 +95,7 @@ static NSString *const KQuestionSectionHeader = @"KQuestionSectionHeader";
 //        cell = [[QuestionCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:KQuestionCellID];
 //    }
     QuestionCell *cell = [[QuestionCell alloc] init];
-    questionCellModel *model = self.questionData[indexPath.section];
-    cell.model = model;
+    cell.questionModel = self.questionData[indexPath.section];
     
     return cell;
 }
@@ -109,7 +106,6 @@ static NSString *const KQuestionSectionHeader = @"KQuestionSectionHeader";
 
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-//    if (_cellHeight)  return _cellHeight;
     
     questionCellModel *model = self.questionData[indexPath.section];
     
@@ -120,6 +116,9 @@ static NSString *const KQuestionSectionHeader = @"KQuestionSectionHeader";
     return 44;
 }
 
+/***
+ *  每一组的头部
+ */
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
     QuestionSectionHeader *headerView = (QuestionSectionHeader *)[tableView dequeueReusableHeaderFooterViewWithIdentifier:KQuestionSectionHeader];
    

@@ -34,58 +34,51 @@
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier{
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
-        UILabel *questionLabel = [[UILabel alloc] init];
-        self.questionLabel.numberOfLines = 0;
+          self.userInteractionEnabled = NO;
+//        UILabel *questionLabel = [[UILabel alloc] init];
+//        self.questionLabel.numberOfLines = 0;
+//        questionLabel.numberOfLines = 30;
 //        questionLabel.adjustsFontSizeToFitWidth = YES;
 //        questionLabel.minimumScaleFactor = 0.5;
-        [self.contentView addSubview:questionLabel];
-        self.questionLabel = questionLabel;
+//        questionLabel.textColor = [UIColor grayColor];
+//        questionLabel.backgroundColor = [UIColor whiteColor];
+//        [self.contentView addSubview:questionLabel];
+       
     }
     return self;
 }
 
 - (void)layoutSubviews{
     [super layoutSubviews];
-    
-    [self caclueCellHeight];
+    if (self.labArr.count) {
+        NSInteger count = _questionModel.texts.count;
+        
+        for (int i = 0; i<count; i++) {
+            UILabel *textLabel = [self.labArr objectAtIndex:i];
+            textLabel.numberOfLines = 0;
+
+            CGFloat y = CGRectGetMaxY(self.lastLabel.frame) + MGMargin;
+            textLabel.frame = CGRectMake(2*MGMargin, y  , MGSCREEN_width - 4*MGMargin, [self.questionModel.everyRowHeight[i] integerValue]);
+            self.lastLabel = textLabel;
+        }
+    }
 }
 
-- (void)setModel:(questionCellModel *)model{
-    _model = model;
+- (void)setQuestionModel:(questionCellModel *)questionModel{
+    _questionModel = questionModel;
     
-    NSInteger count = model.texts.count;
+    NSInteger count = _questionModel.texts.count;
     for (int i = 0; i<count; i++) {
         UILabel *textLabel = [[UILabel alloc] initWithFrame:CGRectZero];
-        textLabel.text = model.texts[i];
+        textLabel.text = _questionModel.texts[i];
         textLabel.numberOfLines = 0;
         textLabel.textColor = [UIColor grayColor];
         textLabel.font = [UIFont systemFontOfSize:16];
         [self.contentView addSubview:textLabel];
         [self.labArr addObject:textLabel];
     }
-    model.cellHeight = self.contentView.height;
 }
 
-
-- (CGFloat)caclueCellHeight{
-    NSInteger count = _model.texts.count;
-    CGSize MaxSize = CGSizeMake(MGSCREEN_width - 2*MGMargin, MAXFLOAT);
-    for (int i = 0; i<count; i++) {
-        UILabel *textLabel = [self.labArr objectAtIndex:i];
-        textLabel.text = _model.texts[i];
-        textLabel.numberOfLines = 0;
-        textLabel.backgroundColor = MGRandomColor;
-        //  根据计算得出  HEIGHT
-        CGFloat height  = [textLabel.text boundingRectWithSize:MaxSize options:NSStringDrawingUsesFontLeading attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:16]} context:nil].size.height;
-        CGFloat y = CGRectGetMaxY(self.lastLabel.frame);
-        textLabel.frame = CGRectMake(MGMargin, y  , MGSCREEN_width - 2*MGMargin, height);
-        self.lastLabel = textLabel;
-        self.contentView.height += height;
-    }
-    return self.height += MGMargin;
-//    UILabel *lastLabel = [self.labArr lastObject];
-//   return  CGRectGetMaxY(lastLabel.frame) + 2 * MGMargin;
-}
 
 @end
 

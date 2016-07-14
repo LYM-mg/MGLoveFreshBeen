@@ -25,4 +25,9 @@
 @property (nonatomic, assign) CGFloat subTitleViewHeightNomarl;
 @property (nonatomic, assign) CGFloat cellHeight;
 @property (nonatomic, assign) CGFloat subTitleViewHeightSpread;
+
+/** <#注释#> */
+@property (nonatomic, assign) BOOL isSelected;
+
+
 @end

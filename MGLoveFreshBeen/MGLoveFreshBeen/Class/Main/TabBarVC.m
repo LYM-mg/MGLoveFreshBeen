@@ -46,6 +46,12 @@
     NSArray *imageArr = @[@"v2_home", @"v2_order", @"shopCart", @"v2_my"];
     NSArray *selImageArr = @[@"v2_home_r", @"v2_order_r", @"shopCart_r", @"v2_my_r"];
     
+    // 4.我
+    MineVC *meVC = [[MineVC alloc] init];
+    meVC.view.backgroundColor = [UIColor purpleColor];
+    [self setNavOneChildViewController:meVC title:@"我" image:imageArr[3] selImage:
+     selImageArr[3]];
+    
     // 1.首页
     HomeVC *essenceCV = [[HomeVC alloc] init];
     [self setNavOneChildViewController:essenceCV title:@"首页" image:imageArr[0] selImage:selImageArr[0]];
@@ -60,11 +66,7 @@
     ShopCarVC *friendVC = [[ShopCarVC alloc] init];
     [self setNavOneChildViewController:friendVC title:@"购物车" image:imageArr[2] selImage:selImageArr[2]];
     
-    // 4.我
-    MineVC *meVC = [[MineVC alloc] init];
-    meVC.view.backgroundColor = [UIColor purpleColor];
-    [self setNavOneChildViewController:meVC title:@"我" image:imageArr[3] selImage:
-        selImageArr[3]];
+    
 }
 
 /**

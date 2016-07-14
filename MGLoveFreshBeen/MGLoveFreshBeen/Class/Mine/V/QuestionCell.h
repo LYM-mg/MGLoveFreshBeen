@@ -16,7 +16,7 @@
 @property (nonatomic,weak) UILabel *questionLabel;
 
 /** 模型 */
-@property (nonatomic,strong) questionCellModel *model;
+@property (nonatomic,strong) questionCellModel *questionModel;
 
 @end
 
