@@ -63,6 +63,19 @@
     return cell;
 }
 
+- (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier{
+    if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
+        
+    }
+    return self;
+}
+
+- (void)awakeFromNib {
+    self.selectionStyle = UITableViewCellSelectionStyleNone;
+    self.backgroundColor = [UIColor clearColor];
+    self.contentView.backgroundColor = [UIColor clearColor];
+}
+
 - (void)setUpOrderPictureView{
     CGFloat indexMargin = 0;
     if (IS_IPHONE4) {
@@ -112,30 +125,16 @@
 //        [self.goodsses writeToFile:filePath atomically:YES];
 
     }
-    
-//    for (int i = 0; i<count; i++){
-//        UIImageView *subImageView = self.pictures[i];
-//        if (i < 5) {
-//            subImageView.hidden = NO;
-//            if (i == 4) {
-//                [subImageView setImage:[UIImage imageNamed:@"author"]];
-//            }else{
-//                 OrderGoods *good = self.goods[i];
-//                [subImageView sd_setImageWithURL:[NSURL URLWithString:good.img] placeholderImage:[UIImage imageNamed:@"author"]];
-//            }
-//        }else if (i>5){
-//            subImageView.hidden = YES;
-//        }
-//    }
 }
 
-- (void)layoutSubviews{
-    [super layoutSubviews];
+- (void)setFrame:(CGRect)frame
+{
+    frame.size.height -= 25;
+//    frame.origin.x += 10;
+//    frame.size.width -= 20;
+    [super setFrame:frame];
 }
 
-- (void)awakeFromNib {
-    
-}
 
 - (void)setOrderModel:(Order *)orderModel{
     _orderModel = orderModel;
@@ -154,11 +153,12 @@
 
 - (void)setSelected:(BOOL)selected{
     [super setSelected:selected];
-    if (selected) {
-        self.backgroundColor = [UIColor orangeColor];
-    }else{
-         self.backgroundColor = [UIColor whiteColor];
-    }
+//    selected = !selected;
+//    if (selected) {
+//        self.contentView.backgroundColor = [UIColor clearColor];
+//    }else{
+//         self.contentView.backgroundColor = [UIColor whiteColor];
+//    }
 }
 
 @end
