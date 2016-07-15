@@ -4,463 +4,463 @@
 "msg": "查询成功",
 "reqid": "b17264d50442572c8e49231d2ba000a2",
 "data": [
-{
-"star": 5,
-"comment": "好评,水果很新鲜",
-"id": "11776421",
-"order_no": "i001z20151121145152986640",
-"user_id": "4715672",
-"accept_name": "MG明明就是你",
-"pay_code": "A-2015112121001004080246373422",
-"pay_type": "1",
-"distribution": "0",
-"status": "5",
-"pay_status": "1",
-"distribution_status": "1",
-"postcode": null,
-"telphone": "18600694744",
-"country": null,
-"province": "1",
-"city": "2",
-"area": "0",
-"address": "保利茉莉公馆 13号楼1801",
-"longitude": "116.33386030355",
-"latitude": "39.780903420644",
-"mobile": "18600001111",
-"payable_amount": "47.20",
-"real_amount": "42.20",
-"payable_freight": "0.00",
-"real_freight": "0.00",
-"service_fee": "0.00",
-"pay_time": "2015-11-21 14:51:35",
-"send_time": "2015-11-21 16:19:03",
-"create_time": "2015-11-21 14:51:09",
-"completion_time": "2015-11-21 16:38:11",
-"invoice": "0",
-"postscript": "",
-"note": null,
-"if_del": "0",
-"insured": "0.00",
-"if_insured": "0",
-"pay_fee": "0.00",
-"invoice_title": "",
-"taxes": "0.00",
-"promotions": "5.00",
-"discount": "0.00",
-"fullcut": "0",
-"order_amount": "42.20",
-"if_print": "0",
-"prop": "53720853",
-"accept_time": "11月21日 16:00-17:00",
-"dealer_expect_time": null,
-"exp": "0",
-"point": "0",
-"type": "0",
-"dealer_first_id": "20",
-"dealer_second_id": "4846",
-"dealer_third_id": "7951",
-"checknum": "0982",
-"address_id": "4219659",
-"from_crm": "0",
-"dataStatus": "1",
-"lastUpdateTime": "2015-11-21 16:38:11",
-"promotion_check": "0",
-"from_shop": "0",
-"preg_dealer_type": "2",
-"is_allot": "1",
-"is_lock": "0",
-"expecttime": "1448092800",
-"in_free_map": "0",
-"user_refund_status": "0",
-"user_refund_result": "0",
-"user_refund_time": "0",
-"user_accepted_goods": "0",
-"refund_status": "0",
-"order_type": "0",
-"order_type_flag": 0,
-"order_exception": "0",
-"is_dealer_accept": "1",
-"dealer_accept_time": "1448089174",
-"sender_mobile": null,
-"order_no_index": "52986640",
-"expect_service_fee": "0.00",
-"user_pay_amount": "42.20",
-"open_app_id": "0",
-"order_delivery_status": "0",
-"process": [],
-"order_goods": [
-[
-{
-"goods_id": "11290",
-"goods_price": "7.50",
-"real_price": "7.50",
-"isgift": 0,
-"goods_nums": "2",
-"source_goods_id": "",
-"goods_status": "0",
-"name": "三全珍鲜灌汤水饺三鲜",
-"attribute": "",
-"specifics": "450g /袋",
-"photo": {
-"1": [
-{
-"name": "1000011290_27698.jpg",
-"path": "upload/goods/1000011290"
-}
-],
-"2": [
-{
-"name": "1000011290_27699.jpg",
-"path": "upload/goods/1000011290"
-}
-]
+    {
+    "star": 5,
+    "comment": "好评,水果很新鲜",
+    "id": "11776421",
+    "order_no": "i001z20151121145152986640",
+    "user_id": "4715672",
+    "accept_name": "MG明明就是你",
+    "pay_code": "A-2015112121001004080246373422",
+    "pay_type": "1",
+    "distribution": "0",
+    "status": "5",
+    "pay_status": "1",
+    "distribution_status": "1",
+    "postcode": null,
+    "telphone": "18600694744",
+    "country": null,
+    "province": "1",
+    "city": "2",
+    "area": "0",
+    "address": "保利茉莉公馆 13号楼1801",
+    "longitude": "116.33386030355",
+    "latitude": "39.780903420644",
+    "mobile": "18600001111",
+    "payable_amount": "47.20",
+    "real_amount": "42.20",
+    "payable_freight": "0.00",
+    "real_freight": "0.00",
+    "service_fee": "0.00",
+    "pay_time": "2015-11-21 14:51:35",
+    "send_time": "2015-11-21 16:19:03",
+    "create_time": "2015-11-21 14:51:09",
+    "completion_time": "2015-11-21 16:38:11",
+    "invoice": "0",
+    "postscript": "",
+    "note": null,
+    "if_del": "0",
+    "insured": "0.00",
+    "if_insured": "0",
+    "pay_fee": "0.00",
+    "invoice_title": "",
+    "taxes": "0.00",
+    "promotions": "5.00",
+    "discount": "0.00",
+    "fullcut": "0",
+    "order_amount": "42.20",
+    "if_print": "0",
+    "prop": "53720853",
+    "accept_time": "11月21日 16:00-17:00",
+    "dealer_expect_time": null,
+    "exp": "0",
+    "point": "0",
+    "type": "0",
+    "dealer_first_id": "20",
+    "dealer_second_id": "4846",
+    "dealer_third_id": "7951",
+    "checknum": "0982",
+    "address_id": "4219659",
+    "from_crm": "0",
+    "dataStatus": "1",
+    "lastUpdateTime": "2015-11-21 16:38:11",
+    "promotion_check": "0",
+    "from_shop": "0",
+    "preg_dealer_type": "2",
+    "is_allot": "1",
+    "is_lock": "0",
+    "expecttime": "1448092800",
+    "in_free_map": "0",
+    "user_refund_status": "0",
+    "user_refund_result": "0",
+    "user_refund_time": "0",
+    "user_accepted_goods": "0",
+    "refund_status": "0",
+    "order_type": "0",
+    "order_type_flag": 0,
+    "order_exception": "0",
+    "is_dealer_accept": "1",
+    "dealer_accept_time": "1448089174",
+    "sender_mobile": null,
+    "order_no_index": "52986640",
+    "expect_service_fee": "0.00",
+    "user_pay_amount": "42.20",
+    "open_app_id": "0",
+    "order_delivery_status": "0",
+    "process": [],
+    "order_goods": [
+    [
+    {
+    "goods_id": "11290",
+    "goods_price": "7.50",
+    "real_price": "7.50",
+    "isgift": 0,
+    "goods_nums": "2",
+    "source_goods_id": "",
+    "goods_status": "0",
+    "name": "三全珍鲜灌汤水饺三鲜",
+    "attribute": "",
+    "specifics": "450g /袋",
+    "photo": {
+    "1": [
+    {
+        "name": "1000011290_27698.jpg",
+        "path": "upload/goods/1000011290"
+    }
+     ],
+    "2": [
+    {
+        "name": "1000011290_27699.jpg",
+        "path": "upload/goods/1000011290"
+    }
+    ]
 },
-"brand_name": "三全",
-"store_nums": "50",
-"ismix": "0",
-"pre_img": "0000011290_78300.jpg",
-"pre_imgs": "0000011290_63750.jpg,",
-"cart_group_id": "0",
-"img": "http://img01.bqstatic.com/upload/goods/000/001/1290/0000011290_78300.jpg@200w_200h_90Q.jpg",
-"id": "11290",
-"is_gift": 0
-}
-],
-[
-{
-"goods_id": "14705",
-"goods_price": "7.50",
-"real_price": "7.50",
-"isgift": 0,
-"goods_nums": "1",
-"source_goods_id": "",
-"goods_status": "0",
-"name": "三全珍鲜灌汤水饺猪肉韭菜",
-"attribute": "",
-"specifics": "450g /袋",
-"photo": {
-"1": [
-{
-"name": "1000014705_27702.jpg",
-"path": "upload/goods/1000014705"
-}
-],
-"2": [
-{
-"name": "1000014705_27703.jpg",
-"path": "upload/goods/1000014705"
-}
-]
-},
-"brand_name": "三全",
-"store_nums": "50",
-"ismix": "0",
-"pre_img": "0000014705_67580.jpg",
-"pre_imgs": "0000014705_65890.jpg,",
-"cart_group_id": "0",
-"img": "http://img01.bqstatic.com/upload/goods/000/001/4705/0000014705_67580.jpg@200w_200h_90Q.jpg",
-"id": "14705",
-"is_gift": 0
-}
-],
-[
-{
-"goods_id": "90467",
-"goods_price": "7.90",
-"real_price": "7.90",
-"isgift": 0,
-"goods_nums": "1",
-"source_goods_id": "",
-"goods_status": "0",
-"name": "武味周香卤花生",
-"attribute": "",
-"specifics": "90g",
-"photo": {
-"1": [
-{
-"name": "1000090467_33335.jpg",
-"path": "upload/goods/1000090467"
-}
-],
-"2": [
-{
-"name": "1000090467_33334.jpg",
-"path": "upload/goods/1000090467"
-}
-]
-},
-"brand_name": "武味周",
-"store_nums": "50",
-"ismix": "0",
-"pre_img": "0000090467_22760.jpg",
-"pre_imgs": "0000090467_10110.jpg,",
-"cart_group_id": "0",
-"img": "http://img01.bqstatic.com/upload/goods/000/009/0467/0000090467_22760.jpg@200w_200h_90Q.jpg",
-"id": "90467",
-"is_gift": 0
-}
-],
-[
-{
-"goods_id": "96554",
-"goods_price": "7.90",
-"real_price": "7.90",
-"isgift": 0,
-"goods_nums": "1",
-"source_goods_id": "",
-"goods_status": "0",
-"name": "天福号鸡泥肠",
-"attribute": "",
-"specifics": "150g",
-"photo": {
-"1": [
-{
-"name": "1000096554_32073.jpg",
-"path": "upload/goods/1000096554"
-}
-]
-},
-"brand_name": "天福号",
-"store_nums": "50",
-"ismix": "1",
-"pre_img": "0000096554_02030.jpg",
-"pre_imgs": "0000096554_71200.jpg,",
-"cart_group_id": "0",
-"img": "http://img01.bqstatic.com/upload/goods/000/009/6554/0000096554_02030.jpg@200w_200h_90Q.jpg",
-"id": "96554",
-"is_gift": 0
-}
-],
-[
-{
-"goods_id": "12047",
-"goods_price": "8.90",
-"real_price": "8.90",
-"isgift": 0,
-"goods_nums": "1",
-"source_goods_id": "",
-"goods_status": "0",
-"name": "福成原味酸牛奶",
-"attribute": "",
-"specifics": "240g/瓶",
-"photo": {
-"1": [
-{
-"name": "1000012047_32950.jpg",
-"path": "upload/goods/1000012047"
-}
-],
-"2": [
-{
-"name": "1000012047_32949.jpg",
-"path": "upload/goods/1000012047"
-}
-]
-},
-"brand_name": "福成",
-"store_nums": "50",
-"ismix": "0",
-"pre_img": "0000012047_20190.jpg",
-"pre_imgs": "0000012047_94710.jpg,",
-"cart_group_id": "0",
-"img": "http://img01.bqstatic.com/upload/goods/000/001/2047/0000012047_20190.jpg@200w_200h_90Q.jpg",
-"id": "12047",
-"is_gift": 0
-},
-{
-"goods_id": "12047",
-"goods_price": "0.00",
-"real_price": "0.00",
-"isgift": 1,
-"goods_nums": "1",
-"source_goods_id": "12047",
-"goods_status": "0",
-"name": "福成原味酸牛奶",
-"attribute": "",
-"specifics": "240g/瓶",
-"photo": {
-"1": [
-{
-"name": "1000012047_32950.jpg",
-"path": "upload/goods/1000012047"
-}
-],
-"2": [
-{
-"name": "1000012047_32949.jpg",
-"path": "upload/goods/1000012047"
-}
-]
-},
-"brand_name": "福成",
-"store_nums": "50",
-"ismix": "0",
-"pre_img": "0000012047_20190.jpg",
-"pre_imgs": "0000012047_94710.jpg,",
-"cart_group_id": "0",
-"img": "http://img01.bqstatic.com/upload/goods/000/001/2047/0000012047_20190.jpg@200w_200h_90Q.jpg",
-"id": "12047",
-"is_gift": 1
-}
-]
-],
-"enableComment": 1,
-"isCommented": 1,
-"enableCancel": 0,
-"newStatus": 0,
-"pay_platform": "1,2,4,3",
-"status_timeline": [
-{
-"status_title": "已完成",
-"status_desc": "订单已完成，快来评价吧",
-"status_time": "16:38"
-},
-{
-"status_title": "已发货",
-"status_desc": "%商家电话%:{13161315336}",
-"status_time": "16:19"
-},
-{
-"status_title": "待发货",
-"status_desc": "请耐心等待配送",
-"status_time": "14:51"
-},
-{
-"status_title": "支付成功",
-"status_desc": "",
-"status_time": "14:51"
-},
-{
-"status_title": "订单提交成功",
-"status_desc": "下单成功，订单号：i001z20151121145152986640",
-"status_time": "14:51"
-}
-],
-"fee_list": [
-{
-"text": "配送费",
-"value": "0.00"
-},
-{
-"text": "服务费",
-"value": "0.00"
-},
-{
-"text": "优惠券",
-"value": "5.00"
-}
-],
-"share_key": "ZDJkODc5NkNKNUVBdTUvek5Wdi9lOWdPV0Q4cDdHVjZydG14eE9xdEpXVUVDdTdVYkFxSFNEWEU1SUpLSzFsYmM=",
-"buy_num": 7,
-"is_complained": 0,
-"showSendCouponBtn": 1,
-"enableDelete": 1,
-"dealer_name": "一阳超市",
-"dealer_address": "北京市大兴区香海园小区13号楼2单元102",
-"dealer_lng": "116.323718",
-"dealer_lat": "39.783308",
-"dealer_alias": "",
-"dealer_fav": 0,
-"enable_fav": 1,
-"textStatus": "已完成",
-"buttons": [
-{
-"type": 4,
-"text": "发福利"
-}
-],
-"detail_buttons": [
-{
-"type": 9,
-"text": "删除订单"
-}
-],
-"in_refund": 0
-},
-{
-"star": 5,
-"comment": "送货很神速",
-"id": "8022589",
-"order_no": "i004z20150908135717184020",
-"user_id": "4715672",
-"accept_name": "维尼的小熊",
-"pay_code": "T1-1220361601321509088895961193",
-"pay_type": "1",
-"distribution": "0",
-"status": "5",
-"pay_status": "1",
-"distribution_status": "1",
-"postcode": null,
-"telphone": "18600694744",
-"country": null,
-"province": "423",
-"city": "424",
-"area": "0",
-"address": "中南海 2号办公室",
-"longitude": "113.3820939548951",
-"latitude": "23.13870087418578",
-"mobile": "18600694744",
-"payable_amount": "32.60",
-"real_amount": "27.60",
-"payable_freight": "0.00",
-"real_freight": "0.00",
-"service_fee": "0.00",
-"pay_time": "2015-09-08 13:57:46",
-"send_time": "2015-09-08 13:58:31",
-"create_time": "2015-09-08 13:57:37",
-"completion_time": "2015-09-08 14:24:25",
-"invoice": "0",
-"postscript": "",
-"note": null,
-"if_del": "0",
-"insured": "0.00",
-"if_insured": "0",
-"pay_fee": "0.00",
-"invoice_title": "",
-"taxes": "0.00",
-"promotions": "5.00",
-"discount": "0.00",
-"fullcut": "0",
-"order_amount": "27.60",
-"if_print": "0",
-"prop": "30395020",
-"accept_time": "闪电送达",
-"dealer_expect_time": null,
-"exp": "0",
-"point": "0",
-"type": "0",
-"dealer_first_id": "20",
-"dealer_second_id": "3912",
-"dealer_third_id": "5588",
-"checknum": "7550",
-"address_id": "2515118",
-"from_crm": "0",
-"dataStatus": "1",
-"lastUpdateTime": "2015-09-08 14:24:25",
-"promotion_check": "0",
-"from_shop": "0",
-"preg_dealer_type": "2",
-"is_allot": "1",
-"is_lock": "0",
-"expecttime": "1441691866",
-"in_free_map": "0",
-"user_refund_status": "0",
-"user_refund_result": "0",
-"user_refund_time": "0",
-"user_accepted_goods": "0",
-"refund_status": "0",
-"order_type": "0",
-"order_type_flag": 0,
-"order_exception": "0",
-"is_dealer_accept": "0",
-"dealer_accept_time": "0",
-"sender_mobile": null,
-"order_no_index": "17184020",
-"expect_service_fee": "0.00",
-"user_pay_amount": "27.60",
-"open_app_id": "0",
-"order_delivery_status": "0",
-"process": [],
+    "brand_name": "三全",
+    "store_nums": "50",
+    "ismix": "0",
+    "pre_img": "0000011290_78300.jpg",
+    "pre_imgs": "0000011290_63750.jpg,",
+    "cart_group_id": "0",
+    "img": "http://img01.bqstatic.com/upload/goods/000/001/1290/0000011290_78300.jpg@200w_200h_90Q.jpg",
+    "id": "11290",
+    "is_gift": 0
+    }
+    ],
+    [
+    {
+        "goods_id": "14705",
+        "goods_price": "7.50",
+        "real_price": "7.50",
+        "isgift": 0,
+        "goods_nums": "1",
+        "source_goods_id": "",
+        "goods_status": "0",
+        "name": "三全珍鲜灌汤水饺猪肉韭菜",
+        "attribute": "",
+        "specifics": "450g /袋",
+    "photo": {
+    "1": [
+    {
+    "name": "1000014705_27702.jpg",
+    "path": "upload/goods/1000014705"
+    }
+    ],
+    "2": [
+    {
+    "name": "1000014705_27703.jpg",
+    "path": "upload/goods/1000014705"
+    }
+    ]
+    },
+    "brand_name": "三全",
+    "store_nums": "50",
+    "ismix": "0",
+    "pre_img": "0000014705_67580.jpg",
+    "pre_imgs": "0000014705_65890.jpg,",
+    "cart_group_id": "0",
+    "img": "http://img01.bqstatic.com/upload/goods/000/001/4705/0000014705_67580.jpg@200w_200h_90Q.jpg",
+    "id": "14705",
+    "is_gift": 0
+    }
+    ],
+    [
+    {
+    "goods_id": "90467",
+    "goods_price": "7.90",
+    "real_price": "7.90",
+    "isgift": 0,
+    "goods_nums": "1",
+    "source_goods_id": "",
+    "goods_status": "0",
+    "name": "武味周香卤花生",
+    "attribute": "",
+    "specifics": "90g",
+    "photo": {
+    "1": [
+    {
+    "name": "1000090467_33335.jpg",
+    "path": "upload/goods/1000090467"
+    }
+    ],
+    "2": [
+    {
+    "name": "1000090467_33334.jpg",
+    "path": "upload/goods/1000090467"
+    }
+    ]
+    },
+    "brand_name": "武味周",
+    "store_nums": "50",
+    "ismix": "0",
+    "pre_img": "0000090467_22760.jpg",
+    "pre_imgs": "0000090467_10110.jpg,",
+    "cart_group_id": "0",
+    "img": "http://img01.bqstatic.com/upload/goods/000/009/0467/0000090467_22760.jpg@200w_200h_90Q.jpg",
+    "id": "90467",
+    "is_gift": 0
+    }
+    ],
+    [
+    {
+    "goods_id": "96554",
+    "goods_price": "7.90",
+    "real_price": "7.90",
+    "isgift": 0,
+    "goods_nums": "1",
+    "source_goods_id": "",
+    "goods_status": "0",
+    "name": "天福号鸡泥肠",
+    "attribute": "",
+    "specifics": "150g",
+    "photo": {
+    "1": [
+    {
+    "name": "1000096554_32073.jpg",
+    "path": "upload/goods/1000096554"
+    }
+    ]
+    },
+    "brand_name": "天福号",
+    "store_nums": "50",
+    "ismix": "1",
+    "pre_img": "0000096554_02030.jpg",
+    "pre_imgs": "0000096554_71200.jpg,",
+    "cart_group_id": "0",
+    "img": "http://img01.bqstatic.com/upload/goods/000/009/6554/0000096554_02030.jpg@200w_200h_90Q.jpg",
+    "id": "96554",
+    "is_gift": 0
+    }
+    ],
+    [
+    {
+    "goods_id": "12047",
+    "goods_price": "8.90",
+    "real_price": "8.90",
+    "isgift": 0,
+    "goods_nums": "1",
+    "source_goods_id": "",
+    "goods_status": "0",
+    "name": "福成原味酸牛奶",
+    "attribute": "",
+    "specifics": "240g/瓶",
+    "photo": {
+    "1": [
+    {
+    "name": "1000012047_32950.jpg",
+    "path": "upload/goods/1000012047"
+    }
+    ],
+    "2": [
+    {
+    "name": "1000012047_32949.jpg",
+    "path": "upload/goods/1000012047"
+    }
+    ]
+    },
+    "brand_name": "福成",
+    "store_nums": "50",
+    "ismix": "0",
+    "pre_img": "0000012047_20190.jpg",
+    "pre_imgs": "0000012047_94710.jpg,",
+    "cart_group_id": "0",
+    "img": "http://img01.bqstatic.com/upload/goods/000/001/2047/0000012047_20190.jpg@200w_200h_90Q.jpg",
+    "id": "12047",
+    "is_gift": 0
+    },
+    {
+    "goods_id": "12047",
+    "goods_price": "0.00",
+    "real_price": "0.00",
+    "isgift": 1,
+    "goods_nums": "1",
+    "source_goods_id": "12047",
+    "goods_status": "0",
+    "name": "福成原味酸牛奶",
+    "attribute": "",
+    "specifics": "240g/瓶",
+    "photo": {
+    "1": [
+    {
+    "name": "1000012047_32950.jpg",
+    "path": "upload/goods/1000012047"
+    }
+    ],
+    "2": [
+    {
+    "name": "1000012047_32949.jpg",
+    "path": "upload/goods/1000012047"
+    }
+    ]
+    },
+    "brand_name": "福成",
+    "store_nums": "50",
+    "ismix": "0",
+    "pre_img": "0000012047_20190.jpg",
+    "pre_imgs": "0000012047_94710.jpg,",
+    "cart_group_id": "0",
+    "img": "http://img01.bqstatic.com/upload/goods/000/001/2047/0000012047_20190.jpg@200w_200h_90Q.jpg",
+    "id": "12047",
+    "is_gift": 1
+    }
+    ]
+    ],
+    "enableComment": 1,
+    "isCommented": 1,
+    "enableCancel": 0,
+    "newStatus": 0,
+    "pay_platform": "1,2,4,3",
+    "status_timeline": [
+    {
+    "status_title": "已完成",
+    "status_desc": "订单已完成，快来评价吧",
+    "status_time": "16:38"
+    },
+    {
+    "status_title": "已发货",
+    "status_desc": "%商家电话%:{13161315336}",
+    "status_time": "16:19"
+    },
+    {
+    "status_title": "待发货",
+    "status_desc": "请耐心等待配送",
+    "status_time": "14:51"
+    },
+    {
+    "status_title": "支付成功",
+    "status_desc": "",
+    "status_time": "14:51"
+    },
+    {
+    "status_title": "订单提交成功",
+    "status_desc": "下单成功，订单号：i001z20151121145152986640",
+    "status_time": "14:51"
+    }
+    ],
+    "fee_list": [
+    {
+    "text": "配送费",
+    "value": "0.00"
+    },
+    {
+    "text": "服务费",
+    "value": "0.00"
+    },
+    {
+    "text": "优惠券",
+    "value": "5.00"
+    }
+    ],
+    "share_key": "ZDJkODc5NkNKNUVBdTUvek5Wdi9lOWdPV0Q4cDdHVjZydG14eE9xdEpXVUVDdTdVYkFxSFNEWEU1SUpLSzFsYmM=",
+    "buy_num": 7,
+    "is_complained": 0,
+    "showSendCouponBtn": 1,
+    "enableDelete": 1,
+    "dealer_name": "一阳超市",
+    "dealer_address": "北京市大兴区香海园小区13号楼2单元102",
+    "dealer_lng": "116.323718",
+    "dealer_lat": "39.783308",
+    "dealer_alias": "",
+    "dealer_fav": 0,
+    "enable_fav": 1,
+    "textStatus": "已完成",
+    "buttons": [
+    {
+    "type": 4,
+    "text": "发福利"
+    }
+    ],
+    "detail_buttons": [
+    {
+    "type": 9,
+    "text": "删除订单"
+    }
+    ],
+    "in_refund": 0
+    },
+    {
+    "star": 5,
+    "comment": "送货很神速",
+    "id": "8022589",
+    "order_no": "i004z20150908135717184020",
+    "user_id": "4715672",
+    "accept_name": "维尼的小熊",
+    "pay_code": "T1-1220361601321509088895961193",
+    "pay_type": "1",
+    "distribution": "0",
+    "status": "5",
+    "pay_status": "1",
+    "distribution_status": "1",
+    "postcode": null,
+    "telphone": "18600694744",
+    "country": null,
+    "province": "423",
+    "city": "424",
+    "area": "0",
+    "address": "中南海 2号办公室",
+    "longitude": "113.3820939548951",
+    "latitude": "23.13870087418578",
+    "mobile": "18600694744",
+    "payable_amount": "32.60",
+    "real_amount": "27.60",
+    "payable_freight": "0.00",
+    "real_freight": "0.00",
+    "service_fee": "0.00",
+    "pay_time": "2015-09-08 13:57:46",
+    "send_time": "2015-09-08 13:58:31",
+    "create_time": "2015-09-08 13:57:37",
+    "completion_time": "2015-09-08 14:24:25",
+    "invoice": "0",
+    "postscript": "",
+    "note": null,
+    "if_del": "0",
+    "insured": "0.00",
+    "if_insured": "0",
+    "pay_fee": "0.00",
+    "invoice_title": "",
+    "taxes": "0.00",
+    "promotions": "5.00",
+    "discount": "0.00",
+    "fullcut": "0",
+    "order_amount": "27.60",
+    "if_print": "0",
+    "prop": "30395020",
+    "accept_time": "闪电送达",
+    "dealer_expect_time": null,
+    "exp": "0",
+    "point": "0",
+    "type": "0",
+    "dealer_first_id": "20",
+    "dealer_second_id": "3912",
+    "dealer_third_id": "5588",
+    "checknum": "7550",
+    "address_id": "2515118",
+    "from_crm": "0",
+    "dataStatus": "1",
+    "lastUpdateTime": "2015-09-08 14:24:25",
+    "promotion_check": "0",
+    "from_shop": "0",
+    "preg_dealer_type": "2",
+    "is_allot": "1",
+    "is_lock": "0",
+    "expecttime": "1441691866",
+    "in_free_map": "0",
+    "user_refund_status": "0",
+    "user_refund_result": "0",
+    "user_refund_time": "0",
+    "user_accepted_goods": "0",
+    "refund_status": "0",
+    "order_type": "0",
+    "order_type_flag": 0,
+    "order_exception": "0",
+    "is_dealer_accept": "0",
+    "dealer_accept_time": "0",
+    "sender_mobile": null,
+    "order_no_index": "17184020",
+    "expect_service_fee": "0.00",
+    "user_pay_amount": "27.60",
+    "open_app_id": "0",
+    "order_delivery_status": "0",
+    "process": [],
 "order_goods": [
 [
 {

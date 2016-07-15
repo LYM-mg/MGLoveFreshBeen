@@ -50,20 +50,26 @@
 @property (nonatomic,copy) NSString *lastUpdateTime;
 @property (nonatomic,copy) NSString *preg_dealer_type;
 @property (nonatomic,copy) NSString *user_pay_amount;
-@property (nonatomic,copy) NSString *order_goods;
+/** 商品个数 */
+@property (nonatomic,strong) NSArray *order_goods;
 @property (nonatomic, assign) int enableComment;
 @property (nonatomic, assign) int isCommented;
 @property (nonatomic, assign) int newStatus;
-@property (nonatomic,copy) NSString *status_timeline;
-@property (nonatomic,copy) NSString *fee_list;
+
 @property (nonatomic, assign) int buy_num;
 @property (nonatomic, assign) int showSendCouponBtn;
 @property (nonatomic,copy) NSString *dealer_name;
 @property (nonatomic,copy) NSString *dealer_address;
 @property (nonatomic,copy) NSString *dealer_lng;
 @property (nonatomic,copy) NSString *dealer_lat;
-@property (nonatomic,copy) NSString *buttons;
-@property (nonatomic,copy) NSString *detail_buttons;
+/** 时间线 */
+@property (nonatomic,strong) NSArray *status_timeline;
+/** <#注释#> */
+@property (nonatomic,strong) NSArray *fee_list;
+/** <#注释#> */
+@property (nonatomic,strong) NSArray *buttons;
+/** <#注释#> */
+@property (nonatomic,strong) NSArray *detail_buttons;
 @property (nonatomic,copy) NSString *textStatus;
 @property (nonatomic, assign) int in_refund;
 @property (nonatomic,copy) NSString *checknum;
@@ -84,6 +90,8 @@
 @property (nonatomic,copy) NSString *img;
 @property (nonatomic, assign) int is_gift;
 @property (nonatomic,copy) NSString *goods_nums;
+@property (nonatomic,copy) NSString *pre_img;
+@property (nonatomic,copy) NSString *pre_imgs;
 @end
 
 

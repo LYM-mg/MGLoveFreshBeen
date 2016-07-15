@@ -55,9 +55,14 @@ typedef enum{
 
 
 - (void)setupRightNavigationItem {
-    [self setRightNavBtn:@"保存" withTarget:@selector(confirmAddress)];
+    //导航按钮
+    UIBarButtonItem *rightItem = [[UIBarButtonItem alloc] initWithTitle:@"保存" style:UIBarButtonItemStylePlain target:self action:@selector(confirmAddress)];
+    rightItem.tintColor = [UIColor orangeColor];
+    self.navigationItem.rightBarButtonItem = rightItem;
 }
 
+#pragma mark - 私有方法
+#pragma mark 布局控件
 - (void)setupMainView {
     _scrollView =[[UIScrollView alloc] initWithFrame:(CGRectMake(0, 0, MGSCREEN_width, MGSCREEN_height-64))];
     _scrollView.showsHorizontalScrollIndicator=NO;
@@ -114,6 +119,7 @@ typedef enum{
                 
             }
         }
+        // 分割线
         UIView *line=[[UIView alloc] initWithFrame:(CGRectMake(10,30+46*i+35.5 , MGSCREEN_width-10, 0.5f))];
         line.backgroundColor=payKGray;
         [_scrollView addSubview:line];
@@ -121,7 +127,7 @@ typedef enum{
     
     //确认
     UIButton *conformBtn=[UIButton buttonWithType:(UIButtonTypeCustom)];
-    conformBtn.frame=CGRectMake(0, MGSCREEN_height-40-64, MGSCREEN_width, 50);
+    conformBtn.frame = CGRectMake(0, MGSCREEN_height-50-64, MGSCREEN_width, 50);
     conformBtn.backgroundColor = MGNavBarTiniColor;
     [conformBtn setTitle:@"保存" forState:(UIControlStateNormal)];
     [conformBtn setTitleColor:[UIColor whiteColor] forState:(UIControlStateNormal)];
@@ -130,6 +136,7 @@ typedef enum{
     [_scrollView addSubview:conformBtn];
 
 }
+
 #pragma mark - 按钮相关
 - (UIButton *)setSexButtonWithFrame:(CGRect)frame withTitle:(NSString *)title imageName:(NSString *)imageName selImage:(NSString *)selImageName type:(SexType)type{
     UIButton *btn=[UIButton buttonWithType:(UIButtonTypeCustom)];
@@ -242,13 +249,15 @@ typedef enum{
                         _address.address=[_address.address stringByAppendingFormat:@"%@",_address.address];
         
                         if(self.userInfo!=nil){ // 实际开发中是把这个上传到服务器并   发布通知pop的控制器重新网络加载数据
-                            MGPS(@"收货地址编辑完成！");
+                            [MBProgressHUD showSuccess:@"收货地址编辑完成！"];
+//                            MGPS(@"收货地址编辑完成！");
                             NSMutableDictionary *dict = [NSMutableDictionary dictionary];
                             [dict setObject:_address forKey:@"address"];
                             [MGNotificationCenter postNotificationName:MGEditAddressNotificationCenter  object:nil userInfo:dict];
                         }
                         else{
-                            MGPS(@"收货地址添加成功！");
+                            [MBProgressHUD showError:@"收货地址添加成功！"];
+//                            MGPS(@"收货地址添加成功！");
                             NSMutableDictionary *dict = [NSMutableDictionary dictionary];
                             [dict setObject:_address forKey:@"address"];
                             [MGNotificationCenter postNotificationName:MGAddAddressNotificationCenter object:nil userInfo:dict];

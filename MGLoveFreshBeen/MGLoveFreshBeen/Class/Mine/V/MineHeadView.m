@@ -9,10 +9,11 @@
 #import "MineHeadView.h"
 
 @interface MineHeadView ()
-/** iconView */
-@property (nonatomic,weak) IconView *iconView;
+
 @property (nonatomic,weak) UIButton *setUpBtn;
 @end
+
+#pragma mark - MineHeadView
 
 @implementation MineHeadView
 
@@ -63,6 +64,9 @@
 
 @end
 
+#pragma mark -
+#pragma mark - IconView
+
 @implementation IconView
 
 - (instancetype)initWithFrame:(CGRect)frame{
@@ -76,13 +80,14 @@
 #pragma mark - setUpUI
 - (void)setUpUI{
     UIImageView *icon  = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"v2_my_avatar"]];
+    icon.userInteractionEnabled = YES;
     self.iconImageView = icon;
     [self addSubview:_iconImageView];
     
     UILabel *phone = [[UILabel alloc] init];
     [self addSubview:phone];
     self.phoneNum = phone;
-    _phoneNum.text = @"18612348765";
+    _phoneNum.text = @"1375055922";
     _phoneNum.font = [UIFont boldSystemFontOfSize:18];
     _phoneNum.textColor = [UIColor whiteColor];
     _phoneNum.textAlignment = NSTextAlignmentCenter;
@@ -92,6 +97,9 @@
     [super layoutSubviews];
     _iconImageView.frame = CGRectMake((self.width - _iconImageView.width) * 0.5, 0, _iconImageView.size.width, _iconImageView.size.height);
     _phoneNum.frame = CGRectMake(0, CGRectGetMaxY(_iconImageView.frame) + 5, self.width, 30);
+    
+    _iconImageView.layer.cornerRadius = _iconImageView.size.width * 0.5;
+    _iconImageView.layer.masksToBounds = YES;
 }
 
 @end

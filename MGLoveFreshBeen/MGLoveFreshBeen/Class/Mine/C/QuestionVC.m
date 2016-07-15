@@ -23,7 +23,7 @@
 @property (nonatomic, assign) CGFloat cellHeight;
 
 /** Bool */
-@property (nonatomic, assign) BOOL isExpanded;
+@property (nonatomic, assign) BOOL isLastExpanded;
 
 
 @end
@@ -123,8 +123,21 @@ static NSString *const KQuestionSectionHeader = @"KQuestionSectionHeader";
     QuestionSectionHeader *headerView = (QuestionSectionHeader *)[tableView dequeueReusableHeaderFooterViewWithIdentifier:KQuestionSectionHeader];
    
     __weak typeof(self) weakSelf = self;
+    
+    /** 头部点击的回调 */
     headerView.sectionHeaderClickBlock = ^(BOOL isExpanded){
-        self.isExpanded = isExpanded;
+        __block CGPoint offset = tableView.contentOffset;
+        if (isExpanded) {
+            CGFloat offsetY = headerView.frame.origin.y - offset.y;
+            if (offsetY > MGSCREEN_height*0.5){
+                [UIView animateWithDuration:0.8 animations:^{
+                    offset.y = headerView.frame.origin.y;
+                    weakSelf.tableView.contentOffset = offset;
+                }];
+            }
+        }else {
+            weakSelf.tableView.contentOffset = offset;
+        }
         
         [weakSelf.tableView reloadSections:[NSIndexSet indexSetWithIndex:section] withRowAnimation:UITableViewRowAnimationAutomatic];
     };

@@ -13,13 +13,13 @@
 @interface OrderVC ()<UITableViewDataSource,UITableViewDelegate>
 /** 订单数据源 */
 @property (nonatomic,strong) NSArray *orderData;
-/** <#注释#> */
+/** tableView */
 @property (nonatomic,weak) UITableView *tableView;
 @end
 
 @implementation OrderVC
 
-static NSString * const reuseIdentifier = @"Cell";
+
 #pragma mark - lazy
 - (NSArray *)orderData{
     if (!_orderData) {
@@ -37,11 +37,12 @@ static NSString * const reuseIdentifier = @"Cell";
    UITableView *tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
     tableView.delegate = self;
     tableView.dataSource = self;
+    self.tableView.rowHeight = 160;
     self.tableView = tableView;
     [self.view addSubview:self.tableView];
     
     // 注册
-    [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([OrderCell class]) bundle:nil] forCellReuseIdentifier:reuseIdentifier];
+    [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([OrderCell class]) bundle:nil] forCellReuseIdentifier:KOrderCellIdentifier];
     
     
     [self loadOderData];
@@ -54,7 +55,6 @@ static NSString * const reuseIdentifier = @"Cell";
     
     NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
     
-    MGLog(@"%@",dict);
     self.orderData = [Order objectArrayWithKeyValuesArray:dict[@"data"]];
 }
 
@@ -67,15 +67,25 @@ static NSString * const reuseIdentifier = @"Cell";
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    OrderCell *cell = [tableView dequeueReusableCellWithIdentifier:reuseIdentifier];
+    Order *model = self.orderData[indexPath.row];
     
-    cell.orderModel = self.orderData[indexPath.row];
+    OrderCell *cell = [OrderCell OrderCellWithTableView:tableView withImages:model.order_goods];
+    
+    cell.orderModel = model;
     
     return cell;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 165;
+    return 160;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+    return 10;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
+    return 10;
 }
 
 
@@ -84,35 +94,5 @@ static NSString * const reuseIdentifier = @"Cell";
     
 }
 
-
-
-/*
-// Uncomment this method to specify if the specified item should be highlighted during tracking
-- (BOOL)collectionView:(UICollectionView *)collectionView shouldHighlightItemAtIndexPath:(NSIndexPath *)indexPath {
-	return YES;
-}
-*/
-
-/*
-// Uncomment this method to specify if the specified item should be selected
-- (BOOL)collectionView:(UICollectionView *)collectionView shouldSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    return YES;
-}
-*/
-
-/*
-// Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
-- (BOOL)collectionView:(UICollectionView *)collectionView shouldShowMenuForItemAtIndexPath:(NSIndexPath *)indexPath {
-	return NO;
-}
-
-- (BOOL)collectionView:(UICollectionView *)collectionView canPerformAction:(SEL)action forItemAtIndexPath:(NSIndexPath *)indexPath withSender:(id)sender {
-	return NO;
-}
-
-- (void)collectionView:(UICollectionView *)collectionView performAction:(SEL)action forItemAtIndexPath:(NSIndexPath *)indexPath withSender:(id)sender {
-	
-}
-*/
 
 @end

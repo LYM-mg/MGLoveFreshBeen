@@ -22,7 +22,9 @@
 #import "IdeaVC.h"
 
 
-@interface MineVC ()<UITableViewDataSource,UITableViewDelegate>
+@interface MineVC ()<UITableViewDataSource,UITableViewDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate>
+/** tableView */
+@property (nonatomic,weak) MineHeadView *headView;
 
 /** tableView */
 @property (nonatomic,weak) UITableView *tableView;
@@ -66,7 +68,8 @@ CGFloat headViewHeight = 150;
 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    [self.navigationController setNavigationBarHidden:YES];
+    
+    [self.navigationController setNavigationBarHidden:YES animated:YES];
 }
 
 - (void)viewDidAppear:(BOOL)animated{
@@ -75,7 +78,7 @@ CGFloat headViewHeight = 150;
         MGPS(@"客服🐯哥已经收到你的意见了,我们会改进的,放心吧~~")
         _iderVCSendIderSuccess = false;
     }
-
+    [self.navigationController setNavigationBarHidden:YES];
 }
 
 - (void)viewWillDisappear:(BOOL)animated{
@@ -97,9 +100,61 @@ CGFloat headViewHeight = 150;
         SettingVC *settingVc = [[SettingVC alloc] init];
         [weakSelf.navigationController pushViewController:settingVc  animated:YES];
     }];
+    _headView = headView;
     headView.frame = CGRectMake(0, 0, MGSCREEN_width, headViewHeight);
     [self.view addSubview:headView];
+    
+    UITapGestureRecognizer *iconViewTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(iconViewTapClick)];
+    [headView.iconView.iconImageView addGestureRecognizer:iconViewTap];
 }
+
+- (void)iconViewTapClick{
+    UIAlertController *alertVC = [UIAlertController alertControllerWithTitle:@"请选择照片来源" message:nil preferredStyle:UIAlertControllerStyleAlert];
+     // 相机
+    UIAlertAction *cameraAction = [UIAlertAction actionWithTitle:@"相机" style:UIAlertActionStyleDefault  handler:^(UIAlertAction * _Nonnull action) {
+         [self openCamera:UIImagePickerControllerSourceTypeCamera];
+    }];
+    
+    // 相册
+    UIAlertAction *photoAction = [UIAlertAction actionWithTitle:@"相册" style:UIAlertActionStyleDefault  handler:^(UIAlertAction * _Nonnull action) {
+        [self openCamera:UIImagePickerControllerSourceTypePhotoLibrary];
+    }];
+    
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
+    
+    [alertVC addAction:cameraAction];
+    [alertVC addAction:photoAction];
+    [alertVC addAction:cancelAction];
+    [self.navigationController presentViewController:alertVC animated:YES completion:nil];
+}
+/**
+ *  打开照相机/打开相册
+ */
+- (void)openCamera:(UIImagePickerControllerSourceType)type{
+    if (![UIImagePickerController isSourceTypeAvailable:type]){
+         MGPE(@"Camera不可用");
+        return;
+    }
+    
+    UIImagePickerController *ipc = [[UIImagePickerController alloc] init];
+    ipc.sourceType = type;
+    ipc.delegate = self;
+    [self presentViewController:ipc animated:YES completion:nil];
+}
+
+#pragma mark - UIImagePickerControllerDelegate
+-(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info{
+    
+    //1.获取用户选中的图片
+    UIImage *selectedImg =  info[UIImagePickerControllerOriginalImage];
+    
+    //2.设置图片
+    [self.headView.iconView.iconImageView setImage:selectedImg];
+    
+    //3.隐藏当前图片选择控制器
+    [self dismissViewControllerAnimated:YES completion:NULL];
+}
+
 
 // 2.tableView
 -(void)setUpTableView{
@@ -176,7 +231,7 @@ CGFloat headViewHeight = 150;
     }
     
     cell.textLabel.text = text;
-    [cell.imageView sd_setImageWithURL:[NSURL URLWithString:imageName]];
+    cell.imageView.image =[UIImage imageNamed:imageName];
     return cell;
 }
 
@@ -208,6 +263,15 @@ CGFloat headViewHeight = 150;
     }
 }
 
+//- (void)scrollViewDidScroll:(UIScrollView *)scrollView{
+//    if (scrollView.contentOffset.y > MGNavHeight) {
+//        [UIView animateWithDuration:0.5 animations:^{
+//            [self.navigationController setNavigationBarHidden:NO animated:YES];
+//        }];
+//    }else{
+//        [self.navigationController setNavigationBarHidden:YES animated:YES];
+//    }
+//}
 
 @end
 

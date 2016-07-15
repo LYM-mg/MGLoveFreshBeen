@@ -10,9 +10,13 @@
 
 @class Order;
 
+static NSString * const KOrderCellIdentifier = @"KOrderCellIdentifier";
+
 @interface OrderCell : UITableViewCell
 
 /** 模型 */
 @property (nonatomic,strong) Order * orderModel;
+
++ (instancetype)OrderCellWithTableView:(UITableView *)tableView withImages:(NSArray *)images;
 
 @end

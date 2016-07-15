@@ -45,16 +45,34 @@
 }
 
 - (void)setUpMainView{
-    UIImageView *backImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"v2_store_empty"]];
+    UIView *contentView = [UIView new];
+    [self.view addSubview:contentView];
+    contentView.backgroundColor = [UIColor redColor];
+    [contentView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.width.mas_equalTo(self.view);
+        make.height.mas_equalTo(200);
+        make.center.mas_equalTo(self.view).mas_equalTo(CGPointMake(0, -MGMargin));
+    }];
+    
+    UIImageView *backImageView = [[UIImageView alloc] init];
+    backImageView.image = [UIImage imageNamed:@"v2_store_empty"];
     [backImageView sizeToFit];
-    backImageView.center = CGPointMake(MGSCREEN_width * 0.5,self.view.height * 0.5);
-    [self.view addSubview:backImageView];
+    [contentView addSubview:backImageView];
+    [backImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.width.mas_equalTo(60);
+        make.height.mas_equalTo(60);
+        make.center.mas_equalTo(contentView).mas_equalTo(CGPointMake(0, -2*MGMargin));
+    }];
     
     UILabel *normalLabel = [[UILabel alloc] init];
     normalLabel.text = @"~~~暂时没有收藏店铺信息~~~";
     normalLabel.textAlignment = NSTextAlignmentCenter;
-    normalLabel.frame = CGRectMake(0, CGRectGetMaxY(backImageView.frame) + MGMargin, MGSCREEN_width, 50);
-    [self.view addSubview:normalLabel];
+    [contentView addSubview:normalLabel];
+    [backImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.height.mas_equalTo(30);
+        make.left.right.mas_equalTo(contentView);
+        make.bottom.mas_equalTo(contentView.mas_bottom).offset(-2*MGMargin);
+    }];
 
     
     [self setUpTableView];
