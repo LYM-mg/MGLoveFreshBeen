@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SuperMarketVC">
+            <connections>
+                <outlet property="categoryTableView" destination="isk-Ks-bYP" id="QQc-e9-Llg"/>
+                <outlet property="productsTableView" destination="gMq-wK-5JV" id="ACP-Ya-nf9"/>
+                <outlet property="view" destination="iN0-l3-epB" id="2My-jg-b4L"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="44" width="320" height="387"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="isk-Ks-bYP">
+                    <rect key="frame" x="0.0" y="0.0" width="90" height="387"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="90" id="2CC-zt-uCh"/>
+                    </constraints>
+                    <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="A5O-69-Imn"/>
+                        <outlet property="delegate" destination="-1" id="hlR-Zl-qwV"/>
+                    </connections>
+                </tableView>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" indicatorStyle="white" style="plain" separatorStyle="default" rowHeight="100" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gMq-wK-5JV">
+                    <rect key="frame" x="90" y="0.0" width="230" height="387"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="Ng1-AO-yNd"/>
+                        <outlet property="delegate" destination="-1" id="spY-tF-ETx"/>
+                    </connections>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="gMq-wK-5JV" secondAttribute="trailing" id="7Vt-Ka-eih"/>
+                <constraint firstItem="isk-Ks-bYP" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="JL0-CR-aQQ"/>
+                <constraint firstItem="gMq-wK-5JV" firstAttribute="leading" secondItem="isk-Ks-bYP" secondAttribute="trailing" id="NsA-CK-nOD"/>
+                <constraint firstItem="isk-Ks-bYP" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="b9a-cv-D4X"/>
+                <constraint firstAttribute="bottom" secondItem="gMq-wK-5JV" secondAttribute="bottom" id="fAo-ne-Law"/>
+                <constraint firstAttribute="bottom" secondItem="isk-Ks-bYP" secondAttribute="bottom" id="gbI-ri-Ygl"/>
+                <constraint firstItem="gMq-wK-5JV" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="yB5-gK-3EN"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+            <simulatedTabBarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+        </view>
+    </objects>
+</document>
