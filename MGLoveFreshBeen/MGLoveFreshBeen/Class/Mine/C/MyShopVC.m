@@ -47,7 +47,6 @@
 - (void)setUpMainView{
     UIView *contentView = [UIView new];
     [self.view addSubview:contentView];
-    contentView.backgroundColor = [UIColor redColor];
     [contentView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.width.mas_equalTo(self.view);
         make.height.mas_equalTo(200);
@@ -56,11 +55,10 @@
     
     UIImageView *backImageView = [[UIImageView alloc] init];
     backImageView.image = [UIImage imageNamed:@"v2_store_empty"];
-    [backImageView sizeToFit];
     [contentView addSubview:backImageView];
     [backImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.width.mas_equalTo(60);
-        make.height.mas_equalTo(60);
+        make.width.mas_equalTo(100);
+        make.height.mas_equalTo(100);
         make.center.mas_equalTo(contentView).mas_equalTo(CGPointMake(0, -2*MGMargin));
     }];
     
@@ -68,7 +66,7 @@
     normalLabel.text = @"~~~暂时没有收藏店铺信息~~~";
     normalLabel.textAlignment = NSTextAlignmentCenter;
     [contentView addSubview:normalLabel];
-    [backImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+    [normalLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.height.mas_equalTo(30);
         make.left.right.mas_equalTo(contentView);
         make.bottom.mas_equalTo(contentView.mas_bottom).offset(-2*MGMargin);
