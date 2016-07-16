@@ -179,7 +179,7 @@
     }else{ // 右边tableView 👉➡️  进入商品详情界面
         Goods *goods = goods = self.goodsArr[indexPath.section][indexPath.row];
         ProductDetailVC *productDetailVC = [[ProductDetailVC alloc] initWithGoods:goods];
-       self.navigationController pushViewController:productDetailVC animated:YES
+        [self.navigationController pushViewController:productDetailVC animated:YES];
     }
 }
 

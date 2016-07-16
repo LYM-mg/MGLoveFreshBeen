@@ -37,6 +37,9 @@
     UIView *bottomView;
     UILabel *addProductLabel;
     
+    UILabel *marketPriceLabel;
+    UILabel *priceLabel;
+    
 //    Goods *goods;
 }
 /** 数组 */
@@ -59,12 +62,18 @@
 #pragma mark - 遍历构造方法
 - (instancetype)initWithGoods:(Goods *)goods{
     if (self = [super init]) {
+        
+        [self setupMainView];
+        
         self.goods = goods;
         [productImageView sd_setImageWithURL:[NSURL URLWithString:[goods valueForKeyPath:@"img"]] placeholderImage:[UIImage imageNamed:@"v2_placeholder_square"]];
         titleNameLabel.text = [goods valueForKeyPath:@"name"];
-        //        priceView = DiscountPriceView(price: goods.price, marketPrice: goods.market_price)
-        //        priceView.frame = CGRectMake(15, 40, ScreenWidth * 0.6, 40)
-        //        nameView.addSubview(priceView)
+        UIView *discountPriceView = [self discountPriceView];
+        discountPriceView.frame = CGRectMake(15, 40, MGSCREEN_width * 0.6, 40);
+        [nameView addSubview:discountPriceView];
+        
+        priceLabel.text = [goods valueForKeyPath:@"partner_price"];
+        marketPriceLabel.text = [goods valueForKeyPath:@"market_price"];
         
         if ([[goods valueForKeyPath:@"pm_desc"] isEqualToString:@"买一赠一"]) {
             presentView.height = 50;
@@ -91,6 +100,25 @@
 }
 
 
+- (UIView *)discountPriceView{
+    UIView *discountPriceView = [[UIView alloc] init];
+    priceLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, priceLabel.width, discountPriceView.height)];
+    priceLabel.font = MGFont(14);
+    priceLabel.textColor = [UIColor redColor];
+    [discountPriceView addSubview:priceLabel];
+    
+    marketPriceLabel = [[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMaxX(priceLabel.frame) + 5, 0, marketPriceLabel.width, discountPriceView.height)];
+    marketPriceLabel.textColor = MGRGBColor(80, 80, 80);
+    marketPriceLabel.font = MGFont(14);
+    [discountPriceView addSubview:marketPriceLabel];
+    
+    UIView *lineView = [[UIView alloc] initWithFrame:CGRectMake(0, marketPriceLabel.height * 0.5 - 0.5, marketPriceLabel.width, 1)];
+    lineView.backgroundColor = MGRGBColor(80, 80, 80);
+    [marketPriceLabel addSubview:lineView];
+    return discountPriceView;
+}
+
+
 
 #pragma mark - 私有方法
 - (void)setupMainView {
@@ -112,7 +140,7 @@
     // nameView
     nameView = [[UIView alloc] init];
     nameView.frame = CGRectMake(0, CGRectGetMaxY(productImageView.frame), MGSCREEN_width, 80);
-    nameView.backgroundColor = [UIColor whiteColor];
+    nameView.backgroundColor = MGProductBackGray;
     [scrollView addSubview:nameView];
     
     titleNameLabel = [[UILabel alloc] initWithFrame:CGRectMake(MGSmallMargin * 3, 0, MGSCREEN_width, 60)];
@@ -201,9 +229,11 @@
     promptDetailLabel.font = MGFont(14);
     [promptView addSubview:promptDetailLabel];
     
-    [self buildLineView:CGRectMake(0, MGSCREEN_height - 51 - MGNavHeight, MGSCREEN_width, 1) addLineToView:self.view];
     
-    bottomView = [[UIView alloc] initWithFrame:CGRectMake(0, MGSCREEN_height - 50 - MGNavHeight, MGSCREEN_width, 50)];
+    // 底部的View
+    [self buildLineView:CGRectMake(0, MGSCREEN_height - 51, MGSCREEN_width, 1) addLineToView:self.view];
+    
+    bottomView = [[UIView alloc] initWithFrame:CGRectMake(0, MGSCREEN_height - bottomView.height, MGSCREEN_width, 50)];
     bottomView.backgroundColor = MGProductBackGray;
     [self.view addSubview:bottomView];
     

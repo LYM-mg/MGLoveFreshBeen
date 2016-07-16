@@ -35,7 +35,7 @@
 #define MGRandomColor MGRGBColor(arc4random_uniform(255),arc4random_uniform(255),arc4random_uniform(255))
 
 // 商品详情背景
-#define MGProductBackGray MGRGBColor(30, 30, 30)
+#define MGProductBackGray MGRGBColor(248, 248, 248)
 
 /** 地址灰色字体 */
 #define MGBackGray MGRGBColor(146, 146, 146)
