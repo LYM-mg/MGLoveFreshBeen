@@ -108,7 +108,7 @@ typedef enum{
             textfield.returnKeyType = UIReturnKeyDone;
             if(self.userInfo!=nil)
             textfield.text = plString[i];
-            textfield.tintColor= payKGray;
+            textfield.tintColor= MGBackGray;
             textfield.textColor= MGRGBColor(39, 39, 40);
             textfield.placeholder = placeholderArr[i];
             [textfield setValue:MGRGBColor(171, 171, 171) forKeyPath:@"placeholderLabel.textColor"];
@@ -121,7 +121,7 @@ typedef enum{
         }
         // 分割线
         UIView *line=[[UIView alloc] initWithFrame:(CGRectMake(10,30+46*i+35.5 , MGSCREEN_width-10, 0.5f))];
-        line.backgroundColor=payKGray;
+        line.backgroundColor = MGBackGray;
         [_scrollView addSubview:line];
     }
     

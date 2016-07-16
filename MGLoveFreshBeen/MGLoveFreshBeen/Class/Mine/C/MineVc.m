@@ -12,6 +12,7 @@
 
 #import "SettingVC.h"
 #import "OrderVC.h"
+#import "CouponVC.h"
 #import "MessageVC.h"
 
 #import "MyAddressVC.h"
@@ -171,15 +172,16 @@ CGFloat headViewHeight = 150;
     
     /// 我的订单/优惠券/我的消息 回调
     tableHead.orderBtnClickBlock = ^{
-        OrderVC *order = [[OrderVC alloc] init];
-        [self.navigationController pushViewController:order animated:YES];
+        OrderVC *orderVC = [[OrderVC alloc] init];
+        [self.navigationController pushViewController:orderVC animated:YES];
     };
     tableHead.CouponBtnClickBlock = ^{
-        
+        CouponVC *couponVC = [[CouponVC alloc] init];
+        [self.navigationController pushViewController:couponVC animated:YES];
     };
     tableHead.messageBtnClickBlock = ^{
-        MessageVC *message = [[MessageVC alloc] init];
-        [self.navigationController pushViewController:message animated:YES];
+        MessageVC *messageVC = [[MessageVC alloc] init];
+        [self.navigationController pushViewController:messageVC animated:YES];
     };
 }
 

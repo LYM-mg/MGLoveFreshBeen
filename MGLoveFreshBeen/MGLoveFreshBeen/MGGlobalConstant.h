@@ -26,4 +26,7 @@ UIKIT_EXTERN NSString * const MGAddAddressNotificationCenter;
 /** 通知：编辑地址的通知 */
 UIKIT_EXTERN NSString * const MGEditAddressNotificationCenter;
 
+/** 优惠劵使用规则  */
+UIKIT_EXTERN NSString * const MGCouponUserRuleURLString;
+
 @end

@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		0AC56EECE693106A7BF07F31 /* libPods-MGLoveFreshBeen.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C1D56701D76C2B738A1E4C1 /* libPods-MGLoveFreshBeen.a */; };
+		3A06A7921D39BD3C00D9C22B /* OrderDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A06A7911D39BD3C00D9C22B /* OrderDetailVC.m */; settings = {ASSET_TAGS = (); }; };
+		3A06A7951D39C5BF00D9C22B /* CouponVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A06A7941D39C5BF00D9C22B /* CouponVC.m */; settings = {ASSET_TAGS = (); }; };
+		3A06A7981D39CEDA00D9C22B /* CouponCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A06A7971D39CEDA00D9C22B /* CouponCell.m */; settings = {ASSET_TAGS = (); }; };
 		3A09CBAD1D3746D1007BD1FD /* MessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A09CBAC1D3746D1007BD1FD /* MessageCell.m */; settings = {ASSET_TAGS = (); }; };
 		3A09CBB01D377BD6007BD1FD /* MyShopVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A09CBAF1D377BD6007BD1FD /* MyShopVC.m */; settings = {ASSET_TAGS = (); }; };
 		3A09CBB31D377C69007BD1FD /* MyAddressVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A09CBB21D377C69007BD1FD /* MyAddressVC.m */; settings = {ASSET_TAGS = (); }; };
@@ -45,6 +48,7 @@
 		3A64A2471D350EF100288490 /* NSObject+MJKeyValue.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A64A23B1D350EF100288490 /* NSObject+MJKeyValue.m */; settings = {ASSET_TAGS = (); }; };
 		3A64A2481D350EF100288490 /* NSObject+MJProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A64A23D1D350EF100288490 /* NSObject+MJProperty.m */; settings = {ASSET_TAGS = (); }; };
 		3A64A2491D350EF100288490 /* NSString+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A64A23F1D350EF100288490 /* NSString+MJExtension.m */; settings = {ASSET_TAGS = (); }; };
+		3A84FF8C1D39E6DB00EDA949 /* CouponRuleVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A84FF8B1D39E6DB00EDA949 /* CouponRuleVC.m */; settings = {ASSET_TAGS = (); }; };
 		3AADC9EC1D36018900DDEE87 /* questionCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AADC9EB1D36018900DDEE87 /* questionCellModel.m */; settings = {ASSET_TAGS = (); }; };
 		3AADC9EF1D36025F00DDEE87 /* QuestionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AADC9EE1D36025F00DDEE87 /* QuestionCell.m */; settings = {ASSET_TAGS = (); }; };
 		3AADC9F21D361DCA00DDEE87 /* QuestionSectionHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AADC9F11D361DCA00DDEE87 /* QuestionSectionHeader.m */; settings = {ASSET_TAGS = (); }; };
@@ -97,6 +101,12 @@
 
 /* Begin PBXFileReference section */
 		098776D3953F6391067D4977 /* Pods-MGLoveFreshBeen.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MGLoveFreshBeen.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MGLoveFreshBeen/Pods-MGLoveFreshBeen.debug.xcconfig"; sourceTree = "<group>"; };
+		3A06A7901D39BD3C00D9C22B /* OrderDetailVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderDetailVC.h; sourceTree = "<group>"; };
+		3A06A7911D39BD3C00D9C22B /* OrderDetailVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderDetailVC.m; sourceTree = "<group>"; };
+		3A06A7931D39C5BF00D9C22B /* CouponVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CouponVC.h; sourceTree = "<group>"; };
+		3A06A7941D39C5BF00D9C22B /* CouponVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CouponVC.m; sourceTree = "<group>"; };
+		3A06A7961D39CEDA00D9C22B /* CouponCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CouponCell.h; sourceTree = "<group>"; };
+		3A06A7971D39CEDA00D9C22B /* CouponCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CouponCell.m; sourceTree = "<group>"; };
 		3A09CBAB1D3746D1007BD1FD /* MessageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageCell.h; sourceTree = "<group>"; };
 		3A09CBAC1D3746D1007BD1FD /* MessageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageCell.m; sourceTree = "<group>"; };
 		3A09CBAE1D377BD6007BD1FD /* MyShopVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyShopVC.h; sourceTree = "<group>"; };
@@ -167,6 +177,8 @@
 		3A64A23D1D350EF100288490 /* NSObject+MJProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+MJProperty.m"; sourceTree = "<group>"; };
 		3A64A23E1D350EF100288490 /* NSString+MJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MJExtension.h"; sourceTree = "<group>"; };
 		3A64A23F1D350EF100288490 /* NSString+MJExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MJExtension.m"; sourceTree = "<group>"; };
+		3A84FF8A1D39E6DB00EDA949 /* CouponRuleVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CouponRuleVC.h; sourceTree = "<group>"; };
+		3A84FF8B1D39E6DB00EDA949 /* CouponRuleVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CouponRuleVC.m; sourceTree = "<group>"; };
 		3AADC9EA1D36018900DDEE87 /* questionCellModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = questionCellModel.h; sourceTree = "<group>"; };
 		3AADC9EB1D36018900DDEE87 /* questionCellModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = questionCellModel.m; sourceTree = "<group>"; };
 		3AADC9ED1D36025F00DDEE87 /* QuestionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionCell.h; sourceTree = "<group>"; };
@@ -388,20 +400,26 @@
 				3AED5D4C1D353AFF0045CF64 /* AboutMeVC.xib */,
 				3AED5D4E1D3541E70045CF64 /* OrderVC.h */,
 				3AED5D4F1D3541E70045CF64 /* OrderVC.m */,
-				3AED5D7D1D357D9F0045CF64 /* HelpVC.h */,
-				3AED5D7E1D357D9F0045CF64 /* HelpVC.m */,
-				3AED5D801D35802F0045CF64 /* QuestionVC.h */,
-				3AED5D811D35802F0045CF64 /* QuestionVC.m */,
-				3AED5D831D3584E00045CF64 /* IdeaVC.h */,
-				3AED5D841D3584E00045CF64 /* IdeaVC.m */,
+				3A06A7901D39BD3C00D9C22B /* OrderDetailVC.h */,
+				3A06A7911D39BD3C00D9C22B /* OrderDetailVC.m */,
+				3A06A7931D39C5BF00D9C22B /* CouponVC.h */,
+				3A06A7941D39C5BF00D9C22B /* CouponVC.m */,
+				3A84FF8A1D39E6DB00EDA949 /* CouponRuleVC.h */,
+				3A84FF8B1D39E6DB00EDA949 /* CouponRuleVC.m */,
 				3AADC9F31D36A19200DDEE87 /* MessageVC.h */,
 				3AADC9F41D36A19200DDEE87 /* MessageVC.m */,
-				3A09CBAE1D377BD6007BD1FD /* MyShopVC.h */,
-				3A09CBAF1D377BD6007BD1FD /* MyShopVC.m */,
 				3A09CBB11D377C69007BD1FD /* MyAddressVC.h */,
 				3A09CBB21D377C69007BD1FD /* MyAddressVC.m */,
 				3A09CBB71D37870A007BD1FD /* EditAddressVC.h */,
 				3A09CBB81D37870A007BD1FD /* EditAddressVC.m */,
+				3A09CBAE1D377BD6007BD1FD /* MyShopVC.h */,
+				3A09CBAF1D377BD6007BD1FD /* MyShopVC.m */,
+				3AED5D831D3584E00045CF64 /* IdeaVC.h */,
+				3AED5D841D3584E00045CF64 /* IdeaVC.m */,
+				3AED5D801D35802F0045CF64 /* QuestionVC.h */,
+				3AED5D811D35802F0045CF64 /* QuestionVC.m */,
+				3AED5D7D1D357D9F0045CF64 /* HelpVC.h */,
+				3AED5D7E1D357D9F0045CF64 /* HelpVC.m */,
 			);
 			path = C;
 			sourceTree = "<group>";
@@ -432,14 +450,16 @@
 				3AED5D511D3542520045CF64 /* OrderCell.h */,
 				3AED5D521D3542520045CF64 /* OrderCell.m */,
 				3AED5D531D3542520045CF64 /* OrderCell.xib */,
-				3AADC9ED1D36025F00DDEE87 /* QuestionCell.h */,
-				3AADC9EE1D36025F00DDEE87 /* QuestionCell.m */,
-				3AADC9F01D361DCA00DDEE87 /* QuestionSectionHeader.h */,
-				3AADC9F11D361DCA00DDEE87 /* QuestionSectionHeader.m */,
 				3A09CBAB1D3746D1007BD1FD /* MessageCell.h */,
 				3A09CBAC1D3746D1007BD1FD /* MessageCell.m */,
 				3A09CBB41D378091007BD1FD /* MyAddressCell.h */,
 				3A09CBB51D378091007BD1FD /* MyAddressCell.m */,
+				3AADC9ED1D36025F00DDEE87 /* QuestionCell.h */,
+				3AADC9EE1D36025F00DDEE87 /* QuestionCell.m */,
+				3AADC9F01D361DCA00DDEE87 /* QuestionSectionHeader.h */,
+				3AADC9F11D361DCA00DDEE87 /* QuestionSectionHeader.m */,
+				3A06A7961D39CEDA00D9C22B /* CouponCell.h */,
+				3A06A7971D39CEDA00D9C22B /* CouponCell.m */,
 			);
 			path = V;
 			sourceTree = "<group>";
@@ -878,9 +898,12 @@
 				3AADC9F51D36A19200DDEE87 /* MessageVC.m in Sources */,
 				3A64A2491D350EF100288490 /* NSString+MJExtension.m in Sources */,
 				3AADC9EF1D36025F00DDEE87 /* QuestionCell.m in Sources */,
+				3A84FF8C1D39E6DB00EDA949 /* CouponRuleVC.m in Sources */,
 				3AED5D541D3542520045CF64 /* OrderCell.m in Sources */,
 				3A09CBB31D377C69007BD1FD /* MyAddressVC.m in Sources */,
+				3A06A7921D39BD3C00D9C22B /* OrderDetailVC.m in Sources */,
 				3AE1BDBB1D38FC480069E1B9 /* ViewController+MASAdditions.m in Sources */,
+				3A06A7951D39C5BF00D9C22B /* CouponVC.m in Sources */,
 				3A09CBAD1D3746D1007BD1FD /* MessageCell.m in Sources */,
 				3A64A2421D350EF100288490 /* MJProperty.m in Sources */,
 				3AED5D851D3584E00045CF64 /* IdeaVC.m in Sources */,
@@ -918,6 +941,7 @@
 				3A64A1F91D34D64300288490 /* AppDelegate.m in Sources */,
 				3A64A2171D34E23A00288490 /* NavigationVC.m in Sources */,
 				3A09CBB61D378091007BD1FD /* MyAddressCell.m in Sources */,
+				3A06A7981D39CEDA00D9C22B /* CouponCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -17,6 +17,7 @@
 
 @end
 
+#pragma mark - Order
 @interface Order : NSObject
 @property (nonatomic, assign) int star;
 @property (nonatomic,copy) NSString *comment;

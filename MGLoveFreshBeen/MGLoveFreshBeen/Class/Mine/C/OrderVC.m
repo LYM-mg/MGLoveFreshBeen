@@ -10,11 +10,13 @@
 #import "OrderCell.h"
 #import "OrderCellModel.h"
 
+#import "OrderDetailVC.h"
+
 @interface OrderVC ()<UITableViewDataSource,UITableViewDelegate>
 /** 订单数据源 */
 @property (nonatomic,strong) NSArray *orderData;
 /** tableView */
-@property (nonatomic,weak) UITableView *tableView;
+@property (nonatomic,weak) UITableView *orderTableView;
 @end
 
 @implementation OrderVC
@@ -32,19 +34,19 @@
     [super viewDidLoad];
     
     self.title = @"我的订单";
-    self.view.backgroundColor = [UIColor grayColor];
+    self.view.backgroundColor = MGRGBColor(220, 220, 220);
     
-   UITableView *tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
-    tableView.delegate = self;
-    tableView.dataSource = self;
-    self.tableView.rowHeight = 160;
-    self.tableView = tableView;
-    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    tableView.backgroundColor = [UIColor clearColor];
-    [self.view addSubview:self.tableView];
+   UITableView *orderTableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
+    orderTableView.delegate = self;
+    orderTableView.dataSource = self;
+    self.orderTableView.rowHeight = 160;
+    self.orderTableView = orderTableView;
+    self.orderTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    orderTableView.backgroundColor = [UIColor clearColor];
+    [self.view addSubview:self.orderTableView];
     
     // 注册
-    [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([OrderCell class]) bundle:nil] forCellReuseIdentifier:KOrderCellIdentifier];
+    [self.orderTableView registerNib:[UINib nibWithNibName:NSStringFromClass([OrderCell class]) bundle:nil] forCellReuseIdentifier:KOrderCellIdentifier];
     
     
     [self loadOderData];
@@ -79,7 +81,7 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 195.0;
+    return 185.0;
 }
 
 
@@ -87,6 +89,10 @@
 #pragma mark <UITableViewDelegate>
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
+//    Order *model = self.orderData[indexPath.row];
+    OrderDetailVC *orderDetailVC = [[OrderDetailVC alloc] init];
+//    OrderDetailVC.model = model;
+    [self.navigationController pushViewController:orderDetailVC animated:YES];
 }
 
 
