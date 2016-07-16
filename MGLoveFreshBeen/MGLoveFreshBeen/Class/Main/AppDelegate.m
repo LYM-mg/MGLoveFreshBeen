@@ -15,8 +15,9 @@
 
 @implementation AppDelegate
 
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+    [self setup3DTouch:application];
     
     self.window = [[UIWindow alloc]  initWithFrame:[UIScreen mainScreen].bounds];
     
@@ -25,6 +26,27 @@
     [self.window makeKeyAndVisible];
     
     return YES;
+}
+
+- (void)setup3DTouch:(UIApplication *)application{
+    // 创建标签的ICON图标。
+    UIApplicationShortcutIcon *firstItemIcon = [UIApplicationShortcutIcon iconWithType:UIApplicationShortcutIconTypeAdd];
+    // 创建一个标签，并配置相关属性。
+    UIMutableApplicationShortcutItem *firstItem = [[UIMutableApplicationShortcutItem alloc]initWithType:@"First" localizedTitle:@"添加" localizedSubtitle:nil icon:firstItemIcon userInfo:nil];
+    UIApplicationShortcutIcon *secondItemIcon = [UIApplicationShortcutIcon iconWithType:UIApplicationShortcutIconTypeShare];
+    UIMutableApplicationShortcutItem *secondItem = [[UIMutableApplicationShortcutItem alloc]initWithType:@"Second" localizedTitle:@"分享" localizedSubtitle:nil icon:secondItemIcon userInfo:nil];
+    
+    // 自定义创建标签的ICON图标。
+    UIApplicationShortcutIcon *thirdItemIcon = [UIApplicationShortcutIcon iconWithTemplateImageName:@""];
+    UIMutableApplicationShortcutItem *thirdItem = [[UIMutableApplicationShortcutItem alloc]initWithType:@"Third" localizedTitle:@"自定义" localizedSubtitle:nil icon:thirdItemIcon userInfo:nil];
+    application.shortcutItems = @[firstItem,secondItem,thirdItem];
+}
+
+- (void)application:(UIApplication *)application performActionForShortcutItem:(nonnull UIApplicationShortcutItem *)shortcutItem completionHandler:(nonnull void (^)(BOOL))completionHandler{
+    if ([shortcutItem.type isEqual:@"add"])
+    { MGPS(@"执行添加事件"); }
+    else if([shortcutItem.type isEqual:@"share"])
+    { MGPS(@"执行分享的操作 ");}
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

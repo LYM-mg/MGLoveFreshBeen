@@ -85,5 +85,38 @@
 			</dict>
 		</dict>
 	</dict>
+	<key>UIApplicationShortcutItems</key>
+	<array>
+		<dict>
+			<key>UIApplicationShortcutItemType</key>
+			<string>First</string>
+			<key>UIApplicationShortcutItemTitle</key>
+			<string>添加</string>
+			<key>UIApplicationShortcutItemSubtitle</key>
+			<string>静靓女，可以加你为好友吗</string>
+			<key>UIApplicationShortcutItemIconType</key>
+			<string>UIApplicationShortcutIconTypeAdd</string>
+		</dict>
+		<dict>
+			<key>UIApplicationShortcutItemType</key>
+			<string>Second</string>
+			<key>UIApplicationShortcutItemTitle</key>
+			<string>点赞</string>
+			<key>UIApplicationShortcutItemSubtitle</key>
+			<string>明哥帅吗？还行吧</string>
+			<key>UIApplicationShortcutItemIconType</key>
+			<string>UIApplicationShortcutIconTypeLocation</string>
+		</dict>
+		<dict>
+			<key>UIApplicationShortcutItemType</key>
+			<string>Third</string>
+			<key>UIApplicationShortcutItemTitle</key>
+			<string>分享</string>
+			<key>UIApplicationShortcutItemSubtitle</key>
+			<string>我这么帅，你肯定要分享的啦</string>
+			<key>UIApplicationShortcutItemIconType</key>
+			<string>UIApplicationShortcutIconTypeShare</string>
+		</dict>
+	</array>
 </dict>
 </plist>

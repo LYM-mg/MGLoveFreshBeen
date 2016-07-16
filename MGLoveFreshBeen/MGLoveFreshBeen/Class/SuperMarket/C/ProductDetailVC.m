@@ -88,6 +88,7 @@
         brandTitleLabel.text = [goods valueForKeyPath:@"brand_name"];
         detailTitleLabel.text = [goods valueForKeyPath:@"specifics"];
         
+        // 图片 (很长的图片)
         detailImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"aaaa"]];
         CGFloat scale = 320.0 / MGSCREEN_width;
         detailImageView.frame = CGRectMake(0, CGRectGetMaxY(promptView.frame), MGSCREEN_width, detailImageView.height / scale);
@@ -264,6 +265,7 @@
 // MARK: - Action
 - (void)rightItemClick {
     MGPS(@"暂时还没有集成分享");
+    
 }
 
 //        buyView = BuyView(frame: CGRectMake(85, 12, 80, 25))
