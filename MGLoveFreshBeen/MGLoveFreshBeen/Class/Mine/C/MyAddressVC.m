@@ -62,7 +62,7 @@
 }
 
 - (void)dealloc{
-    MGLogFunc;
+//    MGLogFunc;
     [MGNotificationCenter removeObserver:self];
 }
 

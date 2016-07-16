@@ -12,6 +12,8 @@
 #import "CategoryCell.h"
 #import "SupermarketHeadView.h"
 
+#import "ProductDetailVC.h"
+
 
 @interface SuperMarketVC ()<UITableViewDataSource,UITableViewDelegate>
 
@@ -19,22 +21,21 @@
 @property (weak, nonatomic) IBOutlet UITableView *productsTableView;
 /** 分类TableView */
 @property (weak, nonatomic) IBOutlet UITableView *categoryTableView;
-/** <#注释#> */
+/** 数据源 */
 @property (nonatomic,strong) SuperMarket *superMarketData;
-
+/** 商品数据源 */
 @property (nonatomic,strong) NSMutableArray *goodsArr;
 
 /** 记录左边TableView点击的位置 */
 @property (nonatomic,strong) NSIndexPath *categortsSelectedIndexPath;
 
 
-
 /** 记录右边边TableView是否滚动到某个头部 */
 @property (nonatomic, assign) BOOL isScrollDown;
 /** 记录右边边TableView是否滚动到的位置的Y坐标 */
-@property (nonatomic, assign) BOOL lastOffsetY;
+@property (nonatomic, assign) CGFloat lastOffsetY;
 /** 记录右边边TableView是否滚动到某个头部 */
-@property (nonatomic,assign) NSInteger productSection;
+@property (nonatomic,strong) NSIndexPath *productIndexPath;
 
 @end
 
@@ -44,18 +45,20 @@
 #pragma mark - 声明周期
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.automaticallyAdjustsScrollViewInsets = YES;
     
+    // 1.初始化子控件
     [self setupTableView];
     
+    // 2.加载数据
     [self loadSupermarketData];
     
-    // 通知
+    // 3.通知
     [self addNotication];
 }
 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    [self loadSupermarketData];
 }
 
 - (void)setupTableView{
@@ -65,14 +68,9 @@
         self.categoryTableView.layoutMargins = UIEdgeInsetsZero;
     }
     
-    
-    self.productsTableView.separatorInset = UIEdgeInsetsZero;
-    if ([self.productsTableView respondsToSelector:@selector(layoutMargins)]) {
-        self.productsTableView.layoutMargins = UIEdgeInsetsZero;
-    }
-    CGPoint orgin = self.productsTableView.orgin ;
-    orgin.y = MGNavHeight;
-    self.productsTableView.orgin = orgin;
+//    CGPoint orgin = self.productsTableView.orgin ;
+//    orgin.y = MGNavHeight;
+//    self.productsTableView.orgin = orgin;
     
     [self.productsTableView registerClass:[SupermarketHeadView class] forHeaderFooterViewReuseIdentifier:@"MGKSupermarketHeadView"];
 }
@@ -87,18 +85,15 @@
     [str stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
     self.superMarketData = [SuperMarket objectWithKeyValues:dict];
     
-    // 分类
+    //////////////////////////// 分类 ///////////////////////////
     [self.categoryTableView reloadData];
     // 默认选中第一个
-    [self.categoryTableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] animated:YES scrollPosition:UITableViewScrollPositionTop];
+    [self.categoryTableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] animated:YES scrollPosition:UITableViewScrollPositionMiddle];
     
-    
-    
-    
-    
-    
+
+    //////////////////////////// 商品 ///////////////////////////
     _goodsArr = [NSMutableArray array];
-    // 商品
+    
     ProductstModel *productsModel = self.superMarketData.data.products;
     for (CategoriesModel *cModel in self.superMarketData.data.categories) {
         NSArray *goodsArr = (NSArray *)[productsModel valueForKeyPath:[cModel valueForKey:@"id"]];
@@ -111,9 +106,9 @@
 #pragma mark - UITableViewDataSource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     if (tableView == self.productsTableView) { // 右边tableView 👉➡️
-         return self.superMarketData.data.categories.count;
+        return self.superMarketData.data.categories.count;
     }else{  // 左边tableView 👈⬅️
-       return 1;
+        return 1;
     }
 }
 
@@ -181,8 +176,10 @@
     if (tableView == self.categoryTableView) { // 左边tableView 👈⬅️
         self.categortsSelectedIndexPath = indexPath;
         [MGNotificationCenter postNotificationName:MGCategortsSelectedIndexPathNotificationCenter object:nil];
-    }else{ // 右边tableView 👉➡️
-       
+    }else{ // 右边tableView 👉➡️  进入商品详情界面
+        Goods *goods = goods = self.goodsArr[indexPath.section][indexPath.row];
+        ProductDetailVC *productDetailVC = [[ProductDetailVC alloc] initWithGoods:goods];
+       self.navigationController pushViewController:productDetailVC animated:YES
     }
 }
 
@@ -190,14 +187,19 @@
 #pragma mark - 用来滚动滚动滚动
 // 头部即将消失
 - (void)tableView:(UITableView *)tableView willDisplayHeaderView:(UIView *)view forSection:(NSInteger)section{
-    _productSection = section;
-    [MGNotificationCenter postNotificationName:MGWillDisplayHeaderViewNotificationCenter object:nil];
+    if (tableView == self.productsTableView && !_isScrollDown) { // 右边tableView 👉➡️
+        _productIndexPath = [NSIndexPath indexPathForRow:section inSection:0];
+        
+        [MGNotificationCenter postNotificationName:MGWillDisplayHeaderViewNotificationCenter object:nil];
+    }
 }
 
 // 头部完全消失
 - (void)tableView:(UITableView *)tableView didEndDisplayingHeaderView:(nonnull UIView *)view forSection:(NSInteger)section{
-    _productSection = section;
-    [MGNotificationCenter postNotificationName:MGDidEndDisplayingHeaderViewNotificationCenter object:nil];
+    if (tableView == self.productsTableView && _isScrollDown) { // 右边tableView 👉➡️
+            _productIndexPath = [NSIndexPath indexPathForRow:(section+1) inSection:0];
+            [MGNotificationCenter postNotificationName:MGDidEndDisplayingHeaderViewNotificationCenter object:nil];
+    }
 }
 
 
@@ -215,24 +217,30 @@
 #pragma mark - 通知
 - (void)addNotication{
     NSOperationQueue *queue = [[NSOperationQueue alloc] init];
+    __weak typeof(self) weakSelf = self;
+    
     // 1.左边选中的通知
     [MGNotificationCenter addObserverForName:MGCategortsSelectedIndexPathNotificationCenter object:nil queue:queue usingBlock:^(NSNotification * _Nonnull note) {
-        [self.productsTableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:_categortsSelectedIndexPath.row] atScrollPosition:UITableViewScrollPositionTop animated:YES];
+        [weakSelf.productsTableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:_categortsSelectedIndexPath.row] atScrollPosition:UITableViewScrollPositionTop animated:YES];
     }];
     
-    // 2.HeaderView完全消失的通知
-    [MGNotificationCenter addObserverForName:MGWillDisplayHeaderViewNotificationCenter object:nil queue:queue usingBlock:^(NSNotification * _Nonnull note) {
-        [self.categoryTableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:_productSection inSection:0] animated:YES scrollPosition:UITableViewScrollPositionMiddle];
-    }];
-    
-    // 3.HeaderView即将消失的通知
+    // 2.HeaderView即将消失的通知
     [MGNotificationCenter addObserverForName:MGDidEndDisplayingHeaderViewNotificationCenter object:queue queue:nil usingBlock:^(NSNotification * _Nonnull note) {
-        [self.categoryTableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:(_productSection+1) inSection:0] animated:YES scrollPosition:UITableViewScrollPositionMiddle];
+        [weakSelf.categoryTableView selectRowAtIndexPath:_productIndexPath animated:YES scrollPosition:UITableViewScrollPositionMiddle];
+        [weakSelf.categoryTableView scrollToRowAtIndexPath:_productIndexPath atScrollPosition:UITableViewScrollPositionNone animated:YES];
+    }];
+    
+    // 3.HeaderView完全消失的通知
+    [MGNotificationCenter addObserverForName:MGWillDisplayHeaderViewNotificationCenter object:nil queue:queue usingBlock:^(NSNotification * _Nonnull note) {
+        [weakSelf.categoryTableView selectRowAtIndexPath:_productIndexPath animated:YES scrollPosition:UITableViewScrollPositionMiddle];
+        [weakSelf.categoryTableView scrollToRowAtIndexPath:_productIndexPath atScrollPosition:UITableViewScrollPositionNone animated:YES];
+        
     }];
 }
 
 - (void)dealloc{
     [MGNotificationCenter removeObserver:self];
+    NSLog(@"%s",__func__);
 }
 
 @end

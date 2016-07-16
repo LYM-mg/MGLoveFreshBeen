@@ -56,6 +56,7 @@
 		3AA57C4D1D3A0E4100AC5802 /* CategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AA57C4B1D3A0E4100AC5802 /* CategoryCell.xib */; settings = {ASSET_TAGS = (); }; };
 		3AA57C501D3A1C3F00AC5802 /* SuperMarketModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AA57C4F1D3A1C3F00AC5802 /* SuperMarketModel.m */; settings = {ASSET_TAGS = (); }; };
 		3AA57C531D3A4D3B00AC5802 /* SupermarketHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AA57C521D3A4D3B00AC5802 /* SupermarketHeadView.m */; settings = {ASSET_TAGS = (); }; };
+		3AA57C591D3AB1FE00AC5802 /* ProductDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AA57C581D3AB1FE00AC5802 /* ProductDetailVC.m */; settings = {ASSET_TAGS = (); }; };
 		3AADC9EC1D36018900DDEE87 /* questionCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AADC9EB1D36018900DDEE87 /* questionCellModel.m */; settings = {ASSET_TAGS = (); }; };
 		3AADC9EF1D36025F00DDEE87 /* QuestionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AADC9EE1D36025F00DDEE87 /* QuestionCell.m */; settings = {ASSET_TAGS = (); }; };
 		3AADC9F21D361DCA00DDEE87 /* QuestionSectionHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AADC9F11D361DCA00DDEE87 /* QuestionSectionHeader.m */; settings = {ASSET_TAGS = (); }; };
@@ -197,6 +198,8 @@
 		3AA57C4F1D3A1C3F00AC5802 /* SuperMarketModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SuperMarketModel.m; sourceTree = "<group>"; };
 		3AA57C511D3A4D3B00AC5802 /* SupermarketHeadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SupermarketHeadView.h; sourceTree = "<group>"; };
 		3AA57C521D3A4D3B00AC5802 /* SupermarketHeadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SupermarketHeadView.m; sourceTree = "<group>"; };
+		3AA57C571D3AB1FE00AC5802 /* ProductDetailVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductDetailVC.h; sourceTree = "<group>"; };
+		3AA57C581D3AB1FE00AC5802 /* ProductDetailVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductDetailVC.m; sourceTree = "<group>"; };
 		3AADC9EA1D36018900DDEE87 /* questionCellModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = questionCellModel.h; sourceTree = "<group>"; };
 		3AADC9EB1D36018900DDEE87 /* questionCellModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = questionCellModel.m; sourceTree = "<group>"; };
 		3AADC9ED1D36025F00DDEE87 /* QuestionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionCell.h; sourceTree = "<group>"; };
@@ -615,6 +618,8 @@
 				3A64A20C1D34E14000288490 /* SuperMarketVC.h */,
 				3A64A20D1D34E14000288490 /* SuperMarketVC.m */,
 				3AA57C421D3A0BD000AC5802 /* SuperMarketVC.xib */,
+				3AA57C571D3AB1FE00AC5802 /* ProductDetailVC.h */,
+				3AA57C581D3AB1FE00AC5802 /* ProductDetailVC.m */,
 			);
 			path = C;
 			sourceTree = "<group>";
@@ -959,6 +964,7 @@
 				3AA57C471D3A0E2A00AC5802 /* ProductsCell.m in Sources */,
 				3AE1BDB31D38FC480069E1B9 /* MASConstraint.m in Sources */,
 				3A64A2451D350EF100288490 /* NSObject+MJClass.m in Sources */,
+				3AA57C591D3AB1FE00AC5802 /* ProductDetailVC.m in Sources */,
 				3A64A2461D350EF100288490 /* NSObject+MJCoding.m in Sources */,
 				3A64A2001D34DEC500288490 /* TabBarVC.m in Sources */,
 				3AED5D8C1D358A200045CF64 /* LYMTextViewWithLabel.m in Sources */,

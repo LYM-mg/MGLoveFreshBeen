@@ -23,7 +23,7 @@
     self.selectionStyle = UITableViewCellSelectionStyleNone;
     self.indicatorView.hidden = YES;
     self.categoryName.backgroundColor = [UIColor clearColor];
-    self.contentView.backgroundColor = MGBackGray;
+    self.contentView.backgroundColor = MGRGBColor(222, 222, 222);
 }
 
 + (instancetype)categoryCellWithTableView:(UITableView *)tableView{
