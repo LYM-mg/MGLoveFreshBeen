@@ -44,5 +44,7 @@ NSString * const MGWillDisplayHeaderViewNotificationCenter = @"MGWillDisplayHead
 /** 通知：头部完全消失的的通知 */
 NSString * const MGDidEndDisplayingHeaderViewNotificationCenter = @"MGDidEndDisplayingHeaderViewNotificationCenter";
 
+#pragma mark - 友盟分享APPKey
+NSString * const MGUmengAppkey = @"578b2021e0f55af6c9000e65";
 
 @end

@@ -41,6 +41,7 @@ UIKIT_EXTERN NSString * const MGWillDisplayHeaderViewNotificationCenter;
 /** 通知：头部完全消失的的通知 */
 UIKIT_EXTERN NSString * const MGDidEndDisplayingHeaderViewNotificationCenter;
 
-
+#pragma mark - 友盟分享APPKey
+UIKIT_EXTERN NSString * const MGUmengAppkey;
 
 @end

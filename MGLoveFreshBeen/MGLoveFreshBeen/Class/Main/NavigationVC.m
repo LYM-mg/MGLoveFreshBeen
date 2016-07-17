@@ -14,11 +14,43 @@
 
 @implementation NavigationVC
 
++ (void)load{
+    if (self == [NavigationVC class]) {
+        UINavigationBar *navBar = [UINavigationBar appearance];
+        UIBarButtonItem *barItem = [UIBarButtonItem appearance];
+        
+        if(ISIOS8)
+            navBar.translucent = NO;
+        else
+            navBar.translucent  =NO;
+        navBar.barTintColor = MGNavBarTiniColor;
+        navBar.tintColor = [UIColor colorWithRed:1 green:1 blue:1 alpha:1.000];
+        [navBar setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}];
+        
+        [navBar setTitleTextAttributes:@{
+                                         NSForegroundColorAttributeName :[UIColor whiteColor] ,
+                                         NSFontAttributeName : [UIFont boldSystemFontOfSize:18]
+                                         }];
+        
+        
+        if(barItem==[[UINavigationItem alloc] init].leftBarButtonItem){
+            [barItem setTitleTextAttributes:@{
+                                              NSForegroundColorAttributeName : [UIColor clearColor],
+                                              NSFontAttributeName : [UIFont systemFontOfSize:0]
+                                              } forState:UIControlStateNormal];
+        }else{
+            [barItem setTitleTextAttributes:@{
+                                              NSForegroundColorAttributeName : [UIColor whiteColor],
+                                              NSFontAttributeName : [UIFont systemFontOfSize:13]
+                                              } forState:UIControlStateNormal];
+            
+        }
+    }
+}
+
 #pragma mark ========= 添加全屏滑动手势 ==========
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-//    [self setup];
     
     // setp1:需要获取系统自带滑动手势的target对象
     id target = self.interactivePopGestureRecognizer.delegate;
@@ -72,7 +104,6 @@
     [self popViewControllerAnimated:YES];
 }
 
-
 - (void)setup{
     UINavigationBar *navBar = [UINavigationBar appearance];
     UIBarButtonItem *barItem = [UIBarButtonItem appearance];
@@ -103,6 +134,5 @@
         
     }
 }
-
 
 @end
