@@ -27,6 +27,7 @@
     self.navigationItem.title = self.navTitle;
     [self bulidWebView];
     [self buildProgressAnimationView];
+    [self setUpRightNavItem];
 }
 
 #pragma mark - 便利构造方法
@@ -83,6 +84,7 @@
 }
 
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error{
+    [self endLoadProgressAnimation];
     MGPS(@"没有网络，加载数据失败");
 }
 
@@ -90,10 +92,10 @@
 - (void)startLoadProgressAnimation {
     _loadProgressAnimationView.width = 0;
     _loadProgressAnimationView.hidden = NO;
-    [UIView animateWithDuration:0.6 animations:^{
-        _loadProgressAnimationView.width = MGSCREEN_width * 0.58;
+    [UIView animateWithDuration:0.8 animations:^{
+        _loadProgressAnimationView.width = MGSCREEN_width * 0.70;
     } completion:^(BOOL finished) {
-        dispatch_time_t time = dispatch_time(DISPATCH_TIME_NOW, (int64_t)0.2*NSEC_PER_SEC);
+        dispatch_time_t time = dispatch_time(DISPATCH_TIME_NOW, (int64_t)0.08*NSEC_PER_SEC);
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(time * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             [UIView animateWithDuration:0.2 animations:^{
                 _loadProgressAnimationView.width = MGSCREEN_width * 0.85;

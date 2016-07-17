@@ -14,12 +14,14 @@ typedef enum{
     SexMan
 }SexType;
 
-@interface EditAddressVC ()<UITextFieldDelegate>
+@interface EditAddressVC ()<UITextFieldDelegate,UIPickerViewDataSource, UIPickerViewDelegate>
 {
     UIScrollView *_scrollView;
     AddressCellModel *_address;
-    UIButton *_manBtn;
-    UIButton *_womanBtn;
+    UIButton *_manBtn; // 选择女生
+    UIButton *_womanBtn; // 选择男生
+    UIPickerView *selectCityPickView; // 城市选择的pickerView
+    NSInteger _currentSelectedCityIndex; // pickerView当前选择下标
 }
 /** 城市数组 */
 @property (nonatomic,strong) NSArray *cityArr;
@@ -116,7 +118,12 @@ typedef enum{
             if(2 == i){
                 textfield.keyboardType = UIKeyboardTypeNumberPad;
             }else if (3==i){
-                
+                selectCityPickView = [[UIPickerView alloc] init];
+                selectCityPickView.delegate = self;
+                selectCityPickView.dataSource = self;
+                textfield.inputView = selectCityPickView;
+                // 创建赋值键盘的确定取消按钮
+                textfield.inputAccessoryView = [self buildInputView];
             }
         }
         // 分割线
@@ -279,5 +286,64 @@ typedef enum{
         MGPE(@"请填写姓名");
 }
 
+
+- (UIView *)buildInputView  {
+    UIToolbar *toolBar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, MGSCREEN_width, 40)];
+    toolBar.backgroundColor = [UIColor whiteColor];
+    
+    UIView *lineView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, MGSCREEN_width, 1)];
+    lineView.backgroundColor = [UIColor blackColor];
+    lineView.alpha = 0.2;
+    [toolBar addSubview:lineView];
+    
+    UILabel *titleLabel = [[UILabel alloc] init];
+    titleLabel.font = MGFont(15);
+    titleLabel.textColor = [UIColor lightGrayColor];
+    titleLabel.alpha = 0.8;
+    titleLabel.text = @"选择城市";
+    titleLabel.textAlignment = NSTextAlignmentCenter;
+    titleLabel.frame = CGRectMake(0, 0, MGSCREEN_width, toolBar.height);
+    [toolBar addSubview:titleLabel];
+    
+    UIButton *cancleButton = [[UIButton alloc] initWithFrame: CGRectMake(0, 0, 80, toolBar.height)];
+    cancleButton.tag = 10;
+    [cancleButton addTarget:self action:@selector(selectedCityTextFieldDidChange:) forControlEvents:UIControlEventTouchUpInside];
+    [cancleButton setTitle:@"取消"  forState: UIControlStateNormal];
+    [cancleButton setTitleColor:MGRGBColor(88, 233, 168) forState:UIControlStateNormal];
+    [toolBar addSubview:cancleButton];
+    
+    UIButton *determineButton = [[UIButton alloc] initWithFrame:CGRectMake(MGSCREEN_width - 80, 0, 80, toolBar.height)];
+    determineButton.tag = 11;
+    [cancleButton addTarget:self action:@selector(selectedCityTextFieldDidChange:) forControlEvents:UIControlEventTouchUpInside];
+    [cancleButton setTitle:@"取消"  forState: UIControlStateNormal];
+    [cancleButton setTitleColor:MGRGBColor(82, 203, 238) forState:UIControlStateNormal];
+    [cancleButton setTitle:@"确定"  forState: UIControlStateNormal];
+    [toolBar addSubview:determineButton];
+    
+    return toolBar;
+}
+
+- (void)selectedCityTextFieldDidChange:(UIButton *)sender{
+    UITextField *cityTextField = (UITextField *)[_scrollView viewWithTag:205];
+    if (sender.tag == 11) {
+        if (_currentSelectedCityIndex != -1) {
+            cityTextField.text = self.cityArr[_currentSelectedCityIndex];
+        }
+    }
+    [cityTextField endEditing:YES];
+}
+
+#pragma mark - UIPickerViewDataSource, UIPickerViewDelegate
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView{
+    return 1;
+}
+
+- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component{
+    return self.cityArr.count;
+}
+
+- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component{
+    _currentSelectedCityIndex = row;
+}
 
 @end

@@ -176,7 +176,7 @@ static NSString *const KHomeFooterIdentifier = @"Footer";
 //    }
 //    return  nil;
 //}
-#pragma mark - 通知
+#pragma mark - 通知 (跳转网页)
 - (void)addObserverNotification{
     // 解决循环引用
       __weak typeof(self) weakSelf = self;
