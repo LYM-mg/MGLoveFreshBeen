@@ -253,14 +253,14 @@ typedef enum{
 //                            MGPS(@"收货地址编辑完成！");
                             NSMutableDictionary *dict = [NSMutableDictionary dictionary];
                             [dict setObject:_address forKey:@"address"];
-                            [MGNotificationCenter postNotificationName:MGEditAddressNotificationCenter  object:nil userInfo:dict];
+                            [MGNotificationCenter postNotificationName:MGEditAddressNotification object:nil userInfo:dict];
                         }
                         else{
                             [MBProgressHUD showError:@"收货地址添加成功！"];
 //                            MGPS(@"收货地址添加成功！");
                             NSMutableDictionary *dict = [NSMutableDictionary dictionary];
                             [dict setObject:_address forKey:@"address"];
-                            [MGNotificationCenter postNotificationName:MGAddAddressNotificationCenter object:nil userInfo:dict];
+                            [MGNotificationCenter postNotificationName:MGAddAddressNotification object:nil userInfo:dict];
                             
                         }
                         [self.navigationController popViewControllerAnimated:YES];

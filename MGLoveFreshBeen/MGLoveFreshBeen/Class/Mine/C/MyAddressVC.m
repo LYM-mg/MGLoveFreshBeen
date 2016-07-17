@@ -48,13 +48,13 @@
 }
 #pragma mark - 通知
 - (void)addObserveNOtification{
-    [MGNotificationCenter addObserverForName:MGAddAddressNotificationCenter object:nil queue:nil usingBlock:^(NSNotification *note) {
+    [MGNotificationCenter addObserverForName:MGAddAddressNotification object:nil queue:nil usingBlock:^(NSNotification *note) {
         AddressCellModel *model = note.userInfo[@"address"];
         [self.myAddressData insertObject:model atIndex:0];
         [self.addressTableView reloadData];
     }];
     
-    [MGNotificationCenter addObserverForName:MGEditAddressNotificationCenter object:nil queue:nil usingBlock:^(NSNotification *note) {
+    [MGNotificationCenter addObserverForName:MGEditAddressNotification object:nil queue:nil usingBlock:^(NSNotification *note) {
         AddressCellModel *model = note.userInfo[@"address"];
         self.myAddressData[_addressIndexRow] = model;
         [self.addressTableView reloadData];

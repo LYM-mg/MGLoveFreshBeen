@@ -27,21 +27,30 @@ UIKIT_EXTERN CGFloat const MGNavHeight;
 
 #pragma mark - 通知
 /** 通知：添加地址的通知 */
-UIKIT_EXTERN NSString * const MGAddAddressNotificationCenter;
+UIKIT_EXTERN NSString * const MGAddAddressNotification;
 
 /** 通知：编辑地址的通知 */
-UIKIT_EXTERN NSString * const MGEditAddressNotificationCenter;
+UIKIT_EXTERN NSString * const MGEditAddressNotification;
 
 /** 通知：分类栏选中的的通知 */
-UIKIT_EXTERN NSString * const MGCategortsSelectedIndexPathNotificationCenter;
+UIKIT_EXTERN NSString * const MGCategortsSelectedIndexPathNotification;
 
 /** 通知：头部即将消失的的通知 */
-UIKIT_EXTERN NSString * const MGWillDisplayHeaderViewNotificationCenter;
+UIKIT_EXTERN NSString * const MGWillDisplayHeaderViewNotification;
 
 /** 通知：头部完全消失的的通知 */
-UIKIT_EXTERN NSString * const MGDidEndDisplayingHeaderViewNotificationCenter;
+UIKIT_EXTERN NSString * const MGDidEndDisplayingHeaderViewNotification;
+
+/** 通知：hotView点击的的通知 */
+UIKIT_EXTERN NSString * const MGHotPanClickNotification;
+
+/** 通知：轮播器图片被点击的点击的的通知 */
+UIKIT_EXTERN NSString * const MGCarouseViewImageClickNotification;
+
 
 #pragma mark - 友盟分享APPKey
 UIKIT_EXTERN NSString * const MGUmengAppkey;
+
+
 
 @end

@@ -30,19 +30,24 @@ CGFloat const MGNavHeight = 64;
 #pragma mark - 通知
 
 /** 通知：添加地址的通知 */
-NSString * const MGAddAddressNotificationCenter = @"MGAddAddressNotificationCenter";
+NSString * const MGAddAddressNotification = @"MGAddAddressNotification";
 
 /** 通知：编辑地址的通知 */
-NSString * const MGEditAddressNotificationCenter = @"MGEditAddressNotificationCenter";
+NSString * const MGEditAddressNotification = @"MGEditAddressNotification";
 
 /** 通知：分类栏选中的的通知 */
-NSString * const MGCategortsSelectedIndexPathNotificationCenter = @"MGCategortsSelectedIndexPathNotificationCenter";
+NSString * const MGCategortsSelectedIndexPathNotification = @"MGCategortsSelectedIndexPathNotification";
 
 /** 通知：头部即将消失的的通知 */
-NSString * const MGWillDisplayHeaderViewNotificationCenter = @"MGWillDisplayHeaderViewNotificationCenter";
+NSString * const MGWillDisplayHeaderViewNotification = @"MGWillDisplayHeaderViewNotification";
 
 /** 通知：头部完全消失的的通知 */
-NSString * const MGDidEndDisplayingHeaderViewNotificationCenter = @"MGDidEndDisplayingHeaderViewNotificationCenter";
+NSString * const MGDidEndDisplayingHeaderViewNotification = @"MGDidEndDisplayingHeaderViewNotification";
+
+/** 通知：hotView点击的的通知 */
+NSString * const MGHotPanClickNotification = @"MGHotPanClickNotification";
+
+NSString * const MGCarouseViewImageClickNotification = @"MGCarouseViewImageClickNotification";
 
 #pragma mark - 友盟分享APPKey
 NSString * const MGUmengAppkey = @"578b2021e0f55af6c9000e65";

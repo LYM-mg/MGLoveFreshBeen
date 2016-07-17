@@ -175,7 +175,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     if (tableView == self.categoryTableView) { // 左边tableView 👈⬅️
         self.categortsSelectedIndexPath = indexPath;
-        [MGNotificationCenter postNotificationName:MGCategortsSelectedIndexPathNotificationCenter object:nil];
+        [MGNotificationCenter postNotificationName:MGCategortsSelectedIndexPathNotification object:nil];
     }else{ // 右边tableView 👉➡️  进入商品详情界面
         Goods *goods = goods = self.goodsArr[indexPath.section][indexPath.row];
         ProductDetailVC *productDetailVC = [[ProductDetailVC alloc] initWithGoods:goods];
@@ -190,7 +190,7 @@
     if (tableView == self.productsTableView && !_isScrollDown) { // 右边tableView 👉➡️
         _productIndexPath = [NSIndexPath indexPathForRow:section inSection:0];
         
-        [MGNotificationCenter postNotificationName:MGWillDisplayHeaderViewNotificationCenter object:nil];
+        [MGNotificationCenter postNotificationName:MGWillDisplayHeaderViewNotification object:nil];
     }
 }
 
@@ -198,7 +198,7 @@
 - (void)tableView:(UITableView *)tableView didEndDisplayingHeaderView:(nonnull UIView *)view forSection:(NSInteger)section{
     if (tableView == self.productsTableView && _isScrollDown) { // 右边tableView 👉➡️
             _productIndexPath = [NSIndexPath indexPathForRow:(section+1) inSection:0];
-            [MGNotificationCenter postNotificationName:MGDidEndDisplayingHeaderViewNotificationCenter object:nil];
+            [MGNotificationCenter postNotificationName:MGDidEndDisplayingHeaderViewNotification object:nil];
     }
 }
 
@@ -220,18 +220,18 @@
     __weak typeof(self) weakSelf = self;
     
     // 1.左边选中的通知
-    [MGNotificationCenter addObserverForName:MGCategortsSelectedIndexPathNotificationCenter object:nil queue:queue usingBlock:^(NSNotification * _Nonnull note) {
+    [MGNotificationCenter addObserverForName:MGCategortsSelectedIndexPathNotification object:nil queue:queue usingBlock:^(NSNotification * _Nonnull note) {
         [weakSelf.productsTableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:_categortsSelectedIndexPath.row] atScrollPosition:UITableViewScrollPositionTop animated:YES];
     }];
     
     // 2.HeaderView即将消失的通知
-    [MGNotificationCenter addObserverForName:MGDidEndDisplayingHeaderViewNotificationCenter object:queue queue:nil usingBlock:^(NSNotification * _Nonnull note) {
+    [MGNotificationCenter addObserverForName:MGDidEndDisplayingHeaderViewNotification object:queue queue:nil usingBlock:^(NSNotification * _Nonnull note) {
         [weakSelf.categoryTableView selectRowAtIndexPath:_productIndexPath animated:YES scrollPosition:UITableViewScrollPositionMiddle];
         [weakSelf.categoryTableView scrollToRowAtIndexPath:_productIndexPath atScrollPosition:UITableViewScrollPositionNone animated:YES];
     }];
     
     // 3.HeaderView完全消失的通知
-    [MGNotificationCenter addObserverForName:MGWillDisplayHeaderViewNotificationCenter object:nil queue:queue usingBlock:^(NSNotification * _Nonnull note) {
+    [MGNotificationCenter addObserverForName:MGWillDisplayHeaderViewNotification object:nil queue:queue usingBlock:^(NSNotification * _Nonnull note) {
         [weakSelf.categoryTableView selectRowAtIndexPath:_productIndexPath animated:YES scrollPosition:UITableViewScrollPositionMiddle];
         [weakSelf.categoryTableView scrollToRowAtIndexPath:_productIndexPath atScrollPosition:UITableViewScrollPositionNone animated:YES];
         
