@@ -82,6 +82,14 @@
 		3AD591281D3B5A1700BCD7AA /* libSocialWechat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AD5911B1D3B5A1700BCD7AA /* libSocialWechat.a */; settings = {ASSET_TAGS = (); }; };
 		3AD591291D3B5A1700BCD7AA /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AD5911C1D3B5A1700BCD7AA /* libWeChatSDK.a */; settings = {ASSET_TAGS = (); }; };
 		3AD5912A1D3B5A1700BCD7AA /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3AD5911D1D3B5A1700BCD7AA /* README.txt */; settings = {ASSET_TAGS = (); }; };
+		3AD5912C1D3B5BD500BCD7AA /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AD5912B1D3B5BD500BCD7AA /* Security.framework */; };
+		3AD5912E1D3B5C0000BCD7AA /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AD5912D1D3B5C0000BCD7AA /* libiconv.tbd */; };
+		3AD591301D3B5C0800BCD7AA /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AD5912F1D3B5C0800BCD7AA /* SystemConfiguration.framework */; };
+		3AD591321D3B5C1200BCD7AA /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AD591311D3B5C1200BCD7AA /* CoreGraphics.framework */; };
+		3AD591341D3B5C1A00BCD7AA /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AD591331D3B5C1A00BCD7AA /* libsqlite3.tbd */; };
+		3AD591361D3B5C2100BCD7AA /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AD591351D3B5C2100BCD7AA /* CoreTelephony.framework */; };
+		3AD591381D3B5C2B00BCD7AA /* libstdc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AD591371D3B5C2B00BCD7AA /* libstdc++.tbd */; };
+		3AD5913A1D3B5C3700BCD7AA /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AD591391D3B5C3700BCD7AA /* libz.tbd */; };
 		3AE1BD931D38E3330069E1B9 /* MBProgressHUD+XMG.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AE1BD8F1D38E3330069E1B9 /* MBProgressHUD+XMG.m */; settings = {ASSET_TAGS = (); }; };
 		3AE1BD941D38E3330069E1B9 /* MBProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3AE1BD901D38E3330069E1B9 /* MBProgressHUD.bundle */; settings = {ASSET_TAGS = (); }; };
 		3AE1BD951D38E3330069E1B9 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AE1BD921D38E3330069E1B9 /* MBProgressHUD.m */; settings = {ASSET_TAGS = (); }; };
@@ -279,6 +287,14 @@
 		3AD5911F1D3B5A1700BCD7AA /* WechatAuthSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WechatAuthSDK.h; sourceTree = "<group>"; };
 		3AD591201D3B5A1700BCD7AA /* WXApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApi.h; sourceTree = "<group>"; };
 		3AD591211D3B5A1700BCD7AA /* WXApiObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApiObject.h; sourceTree = "<group>"; };
+		3AD5912B1D3B5BD500BCD7AA /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		3AD5912D1D3B5C0000BCD7AA /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = usr/lib/libiconv.tbd; sourceTree = SDKROOT; };
+		3AD5912F1D3B5C0800BCD7AA /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		3AD591311D3B5C1200BCD7AA /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		3AD591331D3B5C1A00BCD7AA /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		3AD591351D3B5C2100BCD7AA /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		3AD591371D3B5C2B00BCD7AA /* libstdc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.tbd"; path = "usr/lib/libstdc++.tbd"; sourceTree = SDKROOT; };
+		3AD591391D3B5C3700BCD7AA /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		3AE1BD8E1D38E3330069E1B9 /* MBProgressHUD+XMG.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+XMG.h"; sourceTree = "<group>"; };
 		3AE1BD8F1D38E3330069E1B9 /* MBProgressHUD+XMG.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+XMG.m"; sourceTree = "<group>"; };
 		3AE1BD901D38E3330069E1B9 /* MBProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MBProgressHUD.bundle; sourceTree = "<group>"; };
@@ -356,6 +372,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3AD591361D3B5C2100BCD7AA /* CoreTelephony.framework in Frameworks */,
+				3AD5913A1D3B5C3700BCD7AA /* libz.tbd in Frameworks */,
+				3AD591381D3B5C2B00BCD7AA /* libstdc++.tbd in Frameworks */,
+				3AD591341D3B5C1A00BCD7AA /* libsqlite3.tbd in Frameworks */,
+				3AD591321D3B5C1200BCD7AA /* CoreGraphics.framework in Frameworks */,
+				3AD591301D3B5C0800BCD7AA /* SystemConfiguration.framework in Frameworks */,
+				3AD5912E1D3B5C0000BCD7AA /* libiconv.tbd in Frameworks */,
+				3AD5912C1D3B5BD500BCD7AA /* Security.framework in Frameworks */,
 				3AD591251D3B5A1700BCD7AA /* libSocialQQ.a in Frameworks */,
 				3AD591261D3B5A1700BCD7AA /* TencentOpenAPI.framework in Frameworks */,
 				3AD591291D3B5A1700BCD7AA /* libWeChatSDK.a in Frameworks */,
@@ -934,6 +958,14 @@
 		AE889D3491237DC59BD043D8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3AD591391D3B5C3700BCD7AA /* libz.tbd */,
+				3AD591371D3B5C2B00BCD7AA /* libstdc++.tbd */,
+				3AD591351D3B5C2100BCD7AA /* CoreTelephony.framework */,
+				3AD591331D3B5C1A00BCD7AA /* libsqlite3.tbd */,
+				3AD591311D3B5C1200BCD7AA /* CoreGraphics.framework */,
+				3AD5912F1D3B5C0800BCD7AA /* SystemConfiguration.framework */,
+				3AD5912D1D3B5C0000BCD7AA /* libiconv.tbd */,
+				3AD5912B1D3B5BD500BCD7AA /* Security.framework */,
 				5C1D56701D76C2B738A1E4C1 /* libPods-MGLoveFreshBeen.a */,
 			);
 			name = Frameworks;

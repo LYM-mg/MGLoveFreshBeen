@@ -24,6 +24,7 @@ xcuserdata/
 ## Obj-C/Swift specific
 *.hmap
 *.ipa
+*.a
 
 ## Playgrounds
 timeline.xctimeline

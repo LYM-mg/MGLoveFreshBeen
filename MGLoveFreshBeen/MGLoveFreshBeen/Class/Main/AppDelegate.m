@@ -65,7 +65,7 @@
     [UMSocialData setAppKey:MGUmengAppkey];
     
     //打开调试log的开关
-    [UMSocialData openLog:YES];
+    [UMSocialData openLog:NO];
     
     //如果你要支持不同的屏幕方向，需要这样设置，否则在iPhone只支持一个竖屏方向
     [UMSocialConfig setSupportedInterfaceOrientations:UIInterfaceOrientationMaskAll];
@@ -75,9 +75,9 @@
     
     // 打开新浪微博的SSO开关
     // 将在新浪微博注册的应用appkey、redirectURL替换下面参数，并在info.plist的URL Scheme中相应添加wb+appkey，如"wb3921700954"，详情请参考官方文档。
-    [UMSocialSinaSSOHandler openNewSinaSSOWithAppKey:@"3921700954"
-                                              secret:@"04b48b094faeb16683c32669824ebdad"
-                                         RedirectURL:@"http://sns.whalecloud.com/sina2/callback"];
+    [UMSocialSinaSSOHandler openNewSinaSSOWithAppKey:@"3741778105"
+                                              secret:@"f1a443691c88263068c4a33eb37fde1b"
+                                         RedirectURL:@"https://github.com/LYM-mg"];
 
     //    //设置分享到QQ空间的应用Id，和分享url 链接
     [UMSocialQQHandler setQQWithAppId:@"100424468" appKey:@"c7394704798a158208a74ab60104f0ba" url:@"http://www.umeng.com/social"];
