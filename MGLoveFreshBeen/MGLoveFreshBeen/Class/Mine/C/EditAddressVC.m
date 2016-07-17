@@ -315,7 +315,7 @@ typedef enum{
     UIButton *determineButton = [[UIButton alloc] initWithFrame:CGRectMake(MGSCREEN_width - 80, 0, 80, toolBar.height)];
     determineButton.tag = 11;
     [determineButton addTarget:self action:@selector(selectedCityTextFieldDidChange:) forControlEvents:UIControlEventTouchUpInside];
-    [determineButton setTitle:@"取消"  forState: UIControlStateNormal];
+    [determineButton setTitle:@"确定"  forState: UIControlStateNormal];
     [determineButton setTitleColor:MGRGBColor(82, 203, 238) forState:UIControlStateNormal];
     [toolBar addSubview:determineButton];
     
@@ -339,6 +339,15 @@ typedef enum{
 
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component{
     return self.cityArr.count;
+}
+
+- (UIView *)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(UIView *)view{
+    return self.cityArr[row];
+}
+
+// 每一组返回的行高
+- (CGFloat)pickerView:(UIPickerView *)pickerView rowHeightForComponent:(NSInteger)component{
+    return 30;
 }
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component{
