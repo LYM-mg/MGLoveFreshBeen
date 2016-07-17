@@ -31,7 +31,7 @@ typedef enum{
 #pragma mark - lazy   数据源
 - (NSArray *)cityArr{
     if (!_cityArr) {
-        [NSArray arrayWithObjects:@"梅州市", @"清远市", @"北京市", @"上海市", @"天津市", @"广州市", @"佛山市", @"深圳市", @"廊坊市", @"武汉市", @"苏州市", @"无锡市", nil];
+        _cityArr = [NSArray arrayWithObjects:@"梅州市", @"清远市", @"北京市", @"上海市", @"潮汕市", @"珠海市",@"长沙市",@"南京市",@"天津市", @"广州市", @"佛山市", @"深圳市", @"廊坊市", @"武汉市", @"苏州市", @"无锡市",@"茂名市",@"阳江市", @"武汉市",@"杭州市",@"南昌市", nil];
     }
    return _cityArr;
 }
@@ -314,10 +314,9 @@ typedef enum{
     
     UIButton *determineButton = [[UIButton alloc] initWithFrame:CGRectMake(MGSCREEN_width - 80, 0, 80, toolBar.height)];
     determineButton.tag = 11;
-    [cancleButton addTarget:self action:@selector(selectedCityTextFieldDidChange:) forControlEvents:UIControlEventTouchUpInside];
-    [cancleButton setTitle:@"取消"  forState: UIControlStateNormal];
-    [cancleButton setTitleColor:MGRGBColor(82, 203, 238) forState:UIControlStateNormal];
-    [cancleButton setTitle:@"确定"  forState: UIControlStateNormal];
+    [determineButton addTarget:self action:@selector(selectedCityTextFieldDidChange:) forControlEvents:UIControlEventTouchUpInside];
+    [determineButton setTitle:@"取消"  forState: UIControlStateNormal];
+    [determineButton setTitleColor:MGRGBColor(82, 203, 238) forState:UIControlStateNormal];
     [toolBar addSubview:determineButton];
     
     return toolBar;
