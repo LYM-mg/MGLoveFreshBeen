@@ -35,9 +35,7 @@
     // 提示文字
     CGFloat margin  = 15;
     
-    CGFloat y = self.navigationController ? MGNavHeight + 10 : 20;
-    
-    UILabel *tipLabel = [[UILabel alloc] initWithFrame:CGRectMake(margin, y, MGSCREEN_width - 2 * margin, 50)];
+    UILabel *tipLabel = [[UILabel alloc] initWithFrame:CGRectMake(margin, 0, MGSCREEN_width - 2 * margin, 50)];
     tipLabel.text = @"你的批评和建议能帮助我们更好的完善产品,请留下你的宝贵意见!";
     tipLabel.numberOfLines = 2;
     tipLabel.textColor = MGRGBColor(255, 10, 10);

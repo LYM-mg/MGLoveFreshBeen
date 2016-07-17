@@ -89,11 +89,7 @@ static NSString *const KQuestionSectionHeader = @"KQuestionSectionHeader";
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-//    static NSString *const KQuestionCellID = @"KQuestionCellID";
-//    QuestionCell *cell = [tableView dequeueReusableCellWithIdentifier:KQuestionCellID];
-//    if (!cell) {
-//        cell = [[QuestionCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:KQuestionCellID];
-//    }
+
     QuestionCell *cell = [[QuestionCell alloc] init];
     cell.questionModel = self.questionData[indexPath.section];
     

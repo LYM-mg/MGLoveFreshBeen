@@ -9,7 +9,8 @@
 #import "HomeHotView.h"
 
 @interface HomeHotView ()
-
+/** 记录tag */
+@property (nonatomic,weak) ContantView *contantView;
 @end
 
 @implementation HomeHotView
@@ -27,8 +28,9 @@
     for (int i = 0; i<count; i++) {
         
         ContantView *contantView = [[ContantView alloc] initWithFrame:CGRectMake(i*(width + 2*MGMargin)+ 2*MGMargin, 0, width, self.height)];
-        
+        contantView.tag = i;
         [self addSubview:contantView];
+        
         
         NSArray *tmpArr = [Activities objectArrayWithKeyValuesArray:headData.icons];
         
@@ -55,7 +57,8 @@
 
 #pragma mark - pan 手势
 - (void)hotPanClick:(UITapGestureRecognizer *)tap{
-    [MGNotificationCenter postNotificationName:MGHotPanClickNotification object:nil];
+    
+    [MGNotificationCenter postNotificationName:MGHotPanClickNotification object:nil userInfo:@{@"tag":@(tap.view.tag)}];
 }
 
 @end
@@ -73,7 +76,7 @@
 #pragma mark - 私有方法
 - (void)setupUI{
     UIImageView *imageView = [[UIImageView alloc] init];
-    imageView.userInteractionEnabled = YES;
+    imageView.userInteractionEnabled = NO;
     imageView.contentMode = UIViewContentModeCenter;
     [self addSubview:imageView];
     _imageView = imageView;
@@ -82,7 +85,7 @@
     textLabel.textAlignment = NSTextAlignmentCenter;
     textLabel.font = MGFont(12);
     textLabel.textColor = [UIColor blackColor];
-    textLabel.userInteractionEnabled = YES;
+    textLabel.userInteractionEnabled = NO;
     [self addSubview:textLabel];
     _textLabel = textLabel;
 }

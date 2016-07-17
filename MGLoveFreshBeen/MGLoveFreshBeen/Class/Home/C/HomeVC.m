@@ -11,6 +11,7 @@
 #import "HomeHeaderView.h"
 #import "HeadReosurce.h"
 
+#import "HomeWebVC.h"
 
 @interface HomeVC ()<UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout>
 {
@@ -19,8 +20,11 @@
 }
 /** 数据 */
 @property (nonatomic, strong) NSMutableArray *dataArr;
-/** <#注释#> */
+/** 顶部View */
 @property (nonatomic,strong) HomeHeaderView *headView;
+
+/** 模型 */
+@property (nonatomic,strong) HeadReosurce *headData;
 
 @end
 
@@ -67,6 +71,7 @@ static NSString *const KHomeFooterIdentifier = @"Footer";
     [str stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
     
     _headView.headData = [HeadReosurce objectWithKeyValues:dict];
+    self.headData = _headView.headData;
 }
 
 #pragma mark - collectionView
@@ -173,17 +178,41 @@ static NSString *const KHomeFooterIdentifier = @"Footer";
 //}
 #pragma mark - 通知
 - (void)addObserverNotification{
+    // 解决循环引用
+      __weak typeof(self) weakSelf = self;
+
+    // hotView点击
+    [MGNotificationCenter addObserverForName:MGHotPanClickNotification object:nil queue:nil usingBlock:^(NSNotification * note) {
+        
+        int index = (int)[note.userInfo valueForKeyPath:@"tag"];
+        
+         HomeWebVC *webVC = [[HomeWebVC alloc] initWithNavigationTitle:[_headData.data.icons[index] valueForKeyPath:@"name"] withUrlStr:[_headData.data.icons[index] valueForKeyPath:@"customURL"]];
+            [weakSelf.navigationController pushViewController:webVC animated:YES];
+       
+    }];
+    
+    
+    
     NSOperationQueue *queue = [[NSOperationQueue alloc] init];
     // 轮播器图片被点击的通知
-    [MGNotificationCenter addObserverForName:MGHotPanClickNotification object:nil queue:queue usingBlock:^(NSNotification * _Nonnull note) {
+    [MGNotificationCenter addObserverForName:MGCarouseViewImageClickNotification object:nil queue:queue usingBlock:^(NSNotification *note) {
         
-    }];
+        NSString *path = [[NSBundle mainBundle] pathForResource:@"FocusURL.plist" ofType: nil];
     
-    
-    // hotView点击
-    [MGNotificationCenter addObserverForName:MGHotPanClickNotification object:nil queue:queue usingBlock:^(NSNotification * _Nonnull note) {
+        NSArray *array = [NSArray arrayWithContentsOfFile:path];
         
+        __block NSInteger index = (NSInteger)[note.userInfo valueForKeyPath:@"index"];
+        
+        [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+             HomeWebVC *webVC = [[HomeWebVC alloc] initWithNavigationTitle:[_headData.data.focus[index] valueForKeyPath:@"name"] withUrlStr:array[index]];
+            [weakSelf.navigationController pushViewController:webVC animated:YES];
+        }];
     }];
+}
+
+- (void)dealloc{
+    [MGNotificationCenter removeObserver:self];
+    MGLogFunc;
 }
 
 @end

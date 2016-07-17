@@ -41,10 +41,8 @@
 - (void)setUpUI{
     CGFloat subHeight = 50;
     
-    CGFloat y = self.navigationController ? MGNavHeight + 10 : 10;
-    
     // 关于我
-    UIView *aboutMeView = [[UIView alloc] initWithFrame:CGRectMake(0, y, MGSCREEN_width, subHeight)];
+    UIView *aboutMeView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, MGSCREEN_width, subHeight)];
     aboutMeView.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:aboutMeView];
     

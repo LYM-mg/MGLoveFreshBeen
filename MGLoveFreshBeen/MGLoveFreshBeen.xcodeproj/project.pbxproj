@@ -96,6 +96,7 @@
 		3AD591461D3B976900BCD7AA /* XRCarouselView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AD591441D3B976900BCD7AA /* XRCarouselView.m */; settings = {ASSET_TAGS = (); }; };
 		3AD591491D3B9A9C00BCD7AA /* HomeHotView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AD591481D3B9A9C00BCD7AA /* HomeHotView.m */; settings = {ASSET_TAGS = (); }; };
 		3AD5914F1D3BA7CF00BCD7AA /* HeadReosurce.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AD5914E1D3BA7CF00BCD7AA /* HeadReosurce.m */; settings = {ASSET_TAGS = (); }; };
+		3AD591551D3BD83600BCD7AA /* HomeWebVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AD591541D3BD83600BCD7AA /* HomeWebVC.m */; settings = {ASSET_TAGS = (); }; };
 		3AE1BD931D38E3330069E1B9 /* MBProgressHUD+XMG.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AE1BD8F1D38E3330069E1B9 /* MBProgressHUD+XMG.m */; settings = {ASSET_TAGS = (); }; };
 		3AE1BD941D38E3330069E1B9 /* MBProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3AE1BD901D38E3330069E1B9 /* MBProgressHUD.bundle */; settings = {ASSET_TAGS = (); }; };
 		3AE1BD951D38E3330069E1B9 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AE1BD921D38E3330069E1B9 /* MBProgressHUD.m */; settings = {ASSET_TAGS = (); }; };
@@ -312,6 +313,8 @@
 		3AD591481D3B9A9C00BCD7AA /* HomeHotView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeHotView.m; sourceTree = "<group>"; };
 		3AD5914D1D3BA7CF00BCD7AA /* HeadReosurce.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeadReosurce.h; sourceTree = "<group>"; };
 		3AD5914E1D3BA7CF00BCD7AA /* HeadReosurce.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeadReosurce.m; sourceTree = "<group>"; };
+		3AD591531D3BD83600BCD7AA /* HomeWebVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeWebVC.h; sourceTree = "<group>"; };
+		3AD591541D3BD83600BCD7AA /* HomeWebVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeWebVC.m; sourceTree = "<group>"; };
 		3AE1BD8E1D38E3330069E1B9 /* MBProgressHUD+XMG.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+XMG.h"; sourceTree = "<group>"; };
 		3AE1BD8F1D38E3330069E1B9 /* MBProgressHUD+XMG.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+XMG.m"; sourceTree = "<group>"; };
 		3AE1BD901D38E3330069E1B9 /* MBProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MBProgressHUD.bundle; sourceTree = "<group>"; };
@@ -483,6 +486,8 @@
 			children = (
 				3A64A2011D34E0AE00288490 /* HomeVC.h */,
 				3A64A2021D34E0AE00288490 /* HomeVC.m */,
+				3AD591531D3BD83600BCD7AA /* HomeWebVC.h */,
+				3AD591541D3BD83600BCD7AA /* HomeWebVC.m */,
 			);
 			path = C;
 			sourceTree = "<group>";
@@ -1218,6 +1223,7 @@
 				3A64A1C91D34D4D200288490 /* main.m in Sources */,
 				3A64A2291D3504F700288490 /* MGButton.m in Sources */,
 				3AD591491D3B9A9C00BCD7AA /* HomeHotView.m in Sources */,
+				3AD591551D3BD83600BCD7AA /* HomeWebVC.m in Sources */,
 				3AED5D501D3541E70045CF64 /* OrderVC.m in Sources */,
 				3AE1BDBA1D38FC480069E1B9 /* View+MASAdditions.m in Sources */,
 				3AE1BD951D38E3330069E1B9 /* MBProgressHUD.m in Sources */,

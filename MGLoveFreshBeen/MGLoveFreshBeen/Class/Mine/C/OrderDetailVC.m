@@ -89,7 +89,7 @@
 
 // setUpLefttView
 - (void)setUpLefttView{
-    _oneView =[[UITableView alloc] initWithFrame:(CGRectMake(0, MGNavHeight, MGSCREEN_width, MGSCREEN_height-MGNavHeight))];
+    _oneView =[[UITableView alloc] initWithFrame:(CGRectMake(0, 0, MGSCREEN_width, MGSCREEN_height-MGNavHeight))];
     _oneView.delegate = self;
     _oneView.dataSource = self;
     [self.view addSubview:_oneView];

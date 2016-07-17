@@ -37,15 +37,16 @@
     [self setHotView];
 }
 
+// 轮播器底部的四个小东西
 - (void)setHotView{
-    HomeHotView *hotView = [[HomeHotView alloc] init];
+    HomeHotView *hotView = [[HomeHotView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(_carouseView.frame), self.width, 80)];
     [self addSubview:hotView];
     _hotView = hotView;
 }
 
-
+// 轮播器
 - (void)setCarouseView{
-     _carouseView = [[XRCarouselView alloc] init];
+     _carouseView = [[XRCarouselView alloc] initWithFrame:CGRectMake(0, 0, MGSCREEN_width, 150)];
     
     //设置每张图片的停留时间，默认值为5s，最少为2s
     _carouseView.time = 2;
@@ -58,7 +59,7 @@
     
     // 点击了某张图片的Block
     _carouseView.imageClickBlock = ^(NSInteger index){
-        [MGNotificationCenter postNotificationName:MGCarouseViewImageClickNotification object:nil userInfo:@{@"index":@"index"}];
+        [MGNotificationCenter postNotificationName:MGCarouseViewImageClickNotification object:nil userInfo:@{@(index):@"index"}];
     };
     
     [self addSubview:_carouseView];
@@ -67,8 +68,8 @@
 // 布局
 - (void)layoutSubviews{
     [super layoutSubviews];
-    _carouseView.frame = CGRectMake(0, 0, MGSCREEN_width, 150);
-    _hotView.frame = CGRectMake(0, CGRectGetMaxY(_carouseView.frame), self.width, 80);
+//    _carouseView.frame = CGRectMake(0, 0, MGSCREEN_width, 150);
+//    _hotView.frame = CGRectMake(0, CGRectGetMaxY(_carouseView.frame), self.width, 80);
 }
 
 #pragma mark - 重写模型,主要赋值轮播器的图片数据

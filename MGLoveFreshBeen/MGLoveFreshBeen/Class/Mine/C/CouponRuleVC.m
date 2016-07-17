@@ -27,7 +27,7 @@
 }
 
 - (void)buildProgressAnimationView{
-    _loadProgressAnimationView = [[UIView alloc] initWithFrame:CGRectMake(0, MGNavHeight, MGSCREEN_width, 3)];
+    _loadProgressAnimationView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, MGSCREEN_width, 3)];
     _loadProgressAnimationView.backgroundColor = [UIColor orangeColor];
     _loadProgressAnimationView.width = 0;
     [self.view addSubview:_loadProgressAnimationView];
