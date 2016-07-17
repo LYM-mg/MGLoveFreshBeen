@@ -15,7 +15,7 @@
 #import "UMSocialSinaSSOHandler.h"
 
 
-@interface AppDelegate ()
+@interface AppDelegate ()<UMSocialUIDelegate>
 
 @end
 
@@ -83,6 +83,8 @@
     [UMSocialQQHandler setQQWithAppId:@"100424468" appKey:@"c7394704798a158208a74ab60104f0ba" url:@"http://www.umeng.com/social"];
     //    //设置支持没有客户端情况下使用SSO授权
     [UMSocialQQHandler setSupportWebView:YES];
+    
+//    UMSocialDataService
 }
 
 /**
@@ -99,25 +101,26 @@
     [UMSocialSnsService applicationDidBecomeActive];
 }
 
-
-//-(IBAction)showShareList1:(id)sender
-//{
-//    
-//    
-//    NSString *shareText = @"友盟社会化组件可以让移动应用快速具备社会化分享、登录、评论、喜欢等功能，并提供实时、全面的社会化数据统计分析服务。 http://www.umeng.com/social";             //分享内嵌文字
-//    //    UIImage *shareImage = [UIImage imageNamed:@"UMS_social_demo"];          //分享内嵌图片
-//    UIImage *shareImage = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"UMS_social_demo" ofType:@"png"]];
-//    //调用快速分享接口
-//    [UMSocialSnsService presentSnsIconSheetView:self
-//                                         appKey:UmengAppkey
-//                                      shareText:shareText
-//                                     shareImage:shareImage
-//                                shareToSnsNames:nil
-//                                       delegate:self];
-//    
-//    //    [NSArray arrayWithObjects:UMShareToSina,UMShareToTencent,UMShareToRenren,UMShareToQQ,UMShareToQzone,UMShareToDouban,UMShareToWechatSession,UMShareToWechatTimeline,UMShareToWechatFavorite, nil];
-//}
-
+/**
+ 各个页面执行授权完成、分享完成、或者评论完成时的回调函数
+ 
+ @param response 返回`UMSocialResponseEntity`对象，`UMSocialResponseEntity`里面的viewControllerType属性可以获得页面类型
+ */
+-(void)didFinishGetUMSocialDataInViewController:(UMSocialResponseEntity *)response{
+    // 其他平台 UMShareToTencent,UMShareToRenren,UMShareToDouban,
+    NSArray *arr = [NSArray arrayWithObjects:UMShareToSina,UMShareToTencent,UMShareToQQ,UMShareToQzone,UMShareToWechatSession,UMShareToWechatTimeline,UMShareToWechatFavorite, nil];
+    
+    //这里你可以把分享平台UMShareToSina换成其他平台
+    [[UMSocialDataService defaultDataService] postSNSWithTypes:arr content:@"ming" image:nil location:nil urlResource:nil presentedController:self.window.rootViewController completion:^(UMSocialResponseEntity *response) {
+        if (response.responseCode == UMSResponseCodeSuccess) {
+            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"成功" message:@"分享成功" delegate:nil cancelButtonTitle:@"好" otherButtonTitles: nil];
+            [alertView show];
+        } else {
+            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"抱歉" message:@"分享失败" delegate:nil cancelButtonTitle:@"好" otherButtonTitles: nil];
+            [alertView show];
+        }
+    }];
+}
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

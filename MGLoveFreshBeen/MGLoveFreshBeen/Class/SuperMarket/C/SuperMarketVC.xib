@@ -31,7 +31,7 @@
                     </connections>
                 </tableView>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" indicatorStyle="white" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gMq-wK-5JV">
-                    <rect key="frame" x="90" y="64" width="230" height="323"/>
+                    <rect key="frame" x="90" y="0.0" width="230" height="387"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                     <connections>
@@ -45,7 +45,7 @@
                 <constraint firstItem="isk-Ks-bYP" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="JL0-CR-aQQ"/>
                 <constraint firstItem="gMq-wK-5JV" firstAttribute="bottom" secondItem="isk-Ks-bYP" secondAttribute="bottom" id="SHC-xr-LlQ"/>
                 <constraint firstAttribute="trailing" secondItem="gMq-wK-5JV" secondAttribute="trailing" id="ZSF-8v-nQR"/>
-                <constraint firstItem="gMq-wK-5JV" firstAttribute="top" secondItem="isk-Ks-bYP" secondAttribute="top" constant="64" id="a7s-FP-Mqw"/>
+                <constraint firstItem="gMq-wK-5JV" firstAttribute="top" secondItem="isk-Ks-bYP" secondAttribute="top" id="a7s-FP-Mqw"/>
                 <constraint firstItem="isk-Ks-bYP" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="b9a-cv-D4X"/>
                 <constraint firstItem="gMq-wK-5JV" firstAttribute="leading" secondItem="isk-Ks-bYP" secondAttribute="trailing" id="eMQ-aM-MI0"/>
                 <constraint firstAttribute="bottom" secondItem="isk-Ks-bYP" secondAttribute="bottom" id="gbI-ri-Ygl"/>

@@ -8,8 +8,12 @@
 
 #import "ProductDetailVC.h"
 #import "SuperMarketModel.h"
+#import "UMSocialSnsService.h"
+#import "UMSocial.h"
 
-@interface ProductDetailVC ()
+#import "AppDelegate.h"
+
+@interface ProductDetailVC ()<UMSocialUIDelegate>
 {
     UIScrollView *scrollView;
     UIImageView *productImageView;
@@ -101,6 +105,7 @@
 }
 
 
+/// 打折的View
 - (UIView *)discountPriceView{
     UIView *discountPriceView = [[UIView alloc] init];
     priceLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, priceLabel.width, discountPriceView.height)];
@@ -259,27 +264,65 @@
 - (void)setUpNavigationItem:(NSString *)titleText {
     self.navigationItem.title = titleText;
     
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"分享" style:UIBarButtonItemStylePlain target:self action:@selector(rightItemClick)];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"分享" style:UIBarButtonItemStylePlain target:self action:@selector(shareItemClick)];
 }
 
 // MARK: - Action
-- (void)rightItemClick {
-    MGPS(@"暂时还没有集成分享");
+- (void)shareItemClick {
+    // 微信
+    [UMSocialData defaultData].extConfig.wechatSessionData.url = @"https://github.com/LYM-mg/MGLoveFreshBeen";
+    [UMSocialData defaultData].extConfig.wechatSessionData.title = @"mingming";
     
+    // 朋友圈
+    [UMSocialData defaultData].extConfig.wechatTimelineData.url = @"http://www.jianshu.com/users/57b58a39b70e/latest_articles";
+    [UMSocialData defaultData].extConfig.wechatTimelineData.title = @"赶快来关注我吧，支持我";
+    
+    NSString *shareText = @"小明OC全新开源作品,高仿爱鲜蜂,希望可以前来支持“。 https://github.com/LYM-mg/MGLoveFreshBeen";             //分享内嵌文字
+    
+    //分享内嵌图片
+    UIImage *shareImage = productImageView.image;
+    
+    // 分享平台
+    NSArray *arr = [NSArray arrayWithObjects:UMShareToSina,UMShareToTencent,UMShareToQQ,UMShareToQzone,UMShareToWechatSession,UMShareToWechatTimeline,UMShareToWechatFavorite, nil];
+
+    
+    //调用快速分享接口
+//    [UMSocialSnsService presentSnsController:self
+//                                      appKey:MGUmengAppkey
+//                                   shareText:shareText
+//                                  shareImage:shareImage
+//                             shareToSnsNames:nil
+//                                    delegate:self];
+    
+    //调用快速分享接口
+    [UMSocialSnsService presentSnsIconSheetView:self
+                                         appKey:MGUmengAppkey
+                                      shareText:shareText
+                                     shareImage:shareImage
+                                shareToSnsNames:arr
+                                       delegate:self];
 }
 
-//        buyView = BuyView(frame: CGRectMake(85, 12, 80, 25))
-//        buyView.zearIsShow = true
-//        buyView.goods = goods
-//        bottomView.addSubview(buyView)
-//
-//        weak var tmpSelf = self
-//        yellowShopCar = YellowShopCarView(frame: CGRectMake(ScreenWidth - 70, 50 - 61 - 10, 61, 61), shopViewClick: { () -> () in
-//            let shopCarVC = ShopCartViewController()
-//            let nav = BaseNavigationController(rootViewController: shopCarVC)
-//            tmpSelf.presentViewController(nav, animated: true, completion: nil)
-//        })
-//
-//        bottomView.addSubview(yellowShopCar)
+/**
+ 各个页面执行授权完成、分享完成、或者评论完成时的回调函数
+ 
+ @param response 返回`UMSocialResponseEntity`对象，`UMSocialResponseEntity`里面的viewControllerType属性可以获得页面类型
+ */
+-(void)didFinishGetUMSocialDataInViewController:(UMSocialResponseEntity *)response{
+    // 其他平台 UMShareToTencent,UMShareToRenren,UMShareToDouban,
+    NSArray *arr = [NSArray arrayWithObjects:UMShareToSina,UMShareToTencent,UMShareToQQ,UMShareToQzone,UMShareToWechatSession,UMShareToWechatTimeline,UMShareToWechatFavorite, nil];
+    
+    //这里你可以把分享平台UMShareToSina换成其他平台
+    [[UMSocialDataService defaultDataService] postSNSWithTypes:arr content:@"ming" image:nil location:nil urlResource:nil presentedController:self completion:^(UMSocialResponseEntity *response) {
+        if (response.responseCode == UMSResponseCodeSuccess) {
+            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"成功" message:@"分享成功" delegate:nil cancelButtonTitle:@"好" otherButtonTitles: nil];
+            [alertView show];
+        } else {
+            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"抱歉" message:@"分享失败" delegate:nil cancelButtonTitle:@"好" otherButtonTitles: nil];
+            [alertView show];
+        }
+    }];
+}
+
 
 @end

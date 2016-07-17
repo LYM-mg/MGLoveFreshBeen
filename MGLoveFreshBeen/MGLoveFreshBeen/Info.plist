@@ -18,58 +18,57 @@
 	<string>1.0</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>weibo</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>wb3741778105</string>
+			</array>
+		</dict>
+	</array>
 	<key>CFBundleVersion</key>
 	<string>1</string>
-	<key>LSRequiresIPhoneOS</key>
-	<true/>
-	<key>UIRequiredDeviceCapabilities</key>
-	<array>
-		<string>armv7</string>
-	</array>
-	<key>UISupportedInterfaceOrientations</key>
-	<array>
-		<string>UIInterfaceOrientationPortrait</string>
-	</array>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
-        <!-- 微信 URL Scheme 白名单-->
-        <string>wechat</string>
-        <string>weixin</string>
-        
-        <!-- 新浪微博 URL Scheme 白名单-->
-        <string>sinaweibohd</string>
-        <string>sinaweibo</string>
-        <string>sinaweibosso</string>
-        <string>weibosdk</string>
-        <string>weibosdk2.5</string>
-        
-        <!-- QQ、Qzone URL Scheme 白名单-->
-        <string>mqqapi</string>
-        <string>mqq</string>
-        <string>mqqOpensdkSSoLogin</string>
-        <string>mqqconnect</string>
-        <string>mqqopensdkdataline</string>
-        <string>mqqopensdkgrouptribeshare</string>
-        <string>mqqopensdkfriend</string>
-        <string>mqqopensdkapi</string>
-        <string>mqqopensdkapiV2</string>
-        <string>mqqopensdkapiV3</string>
-        <string>mqzoneopensdk</string>
-        <string>wtloginmqq</string>
-        <string>wtloginmqq2</string>
-        <string>mqqwpa</string>
-        <string>mqzone</string>
-        <string>mqzonev2</string>
-        <string>mqzoneshare</string>
-        <string>wtloginqzone</string>
-        <string>mqzonewx</string>
-        <string>mqzoneopensdkapiV2</string>
-        <string>mqzoneopensdkapi19</string>
-        <string>mqzoneopensdkapi</string>
-        <string>mqqbrowser</string>
-        <string>mttbrowser</string>
-
-    </array>
+		<string>wechat</string>
+		<string>weixin</string>
+		<string>sinaweibohd</string>
+		<string>sinaweibo</string>
+		<string>sinaweibosso</string>
+		<string>weibosdk</string>
+		<string>weibosdk2.5</string>
+		<string>mqqapi</string>
+		<string>mqq</string>
+		<string>mqqOpensdkSSoLogin</string>
+		<string>mqqconnect</string>
+		<string>mqqopensdkdataline</string>
+		<string>mqqopensdkgrouptribeshare</string>
+		<string>mqqopensdkfriend</string>
+		<string>mqqopensdkapi</string>
+		<string>mqqopensdkapiV2</string>
+		<string>mqqopensdkapiV3</string>
+		<string>mqzoneopensdk</string>
+		<string>wtloginmqq</string>
+		<string>wtloginmqq2</string>
+		<string>mqqwpa</string>
+		<string>mqzone</string>
+		<string>mqzonev2</string>
+		<string>mqzoneshare</string>
+		<string>wtloginqzone</string>
+		<string>mqzonewx</string>
+		<string>mqzoneopensdkapiV2</string>
+		<string>mqzoneopensdkapi19</string>
+		<string>mqzoneopensdkapi</string>
+		<string>mqqbrowser</string>
+		<string>mttbrowser</string>
+	</array>
+	<key>LSRequiresIPhoneOS</key>
+	<true/>
 	<key>NSAppTransportSecurity</key>
 	<dict>
 		<key>NSAllowsArbitraryLoads</key>
@@ -99,35 +98,43 @@
 	<key>UIApplicationShortcutItems</key>
 	<array>
 		<dict>
-			<key>UIApplicationShortcutItemType</key>
-			<string>First</string>
-			<key>UIApplicationShortcutItemTitle</key>
-			<string>添加</string>
-			<key>UIApplicationShortcutItemSubtitle</key>
-			<string>静靓女，可以加你为好友吗</string>
 			<key>UIApplicationShortcutItemIconType</key>
 			<string>UIApplicationShortcutIconTypeAdd</string>
+			<key>UIApplicationShortcutItemSubtitle</key>
+			<string>静靓女，可以加你为好友吗</string>
+			<key>UIApplicationShortcutItemTitle</key>
+			<string>添加</string>
+			<key>UIApplicationShortcutItemType</key>
+			<string>First</string>
 		</dict>
 		<dict>
-			<key>UIApplicationShortcutItemType</key>
-			<string>Second</string>
-			<key>UIApplicationShortcutItemTitle</key>
-			<string>点赞</string>
-			<key>UIApplicationShortcutItemSubtitle</key>
-			<string>明哥帅吗？还行吧</string>
 			<key>UIApplicationShortcutItemIconType</key>
 			<string>UIApplicationShortcutIconTypeLocation</string>
+			<key>UIApplicationShortcutItemSubtitle</key>
+			<string>明哥帅吗？还行吧</string>
+			<key>UIApplicationShortcutItemTitle</key>
+			<string>点赞</string>
+			<key>UIApplicationShortcutItemType</key>
+			<string>Second</string>
 		</dict>
 		<dict>
-			<key>UIApplicationShortcutItemType</key>
-			<string>Third</string>
-			<key>UIApplicationShortcutItemTitle</key>
-			<string>分享</string>
-			<key>UIApplicationShortcutItemSubtitle</key>
-			<string>我这么帅，你肯定要分享的啦</string>
 			<key>UIApplicationShortcutItemIconType</key>
 			<string>UIApplicationShortcutIconTypeShare</string>
+			<key>UIApplicationShortcutItemSubtitle</key>
+			<string>我这么帅，你肯定要分享的啦</string>
+			<key>UIApplicationShortcutItemTitle</key>
+			<string>分享</string>
+			<key>UIApplicationShortcutItemType</key>
+			<string>Third</string>
 		</dict>
+	</array>
+	<key>UIRequiredDeviceCapabilities</key>
+	<array>
+		<string>armv7</string>
+	</array>
+	<key>UISupportedInterfaceOrientations</key>
+	<array>
+		<string>UIInterfaceOrientationPortrait</string>
 	</array>
 </dict>
 </plist>
