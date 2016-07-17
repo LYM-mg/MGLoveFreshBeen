@@ -220,18 +220,18 @@
     __weak typeof(self) weakSelf = self;
     
     // 1.左边选中的通知
-    [MGNotificationCenter addObserverForName:MGCategortsSelectedIndexPathNotification object:nil queue:queue usingBlock:^(NSNotification * _Nonnull note) {
-        [weakSelf.productsTableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:_categortsSelectedIndexPath.row] atScrollPosition:UITableViewScrollPositionTop animated:YES];
+    [MGNotificationCenter addObserverForName:MGCategortsSelectedIndexPathNotification object:queue queue:nil usingBlock:^(NSNotification * _Nonnull note) {
+        [weakSelf.productsTableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:_categortsSelectedIndexPath.row] atScrollPosition:UITableViewScrollPositionNone animated:YES];
     }];
     
     // 2.HeaderView即将消失的通知
-    [MGNotificationCenter addObserverForName:MGDidEndDisplayingHeaderViewNotification object:queue queue:nil usingBlock:^(NSNotification * _Nonnull note) {
+    [MGNotificationCenter addObserverForName:MGDidEndDisplayingHeaderViewNotification object:nil queue:nil usingBlock:^(NSNotification * _Nonnull note) {
         [weakSelf.categoryTableView selectRowAtIndexPath:_productIndexPath animated:YES scrollPosition:UITableViewScrollPositionMiddle];
         [weakSelf.categoryTableView scrollToRowAtIndexPath:_productIndexPath atScrollPosition:UITableViewScrollPositionNone animated:YES];
     }];
     
     // 3.HeaderView完全消失的通知
-    [MGNotificationCenter addObserverForName:MGWillDisplayHeaderViewNotification object:nil queue:queue usingBlock:^(NSNotification * _Nonnull note) {
+    [MGNotificationCenter addObserverForName:MGWillDisplayHeaderViewNotification object:nil queue:nil usingBlock:^(NSNotification * _Nonnull note) {
         [weakSelf.categoryTableView selectRowAtIndexPath:_productIndexPath animated:YES scrollPosition:UITableViewScrollPositionMiddle];
         [weakSelf.categoryTableView scrollToRowAtIndexPath:_productIndexPath atScrollPosition:UITableViewScrollPositionNone animated:YES];
         

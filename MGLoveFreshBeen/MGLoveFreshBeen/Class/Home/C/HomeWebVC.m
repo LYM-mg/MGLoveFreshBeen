@@ -76,12 +76,12 @@
 - (void)startLoadProgressAnimation {
     _loadProgressAnimationView.width = 0;
     _loadProgressAnimationView.hidden = NO;
-    [UIView animateWithDuration:0.5 animations:^{
+    [UIView animateWithDuration:0.4 animations:^{
         _loadProgressAnimationView.width = MGSCREEN_width * 0.58;
     } completion:^(BOOL finished) {
         dispatch_time_t time = dispatch_time(DISPATCH_TIME_NOW, (int64_t)0.4*NSEC_PER_SEC);
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(time * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            [UIView animateWithDuration:0.3 animations:^{
+            [UIView animateWithDuration:0.2 animations:^{
                 _loadProgressAnimationView.width = MGSCREEN_width * 0.85;
             }];
         });
@@ -91,7 +91,7 @@
 #pragma mark - 隐藏加载条（加载完毕）
 - (void)endLoadProgressAnimation {
     [UIView animateWithDuration:0.2 animations:^{
-        _loadProgressAnimationView.width = MGSCREEN_width;
+        _loadProgressAnimationView.width =  MGSCREEN_width *0.99;
     } completion:^(BOOL finished) {
         _loadProgressAnimationView.hidden = YES;
     }];

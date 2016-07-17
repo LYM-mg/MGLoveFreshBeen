@@ -28,17 +28,18 @@
     for (int i = 0; i<count; i++) {
         
         ContantView *contantView = [[ContantView alloc] initWithFrame:CGRectMake(i*(width + 2*MGMargin)+ 2*MGMargin, 0, width, self.height)];
-        contantView.tag = i;
+        contantView.tag = i + 20;
         [self addSubview:contantView];
+        
+        // contantView添加点按手势
+        UITapGestureRecognizer *hotPan = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hotPanClick:)];
+        [self addGestureRecognizer:hotPan];
+        
         
         
         NSArray *tmpArr = [Activities objectArrayWithKeyValuesArray:headData.icons];
         
         contantView.activity = tmpArr[i];
-        
-        // contantView添加点按手势
-        UITapGestureRecognizer *hotPan = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hotPanClick:)];
-        [contantView addGestureRecognizer:hotPan];
     }
 
 }
@@ -54,12 +55,13 @@
     [self setupUI:headData];
 }
 
-
 #pragma mark - pan 手势
 - (void)hotPanClick:(UITapGestureRecognizer *)tap{
+    int tag = (int)tap.view.tag;
     
-    [MGNotificationCenter postNotificationName:MGHotPanClickNotification object:nil userInfo:@{@"tag":@(tap.view.tag)}];
+    [MGNotificationCenter postNotificationName:MGHotPanClickNotification object:nil userInfo:@{@"tag":@(tag)}];
 }
+
 
 @end
 

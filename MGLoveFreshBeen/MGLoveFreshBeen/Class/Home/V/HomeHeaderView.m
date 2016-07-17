@@ -59,7 +59,7 @@
     
     // 点击了某张图片的Block
     _carouseView.imageClickBlock = ^(NSInteger index){
-        [MGNotificationCenter postNotificationName:MGCarouseViewImageClickNotification object:nil userInfo:@{@(index):@"index"}];
+        [MGNotificationCenter postNotificationName:MGCarouseViewImageClickNotification object:nil userInfo:@{@"index":@(index)}];
     };
     
     [self addSubview:_carouseView];

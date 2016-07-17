@@ -184,7 +184,7 @@ static NSString *const KHomeFooterIdentifier = @"Footer";
     // hotView点击
     [MGNotificationCenter addObserverForName:MGHotPanClickNotification object:nil queue:nil usingBlock:^(NSNotification * note) {
         
-        int index = (int)[note.userInfo valueForKeyPath:@"tag"];
+        int index = (int)[note.userInfo valueForKeyPath:@"tag"] - 20;
         
          HomeWebVC *webVC = [[HomeWebVC alloc] initWithNavigationTitle:[_headData.data.icons[index] valueForKeyPath:@"name"] withUrlStr:[_headData.data.icons[index] valueForKeyPath:@"customURL"]];
             [weakSelf.navigationController pushViewController:webVC animated:YES];
@@ -192,21 +192,19 @@ static NSString *const KHomeFooterIdentifier = @"Footer";
     }];
     
     
-    
-    NSOperationQueue *queue = [[NSOperationQueue alloc] init];
     // 轮播器图片被点击的通知
-    [MGNotificationCenter addObserverForName:MGCarouseViewImageClickNotification object:nil queue:queue usingBlock:^(NSNotification *note) {
+    [MGNotificationCenter addObserverForName:MGCarouseViewImageClickNotification object:nil queue:nil usingBlock:^(NSNotification *note) {
         
         NSString *path = [[NSBundle mainBundle] pathForResource:@"FocusURL.plist" ofType: nil];
     
         NSArray *array = [NSArray arrayWithContentsOfFile:path];
         
-        __block NSInteger index = (NSInteger)[note.userInfo valueForKeyPath:@"index"];
+        NSInteger index = [[note.userInfo valueForKey:@"index"] integerValue];
         
-        [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-             HomeWebVC *webVC = [[HomeWebVC alloc] initWithNavigationTitle:[_headData.data.focus[index] valueForKeyPath:@"name"] withUrlStr:array[index]];
-            [weakSelf.navigationController pushViewController:webVC animated:YES];
-        }];
+        MGLog(@"%@",[note.userInfo valueForKey:@"index"]);
+        
+        HomeWebVC *webVC = [[HomeWebVC alloc] initWithNavigationTitle:[_headData.data.focus[index] valueForKeyPath:@"name"] withUrlStr:array[index]];
+        [weakSelf.navigationController pushViewController:webVC animated:YES];
     }];
 }
 
