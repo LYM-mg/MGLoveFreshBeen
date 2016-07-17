@@ -9,11 +9,10 @@
 #import "HomeWebVC.h"
 #import "HeadReosurce.h"
 
-
 @interface HomeWebVC ()<UIWebViewDelegate>
 {
-    UIWebView *_webView;
-    UIView *_loadProgressAnimationView;
+    UIWebView *_webView; // webView
+    UIView *_loadProgressAnimationView; //导航条  （动态加载View）
 }
 
 
@@ -60,8 +59,17 @@
     _webView.frame = self.view.bounds;
 }
 
-#pragma mark - UIWebViewDelegate
+#pragma mark -  右边导航条刷新按钮
+- (void)setUpRightNavItem{
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(refreshClick)];
+}
 
+- (void)refreshClick{
+    [_webView reload];
+}
+
+
+#pragma mark - UIWebViewDelegate
 - (void)webViewDidStartLoad:(UIWebView *)webView{
     [self startLoadProgressAnimation];
 }
@@ -82,10 +90,10 @@
 - (void)startLoadProgressAnimation {
     _loadProgressAnimationView.width = 0;
     _loadProgressAnimationView.hidden = NO;
-    [UIView animateWithDuration:0.4 animations:^{
+    [UIView animateWithDuration:0.6 animations:^{
         _loadProgressAnimationView.width = MGSCREEN_width * 0.58;
     } completion:^(BOOL finished) {
-        dispatch_time_t time = dispatch_time(DISPATCH_TIME_NOW, (int64_t)0.4*NSEC_PER_SEC);
+        dispatch_time_t time = dispatch_time(DISPATCH_TIME_NOW, (int64_t)0.2*NSEC_PER_SEC);
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(time * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             [UIView animateWithDuration:0.2 animations:^{
                 _loadProgressAnimationView.width = MGSCREEN_width * 0.85;
@@ -96,93 +104,13 @@
 
 #pragma mark - 隐藏加载条（加载完毕）
 - (void)endLoadProgressAnimation {
-    [UIView animateWithDuration:0.2 animations:^{
+    [UIView animateWithDuration:0.1 animations:^{
         _loadProgressAnimationView.width =  MGSCREEN_width *0.99;
     } completion:^(BOOL finished) {
         _loadProgressAnimationView.hidden = YES;
     }];
 }
 
-
-//@interface HomeWebVC ()<UIWebViewDelegate>
-//{
-//    /** webView */
-//    UIWebView *webView;
-//}
-//
-///** urlStr */
-//@property (nonatomic,copy) NSString *urlStr;
-//
-///** webView */
-////@property (nonatomic,weak) UIWebView *webView;
-//@end
-//
-//@implementation HomeWebVC
-//
-//- (void)viewDidLoad {
-//    [super viewDidLoad];
-//    
-//    self.view.backgroundColor = [UIColor whiteColor];
-//    
-//    [self setupWebView];
-//    
-//    [self setUpRightNavItem];
-//}
-//
-//- (void)setUpRightNavItem{
-//    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(refreshClick)];
-//}
-//
-//- (void)refreshClick{
-//    [webView reload];
-//}
-//
-//- (void)didReceiveMemoryWarning {
-//    [super didReceiveMemoryWarning];
-//    // Dispose of any resources that can be recreated.
-//}
-//
-//#pragma mark - 便利构造方法
-//- (instancetype)initWithNavigationTitle:(NSString *)navTitle withUrlStr:(NSString *)urlStr{
-//    if (self = [super init]) {
-//        self.navigationItem.title = navTitle;
-//        self.urlStr = urlStr;
-//    }
-//    return self;
-//}
-//
-//// 设置微博View并加载数据网络请求
-//- (void)setupWebView{
-//    webView = [[UIWebView alloc] init];
-//    [self.view addSubview:webView];
-//    webView.delegate = self;
-//    
-////    self.webView = webView;
-//    [self loadData];
-//}
-//
-//- (void)viewDidLayoutSubviews{
-//    webView.frame = self.view.bounds;
-//}
-//
-//- (void)loadData{
-//    NSURL *url = [NSURL URLWithString:self.urlStr];
-//    NSURLRequest *request = [[NSURLRequest alloc] initWithURL:url];
-//    [webView loadRequest:request];
-//}
-//
-//#pragma mark - UIWebViewDelegate
-//- (void)webViewDidStartLoad:(UIWebView *)webView{
-//    MGPS(@"开始加载");
-//}
-//
-//- (void)webViewDidFinishLoad:(UIWebView *)webView{
-//    MGPS(@"加载完毕");
-//}
-//
-//- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error{
-//    MGPE(@"加载失败，请重新加载");
-//}
 
 
 @end

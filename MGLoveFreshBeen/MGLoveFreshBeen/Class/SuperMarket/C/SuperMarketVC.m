@@ -216,11 +216,10 @@
 
 #pragma mark - 通知
 - (void)addNotication{
-    NSOperationQueue *queue = [[NSOperationQueue alloc] init];
     __weak typeof(self) weakSelf = self;
     
     // 1.左边选中的通知
-    [MGNotificationCenter addObserverForName:MGCategortsSelectedIndexPathNotification object:queue queue:nil usingBlock:^(NSNotification * _Nonnull note) {
+    [MGNotificationCenter addObserverForName:MGCategortsSelectedIndexPathNotification object:nil queue:nil usingBlock:^(NSNotification * _Nonnull note) {
         [weakSelf.productsTableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:_categortsSelectedIndexPath.row] atScrollPosition:UITableViewScrollPositionNone animated:YES];
     }];
     
