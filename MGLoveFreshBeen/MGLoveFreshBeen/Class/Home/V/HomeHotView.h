@@ -19,9 +19,9 @@
 @property (nonatomic,strong) HeadData *headData;
 @end
 
-@interface ContantView : UIView
+@interface ContantView : UIButton
 
-@property (nonatomic,weak) UIImageView *imageView;
+@property (nonatomic,weak) UIImageView *iconView;
 
 /** textLabel */
 @property (nonatomic,weak) UILabel *textLabel;

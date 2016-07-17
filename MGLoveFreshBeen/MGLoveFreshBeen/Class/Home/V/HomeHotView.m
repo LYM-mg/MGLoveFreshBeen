@@ -30,11 +30,8 @@
         ContantView *contantView = [[ContantView alloc] initWithFrame:CGRectMake(i*(width + 2*MGMargin)+ 2*MGMargin, 0, width, self.height)];
         contantView.tag = i + 20;
         [self addSubview:contantView];
-        
         // contantView添加点按手势
-        UITapGestureRecognizer *hotPan = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hotPanClick:)];
-        [self addGestureRecognizer:hotPan];
-        
+        [contantView addTarget:self action:@selector(hotItemClick:) forControlEvents:UIControlEventTouchUpInside];
         
         
         NSArray *tmpArr = [Activities objectArrayWithKeyValuesArray:headData.icons];
@@ -55,9 +52,10 @@
     [self setupUI:headData];
 }
 
-#pragma mark - pan 手势
-- (void)hotPanClick:(UITapGestureRecognizer *)tap{
-    int tag = (int)tap.view.tag;
+
+#pragma mark - 点击操作
+- (void)hotItemClick:(ContantView *)sender{
+    NSInteger tag = sender.tag;
     
     [MGNotificationCenter postNotificationName:MGHotPanClickNotification object:nil userInfo:@{@"tag":@(tag)}];
 }
@@ -81,7 +79,7 @@
     imageView.userInteractionEnabled = NO;
     imageView.contentMode = UIViewContentModeCenter;
     [self addSubview:imageView];
-    _imageView = imageView;
+    _iconView = imageView;
     
     UILabel *textLabel = [[UILabel alloc] init];
     textLabel.textAlignment = NSTextAlignmentCenter;
@@ -95,15 +93,38 @@
 #pragma mark - 布局控件
 - (void)layoutSubviews{
     [super layoutSubviews];
-    _imageView.frame = CGRectMake(MGSmallMargin, MGMargin, self.width - MGMargin, self.height*0.5);
-    _textLabel.frame = CGRectMake(0, CGRectGetMaxY(_imageView.frame) + MGMargin, self.width, self.height*0.25);
+    _iconView.frame = CGRectMake(MGSmallMargin, MGMargin, self.width - MGMargin, self.height*0.5);
+    _textLabel.frame = CGRectMake(0, CGRectGetMaxY(_iconView.frame) + MGMargin, self.width, self.height*0.25);
 }
 
 #pragma mark - 重新模型
 - (void)setActivity:(Activities *)activity{
     _activity = activity;
-    [_imageView sd_setImageWithURL:[NSURL URLWithString:activity.img] placeholderImage:[UIImage imageNamed:@"icon_icons_holder"]];
+    [_iconView sd_setImageWithURL:[NSURL URLWithString:activity.img] placeholderImage:[UIImage imageNamed:@"icon_icons_holder"]];
     _textLabel.text = activity.name;
 }
 
 @end
+
+//- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+//    
+//    UITouch *touch = [touches anyObject];
+//    
+//    // 获取当前的触摸点
+//    CGPoint curP = [touch locationInView:self];
+//    
+//    for (ContantView *hot in self.subviews)
+//    {
+//        // 把btn的转化为坐标
+//        CGPoint btnP = [self convertPoint:curP toView:hot];
+//        //       CGRectContainsPoint(self.frame, curP) ;// 返回BOOL类型
+//        
+//        // 判断当前点是否点在按钮上并且选中为选中的按钮
+//        //        if ([hot pointInside:btnP withEvent:event])
+//        if ( CGRectContainsPoint(self.frame, btnP))
+//        {
+//            self.contantView = hot;
+//        }
+//    }
+//}
+

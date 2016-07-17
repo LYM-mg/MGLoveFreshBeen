@@ -184,9 +184,9 @@ static NSString *const KHomeFooterIdentifier = @"Footer";
     // hotView点击
     [MGNotificationCenter addObserverForName:MGHotPanClickNotification object:nil queue:nil usingBlock:^(NSNotification * note) {
         
-        int index = (int)[note.userInfo valueForKeyPath:@"tag"] - 20;
+        int item = [[note.userInfo valueForKeyPath:@"tag"] integerValue] - 20;
         
-         HomeWebVC *webVC = [[HomeWebVC alloc] initWithNavigationTitle:[_headData.data.icons[index] valueForKeyPath:@"name"] withUrlStr:[_headData.data.icons[index] valueForKeyPath:@"customURL"]];
+         HomeWebVC *webVC = [[HomeWebVC alloc] initWithNavigationTitle:[_headData.data.icons[item] valueForKeyPath:@"name"] withUrlStr:[_headData.data.icons[item] valueForKeyPath:@"customURL"]];
             [weakSelf.navigationController pushViewController:webVC animated:YES];
        
     }];

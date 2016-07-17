@@ -23,6 +23,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.automaticallyAdjustsScrollViewInsets = YES;
+    
     self.navigationItem.title = self.navTitle;
     [self bulidWebView];
     [self buildProgressAnimationView];
@@ -45,13 +47,17 @@
 }
 
 - (void)bulidWebView {
-    _webView = [[UIWebView alloc] initWithFrame:self.view.bounds];
+    _webView = [[UIWebView alloc] init];
     _webView.delegate = self;
     _webView.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:_webView];
     
     // 加载数据
     [_webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:self.urlStr]]];
+}
+
+- (void)viewDidLayoutSubviews{
+    _webView.frame = self.view.bounds;
 }
 
 #pragma mark - UIWebViewDelegate
