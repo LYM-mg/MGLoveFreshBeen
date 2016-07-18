@@ -36,15 +36,19 @@ static NSString *const KQuestionSectionHeader = @"KQuestionSectionHeader";
 - (NSArray *)questionData{
     if (!_questionData) {
         _questionData = [NSArray array];
-        NSString *path = [[NSBundle mainBundle] pathForResource:@"HelpPlist.plist" ofType: nil];
-        NSArray *arrayDict = [NSArray arrayWithContentsOfFile:path];
-        
-        NSMutableArray *questions = [NSMutableArray array];
-        for (NSDictionary *dict in arrayDict) {
-            questionCellModel *model = [questionCellModel questionModelWithDict:dict];
-            [questions addObject:model];
-        }
-        _questionData = questions;
+        // 串行队列
+        dispatch_queue_t queue = dispatch_queue_create("mingming", DISPATCH_QUEUE_SERIAL);
+        dispatch_async(queue, ^{
+            NSString *path = [[NSBundle mainBundle] pathForResource:@"HelpPlist.plist" ofType: nil];
+            NSArray *arrayDict = [NSArray arrayWithContentsOfFile:path];
+            
+            NSMutableArray *questions = [NSMutableArray array];
+            for (NSDictionary *dict in arrayDict) {
+                questionCellModel *model = [questionCellModel questionModelWithDict:dict];
+                [questions addObject:model];
+                 _questionData = questions;
+            }
+        });
     }
     return _questionData;
 }

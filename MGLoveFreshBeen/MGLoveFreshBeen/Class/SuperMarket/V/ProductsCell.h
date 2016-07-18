@@ -13,7 +13,7 @@
 @interface ProductsCell : UITableViewCell
 
 /** 模型 */
-@property (nonatomic,strong) HotGoods *goods;
+@property (nonatomic,strong) HotGoods *hotGood;
 
 + (instancetype)productsCellWithTableView:(UITableView *)tableView;
 

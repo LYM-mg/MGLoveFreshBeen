@@ -79,27 +79,32 @@
 }
 
 - (void)loadCouponData {
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"MyCoupon" ofType: nil];
-    
-    NSData *data = [NSData dataWithContentsOfFile:path];
-    NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
-    NSString *str = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-    [str stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
-
-    NSArray *tempArr = [Coupon objectArrayWithKeyValuesArray:dict[@"data"]];
-    
-    for (Coupon *coupon in tempArr) {
-        switch (coupon.status) {
-            case 0:
-                [self.useCouponData addObject:coupon];
-                break;
-            default:
-                [self.unUseCouponData addObject:coupon];
-                break;
+    [[[NSOperationQueue alloc] init] addOperationWithBlock:^{
+        NSString *path = [[NSBundle mainBundle] pathForResource:@"MyCoupon" ofType: nil];
+        
+        NSData *data = [NSData dataWithContentsOfFile:path];
+        NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
+        NSString *str = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+        [str stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
+        
+        NSArray *tempArr = [Coupon objectArrayWithKeyValuesArray:dict[@"data"]];
+        
+        for (Coupon *coupon in tempArr) {
+            switch (coupon.status) {
+                case 0:
+                    [self.useCouponData addObject:coupon];
+                    break;
+                default:
+                    [self.unUseCouponData addObject:coupon];
+                    break;
+            }
         }
-    }
-
-    [_couponTableView reloadData];
+        
+        // 回到主线程刷新UI
+       [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+          [_couponTableView reloadData];
+       }];
+    }];
 }
 
 #pragma mark - <UITableViewDataSource>

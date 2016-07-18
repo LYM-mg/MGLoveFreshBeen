@@ -32,14 +32,17 @@ enum {
 - (NSArray *)messageData{
     if (!_messageData) {
         _messageData = [NSArray array];
-        NSString *path = [[NSBundle mainBundle] pathForResource:@"SystemMessage" ofType: nil];
-        
-        NSData *data = [NSData dataWithContentsOfFile:path];
-        NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
-        NSString *str = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-        [str stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
-
-        _messageData = [MessageModel objectArrayWithKeyValuesArray:dict[@"data"]];
+        dispatch_queue_t queue = dispatch_queue_create("ming", DISPATCH_QUEUE_CONCURRENT);
+        dispatch_async(queue, ^{
+            NSString *path = [[NSBundle mainBundle] pathForResource:@"SystemMessage" ofType: nil];
+            
+            NSData *data = [NSData dataWithContentsOfFile:path];
+            NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
+            NSString *str = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+            [str stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
+            
+            _messageData = [MessageModel objectArrayWithKeyValuesArray:dict[@"data"]];
+        });
     }
     return _messageData;
 }
@@ -81,7 +84,7 @@ enum {
 
 // setUpLefttView
 - (void)setUpLefttView{
-    _leftView=[[UITableView alloc] initWithFrame:(CGRectMake(0, MGNavHeight, MGSCREEN_width, MGSCREEN_height-MGNavHeight))];
+    _leftView=[[UITableView alloc] initWithFrame:(CGRectMake(0, 0, MGSCREEN_width, MGSCREEN_height-MGNavHeight))];
     _leftView.delegate = self;
     _leftView.dataSource = self;
     [self.view addSubview:_leftView];
@@ -89,7 +92,7 @@ enum {
 
 // setUpRightView
 - (void)setUpRightView{
-    _rightnView = [[UITableView alloc] initWithFrame:(CGRectMake(0, MGNavHeight, MGSCREEN_width, MGSCREEN_height- MGNavHeight))];
+    _rightnView = [[UITableView alloc] initWithFrame:(CGRectMake(0, 0, MGSCREEN_width, MGSCREEN_height- MGNavHeight))];
     _rightnView.backgroundColor=[UIColor greenColor];
     [self.view addSubview:_rightnView];
     _rightnView.tableFooterView = [[UIView alloc] init];

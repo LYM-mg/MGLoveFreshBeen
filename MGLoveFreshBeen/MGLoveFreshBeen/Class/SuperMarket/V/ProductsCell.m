@@ -37,20 +37,20 @@
     return cell;
 }
 
-- (void)setGoods:(HotGoods *)goods{
-    _goods = goods;
-    [_productImageView sd_setImageWithURL:[NSURL URLWithString:[goods valueForKeyPath:@"img"]] placeholderImage:[UIImage imageNamed:@"v2_placeholder_square"]];
+- (void)setHotGood:(HotGoods *)hotGood{
+    _hotGood = hotGood;
+    [_productImageView sd_setImageWithURL:[NSURL URLWithString:[hotGood valueForKeyPath:@"img"]] placeholderImage:[UIImage imageNamed:@"v2_placeholder_square"]];
     
-    _productName.text = [goods valueForKeyPath:@"name"];
-    _buyOneImageView.hidden = [[goods valueForKeyPath:@"pm_desc"] isEqualToString:@"买一赠一"];
+    _productName.text = [hotGood valueForKeyPath:@"name"];
+    _buyOneImageView.hidden = [[hotGood valueForKeyPath:@"pm_desc"] isEqualToString:@"买一赠一"];
     
-    _fineImageView.hidden = ((int)[goods valueForKeyPath:@"is_xf"] == 1);
+    _fineImageView.hidden = ((int)[hotGood valueForKeyPath:@"is_xf"] == 1);
 
-    _specialLabel.text = [goods valueForKeyPath:@"specifics"];
+    _specialLabel.text = [hotGood valueForKeyPath:@"specifics"];
     
-    _originPriceLabel.text = [goods valueForKeyPath:@"market_price"];
+    _originPriceLabel.text = [hotGood valueForKeyPath:@"market_price"];
     
-    _discountPriceLabel.text = [goods valueForKeyPath:@"partner_price"];
+    _discountPriceLabel.text = [hotGood valueForKeyPath:@"partner_price"];
     
     _discountPriceView.hidden = (_originPriceLabel.text == _discountPriceLabel.text);
 

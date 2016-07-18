@@ -77,29 +77,36 @@
 
 #pragma mark - 加载数据
 - (void)loadSupermarketData {
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"supermarket" ofType: nil];
     
-    NSData *data = [NSData dataWithContentsOfFile:path];
-    NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
-    NSString *str = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-    [str stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
-    self.superMarketData = [SuperMarket objectWithKeyValues:dict];
-    
-    //////////////////////////// 分类 ///////////////////////////
-    [self.categoryTableView reloadData];
-    // 默认选中第一个
-    [self.categoryTableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] animated:YES scrollPosition:UITableViewScrollPositionMiddle];
-    
-
-    //////////////////////////// 商品 ///////////////////////////
-    _goodsArr = [NSMutableArray array];
-    
-    ProductstModel *productsModel = self.superMarketData.data.products;
-    for (CategoriesModel *cModel in self.superMarketData.data.categories) {
-        NSArray *goodsArr = (NSArray *)[productsModel valueForKeyPath:[cModel valueForKey:@"id"]];
-        [self.goodsArr addObject:goodsArr];
-    }
-    [self.productsTableView reloadData];
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        NSString *path = [[NSBundle mainBundle] pathForResource:@"supermarket" ofType: nil];
+        
+        NSData *data = [NSData dataWithContentsOfFile:path];
+        NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
+        NSString *str = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+        [str stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
+        
+        //////////////////////////// 分类 ///////////////////////////
+        self.superMarketData = [SuperMarket objectWithKeyValues:dict];
+        
+        //////////////////////////// 商品 ///////////////////////////
+        _goodsArr = [NSMutableArray array];
+        
+        ProductstModel *productsModel = self.superMarketData.data.products;
+        for (CategoriesModel *cModel in self.superMarketData.data.categories) {
+            NSArray *goodsArr = (NSArray *)[productsModel valueForKeyPath:[cModel valueForKey:@"id"]];
+            [self.goodsArr addObject:goodsArr];
+        }
+        
+        // 回到主线程
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.categoryTableView reloadData];
+            // 默认选中第一个
+            [self.categoryTableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] animated:YES scrollPosition:UITableViewScrollPositionMiddle];
+            
+            [self.productsTableView reloadData];
+        });
+    });
 }
 
 
@@ -134,8 +141,9 @@
         return cell;
     }else { // 右边tableView 👉➡️
         ProductsCell *cell = [ProductsCell productsCellWithTableView:tableView];
-        HotGoods *goods = self.goodsArr[indexPath.section][indexPath.row];
-        cell.goods = goods;
+      
+        HotGoods *hotGood = self.goodsArr[indexPath.section][indexPath.row];
+        cell.hotGood = hotGood;
         
         return cell;
     }

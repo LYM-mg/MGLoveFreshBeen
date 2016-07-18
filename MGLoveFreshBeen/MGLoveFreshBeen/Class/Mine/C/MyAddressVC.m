@@ -127,17 +127,22 @@
 
 // 2.加载地址数据
 - (void)loadAddressData{
-    
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"MyAdress" ofType: nil];
-
-    NSData *data = [[NSData alloc] initWithContentsOfFile:path];
-    
-    NSDictionary *dictArr = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
-    
-    NSArray *arr = [AddressCellModel objectArrayWithKeyValuesArray:[dictArr valueForKey:@"data"]];
-    
-    [self.myAddressData addObjectsFromArray:arr];
-    [self.addressTableView reloadData];
+    [[[NSOperationQueue alloc] init] addOperationWithBlock:^{
+        NSString *path = [[NSBundle mainBundle] pathForResource:@"MyAdress" ofType: nil];
+        
+        NSData *data = [[NSData alloc] initWithContentsOfFile:path];
+        
+        NSDictionary *dictArr = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
+        
+        NSArray *arr = [AddressCellModel objectArrayWithKeyValuesArray:[dictArr valueForKey:@"data"]];
+        [self.myAddressData addObjectsFromArray:arr];
+        
+        // 回到主线程刷新UI
+        [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+            [self.addressTableView reloadData];
+        }];
+        
+    }];
 }
 
 - (void)shouldHideThisView{

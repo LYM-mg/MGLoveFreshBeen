@@ -24,10 +24,6 @@
 - (NSMutableArray *)myShopData{
     if (!_myShopData) {
         _myShopData = [NSMutableArray array];
-        //        NSString *path = [[NSBundle mainBundle] pathForResource:@"MinePlist.plist" ofType: nil];
-        //
-        //        NSArray *arr = [NSArray arrayWithContentsOfFile:path];
-        //        _myShopData = [MineCellModel objectArrayWithKeyValuesArray:arr];
     }
     return _myShopData;
 }
@@ -36,12 +32,12 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
     
+    // 设置界面
    [self setUpMainView];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 - (void)setUpMainView{
