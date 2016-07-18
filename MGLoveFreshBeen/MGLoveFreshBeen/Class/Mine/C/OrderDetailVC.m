@@ -170,12 +170,13 @@
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
     if (1 == buttonIndex) {
         // 打电话(这种方法也会回去到原来的程序里（注意这里的telprompt），也会弹出提示)
-//        NSMutableString* str=[[NSMutableString alloc] initWithFormat:@"telprompt://%@",@"110"];
+//        NSMutableString* str= [[NSMutableString alloc] initWithFormat:@"telprompt://%@",@"10086"];
 //        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:str]];
         
         NSMutableString *str2=[[NSMutableString alloc] initWithFormat:@"tel:%@",@"10086"];
         UIWebView *callWebview = [[UIWebView alloc] init];
-        [callWebview loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:str2]]];[self.view addSubview:callWebview];
+        [callWebview loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:str2]]];
+        [self.view addSubview:callWebview];
     }
 }
 
