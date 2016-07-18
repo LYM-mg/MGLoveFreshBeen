@@ -14,6 +14,7 @@
 #import "HomeCollectionCell.h"
 
 #import "HomeWebVC.h"
+#import "ProductDetailVC.h"
 
 @interface HomeVC ()<UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout>
 {
@@ -203,9 +204,24 @@ static NSString *const KHomeFooterIdentifier = @"Footer";
     return CGSizeZero;
 }
 
-#pragma mark - UICollectionViewDelegate
+// 插入内边距，显示顶部轮播器和四个小家伙
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section{
-   return  UIEdgeInsetsMake(_headView.height, 0, 0, 0);
+    return  UIEdgeInsetsMake(_headView.height, 0, 0, 0);
+}
+#pragma mark - UICollectionViewDelegate
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    if (0 == indexPath.section) {
+        NSArray *tmpArr = [NSArray array];
+        tmpArr = [Activities objectArrayWithKeyValuesArray:_headData.data.activities];
+        Activities *activity = tmpArr[indexPath.row];
+        HomeWebVC *webVC = [[HomeWebVC alloc] initWithNavigationTitle:activity.name withUrlStr:activity.customURL];
+        [self.navigationController pushViewController:webVC animated:YES];
+    } else if (1 == indexPath.section) {
+        NSArray *tmpArr2 = [NSArray array];
+        tmpArr2 = [HotGoods objectArrayWithKeyValuesArray:_hotFreshData.data];
+        ProductDetailVC *productDetailVC = [[ProductDetailVC alloc] initWithGoods:tmpArr2[indexPath.row]];
+        [self.navigationController pushViewController:productDetailVC animated:YES];
+    }
 }
 
 

@@ -7,17 +7,18 @@
 //
 
 #import "SuperMarketModel.h"
-
+#pragma mark - SuperMarketModel
 @implementation SuperMarketModel
 
 @end
 
 
-
+#pragma mark - ProductstModel
 @implementation ProductstModel
 
 @end
 
+#pragma mark - CategoriesModel
 @implementation CategoriesModel
 
 //+ (NSDictionary *)replacedKeyFromPropertyName{
@@ -28,6 +29,7 @@
 
 @end
 
+#pragma mark - SuperMarket
 @implementation SuperMarket
 
 

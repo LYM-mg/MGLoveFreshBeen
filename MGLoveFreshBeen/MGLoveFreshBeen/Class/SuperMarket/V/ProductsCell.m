@@ -8,6 +8,7 @@
 
 #import "ProductsCell.h"
 #import "SuperMarketModel.h"
+#import "HotFreshModel.h"
 
 @interface ProductsCell ()
 @property (weak, nonatomic) IBOutlet UIImageView *productImageView;
@@ -36,7 +37,7 @@
     return cell;
 }
 
-- (void)setGoods:(Goods *)goods{
+- (void)setGoods:(HotGoods *)goods{
     _goods = goods;
     [_productImageView sd_setImageWithURL:[NSURL URLWithString:[goods valueForKeyPath:@"img"]] placeholderImage:[UIImage imageNamed:@"v2_placeholder_square"]];
     

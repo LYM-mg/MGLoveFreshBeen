@@ -8,6 +8,7 @@
 
 #import "ProductDetailVC.h"
 #import "SuperMarketModel.h"
+#import "HotFreshModel.h"
 #import "UMSocialSnsService.h"
 #import "UMSocial.h"
 
@@ -44,10 +45,9 @@
     UILabel *marketPriceLabel;
     UILabel *priceLabel;
     
-//    Goods *goods;
 }
-/** 数组 */
-@property (nonatomic,strong) Goods *goods;
+/** HotGoods */
+@property (nonatomic,strong) HotGoods *goods;
 @end
 
 @implementation ProductDetailVC
@@ -57,6 +57,9 @@
    
     // 添加子控件
     [self setupMainView];
+    
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -64,10 +67,8 @@
 }
 
 #pragma mark - 遍历构造方法
-- (instancetype)initWithGoods:(Goods *)goods{
+- (instancetype)initWithGoods:(HotGoods *)goods{
     if (self = [super init]) {
-        
-        [self setupMainView];
         
         self.goods = goods;
         [productImageView sd_setImageWithURL:[NSURL URLWithString:[goods valueForKeyPath:@"img"]] placeholderImage:[UIImage imageNamed:@"v2_placeholder_square"]];

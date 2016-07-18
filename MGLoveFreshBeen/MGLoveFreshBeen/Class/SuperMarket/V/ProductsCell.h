@@ -8,12 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@class Goods;
+@class HotGoods;
 
 @interface ProductsCell : UITableViewCell
 
 /** 模型 */
-@property (nonatomic,strong) Goods *goods;
+@property (nonatomic,strong) HotGoods *goods;
 
 + (instancetype)productsCellWithTableView:(UITableView *)tableView;
 

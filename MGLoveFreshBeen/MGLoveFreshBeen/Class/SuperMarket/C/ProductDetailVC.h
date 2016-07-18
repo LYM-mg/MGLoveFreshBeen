@@ -8,10 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@class Goods;
+@class HotGoods;
 
 @interface ProductDetailVC : UIViewController
 
-- (instancetype)initWithGoods:(Goods *)goods;
+- (instancetype)initWithGoods:(HotGoods *)goods;
 
 @end

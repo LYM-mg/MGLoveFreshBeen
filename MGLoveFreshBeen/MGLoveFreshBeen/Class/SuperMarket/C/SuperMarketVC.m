@@ -134,7 +134,7 @@
         return cell;
     }else { // 右边tableView 👉➡️
         ProductsCell *cell = [ProductsCell productsCellWithTableView:tableView];
-        Goods *goods = self.goodsArr[indexPath.section][indexPath.row];
+        HotGoods *goods = self.goodsArr[indexPath.section][indexPath.row];
         cell.goods = goods;
         
         return cell;
@@ -177,7 +177,7 @@
         self.categortsSelectedIndexPath = indexPath;
         [MGNotificationCenter postNotificationName:MGCategortsSelectedIndexPathNotification object:nil];
     }else{ // 右边tableView 👉➡️  进入商品详情界面
-        Goods *goods = goods = self.goodsArr[indexPath.section][indexPath.row];
+        HotGoods *goods = goods = self.goodsArr[indexPath.section][indexPath.row];
         ProductDetailVC *productDetailVC = [[ProductDetailVC alloc] initWithGoods:goods];
         [self.navigationController pushViewController:productDetailVC animated:YES];
     }
