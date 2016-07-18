@@ -30,18 +30,21 @@
 - (void)awakeFromNib{
 }
 
+// 我的订单的点击
 - (IBAction)orderBtnClick:(MGButton *)sender {
     if (_orderBtnClickBlock) {
         self.orderBtnClickBlock();
     }
 }
 
+// 我的优惠券的点击
 - (IBAction)CouponBtnClick:(MGButton *)sender {
     if (_CouponBtnClickBlock) {
          self.CouponBtnClickBlock();
     }
 }
 
+// 我的消息按钮的点击
 - (IBAction)messageBtnClick:(MGButton *)sender {
     if (_messageBtnClickBlock) {
         self.messageBtnClickBlock();

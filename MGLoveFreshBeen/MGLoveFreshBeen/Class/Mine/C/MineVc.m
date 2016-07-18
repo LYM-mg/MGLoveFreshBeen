@@ -111,6 +111,9 @@ CGFloat headViewHeight = 150;
     [headView.iconView.iconImageView addGestureRecognizer:iconViewTap];
 }
 
+/**
+ *  更换头像
+ */
 - (void)iconViewTapClick{
     UIAlertController *alertVC = [UIAlertController alertControllerWithTitle:@"请选择照片来源" message:nil preferredStyle:UIAlertControllerStyleAlert];
      // 相机
@@ -266,7 +269,9 @@ CGFloat headViewHeight = 150;
     }
 }
 
-// MARK: - Action
+/**
+ *  分享Action
+ */
 - (void)shareToFriend {
     // 微信
     [UMSocialData defaultData].extConfig.wechatSessionData.url = @"https://github.com/LYM-mg/MGLoveFreshBeen";

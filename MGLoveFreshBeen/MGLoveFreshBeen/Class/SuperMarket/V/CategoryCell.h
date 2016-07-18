@@ -15,6 +15,9 @@
 /** 分类模型 */
 @property (nonatomic,strong) CategoriesModel *categoryModel;
 
+/**
+ *  快速创建CategoryCell
+ */
 + (instancetype)categoryCellWithTableView:(UITableView *)tableView;
 
 @end

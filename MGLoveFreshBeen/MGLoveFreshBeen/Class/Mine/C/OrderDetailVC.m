@@ -8,7 +8,7 @@
 
 #import "OrderDetailVC.h"
 
-@interface OrderDetailVC ()<UITableViewDelegate,UITableViewDataSource>
+@interface OrderDetailVC ()<UITableViewDelegate,UITableViewDataSource,UIAlertViewDelegate>
 {
     UISegmentedControl *segment;
     UITableView *_oneView;
@@ -57,6 +57,8 @@
     self.view.backgroundColor = MGBackGray;
     
     [self setMainView];
+    
+    [self setupNavRightItem];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -154,6 +156,28 @@
 }
 
 
+#pragma mark - 导航栏右边按钮 投诉
+- (void)setupNavRightItem{
+    [self setRightNavBtn:@"投诉" withTarget:@selector(complainClick)];
+}
+
+- (void)complainClick{
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"申诉" message:@"联系卖家" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
+    [alertView show];
+}
+
+#pragma mark - UIAlertViewDelegate
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    if (1 == buttonIndex) {
+        // 打电话(这种方法也会回去到原来的程序里（注意这里的telprompt），也会弹出提示)
+//        NSMutableString* str=[[NSMutableString alloc] initWithFormat:@"telprompt://%@",@"110"];
+//        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:str]];
+        
+        NSMutableString *str2=[[NSMutableString alloc] initWithFormat:@"tel:%@",@"10086"];
+        UIWebView *callWebview = [[UIWebView alloc] init];
+        [callWebview loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:str2]]];[self.view addSubview:callWebview];
+    }
+}
 
 
 @end

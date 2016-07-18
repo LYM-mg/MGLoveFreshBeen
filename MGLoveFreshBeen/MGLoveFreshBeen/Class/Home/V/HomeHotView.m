@@ -22,6 +22,9 @@
 }
 
 #pragma mark - 私有方法
+/**
+ *  根据模型   设置控件
+ */
 - (void)setupUI:(HeadData *)headData{
     NSInteger count =  headData.icons.count;
     CGFloat width = (MGSCREEN_width - (count+1)*2*MGMargin)/count;
@@ -53,7 +56,7 @@
 }
 
 
-#pragma mark - 点击操作
+#pragma mark - hotView里面的按钮的点击操作
 - (void)hotItemClick:(ContantView *)sender{
     NSInteger tag = sender.tag;
     
@@ -74,6 +77,9 @@
 }
 
 #pragma mark - 私有方法
+/**
+ *  设置UI界面
+ */
 - (void)setupUI{
     UIImageView *imageView = [[UIImageView alloc] init];
     imageView.userInteractionEnabled = NO;
@@ -94,7 +100,7 @@
 - (void)layoutSubviews{
     [super layoutSubviews];
     _iconView.frame = CGRectMake(MGSmallMargin, MGMargin, self.width - MGMargin, self.height*0.5);
-    _textLabel.frame = CGRectMake(0, CGRectGetMaxY(_iconView.frame) + MGMargin, self.width, self.height*0.25);
+    _textLabel.frame = CGRectMake(0, CGRectGetMaxY(_iconView.frame) + MGSmallMargin, self.width, self.height*0.25);
 }
 
 #pragma mark - 重新模型

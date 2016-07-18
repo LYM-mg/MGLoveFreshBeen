@@ -142,7 +142,6 @@
 
 
 #pragma mark - 动画
-
 - (void)animationImageTapClick:(UITapGestureRecognizer *)tap{
     self.animationImage.userInteractionEnabled = NO;
     static int i = 0;

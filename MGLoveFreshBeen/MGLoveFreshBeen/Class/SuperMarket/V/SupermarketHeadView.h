@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface SupermarketHeadView : UITableViewHeaderFooterView
+
 /** 头部标题 */
 @property (nonatomic,strong) UILabel *titleLabel;
+
 @end

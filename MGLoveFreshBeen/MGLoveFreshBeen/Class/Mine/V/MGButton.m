@@ -34,8 +34,7 @@
     
     // 设置图片的方式
     self.imageView.contentMode = UIViewContentModeScaleAspectFit;
-    
-//    self.backgroundColor = MGRandomColor;
+
 
 }
 

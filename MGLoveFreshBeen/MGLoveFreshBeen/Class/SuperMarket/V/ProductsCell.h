@@ -15,6 +15,9 @@
 /** 模型 */
 @property (nonatomic,strong) HotGoods *hotGood;
 
+/**
+ *  快速创建ProductsCell
+ */
 + (instancetype)productsCellWithTableView:(UITableView *)tableView;
 
 @end

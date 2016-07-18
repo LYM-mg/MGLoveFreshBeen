@@ -26,8 +26,8 @@
    UIImageView *_circleImageView;
 }
 
-//@property (nonatomic,strong) UIImageView *backImageView; //v2_coupon_gray  v2_coupon_yellow
-//@property (nonatomic,strong) UIImageView *outdateImageView; // v2_coupon_outdated 过期 // v2_coupon_used已使用
+//@property (nonatomic,strong) UIImageView *backImageView; 
+//@property (nonatomic,strong) UIImageView *outdateImageView;
 //@property (nonatomic,strong) UILabel *titleLabel;
 //@property (nonatomic,strong) UILabel *dateLabel;
 //@property (nonatomic,strong) UILabel *descLabel;

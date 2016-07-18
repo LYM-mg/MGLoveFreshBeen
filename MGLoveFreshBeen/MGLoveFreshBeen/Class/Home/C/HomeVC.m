@@ -43,7 +43,7 @@ static NSString *const KHomeFooterIdentifier = @"Footer";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.view.backgroundColor = MGRGBColor(200, 200, 200);
+    self.view.backgroundColor = MGRGBColor(235, 235, 235);
     
     // 通知
     [self addObserverNotification];
@@ -67,6 +67,9 @@ static NSString *const KHomeFooterIdentifier = @"Footer";
     [self loadHeadData];
 }
 
+/**
+ *  加载数据
+ */
 - (void)loadHeadData{
     
         // 1.首页焦点按钮
@@ -81,7 +84,6 @@ static NSString *const KHomeFooterIdentifier = @"Footer";
         [[NSOperationQueue mainQueue] addOperationWithBlock:^{
             [homeCollectionView reloadData];
         }];
-    
 }
 
 - (NSDictionary *)loadDataWithStr:(NSString *)str{
@@ -95,7 +97,9 @@ static NSString *const KHomeFooterIdentifier = @"Footer";
 }
 
 #pragma mark - collectionView
-/// 初始化collectionView
+/**
+ *  初始化collectionView
+ */
 - (void)setUpHomeCollectionView{
     // 1.创建layout
     UICollectionViewFlowLayout *layout = ({
@@ -130,24 +134,22 @@ static NSString *const KHomeFooterIdentifier = @"Footer";
 
 #pragma mark - UICollectionViewDataSource
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
-    if (_headData.data.activities.count <= 0 || _hotFreshData.data.count <= 0) {
-        return 0;
-    }
+    if (_headData.data.activities.count <= 0 || _hotFreshData.data.count <= 0)
+    {  return 0;  }
     
     return 2;
 }
 
+
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-    if (_headData.data.activities.count <= 0 || _hotFreshData.data.count <= 0) {
-        return 0;
-    }
+    if (_headData.data.activities.count <= 0 || _hotFreshData.data.count <= 0)
+    {  return 0; }
     
-    if (0 == section) { // 第一组
-        return _headData.data.activities.count;
-    } else if (1 == section) { // 第二组
-        return _hotFreshData.data.count;
-    }
-    
+    // 第一组
+    if (0 == section) { return _headData.data.activities.count; }
+    // 第二组
+    else if (1 == section) { return _hotFreshData.data.count; }
+    // 其他
     return 0;
 }
 
@@ -208,6 +210,9 @@ static NSString *const KHomeFooterIdentifier = @"Footer";
     return UIEdgeInsetsZero;
 }
 #pragma mark - UICollectionViewDelegate
+/**
+ *  选中那个cell跳转
+ */
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     if (0 == indexPath.section) {
         NSArray *tmpArr = [NSArray array];
@@ -248,8 +253,7 @@ static NSString *const KHomeFooterIdentifier = @"Footer";
         
          HomeWebVC *webVC = [[HomeWebVC alloc] initWithNavigationTitle:[_headData.data.icons[item] valueForKeyPath:@"name"] withUrlStr:[_headData.data.icons[item] valueForKeyPath:@"customURL"]];
             [weakSelf.navigationController pushViewController:webVC animated:YES];
-       
-    }];
+       }];
     
     
     // 轮播器图片被点击的通知

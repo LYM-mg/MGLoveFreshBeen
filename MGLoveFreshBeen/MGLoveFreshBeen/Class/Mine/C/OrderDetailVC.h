@@ -10,7 +10,7 @@
 
 #import "OrderCellModel.h"
 
-@interface OrderDetailVC : UIViewController
+@interface OrderDetailVC : BaseController
 
 /** orderModel模型 */
 @property (nonatomic,strong) Order *model;

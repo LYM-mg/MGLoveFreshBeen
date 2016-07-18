@@ -45,6 +45,9 @@ typedef enum{
 }
 
 #pragma mark - 私有方法
+/**
+ *  设置UI界面
+ */
 - (void)setupUI{
     backImageView = [[UIImageView alloc] init];
     [self addSubview:backImageView];
@@ -91,6 +94,9 @@ typedef enum{
 
 
 #pragma mark - 重写
+/** 
+ *  这边cell有两种类型 ，第一组是一行只有一个cell的，第二组是一行有两个cell的 根据不同类型决定控件是否需要隐藏
+ */
 - (void)setType:(HomeCellType)type{
     _type = type;
     backImageView.hidden = (type == HomeCellTypeVertical);
@@ -103,7 +109,9 @@ typedef enum{
 //    buyView.hidden = (type == Horizontal);
 }
 
-// 商品
+/**
+ *  重写商品模型的setter方法
+ */
 - (void)setGoodModel:(HotGoods *)goodModel{
     _goodModel = goodModel;
     self.type = HomeCellTypeVertical;
@@ -133,14 +141,18 @@ typedef enum{
 
 }
 
-//一行的话只显示背景
+/**
+ *  重写模型的setter方法  一行的话只显示背景图解图片，其他控件隐藏
+ */
 - (void)setActivity:(Activities *)Activity{
     _Activity = Activity;
     self.type = HomeCellTypeHorizontal;
     [backImageView sd_setImageWithURL:[NSURL URLWithString:Activity.img] placeholderImage:[UIImage imageNamed:@"v2_placeholder_full_size"]];
 }
 
-/// 打折的View
+/**
+ *  快速创建打折的View
+ */
 - (UIView *)discountPriceView{
     UIView *discountPriceView2 = [[UIView alloc] init];
     priceLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 45, 15)];

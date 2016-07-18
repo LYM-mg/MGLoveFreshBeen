@@ -28,6 +28,9 @@
     // Initialization code
 }
 
+/**
+ *  快速创建ProductsCell
+ */
 + (instancetype)productsCellWithTableView:(UITableView *)tableView{
     static NSString *const KProductsCellIdentifier = @"KProductsCellIdentifier";
     ProductsCell *cell = [tableView dequeueReusableCellWithIdentifier:KProductsCellIdentifier];
@@ -37,6 +40,9 @@
     return cell;
 }
 
+/**
+ *  重新HotGoods模型
+ */
 - (void)setHotGood:(HotGoods *)hotGood{
     _hotGood = hotGood;
     [_productImageView sd_setImageWithURL:[NSURL URLWithString:[hotGood valueForKeyPath:@"img"]] placeholderImage:[UIImage imageNamed:@"v2_placeholder_square"]];

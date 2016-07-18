@@ -18,7 +18,9 @@
 @end
 
 @implementation CategoryCell
-
+/**
+ *  设置Cell的一些属性
+ */
 - (void)awakeFromNib {
     self.selectionStyle = UITableViewCellSelectionStyleNone;
     self.indicatorView.hidden = YES;
@@ -26,6 +28,9 @@
     self.contentView.backgroundColor = MGRGBColor(222, 222, 222);
 }
 
+/**
+ *  快速创建CategoryCell
+ */
 + (instancetype)categoryCellWithTableView:(UITableView *)tableView{
     static NSString *const KCategoryCellIdentifier = @"KCategoryCellIdentifier";
     CategoryCell *cell = [tableView dequeueReusableCellWithIdentifier:KCategoryCellIdentifier];
@@ -35,6 +40,9 @@
     return cell;
 }
 
+/**
+ *  重新CategoriesModel模型
+ */
 - (void)setCategoryModel:(CategoriesModel *)categoryModel{
     _categoryModel = categoryModel;
 //    self.categoryName.text = categoryModel.name;

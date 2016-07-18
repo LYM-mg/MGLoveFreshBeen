@@ -13,7 +13,7 @@
 
 @interface HomeHeaderView ()
 {
-    XRCarouselView *_carouseView;
+    XRCarouselView *_carouseView; /// 轮播器View
 }
 
 /** 容器 */
@@ -29,6 +29,9 @@
     return self;
 }
 
+/**
+ *  UI
+ */
 - (void)setupUI{
     // 1.CarouseView
     [self setCarouseView];
@@ -37,14 +40,19 @@
     [self setHotView];
 }
 
-// 轮播器底部的四个小东西
+/**
+ *  轮播器底部的四个小东西
+ */
 - (void)setHotView{
     HomeHotView *hotView = [[HomeHotView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(_carouseView.frame), self.width, 80)];
+    hotView.backgroundColor = [UIColor whiteColor];
     [self addSubview:hotView];
     _hotView = hotView;
 }
 
-// 轮播器
+/**
+ *  轮播器
+ */
 - (void)setCarouseView{
      _carouseView = [[XRCarouselView alloc] initWithFrame:CGRectMake(0, 0, MGSCREEN_width, 150)];
     

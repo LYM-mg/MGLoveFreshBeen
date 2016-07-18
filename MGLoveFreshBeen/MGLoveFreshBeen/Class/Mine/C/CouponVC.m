@@ -78,6 +78,9 @@
     // Dispose of any resources that can be recreated.
 }
 
+/**
+ *  加载优惠券数据
+ */
 - (void)loadCouponData {
     [[[NSOperationQueue alloc] init] addOperationWithBlock:^{
         NSString *path = [[NSBundle mainBundle] pathForResource:@"MyCoupon" ofType: nil];
@@ -138,6 +141,9 @@
 }
 
 
+/**
+ *  未使用的优惠券放在前面也就是第一组，其他放在后面
+ */
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     CouponCell *cell = [CouponCell couponCellWithTableView:tableView];
     Coupon *couponModel;
@@ -178,6 +184,9 @@
 @end
         
 #pragma mark - Coupon
+/**
+ *  替换掉模型中的Key
+ */
 @implementation Coupon
 + (NSDictionary *)replacedKeyFromPropertyName{
     return @{

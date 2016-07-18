@@ -8,25 +8,26 @@
 
 #import <UIKit/UIKit.h>
 #include "HeadReosurce.h"
-@interface HomeHotView : UIView
-/** UIImageView */
-//@property (nonatomic,weak) UIImageView *imageView;
-//
-///** textLabel */
-//@property (nonatomic,weak) UILabel *textLabel;
 
-/** 模型 */
+#pragma mark - HomeHotView
+@interface HomeHotView : UIView
+
+/** HeadData模型 */
 @property (nonatomic,strong) HeadData *headData;
+
 @end
 
-@interface ContantView : UIButton
 
+
+#pragma mark - ContantView
+@interface ContantView : UIButton
+/** 轮播器下面的图片 */
 @property (nonatomic,weak) UIImageView *iconView;
 
-/** textLabel */
+/** 轮播器下  图片下面textLabel文字 */
 @property (nonatomic,weak) UILabel *textLabel;
 
-/** <#注释#> */
+/** Activities模型 */
 @property (nonatomic,strong) Activities *activity;
 
 @end

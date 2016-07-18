@@ -28,7 +28,8 @@ typedef enum{
 @end
 
 @implementation EditAddressVC
-#pragma mark - lazy   数据源
+#pragma mark - lazy   
+// pickerView的 数据源
 - (NSArray *)cityArr{
     if (!_cityArr) {
         _cityArr = [NSArray arrayWithObjects:@"梅州市", @"清远市", @"北京市", @"上海市", @"潮汕市", @"珠海市",@"长沙市",@"南京市",@"天津市", @"广州市", @"佛山市", @"深圳市", @"廊坊市", @"武汉市", @"苏州市", @"无锡市",@"茂名市",@"阳江市", @"武汉市",@"杭州市",@"南昌市", nil];
