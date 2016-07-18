@@ -117,12 +117,12 @@ typedef enum{
             [_scrollView addSubview:textfield];
             if(2 == i){
                 textfield.keyboardType = UIKeyboardTypeNumberPad;
-            }else if (3==i){
+            }else if (4 == i){
                 selectCityPickView = [[UIPickerView alloc] init];
                 selectCityPickView.delegate = self;
                 selectCityPickView.dataSource = self;
                 textfield.inputView = selectCityPickView;
-                // 创建赋值键盘的确定取消按钮
+                // 创建附加键盘的确定取消按钮
                 textfield.inputAccessoryView = [self buildInputView];
             }
         }

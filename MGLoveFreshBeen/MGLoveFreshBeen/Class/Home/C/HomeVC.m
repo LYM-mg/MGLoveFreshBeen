@@ -10,6 +10,8 @@
 #import "HomeCollectionHeaderView.h"
 #import "HomeHeaderView.h"
 #import "HeadReosurce.h"
+#import "HotFreshModel.h"
+#import "HomeCollectionCell.h"
 
 #import "HomeWebVC.h"
 
@@ -23,8 +25,10 @@
 /** 顶部View */
 @property (nonatomic,strong) HomeHeaderView *headView;
 
-/** 模型 */
+/** 轮播图和下面四个下家伙的模型 */
 @property (nonatomic,strong) HeadReosurce *headData;
+/** 热点模型 */
+@property (nonatomic,strong) HotFreshModel *hotFreshData;
 
 @end
 
@@ -63,15 +67,30 @@ static NSString *const KHomeFooterIdentifier = @"Footer";
 }
 
 - (void)loadHeadData{
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"首页焦点按钮" ofType: nil];
+    
+        // 1.首页焦点按钮
+        NSDictionary *focusDict = [self loadDataWithStr:@"首页焦点按钮"];
+        _headView.headData = [HeadReosurce objectWithKeyValues:focusDict];
+        self.headData = _headView.headData;
+        
+        // 2.首页新鲜热卖
+        NSDictionary *freshDict = [self loadDataWithStr:@"首页新鲜热卖"];
+        self.hotFreshData = [HotFreshModel objectWithKeyValues:freshDict];
+        
+        [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+            [homeCollectionView reloadData];
+        }];
+    
+}
+
+- (NSDictionary *)loadDataWithStr:(NSString *)str{
+    NSString *path = [[NSBundle mainBundle] pathForResource:str ofType: nil];
     
     NSData *data = [NSData dataWithContentsOfFile:path];
     NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
-    NSString *str = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-    [str stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
-    
-    _headView.headData = [HeadReosurce objectWithKeyValues:dict];
-    self.headData = _headView.headData;
+    NSString *uTF8Str = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+    [uTF8Str stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
+    return dict;
 }
 
 #pragma mark - collectionView
@@ -101,7 +120,7 @@ static NSString *const KHomeFooterIdentifier = @"Footer";
     
     // 3.注册
     // cell
-    [homeCollectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:KHomeCellIdentifier];
+    [homeCollectionView registerClass:[HomeCollectionCell class] forCellWithReuseIdentifier:KHomeCellIdentifier];
     // 头部和尾部
 //    [homeCollectionView registerClass:[HomeCollectionHeaderView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:KHomeHeaderIdentifier];
 //    [homeCollectionView registerClass:[HomeCollectionHeaderView class] forSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:KHomeFooterIdentifier];
@@ -110,18 +129,44 @@ static NSString *const KHomeFooterIdentifier = @"Footer";
 
 #pragma mark - UICollectionViewDataSource
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
+    if (_headData.data.activities.count <= 0 || _hotFreshData.data.count <= 0) {
+        return 0;
+    }
+    
     return 2;
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-    return 9;
+    if (_headData.data.activities.count <= 0 || _hotFreshData.data.count <= 0) {
+        return 0;
+    }
+    
+    if (0 == section) { // 第一组
+        return _headData.data.activities.count;
+    } else if (1 == section) { // 第二组
+        return _hotFreshData.data.count;
+    }
+    
+    return 0;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:KHomeCellIdentifier forIndexPath:indexPath];
-
+    HomeCollectionCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:KHomeCellIdentifier forIndexPath:indexPath];
     
-    cell.backgroundColor = MGRandomColor;
+    if (_headData.data.activities.count <= 0) {
+        return cell;
+    }
+    
+    if (0 == indexPath.section) {
+        NSArray *tmpArr = [NSArray array];
+        tmpArr = [Activities objectArrayWithKeyValuesArray:_headData.data.activities];
+        cell.Activity = tmpArr[indexPath.row];
+//        MGLog(@"%@",tmpArr);
+    } else if (1 == indexPath.section) {
+        NSArray *tmpArr2 = [NSArray array];
+        tmpArr2 = [HotGoods objectArrayWithKeyValuesArray:_hotFreshData.data];
+        cell.goodModel = tmpArr2[indexPath.row];
+    }
     
     return cell;
 }

@@ -140,6 +140,8 @@
 		3AED5D821D35802F0045CF64 /* QuestionVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AED5D811D35802F0045CF64 /* QuestionVC.m */; settings = {ASSET_TAGS = (); }; };
 		3AED5D851D3584E00045CF64 /* IdeaVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AED5D841D3584E00045CF64 /* IdeaVC.m */; settings = {ASSET_TAGS = (); }; };
 		3AED5D8C1D358A200045CF64 /* LYMTextViewWithLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AED5D8A1D358A200045CF64 /* LYMTextViewWithLabel.m */; settings = {ASSET_TAGS = (); }; };
+		3AFF8CB21D3C9DEE00B3120B /* HotFreshModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AFF8CB11D3C9DEE00B3120B /* HotFreshModel.m */; settings = {ASSET_TAGS = (); }; };
+		3AFF8CB51D3CA41C00B3120B /* HomeCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AFF8CB41D3CA41C00B3120B /* HomeCollectionCell.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -383,6 +385,10 @@
 		3AED5D841D3584E00045CF64 /* IdeaVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IdeaVC.m; sourceTree = "<group>"; };
 		3AED5D891D358A200045CF64 /* LYMTextViewWithLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYMTextViewWithLabel.h; sourceTree = "<group>"; };
 		3AED5D8A1D358A200045CF64 /* LYMTextViewWithLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYMTextViewWithLabel.m; sourceTree = "<group>"; };
+		3AFF8CB01D3C9DEE00B3120B /* HotFreshModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotFreshModel.h; sourceTree = "<group>"; };
+		3AFF8CB11D3C9DEE00B3120B /* HotFreshModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotFreshModel.m; sourceTree = "<group>"; };
+		3AFF8CB31D3CA41C00B3120B /* HomeCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeCollectionCell.h; sourceTree = "<group>"; };
+		3AFF8CB41D3CA41C00B3120B /* HomeCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeCollectionCell.m; sourceTree = "<group>"; };
 		5C1D56701D76C2B738A1E4C1 /* libPods-MGLoveFreshBeen.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MGLoveFreshBeen.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C258C531C65765C7BF233187 /* Pods-MGLoveFreshBeen.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MGLoveFreshBeen.release.xcconfig"; path = "Pods/Target Support Files/Pods-MGLoveFreshBeen/Pods-MGLoveFreshBeen.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -497,6 +503,8 @@
 			children = (
 				3AD5914D1D3BA7CF00BCD7AA /* HeadReosurce.h */,
 				3AD5914E1D3BA7CF00BCD7AA /* HeadReosurce.m */,
+				3AFF8CB01D3C9DEE00B3120B /* HotFreshModel.h */,
+				3AFF8CB11D3C9DEE00B3120B /* HotFreshModel.m */,
 			);
 			path = M;
 			sourceTree = "<group>";
@@ -510,6 +518,8 @@
 				3AD5913F1D3B96D900BCD7AA /* HomeHeaderView.m */,
 				3AD591471D3B9A9C00BCD7AA /* HomeHotView.h */,
 				3AD591481D3B9A9C00BCD7AA /* HomeHotView.m */,
+				3AFF8CB31D3CA41C00B3120B /* HomeCollectionCell.h */,
+				3AFF8CB41D3CA41C00B3120B /* HomeCollectionCell.m */,
 			);
 			path = V;
 			sourceTree = "<group>";
@@ -1254,9 +1264,11 @@
 				3A64A2031D34E0AE00288490 /* HomeVC.m in Sources */,
 				3A64A1F91D34D64300288490 /* AppDelegate.m in Sources */,
 				3A64A2171D34E23A00288490 /* NavigationVC.m in Sources */,
+				3AFF8CB51D3CA41C00B3120B /* HomeCollectionCell.m in Sources */,
 				3A09CBB61D378091007BD1FD /* MyAddressCell.m in Sources */,
 				3AD5914F1D3BA7CF00BCD7AA /* HeadReosurce.m in Sources */,
 				3A06A7981D39CEDA00D9C22B /* CouponCell.m in Sources */,
+				3AFF8CB21D3C9DEE00B3120B /* HotFreshModel.m in Sources */,
 				3AA57C4C1D3A0E4100AC5802 /* CategoryCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
