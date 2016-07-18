@@ -70,6 +70,9 @@
 - (instancetype)initWithGoods:(HotGoods *)goods{
     if (self = [super init]) {
         
+        // 添加子控件
+        [self setupMainView];
+        
         self.goods = goods;
         [productImageView sd_setImageWithURL:[NSURL URLWithString:[goods valueForKeyPath:@"img"]] placeholderImage:[UIImage imageNamed:@"v2_placeholder_square"]];
         titleNameLabel.text = [goods valueForKeyPath:@"name"];
@@ -252,7 +255,7 @@
 }
 
 
-#pragma mark - 分割线
+#pragma mark - 快速创建分割线
 - (void)buildLineView:(CGRect)frame addLineToView:(UIView *)view{
     UIView *lineView = [[UIView alloc] initWithFrame:frame];
     lineView.backgroundColor = [UIColor blackColor];

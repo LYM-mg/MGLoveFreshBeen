@@ -43,7 +43,7 @@ static NSString *const KHomeFooterIdentifier = @"Footer";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.view.backgroundColor = MGProductBackGray;
+    self.view.backgroundColor = MGRGBColor(200, 200, 200);
     
     // 通知
     [self addObserverNotification];
@@ -154,15 +154,11 @@ static NSString *const KHomeFooterIdentifier = @"Footer";
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     HomeCollectionCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:KHomeCellIdentifier forIndexPath:indexPath];
     
-    if (_headData.data.activities.count <= 0) {
-        return cell;
-    }
-    
     if (0 == indexPath.section) {
         NSArray *tmpArr = [NSArray array];
         tmpArr = [Activities objectArrayWithKeyValuesArray:_headData.data.activities];
         cell.Activity = tmpArr[indexPath.row];
-//        MGLog(@"%@",tmpArr);
+
     } else if (1 == indexPath.section) {
         NSArray *tmpArr2 = [NSArray array];
         tmpArr2 = [HotGoods objectArrayWithKeyValuesArray:_hotFreshData.data];
@@ -197,8 +193,8 @@ static NSString *const KHomeFooterIdentifier = @"Footer";
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout referenceSizeForFooterInSection:(NSInteger)section{
     if (0 == section) { // 10
         return CGSizeMake(MGSCREEN_width, MGMargin);
-    } else if (1 == section) { // 50
-        return CGSizeMake(MGSCREEN_width, MGMargin * 5);
+    } else if (1 == section) { // 10
+        return CGSizeMake(MGSCREEN_width, MGMargin);
     }
     
     return CGSizeZero;
@@ -206,7 +202,10 @@ static NSString *const KHomeFooterIdentifier = @"Footer";
 
 // 插入内边距，显示顶部轮播器和四个小家伙
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section{
-    return  UIEdgeInsetsMake(_headView.height, 0, 0, 0);
+    if (0 == section) {
+        return UIEdgeInsetsMake(_headView.height, 0, 0, 0);
+    }
+    return UIEdgeInsetsZero;
 }
 #pragma mark - UICollectionViewDelegate
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
