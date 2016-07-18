@@ -162,7 +162,7 @@
 }
 
 - (void)complainClick{
-    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"申诉" message:@"联系卖家" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"申诉" message:@"联系卖家10086" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
     [alertView show];
 }
 

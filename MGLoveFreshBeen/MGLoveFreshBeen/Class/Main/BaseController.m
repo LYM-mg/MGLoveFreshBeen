@@ -74,9 +74,15 @@
 -(void)setRightNavBtn:(NSString *)str withTarget:(SEL)selector
 {
     //导航按钮
-    UIBarButtonItem *rightItem = [[UIBarButtonItem alloc] initWithTitle:str style:UIBarButtonItemStylePlain target:self action:selector];
-    rightItem.tintColor = [UIColor whiteColor];
-    self.navigationItem.rightBarButtonItem = rightItem;
+    UIButton *rightBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    [rightBtn setTitle:str forState:UIControlStateNormal];
+    rightBtn.titleLabel.font = MGFont(16);
+    rightBtn.width = 40;
+    rightBtn.height = 35;
+    [rightBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [rightBtn setTitleColor:[UIColor blueColor] forState:UIControlStateHighlighted];
+    [rightBtn addTarget:self action:selector forControlEvents:UIControlEventTouchUpInside];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:rightBtn];
 }
 
 -(void)onTap{
