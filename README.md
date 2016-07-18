@@ -1,4 +1,15 @@
 # MGLoveFreshBeen
+<<<<<<< HEAD
 仿写
 
 - 后来又整合了UICollectionView的使用
+=======
+仿写!!!!
+
+[图片1](http://www.gif5.net/93036a17-8af3-4f25-acd6-039d3a1b3e62)
+
+[图片2](http://www.gif5.net/409543ef-be9c-4269-af3f-3abea152549d)
+
+[图片3]((http://www.gif5.net/0a7ee476-1e3b-4f71-8f60-1faea36ac923))
+
+>>>>>>> ede44df9a29eaef77947250db4bbb21248534b2b
