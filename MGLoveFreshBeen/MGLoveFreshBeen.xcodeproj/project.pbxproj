@@ -142,6 +142,10 @@
 		3AED5D8C1D358A200045CF64 /* LYMTextViewWithLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AED5D8A1D358A200045CF64 /* LYMTextViewWithLabel.m */; settings = {ASSET_TAGS = (); }; };
 		3AFF8CB21D3C9DEE00B3120B /* HotFreshModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AFF8CB11D3C9DEE00B3120B /* HotFreshModel.m */; settings = {ASSET_TAGS = (); }; };
 		3AFF8CB51D3CA41C00B3120B /* HomeCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AFF8CB41D3CA41C00B3120B /* HomeCollectionCell.m */; settings = {ASSET_TAGS = (); }; };
+		3AFF8CB91D3D413100B3120B /* LYMGuideTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AFF8CB81D3D413100B3120B /* LYMGuideTool.m */; settings = {ASSET_TAGS = (); }; };
+		3AFF8CC21D3D413B00B3120B /* LYMCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AFF8CBD1D3D413B00B3120B /* LYMCollectionViewController.m */; settings = {ASSET_TAGS = (); }; };
+		3AFF8CC31D3D413B00B3120B /* LYMCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AFF8CC11D3D413B00B3120B /* LYMCollectionViewCell.m */; settings = {ASSET_TAGS = (); }; };
+		3AFF8CC71D3D419C00B3120B /* LYMSaveTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AFF8CC61D3D419C00B3120B /* LYMSaveTool.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -389,6 +393,14 @@
 		3AFF8CB11D3C9DEE00B3120B /* HotFreshModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotFreshModel.m; sourceTree = "<group>"; };
 		3AFF8CB31D3CA41C00B3120B /* HomeCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeCollectionCell.h; sourceTree = "<group>"; };
 		3AFF8CB41D3CA41C00B3120B /* HomeCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeCollectionCell.m; sourceTree = "<group>"; };
+		3AFF8CB71D3D413100B3120B /* LYMGuideTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYMGuideTool.h; sourceTree = "<group>"; };
+		3AFF8CB81D3D413100B3120B /* LYMGuideTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYMGuideTool.m; sourceTree = "<group>"; };
+		3AFF8CBC1D3D413B00B3120B /* LYMCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYMCollectionViewController.h; sourceTree = "<group>"; };
+		3AFF8CBD1D3D413B00B3120B /* LYMCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYMCollectionViewController.m; sourceTree = "<group>"; };
+		3AFF8CC01D3D413B00B3120B /* LYMCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYMCollectionViewCell.h; sourceTree = "<group>"; };
+		3AFF8CC11D3D413B00B3120B /* LYMCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYMCollectionViewCell.m; sourceTree = "<group>"; };
+		3AFF8CC51D3D419C00B3120B /* LYMSaveTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYMSaveTool.h; sourceTree = "<group>"; };
+		3AFF8CC61D3D419C00B3120B /* LYMSaveTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYMSaveTool.m; sourceTree = "<group>"; };
 		5C1D56701D76C2B738A1E4C1 /* libPods-MGLoveFreshBeen.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MGLoveFreshBeen.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C258C531C65765C7BF233187 /* Pods-MGLoveFreshBeen.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MGLoveFreshBeen.release.xcconfig"; path = "Pods/Target Support Files/Pods-MGLoveFreshBeen/Pods-MGLoveFreshBeen.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -420,6 +432,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3A3667631D3D7AFF001CDD24 /* Scan(扫一扫) */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Scan(扫一扫)";
+			sourceTree = "<group>";
+		};
 		3A64A1BB1D34D4D100288490 = {
 			isa = PBXGroup;
 			children = (
@@ -465,6 +484,7 @@
 		3A64A1E11D34D64300288490 /* Class */ = {
 			isa = PBXGroup;
 			children = (
+				3AFF8CBA1D3D413B00B3120B /* NewFeature */,
 				3A64A1E61D34D64300288490 /* Main */,
 				3A64A1E21D34D64300288490 /* Home */,
 				3A64A2081D34E11E00288490 /* SuperMarket */,
@@ -708,6 +728,9 @@
 		3A64A1F81D34D64300288490 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				3A3667631D3D7AFF001CDD24 /* Scan(扫一扫) */,
+				3AFF8CC41D3D419C00B3120B /* save */,
+				3AFF8CB61D3D413100B3120B /* Guide(选择窗口根控制器) */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -1006,6 +1029,59 @@
 			path = "UITextView(附加placeholder功能)";
 			sourceTree = "<group>";
 		};
+		3AFF8CB61D3D413100B3120B /* Guide(选择窗口根控制器) */ = {
+			isa = PBXGroup;
+			children = (
+				3AFF8CB71D3D413100B3120B /* LYMGuideTool.h */,
+				3AFF8CB81D3D413100B3120B /* LYMGuideTool.m */,
+			);
+			path = "Guide(选择窗口根控制器)";
+			sourceTree = "<group>";
+		};
+		3AFF8CBA1D3D413B00B3120B /* NewFeature */ = {
+			isa = PBXGroup;
+			children = (
+				3AFF8CBB1D3D413B00B3120B /* Controller */,
+				3AFF8CBE1D3D413B00B3120B /* Model */,
+				3AFF8CBF1D3D413B00B3120B /* View */,
+			);
+			path = NewFeature;
+			sourceTree = "<group>";
+		};
+		3AFF8CBB1D3D413B00B3120B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				3AFF8CBC1D3D413B00B3120B /* LYMCollectionViewController.h */,
+				3AFF8CBD1D3D413B00B3120B /* LYMCollectionViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		3AFF8CBE1D3D413B00B3120B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		3AFF8CBF1D3D413B00B3120B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3AFF8CC01D3D413B00B3120B /* LYMCollectionViewCell.h */,
+				3AFF8CC11D3D413B00B3120B /* LYMCollectionViewCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3AFF8CC41D3D419C00B3120B /* save */ = {
+			isa = PBXGroup;
+			children = (
+				3AFF8CC51D3D419C00B3120B /* LYMSaveTool.h */,
+				3AFF8CC61D3D419C00B3120B /* LYMSaveTool.m */,
+			);
+			path = save;
+			sourceTree = "<group>";
+		};
 		AE889D3491237DC59BD043D8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -1208,9 +1284,11 @@
 				3AE1BDB81D38FC480069E1B9 /* NSArray+MASAdditions.m in Sources */,
 				3AE1BDB21D38FC480069E1B9 /* MASCompositeConstraint.m in Sources */,
 				3AADC9F81D36A80300DDEE87 /* MessageModel.m in Sources */,
+				3AFF8CC31D3D413B00B3120B /* LYMCollectionViewCell.m in Sources */,
 				3A64A1D51D34D4D200288490 /* MGLoveFreshBeen.xcdatamodeld in Sources */,
 				3AE1BDB91D38FC480069E1B9 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
 				3A64A2241D34FF1200288490 /* TableHeadView.m in Sources */,
+				3AFF8CC71D3D419C00B3120B /* LYMSaveTool.m in Sources */,
 				3AA57C501D3A1C3F00AC5802 /* SuperMarketModel.m in Sources */,
 				3AADC9F51D36A19200DDEE87 /* MessageVC.m in Sources */,
 				3A64A2491D350EF100288490 /* NSString+MJExtension.m in Sources */,
@@ -1258,8 +1336,10 @@
 				3AADC9EC1D36018900DDEE87 /* questionCellModel.m in Sources */,
 				3A64A2481D350EF100288490 /* NSObject+MJProperty.m in Sources */,
 				3AE1BDB51D38FC480069E1B9 /* MASLayoutConstraint.m in Sources */,
+				3AFF8CC21D3D413B00B3120B /* LYMCollectionViewController.m in Sources */,
 				3AED5D7F1D357D9F0045CF64 /* HelpVC.m in Sources */,
 				3AADC9F21D361DCA00DDEE87 /* QuestionSectionHeader.m in Sources */,
+				3AFF8CB91D3D413100B3120B /* LYMGuideTool.m in Sources */,
 				3A64A2141D34E16C00288490 /* MineVC.m in Sources */,
 				3A64A2031D34E0AE00288490 /* HomeVC.m in Sources */,
 				3A64A1F91D34D64300288490 /* AppDelegate.m in Sources */,

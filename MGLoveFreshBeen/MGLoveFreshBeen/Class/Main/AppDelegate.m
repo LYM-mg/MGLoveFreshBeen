@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "TabBarVC.h"
+#import "LYMGuideTool.h"
 
 #import "UMSocial.h"
 #import "UMSocialWechatHandler.h"
@@ -30,7 +31,7 @@
     
     self.window = [[UIWindow alloc]  initWithFrame:[UIScreen mainScreen].bounds];
     
-    self.window.rootViewController = [[TabBarVC alloc] init];
+    self.window.rootViewController = [LYMGuideTool chooseRootViewController];
     
     [self.window makeKeyAndVisible];
     
