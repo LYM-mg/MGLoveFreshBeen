@@ -16,6 +16,9 @@
 #import "HomeWebVC.h"
 #import "ProductDetailVC.h"
 
+#import "UIBarButtonItem+Extension.h"
+#import "QRCodeVC.h"
+
 @interface HomeVC ()<UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout>
 {
     /** collectionView */
@@ -44,19 +47,36 @@ static NSString *const KHomeFooterIdentifier = @"Footer";
     [super viewDidLoad];
     
     self.view.backgroundColor = MGRGBColor(235, 235, 235);
+    // 导航栏
+    [self setUpNavigationItem];
     
     // 通知
     [self addObserverNotification];
     
+    // 主界面
     [self setUpHomeCollectionView];
     
-    
+    // 主界面的头部
     [self setUpHomeHeaderView];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     
+}
+#pragma mark - 导航栏
+- (void)setUpNavigationItem{
+    self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithImage:[UIImage imageNamed:@"icon_black_scancode"] highImage:nil norColor:[UIColor whiteColor] selColor:MGProductBackGray title:@"扫一扫" target:self action:@selector(scanClick)];
+
+    self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithImage:[UIImage imageNamed:@"icon_search"] highImage:nil norColor:[UIColor whiteColor] selColor:MGProductBackGray title:@"搜 索" target:self action:@selector(searchClick)];
+}
+
+- (void)scanClick{
+    [self.navigationController presentViewController:[UIStoryboard storyboardWithName:@"QRCode" bundle:nil].instantiateInitialViewController animated:YES completion:nil];
+}
+
+- (void)searchClick{
+    MGPS(@"还没有做🔍功能");
 }
 
 #pragma mark - HomeHeaderView
@@ -71,7 +91,6 @@ static NSString *const KHomeFooterIdentifier = @"Footer";
  *  加载数据
  */
 - (void)loadHeadData{
-    
         // 1.首页焦点按钮
         NSDictionary *focusDict = [self loadDataWithStr:@"首页焦点按钮"];
         _headView.headData = [HeadReosurce objectWithKeyValues:focusDict];

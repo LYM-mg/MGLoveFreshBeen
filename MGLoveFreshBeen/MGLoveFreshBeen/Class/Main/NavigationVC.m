@@ -84,8 +84,13 @@
 - (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated{
 
     if (self.childViewControllers.count != 0) {
-        // 判断当前控制器是否为根控制器，如果不是，就执行下列代码
-        UIBarButtonItem *leftItem = [[UIBarButtonItem alloc] initWithTitle:@"返回" style:UIBarButtonItemStylePlain target:self action:@selector(leftBtnClick)];
+        // 判断当前控制器是否为根控制器，如果不是，就执行下列代码 backBtn.setImage(UIImage(named: "v2_goback"), forState: .Normal)
+        UIButton *leftBtn = [[UIButton alloc] init];
+        [leftBtn setTitle:@"返回" forState:UIControlStateNormal];
+        [leftBtn setImage:[UIImage imageNamed:@"v2_goback"] forState:UIControlStateNormal];
+        [leftBtn sizeToFit];
+        [leftBtn addTarget:self action:@selector(leftBtnClick) forControlEvents:UIControlEventTouchUpInside];
+        UIBarButtonItem *leftItem = [[UIBarButtonItem alloc] initWithCustomView:leftBtn];
         [viewController.navigationItem setLeftBarButtonItem:leftItem animated:YES];
         
         // 隐藏下面的TabBar

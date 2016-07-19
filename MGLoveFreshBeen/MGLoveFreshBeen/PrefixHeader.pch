@@ -55,6 +55,8 @@
 
 //判断是否为ios8
 #define ISIOS8 ([[UIDevice currentDevice].systemVersion floatValue] >= 8.0f)
+//判断是否为ios8
+#define ISIOS9 ([[UIDevice currentDevice].systemVersion floatValue] >= 9.0f)
 //iPhone4
 #define IS_IPHONE4 (([[UIScreen mainScreen] bounds].size.height == 480) ? YES : NO)
 //iPhone5

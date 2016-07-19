@@ -40,7 +40,7 @@
     {
         // 有
         // 保存当前版本号
-//        [LYMSaveTool setObject:currentVersion forKey:LYMversionKey];
+        [LYMSaveTool setObject:currentVersion forKey:LYMversionKey];
         // 进入新界面控制器
         LYMCollectionViewController *collectionVC = [[LYMCollectionViewController alloc] init];
         

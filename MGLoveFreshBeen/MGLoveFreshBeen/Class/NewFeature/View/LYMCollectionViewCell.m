@@ -31,11 +31,11 @@
     if (!_tipLable) {
         _tipLable = [[UILabel alloc] init];
         
-        _tipLable.frame = CGRectMake(self.width -150,1.5 * MGMargin, 140, 30);
+        _tipLable.frame = CGRectMake(self.width - 142,2 * MGMargin, 142, 30);
         _tipLable.textColor = [UIColor redColor];
         _tipLable.textAlignment = NSTextAlignmentCenter;
         _tipLable.backgroundColor = MGBackGray;
-        _tipLable.text = @"n秒后进入主界面";
+        _tipLable.text = @"7秒后进入主界面";
 //        [_tipLable sizeToFit];
         // 添加提示Label
         [self.contentView addSubview:_tipLable];
@@ -53,7 +53,7 @@
 }
 
 - (void)timeChange{
-    static int t = 60; // 必须用static修饰
+    static int t = 6; // 必须用static修饰
     NSString *str = [NSString stringWithFormat:@"%d秒后进入主界面",t];
     self.tipLable.text = str;;
     if (t == -1) {
@@ -159,6 +159,66 @@
 - (void)layoutSubviews{
     [super layoutSubviews];
 }
+
+/*
+ pragma mark - 屏幕适配
+ // 1.屏幕适配
+ - (void)setupScreenHeight{
+ if (iPone6P) {
+ _bgImageVeiw.image = [UIImage imageNamed:@"LaunchImage-800-Portrait-736h@3x"];
+ }else if (iPone6){
+ _bgImageVeiw.image = [UIImage imageNamed:@"LaunchImage-800-667h@2x"];
+ }else if (iPone5){
+ _bgImageVeiw.image = [UIImage imageNamed:@"LaunchImage-568h@2x"];
+ }else if (iPone4){
+ _bgImageVeiw.image = [UIImage imageNamed:@"LaunchImage"];
+ }
+ }
+ 
+ #pragma mark - 加载广告数据
+ // 2.加载广告数据
+ - (void)loadData{
+ // 创建会话管理者
+ AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+ self.manager = manager;
+ 
+ // 请求超时时间（超过这个时间就会来到fail那个Block里面）
+ manager.requestSerializer.timeoutInterval = 5.0;
+ 
+ // 第一种方法解决
+ // 增加系列化的解析方式
+ manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/html", nil];
+ 
+ // 请求传递的参数
+ NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
+ parameters[@"code2"] = BSCode;
+ 
+ [manager GET:@"http://mobads.baidu.com/cpro/ui/mads.php" parameters:parameters success:^(NSURLSessionDataTask * _Nonnull task, id  _Nonnull responseObject) {
+ if (responseObject == nil) return;
+ // 字典转模型 （模型数组）
+ NSMutableArray *adArray = [BSAdItem mj_objectArrayWithKeyValuesArray:responseObject[@"ad"]];
+ // 取得模型数组的最后一个模型
+ BSAdItem *adItem = [adArray firstObject];
+ self.adItem = adItem;
+ 
+ // 判断一下广告模型是否为空
+ if (self.adItem) {  // 有广告
+ // 设置广告的尺寸
+ CGFloat w = BSScreenW;
+ CGFloat h = BSScreenW*adItem.h/adItem.w;
+ 
+ self.adImageVeiw.frame = CGRectMake(0, 0, w, h);
+ [self.adImageVeiw sd_setImageWithURL:[NSURL URLWithString:adItem.w_picurl]];
+ }else{ // 没有广告
+ [SVProgressHUD showErrorWithStatus:@"当前没有广告页面"];
+ }
+ } failure:^(NSURLSessionDataTask * _Nonnull task, NSError * _Nonnull error) {
+ BSLog(@"%@",error);
+ }];
+ 
+ }
+
+ */
 
 
 @end

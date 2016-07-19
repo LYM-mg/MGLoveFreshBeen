@@ -62,6 +62,12 @@
 		3AADC9F21D361DCA00DDEE87 /* QuestionSectionHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AADC9F11D361DCA00DDEE87 /* QuestionSectionHeader.m */; settings = {ASSET_TAGS = (); }; };
 		3AADC9F51D36A19200DDEE87 /* MessageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AADC9F41D36A19200DDEE87 /* MessageVC.m */; settings = {ASSET_TAGS = (); }; };
 		3AADC9F81D36A80300DDEE87 /* MessageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AADC9F71D36A80300DDEE87 /* MessageModel.m */; settings = {ASSET_TAGS = (); }; };
+		3AB7C17A1D3E01EC00D7F790 /* LYMScanTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AB7C1791D3E01EC00D7F790 /* LYMScanTool.m */; settings = {ASSET_TAGS = (); }; };
+		3AB7C17D1D3E086D00D7F790 /* UIBarButtonItem+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AB7C17C1D3E086D00D7F790 /* UIBarButtonItem+Extension.m */; settings = {ASSET_TAGS = (); }; };
+		3AB7C1801D3E0E0F00D7F790 /* QRCodeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AB7C17F1D3E0E0F00D7F790 /* QRCodeVC.m */; settings = {ASSET_TAGS = (); }; };
+		3AB7C1871D3E108A00D7F790 /* QRCode.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AB7C1841D3E108A00D7F790 /* QRCode.storyboard */; settings = {ASSET_TAGS = (); }; };
+		3AB7C18B1D3E226E00D7F790 /* MyCardVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AB7C18A1D3E226E00D7F790 /* MyCardVC.m */; settings = {ASSET_TAGS = (); }; };
+		3AB7C18E1D3E2A2F00D7F790 /* LYMQRCodeTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AB7C18D1D3E2A2F00D7F790 /* LYMQRCodeTool.m */; settings = {ASSET_TAGS = (); }; };
 		3AD590F91D3B58B300BCD7AA /* UMSocialLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3AD590DF1D3B58B200BCD7AA /* UMSocialLocalizable.strings */; settings = {ASSET_TAGS = (); }; };
 		3AD590FA1D3B58B300BCD7AA /* libUMSocial_Sdk_5.2.1.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AD590ED1D3B58B300BCD7AA /* libUMSocial_Sdk_5.2.1.a */; settings = {ASSET_TAGS = (); }; };
 		3AD590FB1D3B58B300BCD7AA /* UMSCommentDetailController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AD590EF1D3B58B300BCD7AA /* UMSCommentDetailController.xib */; settings = {ASSET_TAGS = (); }; };
@@ -251,6 +257,17 @@
 		3AADC9F41D36A19200DDEE87 /* MessageVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageVC.m; sourceTree = "<group>"; };
 		3AADC9F61D36A80300DDEE87 /* MessageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageModel.h; sourceTree = "<group>"; };
 		3AADC9F71D36A80300DDEE87 /* MessageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageModel.m; sourceTree = "<group>"; };
+		3AB7C1781D3E01EC00D7F790 /* LYMScanTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYMScanTool.h; sourceTree = "<group>"; };
+		3AB7C1791D3E01EC00D7F790 /* LYMScanTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYMScanTool.m; sourceTree = "<group>"; };
+		3AB7C17B1D3E086D00D7F790 /* UIBarButtonItem+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+Extension.h"; sourceTree = "<group>"; };
+		3AB7C17C1D3E086D00D7F790 /* UIBarButtonItem+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+Extension.m"; sourceTree = "<group>"; };
+		3AB7C17E1D3E0E0F00D7F790 /* QRCodeVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRCodeVC.h; sourceTree = "<group>"; };
+		3AB7C17F1D3E0E0F00D7F790 /* QRCodeVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRCodeVC.m; sourceTree = "<group>"; };
+		3AB7C1841D3E108A00D7F790 /* QRCode.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = QRCode.storyboard; sourceTree = "<group>"; };
+		3AB7C1891D3E226E00D7F790 /* MyCardVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCardVC.h; sourceTree = "<group>"; };
+		3AB7C18A1D3E226E00D7F790 /* MyCardVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCardVC.m; sourceTree = "<group>"; };
+		3AB7C18C1D3E2A2F00D7F790 /* LYMQRCodeTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYMQRCodeTool.h; sourceTree = "<group>"; };
+		3AB7C18D1D3E2A2F00D7F790 /* LYMQRCodeTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYMQRCodeTool.m; sourceTree = "<group>"; };
 		3AD590E01D3B58B200BCD7AA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/UMSocialLocalizable.strings; sourceTree = "<group>"; };
 		3AD590E21D3B58B200BCD7AA /* UMSocial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMSocial.h; sourceTree = "<group>"; };
 		3AD590E31D3B58B200BCD7AA /* UMSocialAccountManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMSocialAccountManager.h; sourceTree = "<group>"; };
@@ -435,6 +452,10 @@
 		3A3667631D3D7AFF001CDD24 /* Scan(扫一扫) */ = {
 			isa = PBXGroup;
 			children = (
+				3AB7C1781D3E01EC00D7F790 /* LYMScanTool.h */,
+				3AB7C1791D3E01EC00D7F790 /* LYMScanTool.m */,
+				3AB7C18C1D3E2A2F00D7F790 /* LYMQRCodeTool.h */,
+				3AB7C18D1D3E2A2F00D7F790 /* LYMQRCodeTool.m */,
 			);
 			path = "Scan(扫一扫)";
 			sourceTree = "<group>";
@@ -514,6 +535,11 @@
 				3A64A2021D34E0AE00288490 /* HomeVC.m */,
 				3AD591531D3BD83600BCD7AA /* HomeWebVC.h */,
 				3AD591541D3BD83600BCD7AA /* HomeWebVC.m */,
+				3AB7C17E1D3E0E0F00D7F790 /* QRCodeVC.h */,
+				3AB7C17F1D3E0E0F00D7F790 /* QRCodeVC.m */,
+				3AB7C1841D3E108A00D7F790 /* QRCode.storyboard */,
+				3AB7C1891D3E226E00D7F790 /* MyCardVC.h */,
+				3AB7C18A1D3E226E00D7F790 /* MyCardVC.m */,
 			);
 			path = C;
 			sourceTree = "<group>";
@@ -656,17 +682,20 @@
 				3AED5D861D358A1F0045CF64 /* UITextView(附加placeholder功能) */,
 				3A64A22A1D350EF100288490 /* MJExtension */,
 				3A64A21B1D34EC8C00288490 /* UIView--Frame */,
-				3A64A1EE1D34D64300288490 /* C */,
+				3A64A1EE1D34D64300288490 /* UIBarItem */,
 				3A64A1EF1D34D64300288490 /* M */,
 				3A64A1F01D34D64300288490 /* V */,
 			);
 			path = Other;
 			sourceTree = "<group>";
 		};
-		3A64A1EE1D34D64300288490 /* C */ = {
+		3A64A1EE1D34D64300288490 /* UIBarItem */ = {
 			isa = PBXGroup;
 			children = (
+				3AB7C17B1D3E086D00D7F790 /* UIBarButtonItem+Extension.h */,
+				3AB7C17C1D3E086D00D7F790 /* UIBarButtonItem+Extension.m */,
 			);
+			name = UIBarItem;
 			path = C;
 			sourceTree = "<group>";
 		};
@@ -1136,6 +1165,7 @@
 		3A64A1BC1D34D4D100288490 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = ming;
 				TargetAttributes = {
@@ -1174,6 +1204,7 @@
 				3AED5D7C1D356C270045CF64 /* ming4.jpg in Resources */,
 				3A64A1FC1D34D64300288490 /* MinePlist.plist in Resources */,
 				3AED5D6B1D354AF50045CF64 /* MyCoupon in Resources */,
+				3AB7C1871D3E108A00D7F790 /* QRCode.storyboard in Resources */,
 				3AD591001D3B58B300BCD7AA /* UMSLoginViewController.xib in Resources */,
 				3AD591031D3B58B300BCD7AA /* UMSocialSDKResourcesNew.bundle in Resources */,
 				3A64A2261D34FF7000288490 /* TableHeadView.xib in Resources */,
@@ -1304,8 +1335,10 @@
 				3A64A2421D350EF100288490 /* MJProperty.m in Sources */,
 				3AED5D851D3584E00045CF64 /* IdeaVC.m in Sources */,
 				3A64A2411D350EF100288490 /* MJFoundation.m in Sources */,
+				3AB7C18B1D3E226E00D7F790 /* MyCardVC.m in Sources */,
 				3AD591401D3B96D900BCD7AA /* HomeHeaderView.m in Sources */,
 				3AE1BD931D38E3330069E1B9 /* MBProgressHUD+XMG.m in Sources */,
+				3AB7C17D1D3E086D00D7F790 /* UIBarButtonItem+Extension.m in Sources */,
 				3AED5D741D354BCD0045CF64 /* OrderCellModel.m in Sources */,
 				3A09CBE21D37B106007BD1FD /* BaseController.m in Sources */,
 				3A64A1C91D34D4D200288490 /* main.m in Sources */,
@@ -1321,6 +1354,7 @@
 				3A64A2111D34E15400288490 /* ShopCarVC.m in Sources */,
 				3AD591461D3B976900BCD7AA /* XRCarouselView.m in Sources */,
 				3A64A2441D350EF100288490 /* MJPropertyType.m in Sources */,
+				3AB7C18E1D3E2A2F00D7F790 /* LYMQRCodeTool.m in Sources */,
 				3A09CBB01D377BD6007BD1FD /* MyShopVC.m in Sources */,
 				3AA57C471D3A0E2A00AC5802 /* ProductsCell.m in Sources */,
 				3AE1BDB31D38FC480069E1B9 /* MASConstraint.m in Sources */,
@@ -1328,6 +1362,7 @@
 				3AA57C591D3AB1FE00AC5802 /* ProductDetailVC.m in Sources */,
 				3A64A2461D350EF100288490 /* NSObject+MJCoding.m in Sources */,
 				3A64A2001D34DEC500288490 /* TabBarVC.m in Sources */,
+				3AB7C17A1D3E01EC00D7F790 /* LYMScanTool.m in Sources */,
 				3AED5D8C1D358A200045CF64 /* LYMTextViewWithLabel.m in Sources */,
 				3AE1BDB61D38FC480069E1B9 /* MASViewAttribute.m in Sources */,
 				3AE1BDB71D38FC480069E1B9 /* MASViewConstraint.m in Sources */,
@@ -1347,6 +1382,7 @@
 				3AFF8CB51D3CA41C00B3120B /* HomeCollectionCell.m in Sources */,
 				3A09CBB61D378091007BD1FD /* MyAddressCell.m in Sources */,
 				3AD5914F1D3BA7CF00BCD7AA /* HeadReosurce.m in Sources */,
+				3AB7C1801D3E0E0F00D7F790 /* QRCodeVC.m in Sources */,
 				3A06A7981D39CEDA00D9C22B /* CouponCell.m in Sources */,
 				3AFF8CB21D3C9DEE00B3120B /* HotFreshModel.m in Sources */,
 				3AA57C4C1D3A0E4100AC5802 /* CategoryCell.m in Sources */,
@@ -1462,6 +1498,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = BrandAsset;
+				CLANG_ENABLE_MODULES = YES;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1480,6 +1517,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ming.MGLoveFreshBeen;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -1489,6 +1527,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = BrandAsset;
+				CLANG_ENABLE_MODULES = YES;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
