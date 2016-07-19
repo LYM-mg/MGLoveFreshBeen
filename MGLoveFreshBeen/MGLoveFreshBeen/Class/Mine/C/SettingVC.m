@@ -92,7 +92,7 @@
 
     
     UILabel *logoutLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, MGSCREEN_width, subHeight)];
-    logoutLabel.text = @"退出当前账号";
+    logoutLabel.text = @"退出当前运用";
     logoutLabel.textColor = MGRGBColor(90, 90, 90);
     logoutLabel.font = MGFont(16);
     logoutLabel.textAlignment = NSTextAlignmentCenter;
@@ -136,7 +136,8 @@
 
 // 退出
 - (void)logoutTapClick{
-    MGPE(@"退出失败，现在还没有登录");
+    MGPE(@"退出成功");
+    exit(0);
 }
 
 
