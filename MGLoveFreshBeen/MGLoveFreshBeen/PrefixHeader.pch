@@ -52,6 +52,8 @@
 #define MGSCREEN_width [UIScreen mainScreen].bounds.size.width
 #define MGSCREEN_height [UIScreen mainScreen].bounds.size.height
 
+//主窗口
+#define MGKeyWindow [UIApplication sharedApplication].keyWindow
 
 //判断是否为ios8
 #define ISIOS8 ([[UIDevice currentDevice].systemVersion floatValue] >= 8.0f)
@@ -61,6 +63,12 @@
 #define IS_IPHONE4 (([[UIScreen mainScreen] bounds].size.height == 480) ? YES : NO)
 //iPhone5
 #define IS_IPhone5 ([UIScreen mainScreen].bounds.size.height == 568)
+
+/* 屏幕有关 */
+#define iPone6   ([UIScreen mainScreen].bounds.size.height == 667)
+#define iPone6s   ([UIScreen mainScreen].bounds.size.height == 736)
+#define iPone5   ([UIScreen mainScreen].bounds.size.height == 568)
+#define iPone4  ([UIScreen mainScreen].bounds.size.height == 480)
 
 // 快速创建弱指针
 #define __weakSelf (__weak typeof(self) weakSelf = self)

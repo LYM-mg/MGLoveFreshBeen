@@ -125,7 +125,7 @@ static NSString * ID = @"Cell";
     
     LYMCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:ID forIndexPath:indexPath];
     
-    NSString *imageName = [NSString stringWithFormat:@"guide%ldBackground",indexPath.item+1];
+    NSString *imageName = [NSString stringWithFormat:@"guide%dBackground",(int)indexPath.item+1];
     
     cell.image = [UIImage imageNamed:imageName];
     
@@ -161,6 +161,7 @@ static NSString * ID = @"Cell";
     NSInteger page = currentOffsetX/self.view.width + 1;
     
     NSString *guideImageName = [NSString stringWithFormat:@"guide%ld",page];
+    
     NSString *largeTextImage = [NSString stringWithFormat:@"guideLargeText%ld",page];
 
     NSString *smallTextImage = [NSString stringWithFormat:@"guideSmallText%ld",page];

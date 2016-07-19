@@ -7,7 +7,7 @@
 //
 
 #import "LYMGuideTool.h"
-#import "TabBarVC.h"
+#import "AdvertiseVC.h"
 #import "LYMCollectionViewController.h"
 #import "LYMSaveTool.h"
 
@@ -34,8 +34,8 @@
     if ([currentVersion isEqualToString: lastVersion]) {
         // 没有
         // 进入TabBar控制器
-        TabBarVC *tabBar = [[TabBarVC alloc] init];
-        return tabBar;
+        AdvertiseVC *adVC = [[AdvertiseVC alloc] initWithNibName:@"AdvertiseVC" bundle:nil];
+        return adVC;
     }else
     {
         // 有

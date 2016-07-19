@@ -68,6 +68,9 @@
 		3AB7C1871D3E108A00D7F790 /* QRCode.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AB7C1841D3E108A00D7F790 /* QRCode.storyboard */; settings = {ASSET_TAGS = (); }; };
 		3AB7C18B1D3E226E00D7F790 /* MyCardVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AB7C18A1D3E226E00D7F790 /* MyCardVC.m */; settings = {ASSET_TAGS = (); }; };
 		3AB7C18E1D3E2A2F00D7F790 /* LYMQRCodeTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AB7C18D1D3E2A2F00D7F790 /* LYMQRCodeTool.m */; settings = {ASSET_TAGS = (); }; };
+		3AB7C1941D3E625600D7F790 /* AdvertiseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AB7C1931D3E625600D7F790 /* AdvertiseVC.m */; settings = {ASSET_TAGS = (); }; };
+		3AB7C1971D3E645C00D7F790 /* Aditem.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AB7C1961D3E645C00D7F790 /* Aditem.m */; settings = {ASSET_TAGS = (); }; };
+		3AB7C19B1D3E70AD00D7F790 /* AdvertiseVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AB7C19A1D3E70AD00D7F790 /* AdvertiseVC.xib */; settings = {ASSET_TAGS = (); }; };
 		3AD590F91D3B58B300BCD7AA /* UMSocialLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3AD590DF1D3B58B200BCD7AA /* UMSocialLocalizable.strings */; settings = {ASSET_TAGS = (); }; };
 		3AD590FA1D3B58B300BCD7AA /* libUMSocial_Sdk_5.2.1.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AD590ED1D3B58B300BCD7AA /* libUMSocial_Sdk_5.2.1.a */; settings = {ASSET_TAGS = (); }; };
 		3AD590FB1D3B58B300BCD7AA /* UMSCommentDetailController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AD590EF1D3B58B300BCD7AA /* UMSCommentDetailController.xib */; settings = {ASSET_TAGS = (); }; };
@@ -268,6 +271,11 @@
 		3AB7C18A1D3E226E00D7F790 /* MyCardVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCardVC.m; sourceTree = "<group>"; };
 		3AB7C18C1D3E2A2F00D7F790 /* LYMQRCodeTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYMQRCodeTool.h; sourceTree = "<group>"; };
 		3AB7C18D1D3E2A2F00D7F790 /* LYMQRCodeTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYMQRCodeTool.m; sourceTree = "<group>"; };
+		3AB7C1921D3E625600D7F790 /* AdvertiseVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdvertiseVC.h; sourceTree = "<group>"; };
+		3AB7C1931D3E625600D7F790 /* AdvertiseVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdvertiseVC.m; sourceTree = "<group>"; };
+		3AB7C1951D3E645C00D7F790 /* Aditem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Aditem.h; sourceTree = "<group>"; };
+		3AB7C1961D3E645C00D7F790 /* Aditem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Aditem.m; sourceTree = "<group>"; };
+		3AB7C19A1D3E70AD00D7F790 /* AdvertiseVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AdvertiseVC.xib; sourceTree = "<group>"; };
 		3AD590E01D3B58B200BCD7AA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/UMSocialLocalizable.strings; sourceTree = "<group>"; };
 		3AD590E21D3B58B200BCD7AA /* UMSocial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMSocial.h; sourceTree = "<group>"; };
 		3AD590E31D3B58B200BCD7AA /* UMSocialAccountManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMSocialAccountManager.h; sourceTree = "<group>"; };
@@ -505,6 +513,7 @@
 		3A64A1E11D34D64300288490 /* Class */ = {
 			isa = PBXGroup;
 			children = (
+				3AB7C18F1D3E61DA00D7F790 /* AD */,
 				3AFF8CBA1D3D413B00B3120B /* NewFeature */,
 				3A64A1E61D34D64300288490 /* Main */,
 				3A64A1E21D34D64300288490 /* Home */,
@@ -880,6 +889,34 @@
 			path = MJExtension;
 			sourceTree = "<group>";
 		};
+		3AB7C18F1D3E61DA00D7F790 /* AD */ = {
+			isa = PBXGroup;
+			children = (
+				3AB7C1901D3E61DA00D7F790 /* C */,
+				3AB7C1911D3E61DA00D7F790 /* M */,
+			);
+			path = AD;
+			sourceTree = "<group>";
+		};
+		3AB7C1901D3E61DA00D7F790 /* C */ = {
+			isa = PBXGroup;
+			children = (
+				3AB7C1921D3E625600D7F790 /* AdvertiseVC.h */,
+				3AB7C1931D3E625600D7F790 /* AdvertiseVC.m */,
+				3AB7C19A1D3E70AD00D7F790 /* AdvertiseVC.xib */,
+			);
+			path = C;
+			sourceTree = "<group>";
+		};
+		3AB7C1911D3E61DA00D7F790 /* M */ = {
+			isa = PBXGroup;
+			children = (
+				3AB7C1951D3E645C00D7F790 /* Aditem.h */,
+				3AB7C1961D3E645C00D7F790 /* Aditem.m */,
+			);
+			path = M;
+			sourceTree = "<group>";
+		};
 		3AD590DE1D3B58B200BCD7AA /* UMSocial_Sdk_5.2.1 */ = {
 			isa = PBXGroup;
 			children = (
@@ -1215,6 +1252,7 @@
 				3AED5D651D354AF50045CF64 /* 首页焦点按钮 in Resources */,
 				3AED5D681D354AF50045CF64 /* AD in Resources */,
 				3A64A1FB1D34D64300288490 /* HelpPlist.plist in Resources */,
+				3AB7C19B1D3E70AD00D7F790 /* AdvertiseVC.xib in Resources */,
 				3AD590F91D3B58B300BCD7AA /* UMSocialLocalizable.strings in Resources */,
 				3AED5D661D354AF50045CF64 /* 首页新鲜热卖 in Resources */,
 				3AD591451D3B976900BCD7AA /* placeholder.png in Resources */,
@@ -1317,6 +1355,7 @@
 				3AADC9F81D36A80300DDEE87 /* MessageModel.m in Sources */,
 				3AFF8CC31D3D413B00B3120B /* LYMCollectionViewCell.m in Sources */,
 				3A64A1D51D34D4D200288490 /* MGLoveFreshBeen.xcdatamodeld in Sources */,
+				3AB7C1941D3E625600D7F790 /* AdvertiseVC.m in Sources */,
 				3AE1BDB91D38FC480069E1B9 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
 				3A64A2241D34FF1200288490 /* TableHeadView.m in Sources */,
 				3AFF8CC71D3D419C00B3120B /* LYMSaveTool.m in Sources */,
@@ -1378,6 +1417,7 @@
 				3A64A2141D34E16C00288490 /* MineVC.m in Sources */,
 				3A64A2031D34E0AE00288490 /* HomeVC.m in Sources */,
 				3A64A1F91D34D64300288490 /* AppDelegate.m in Sources */,
+				3AB7C1971D3E645C00D7F790 /* Aditem.m in Sources */,
 				3A64A2171D34E23A00288490 /* NavigationVC.m in Sources */,
 				3AFF8CB51D3CA41C00B3120B /* HomeCollectionCell.m in Sources */,
 				3A09CBB61D378091007BD1FD /* MyAddressCell.m in Sources */,
