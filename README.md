@@ -1,15 +1,10 @@
 # MGLoveFreshBeen
-<<<<<<< HEAD
-仿写
 
-- 后来又整合了UICollectionView的使用
-=======
-仿写!!!!
+-  [MGLoveFreshBeen介绍 github下载](http://www.jianshu.com/writer#/notebooks/2919816/notes/3828997)
 
-[图片1](http://www.gif5.net/93036a17-8af3-4f25-acd6-039d3a1b3e62)
+![](http://upload-images.jianshu.io/upload_images/1429890-c37c86a9955226e5.gif?imageMogr2/auto-orient/strip)
 
-[图片2](http://www.gif5.net/409543ef-be9c-4269-af3f-3abea152549d)
+![](http://upload-images.jianshu.io/upload_images/1429890-0e65b967be715aed.gif?imageMogr2/auto-orient/strip)
 
-[图片3]((http://www.gif5.net/0a7ee476-1e3b-4f71-8f60-1faea36ac923))
+![MGLoveFreshBeen介绍.gif](http://upload-images.jianshu.io/upload_images/1429890-6d3d41d08fd6c572.gif?imageMogr2/auto-orient/strip)
 
->>>>>>> ede44df9a29eaef77947250db4bbb21248534b2b
