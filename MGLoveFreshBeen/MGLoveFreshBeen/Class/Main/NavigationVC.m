@@ -36,12 +36,12 @@
         if(barItem==[[UINavigationItem alloc] init].leftBarButtonItem){
             [barItem setTitleTextAttributes:@{
                                               NSForegroundColorAttributeName : [UIColor clearColor],
-                                              NSFontAttributeName : [UIFont systemFontOfSize:16]
+                                              NSFontAttributeName : [UIFont systemFontOfSize:14]
                                               } forState:UIControlStateNormal];
         }else{
             [barItem setTitleTextAttributes:@{
                                               NSForegroundColorAttributeName : [UIColor whiteColor],
-                                              NSFontAttributeName : [UIFont systemFontOfSize:16]
+                                              NSFontAttributeName : [UIFont systemFontOfSize:14]
                                               } forState:UIControlStateNormal];
             
         }
@@ -89,8 +89,19 @@
         [leftBtn setTitle:@"返回" forState:UIControlStateNormal];
         [leftBtn setImage:[UIImage imageNamed:@"v2_goback"] forState:UIControlStateNormal];
         [leftBtn sizeToFit];
+        /** 想让 导航栏的左按钮向左偏一点的方法 */
+        leftBtn.contentEdgeInsets = UIEdgeInsetsMake(0, -10, 0, 0);
+        /** 想让按钮的内容水平居左 */
+        leftBtn.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;  /** 想让按钮的内容水平居左 */
+        leftBtn.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
         [leftBtn addTarget:self action:@selector(leftBtnClick) forControlEvents:UIControlEventTouchUpInside];
         UIBarButtonItem *leftItem = [[UIBarButtonItem alloc] initWithCustomView:leftBtn];
+        
+        /**
+         *  width为负数时，相当于btn向右移动width数值个像素，由于按钮本身和边界间距为5pix，所以width设为-5时，间距正好调整
+         *  为0；width为正数时，正好相反，相当于往左移动width数值个像素
+         */
+        leftItem.width = -5;
         [viewController.navigationItem setLeftBarButtonItem:leftItem animated:YES];
         
         // 隐藏下面的TabBar
