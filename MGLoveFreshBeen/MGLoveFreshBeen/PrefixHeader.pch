@@ -60,7 +60,7 @@
 //iPhone4
 #define IS_IPHONE4 (([[UIScreen mainScreen] bounds].size.height == 480) ? YES : NO)
 //iPhone5
-#define iPhone5 ([UIScreen mainScreen].bounds.size.height == 568)
+#define IS_IPhone5 ([UIScreen mainScreen].bounds.size.height == 568)
 
 // 快速创建弱指针
 #define __weakSelf (__weak typeof(self) weakSelf = self)

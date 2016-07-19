@@ -36,12 +36,12 @@
         if(barItem==[[UINavigationItem alloc] init].leftBarButtonItem){
             [barItem setTitleTextAttributes:@{
                                               NSForegroundColorAttributeName : [UIColor clearColor],
-                                              NSFontAttributeName : [UIFont systemFontOfSize:0]
+                                              NSFontAttributeName : [UIFont systemFontOfSize:16]
                                               } forState:UIControlStateNormal];
         }else{
             [barItem setTitleTextAttributes:@{
                                               NSForegroundColorAttributeName : [UIColor whiteColor],
-                                              NSFontAttributeName : [UIFont systemFontOfSize:13]
+                                              NSFontAttributeName : [UIFont systemFontOfSize:16]
                                               } forState:UIControlStateNormal];
             
         }

@@ -33,8 +33,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uuP-Sv-Zee" userLabel="容器视图">
-                                <rect key="frame" x="63" y="114" width="250" height="250"/>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uuP-Sv-Zee" userLabel="容器视图">
+                                <rect key="frame" x="63" y="164" width="250" height="250"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="qrcode_border" translatesAutoresizingMaskIntoConstraints="NO" id="NX9-py-3Ga" userLabel="边框">
                                         <rect key="frame" x="0.0" y="0.0" width="250" height="250"/>
@@ -63,7 +63,7 @@
                                 </variation>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="请将手机对准条形码/二维码" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BWv-78-JsO">
-                                <rect key="frame" x="96" y="384" width="185" height="18"/>
+                                <rect key="frame" x="96" y="434" width="185" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -79,18 +79,20 @@
                                     <tabBarItem tag="2" title="条形码" image="qrcode_tabbar_icon_qrcode" id="nNo-zX-dGs"/>
                                 </items>
                                 <connections>
-                                    <outlet property="delegate" destination="gkb-rU-guT" id="l9J-Kg-dyJ"/>
+                                    <outlet property="delegate" destination="gkb-rU-guT" id="ft4-gw-FFS"/>
                                 </connections>
                             </tabBar>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="48c-RE-ZGn">
-                                <rect key="frame" x="148" y="432" width="80" height="30"/>
-                                <color key="backgroundColor" white="0.5" alpha="0.62" colorSpace="calibratedWhite"/>
+                                <rect key="frame" x="148" y="482" width="80" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="Bil-dl-Nqf"/>
                                     <constraint firstAttribute="width" constant="80" id="Drx-JZ-8jx"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <state key="normal" title="我的名片">
-                                    <color key="titleColor" red="0.65167561439999999" green="0.073481886859999998" blue="0.66666666669999997" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="0.60000002384185791" green="0.40000000596046448" blue="0.20000000298023224" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <segue destination="XKm-D5-WSf" kind="show" id="k8u-jX-wXC"/>
@@ -105,16 +107,18 @@
                             <constraint firstItem="BWv-78-JsO" firstAttribute="centerX" secondItem="b7n-wb-5XI" secondAttribute="centerX" id="LB2-QA-Nkx"/>
                             <constraint firstItem="mUw-RG-b4D" firstAttribute="leading" secondItem="9pd-wr-I4U" secondAttribute="leading" id="LRQ-KA-nrj"/>
                             <constraint firstItem="uuP-Sv-Zee" firstAttribute="centerX" secondItem="9pd-wr-I4U" secondAttribute="centerX" id="MqM-01-AKW"/>
-                            <constraint firstItem="uuP-Sv-Zee" firstAttribute="top" secondItem="pAL-V3-GWa" secondAttribute="bottom" constant="50" id="UHN-4l-Rrd"/>
+                            <constraint firstItem="uuP-Sv-Zee" firstAttribute="top" secondItem="pAL-V3-GWa" secondAttribute="bottom" constant="100" id="UHN-4l-Rrd"/>
                             <constraint firstItem="uuP-Sv-Zee" firstAttribute="centerY" secondItem="9pd-wr-I4U" secondAttribute="centerY" id="fhB-yC-1Tk"/>
                             <constraint firstItem="48c-RE-ZGn" firstAttribute="centerX" secondItem="uuP-Sv-Zee" secondAttribute="centerX" id="nTK-Qv-zuj"/>
                             <constraint firstAttribute="trailing" secondItem="mUw-RG-b4D" secondAttribute="trailing" id="u0x-eT-DAA"/>
                             <constraint firstItem="48c-RE-ZGn" firstAttribute="top" secondItem="BWv-78-JsO" secondAttribute="bottom" constant="30" id="upc-8M-OcL"/>
+                            <constraint firstItem="BWv-78-JsO" firstAttribute="centerX" secondItem="uuP-Sv-Zee" secondAttribute="centerX" id="xBY-rj-wMB"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="fhB-yC-1Tk"/>
                                 <exclude reference="Fz3-Jp-XCx"/>
+                                <exclude reference="LB2-QA-Nkx"/>
                             </mask>
                         </variation>
                     </view>
@@ -135,6 +139,7 @@
                         <outlet property="borderView" destination="NX9-py-3Ga" id="fFu-Mb-T0f"/>
                         <outlet property="containView" destination="uuP-Sv-Zee" id="gAv-e5-45t"/>
                         <outlet property="containViewHCon" destination="i48-vM-gGf" id="EUQ-gu-Lmo"/>
+                        <outlet property="containViewTopCon" destination="UHN-4l-Rrd" id="MEA-54-e6f"/>
                         <outlet property="resultLabel" destination="BWv-78-JsO" id="DUf-C7-RBR"/>
                         <outlet property="scanView" destination="b7n-wb-5XI" id="fDV-ce-X94"/>
                         <outlet property="scanViewTopCon" destination="NAX-nS-BWe" id="q9r-my-pM1"/>

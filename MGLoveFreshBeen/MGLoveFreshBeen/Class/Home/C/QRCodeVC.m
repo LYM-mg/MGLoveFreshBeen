@@ -12,42 +12,53 @@
 
 @interface QRCodeVC ()<UITabBarDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate,AVCaptureMetadataOutputObjectsDelegate>
 #pragma mark - storyboard拖线属性
+/**  底部选择Tabbar */
 @property (weak, nonatomic) IBOutlet UITabBar *tabBar;
+/**  容器 */
 @property (weak, nonatomic) IBOutlet UIView *containView;
+/**  扫描的边图片 */
 @property (weak, nonatomic) IBOutlet UIImageView *borderView;
+/**  扫描的View */
 @property (weak, nonatomic) IBOutlet UIImageView *scanView;
+/**  扫描的的结果 */
 @property (weak, nonatomic) IBOutlet UILabel *resultLabel;
 
+/**  容器高度 */
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *containViewHCon;
+/**  扫描的View顶部的约束 */
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *scanViewTopCon;
+/**  容器顶部的约束 适配4s */
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *containViewTopCon;
 
 /** session */
 @property (nonatomic,strong) AVCaptureSession *session;
 /** preViewLayer */
 @property (nonatomic,strong) AVCaptureVideoPreviewLayer *preViewLayer;
+/**  扫描的边界框 */
 @property (nonatomic,strong) CAShapeLayer *shapeLayer;
 
+/** 定时器 */
+@property (weak, nonatomic) NSTimer *timer;
 @end
 
 @implementation QRCodeVC
-
-- (void)scanChange{
-    [self setUpScanAnimation];
-}
-
+#pragma mark - 开启定时器
 - (void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
+    [self.timer invalidate];
 }
 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    // 3.添加扫描动画
-    [self setUpScanAnimation];
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
+    
+    if (IS_IPHONE4) {
+        self.containViewTopCon.constant = 2*MGMargin;
+    }
     
     // 1.让Tabbar默认选择第0个
     self.tabBar.selectedItem = self.tabBar.items[0];
@@ -55,8 +66,8 @@
     // 2.开始扫描
     [self startScanning];
     
-//    // 3.添加扫描动画
-//    [self setUpScanAnimation];
+    // 3.添加扫描动画
+    [self setUpScanAnimation];
 }
 
 /**
@@ -101,14 +112,15 @@
 - (void)setUpScanAnimation{
     self.scanViewTopCon.constant = -self.containViewHCon.constant;
     [self.view layoutIfNeeded];
-    
     [UIView animateWithDuration:1.0 animations:^{
         // 告诉系统该动画需要重复
         [UIView setAnimationRepeatCount:MAXFLOAT];
-        self.scanViewTopCon.constant = self.containViewHCon.constant;
+        self.scanViewTopCon.constant = MGMargin;
+//        [UIView setAnimationRepeatAutoreverses:YES];
         [self.view layoutIfNeeded];
     }];
 }
+
 
 
 - (void)didReceiveMemoryWarning {
