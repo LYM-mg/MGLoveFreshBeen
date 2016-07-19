@@ -48,6 +48,10 @@ static NSString *const KQuestionSectionHeader = @"KQuestionSectionHeader";
                 [questions addObject:model];
                  _questionData = questions;
             }
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self.tableView reloadData];
+            });
         });
     }
     return _questionData;

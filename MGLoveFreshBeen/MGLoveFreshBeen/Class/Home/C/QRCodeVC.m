@@ -45,11 +45,14 @@
 #pragma mark - 开启定时器
 - (void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
-    [self.timer invalidate];
+//    [self.timer invalidate];
 }
 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
+    
+    // 3.添加扫描动画
+    [self setUpScanAnimation];
 }
 
 - (void)viewDidLoad {
@@ -67,7 +70,7 @@
     [self startScanning];
     
     // 3.添加扫描动画
-    [self setUpScanAnimation];
+//    [self setUpScanAnimation];
 }
 
 /**
