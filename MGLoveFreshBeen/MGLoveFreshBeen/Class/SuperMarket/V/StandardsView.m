@@ -223,6 +223,8 @@
         UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"提示" message:@"客官，你还买不买啊，都减没了！" delegate:self cancelButtonTitle:@"我看看再说～" otherButtonTitles: nil];
         [alertView show];
     }
+    if (self.buyTotalCount == 0)
+        return ;
     self.buyTotalCount --;
     self.numberTextFied.text = [NSString stringWithFormat:@"%d",self.buyTotalCount];
 }

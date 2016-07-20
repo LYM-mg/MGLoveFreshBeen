@@ -41,7 +41,7 @@
 }
 
 /**
- *  重新HotGoods模型
+ *  重写HotGoods模型
  */
 - (void)setHotGood:(HotGoods *)hotGood{
     _hotGood = hotGood;
@@ -59,6 +59,7 @@
     _discountPriceLabel.text = [hotGood valueForKeyPath:@"partner_price"];
     
     _discountPriceView.hidden = (_originPriceLabel.text == _discountPriceLabel.text);
+    _discountPriceLabel.hidden = (_originPriceLabel.text == _discountPriceLabel.text);
 
 }
 

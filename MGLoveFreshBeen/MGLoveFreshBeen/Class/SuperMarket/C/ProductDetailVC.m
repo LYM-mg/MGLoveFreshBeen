@@ -292,7 +292,7 @@ typedef  enum {
 - (void)addOrBuyProduct:(UIButton *)sender{
     if (sender.tag == ProductTypeAdd) { // 添加商品
         StandardsView *mystandardsView = [[StandardsView alloc] initWithFrame:self.view.bounds];
-
+        mystandardsView.shopImageView.image = productImageView.image;
         mystandardsView.delegate = self;
 //        mystandardsView.GoodDetailView = self.view;//设置该属性 对应的view 会缩小
         
@@ -312,10 +312,9 @@ typedef  enum {
 //点击自定义按键
 -(void)Standards:(StandardsView *)standardView SelectBtnClick:(UIButton *)sender
 {
-    [standardView dismiss];
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        
-    });
+    [UIView animateWithDuration:0.7 animations:^{
+        [standardView dismiss];
+    }];
 }
 
 
