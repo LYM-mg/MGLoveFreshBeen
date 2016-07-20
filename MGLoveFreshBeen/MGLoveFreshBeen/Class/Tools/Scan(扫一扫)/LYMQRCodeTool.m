@@ -12,7 +12,7 @@
 
 #pragma mark - Navigation
 /// 创建二维码照片
-+ (UIImage *)creatCIQRWithText:(NSString *)text{
++ (UIImage *)creatCIQRWithText:(NSString *)text withR:(CGFloat)R G:(CGFloat)g B:(CGFloat)b{
     // 1.创建滤镜
     CIFilter *filter = [CIFilter filterWithName:@"CIQRCodeGenerator"];
     
@@ -31,7 +31,7 @@
     UIImage *image = [self createNonInterpolatedUIImageFormCIImage:outputImage withSize:100];
     
     // 生成一张彩色图片
-    image = [self imageBlackToTransparent:image withRed:100 andGreen:144 andBlue:60];
+    image = [self imageBlackToTransparent:image withRed:R andGreen:g andBlue:b];
     
     return image;
 }

@@ -33,7 +33,7 @@
  */
 - (void)setUpQRCode{
     // 1.设置图片
-    UIImage *image = [LYMQRCodeTool creatCIQRWithText:@"http://www.jianshu.com/users/57b58a39b70e/latest_articles"];
+    UIImage *image = [LYMQRCodeTool creatCIQRWithText:@"http://www.jianshu.com/users/57b58a39b70e/latest_articles" withR:arc4random_uniform(255) G:arc4random_uniform(255) B:arc4random_uniform(255)];
     
     // 6.在二维码中画上头像
     self.cardImageView.image = [self drawImage:image iconName:@"12.png"];
@@ -55,11 +55,10 @@
     // 4.计算中间图片的大小以及放图片进去的矩形框
     UIImage *centerImage = [UIImage imageNamed:iconName];
     
-    CGFloat width = 60;
-    CGFloat height = 60;
+    CGFloat width = 40;
+    CGFloat height = 40;
     CGFloat x = (image.size.width - width)/2;
     CGFloat y = (image.size.height - height)/2;
-    
     [centerImage drawInRect:CGRectMake(x, y, width, height)];
     
     // 5.获得当前感图片
