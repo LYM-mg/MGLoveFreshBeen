@@ -73,7 +73,7 @@
                                     <tabBarItem tag="2" title="条形码" image="qrcode_tabbar_icon_qrcode" id="nNo-zX-dGs"/>
                                 </items>
                                 <connections>
-                                    <outlet property="delegate" destination="gkb-rU-guT" id="ft4-gw-FFS"/>
+                                    <outlet property="delegate" destination="gkb-rU-guT" id="NNv-Qp-9er"/>
                                 </connections>
                             </tabBar>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="48c-RE-ZGn">
@@ -143,7 +143,7 @@
                         <outlet property="resultLabel" destination="BWv-78-JsO" id="DUf-C7-RBR"/>
                         <outlet property="scanView" destination="b7n-wb-5XI" id="fDV-ce-X94"/>
                         <outlet property="scanViewTopCon" destination="NAX-nS-BWe" id="q9r-my-pM1"/>
-                        <outlet property="tabBar" destination="mUw-RG-b4D" id="JUO-b3-OYG"/>
+                        <outlet property="tabBar" destination="mUw-RG-b4D" id="hPg-PS-cdi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qj9-JI-HaY" userLabel="First Responder" sceneMemberID="firstResponder"/>

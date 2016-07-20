@@ -25,10 +25,11 @@
 
 /**  容器高度 */
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *containViewHCon;
-/**  扫描的View顶部的约束 */
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *scanViewTopCon;
 /**  容器顶部的约束 适配4s */
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *containViewTopCon;
+/**  扫描的View顶部的约束 */
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *scanViewTopCon;
+
 
 /** session */
 @property (nonatomic,strong) AVCaptureSession *session;
@@ -158,6 +159,9 @@
 //        [self.preViewLayer removeFromSuperlayer];
 
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:object.stringValue]];
+    }else{
+        [self.shapeLayer removeFromSuperlayer];
+        MGPE(@"没有扫描到结果");
     }
 }
 
@@ -166,7 +170,7 @@
     [self.shapeLayer removeFromSuperlayer];
     
     // 1.创建CAShapeLayer(形状类型:专门用于画图)
-    CAShapeLayer *shapeLayer = [CAShapeLayer new];
+    CAShapeLayer *shapeLayer = [[CAShapeLayer alloc] init];
     
     // 2.设置layer属性
     shapeLayer.borderColor = [UIColor orangeColor].CGColor;
@@ -264,17 +268,17 @@
 #pragma mark - UITabBarDelegate
 - (void)tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item{
     // 1.修改内容view的高度
-    self.containViewHCon.constant = tabBar.tag == 1 ? 250 : 120;
+    self.containViewHCon.constant = (item.tag == 1) ? 250 : 120;
     [self.view layoutIfNeeded];
     
     // 2.移除之前动画
     [self.scanView.layer removeAllAnimations];
     
-    // 3.调用之前的冲击波动画
+    // 3.重新调用之前的冲击波动画
     [self setUpScanAnimation];
     
     // 4.调用之前的开始扫描动画
-    [self startScanning];
+//    [self startScanning];
 }
 
 @end
