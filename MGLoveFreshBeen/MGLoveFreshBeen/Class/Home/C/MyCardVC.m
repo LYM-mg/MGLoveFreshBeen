@@ -33,8 +33,7 @@
  */
 - (void)setUpQRCode{
     // 1.设置图片
-    UIImage *image = [LYMQRCodeTool creatCIQRWithText:@"http://www.jianshu.com/users/57b58a39b70e/latest_articles" withR:arc4random_uniform(255) G:arc4random_uniform(255) B:arc4random_uniform(255)];
-    
+    UIImage *image = [LYMQRCodeTool creatQRCodeWithText:@"http://www.jianshu.com/users/57b58a39b70e/latest_articles" withR:arc4random_uniform(255) G:arc4random_uniform(255) B:arc4random_uniform(255)];    
     // 6.在二维码中画上头像
     self.cardImageView.image = [self drawImage:image iconName:@"12.png"];
 }

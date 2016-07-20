@@ -15,6 +15,7 @@
 #import "UMSocialQQHandler.h"
 #import "UMSocialSinaSSOHandler.h"
 
+#import "SuperMarketVC.h"
 
 @interface AppDelegate ()<UMSocialUIDelegate>
 

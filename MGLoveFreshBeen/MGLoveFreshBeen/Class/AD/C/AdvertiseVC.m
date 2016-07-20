@@ -125,7 +125,7 @@
     NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
     parameters[@"code2"] = MGKCode;
     
-    [manager GET:@"http://mobads.baidu.com/cpro/ui/mads.php" parameters:parameters success:^(NSURLSessionDataTask * _Nonnull task, id  _Nonnull responseObject) {
+    [manager GET:@"http://mobads.baidu.com/cpro/ui/mads.php" parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nonnull responseObject) {
         if (responseObject == nil) return;
         // 字典转模型 （模型数组）
         NSMutableArray *adArray = [Aditem objectArrayWithKeyValuesArray:responseObject[@"ad"]];
@@ -145,7 +145,9 @@
             [SVProgressHUD showErrorWithStatus:@"当前没有广告页面"];
         }
     } failure:^(NSURLSessionDataTask * _Nonnull task, NSError * _Nonnull error) {
-        MGPE(error);
+//        NSString *errorStr = [NSString stringWithFormat:@"%@",error];
+//        MGPE(errorStr);
+        MGLog(@"%@",error);
     }];
     
 }

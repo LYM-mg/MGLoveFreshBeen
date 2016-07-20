@@ -14,7 +14,15 @@
 
 #import "AppDelegate.h"
 
-@interface ProductDetailVC ()<UMSocialUIDelegate>
+#import "StandardsView.h"
+
+typedef  enum {
+    ProductTypeAdd,
+    ProductTypeBuy
+}ProductType;
+
+
+@interface ProductDetailVC ()<UMSocialUIDelegate,StandardsViewDelegate>
 {
     UIScrollView *scrollView;
     UIImageView *productImageView;
@@ -39,12 +47,13 @@
     UILabel *promptLabel;
     UILabel *promptDetailLabel;
     
-    UIView *bottomView;
-    UILabel *addProductLabel;
-    
     UILabel *marketPriceLabel;
     UILabel *priceLabel;
     
+    // 底部View
+    UIView *bottomView;
+    UIButton *addProductBtn;
+    UIButton *buyProductBtn;
 }
 /** HotGoods */
 @property (nonatomic,strong) HotGoods *goods;
@@ -55,11 +64,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
    
-    // 添加子控件
-    [self setupMainView];
-    
-    
-    
+//    // 添加子控件
+//    [self setupMainView];
+//    
+//
 }
 
 - (void)didReceiveMemoryWarning {
@@ -243,15 +251,30 @@
     // 底部的View
     [self buildLineView:CGRectMake(0, MGSCREEN_height - 51, MGSCREEN_width, 1) addLineToView:self.view];
     
-    bottomView = [[UIView alloc] initWithFrame:CGRectMake(0, MGSCREEN_height - bottomView.height, MGSCREEN_width, 50)];
-    bottomView.backgroundColor = MGProductBackGray;
+    bottomView = [[UIView alloc] initWithFrame:CGRectMake(0, self.view.height - MGNavHeight - 50, MGSCREEN_width, 50)];
+    bottomView.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:bottomView];
     
-    addProductLabel = [[UILabel alloc] initWithFrame:CGRectMake(15, 0, 70, 50)];
-    addProductLabel.text = @"添加商品:";
-    addProductLabel.textColor = [UIColor blackColor];
-    addProductLabel.font = MGFont(15);
-    [bottomView addSubview:addProductLabel];
+    addProductBtn = [[UIButton alloc] init];
+    addProductBtn.tag = ProductTypeAdd;
+    addProductBtn.backgroundColor = [UIColor redColor];
+    [addProductBtn setTitle:@"加入购物车" forState:UIControlStateNormal];
+    [addProductBtn setTitleColor:[UIColor grayColor]  forState:UIControlStateHighlighted];
+    [addProductBtn addTarget:self action:@selector(addOrBuyProduct:) forControlEvents:UIControlEventTouchUpInside];
+    
+    buyProductBtn = [[UIButton alloc] init];
+    buyProductBtn.tag = ProductTypeBuy;
+    buyProductBtn.backgroundColor = [UIColor purpleColor];
+    [buyProductBtn setTitle:@"立即购买" forState:UIControlStateNormal];
+    [buyProductBtn setTitleColor:[UIColor grayColor]  forState:UIControlStateHighlighted];
+    [buyProductBtn addTarget:self action:@selector(addOrBuyProduct:) forControlEvents:UIControlEventTouchUpInside];
+    
+    CGFloat width = self.view.width/2;
+    addProductBtn .frame = CGRectMake(0, 0, width, bottomView.height);
+    buyProductBtn .frame = CGRectMake(width, 0, width, bottomView.height);
+    
+    [bottomView addSubview:addProductBtn];
+    [bottomView addSubview:buyProductBtn];
 }
 
 
@@ -264,6 +287,44 @@
 }
 
 
+
+#pragma mark - 购物车
+- (void)addOrBuyProduct:(UIButton *)sender{
+    if (sender.tag == ProductTypeAdd) { // 添加商品
+        StandardsView *mystandardsView = [[StandardsView alloc] initWithFrame:self.view.bounds];
+
+        mystandardsView.delegate = self;
+//        mystandardsView.GoodDetailView = self.view;//设置该属性 对应的view 会缩小
+        
+//        mystandardsView.showAnimationType = StandsViewShowAnimationShowFromLeft;
+//        mystandardsView.dismissAnimationType = StandsViewDismissAnimationDisToRight;
+        mystandardsView.showAnimationType = StandsViewShowAnimationFlash;
+        mystandardsView.dismissAnimationType = StandsViewDismissAnimationFlash;
+        [self.view addSubview:mystandardsView];
+        
+        [mystandardsView show];
+    }else{ // 立即购买商品 (跳转到 购买支付界面)
+        
+    }
+}
+
+#pragma mark - standardView  delegate
+//点击自定义按键
+-(void)Standards:(StandardsView *)standardView SelectBtnClick:(UIButton *)sender
+{
+    [standardView dismiss];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        
+    });
+}
+
+
+
+
+
+
+
+
 #pragma mark - 分享
 - (void)setUpNavigationItem:(NSString *)titleText {
     self.navigationItem.title = titleText;
@@ -271,7 +332,7 @@
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"分享" style:UIBarButtonItemStylePlain target:self action:@selector(shareItemClick)];
 }
 
-// MARK: - Action
+// MARK: - 分享Action
 - (void)shareItemClick {
     // 微信
     [UMSocialData defaultData].extConfig.wechatSessionData.url = @"https://github.com/LYM-mg/MGLoveFreshBeen";
@@ -288,15 +349,6 @@
     
     // 分享平台
     NSArray *arr = [NSArray arrayWithObjects:UMShareToSina,UMShareToTencent,UMShareToQQ,UMShareToQzone,UMShareToWechatSession,UMShareToWechatTimeline,UMShareToWechatFavorite, nil];
-
-    
-    //调用快速分享接口
-//    [UMSocialSnsService presentSnsController:self
-//                                      appKey:MGUmengAppkey
-//                                   shareText:shareText
-//                                  shareImage:shareImage
-//                             shareToSnsNames:nil
-//                                    delegate:self];
     
     //调用快速分享接口
     [UMSocialSnsService presentSnsIconSheetView:self

@@ -71,6 +71,10 @@
 		3AB7C1941D3E625600D7F790 /* AdvertiseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AB7C1931D3E625600D7F790 /* AdvertiseVC.m */; settings = {ASSET_TAGS = (); }; };
 		3AB7C1971D3E645C00D7F790 /* Aditem.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AB7C1961D3E645C00D7F790 /* Aditem.m */; settings = {ASSET_TAGS = (); }; };
 		3AB7C19B1D3E70AD00D7F790 /* AdvertiseVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AB7C19A1D3E70AD00D7F790 /* AdvertiseVC.xib */; settings = {ASSET_TAGS = (); }; };
+		3AB89E091D3F7A8D005F1B2B /* ShareTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AB89E081D3F7A8D005F1B2B /* ShareTool.m */; settings = {ASSET_TAGS = (); }; };
+		3AB89E0C1D3F9093005F1B2B /* StandardsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AB89E0B1D3F9093005F1B2B /* StandardsView.m */; settings = {ASSET_TAGS = (); }; };
+		3AB89E0F1D3FAE6A005F1B2B /* StandarsAdd@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3AB89E0D1D3FAE6A005F1B2B /* StandarsAdd@2x.png */; settings = {ASSET_TAGS = (); }; };
+		3AB89E101D3FAE6A005F1B2B /* StandarsDel@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3AB89E0E1D3FAE6A005F1B2B /* StandarsDel@2x.png */; settings = {ASSET_TAGS = (); }; };
 		3AD590F91D3B58B300BCD7AA /* UMSocialLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3AD590DF1D3B58B200BCD7AA /* UMSocialLocalizable.strings */; settings = {ASSET_TAGS = (); }; };
 		3AD590FA1D3B58B300BCD7AA /* libUMSocial_Sdk_5.2.1.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AD590ED1D3B58B300BCD7AA /* libUMSocial_Sdk_5.2.1.a */; settings = {ASSET_TAGS = (); }; };
 		3AD590FB1D3B58B300BCD7AA /* UMSCommentDetailController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AD590EF1D3B58B300BCD7AA /* UMSCommentDetailController.xib */; settings = {ASSET_TAGS = (); }; };
@@ -276,6 +280,12 @@
 		3AB7C1951D3E645C00D7F790 /* Aditem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Aditem.h; sourceTree = "<group>"; };
 		3AB7C1961D3E645C00D7F790 /* Aditem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Aditem.m; sourceTree = "<group>"; };
 		3AB7C19A1D3E70AD00D7F790 /* AdvertiseVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AdvertiseVC.xib; sourceTree = "<group>"; };
+		3AB89E071D3F7A8D005F1B2B /* ShareTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShareTool.h; sourceTree = "<group>"; };
+		3AB89E081D3F7A8D005F1B2B /* ShareTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShareTool.m; sourceTree = "<group>"; };
+		3AB89E0A1D3F9093005F1B2B /* StandardsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StandardsView.h; sourceTree = "<group>"; };
+		3AB89E0B1D3F9093005F1B2B /* StandardsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StandardsView.m; sourceTree = "<group>"; };
+		3AB89E0D1D3FAE6A005F1B2B /* StandarsAdd@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "StandarsAdd@2x.png"; sourceTree = "<group>"; };
+		3AB89E0E1D3FAE6A005F1B2B /* StandarsDel@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "StandarsDel@2x.png"; sourceTree = "<group>"; };
 		3AD590E01D3B58B200BCD7AA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/UMSocialLocalizable.strings; sourceTree = "<group>"; };
 		3AD590E21D3B58B200BCD7AA /* UMSocial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMSocial.h; sourceTree = "<group>"; };
 		3AD590E31D3B58B200BCD7AA /* UMSocialAccountManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMSocialAccountManager.h; sourceTree = "<group>"; };
@@ -766,6 +776,7 @@
 		3A64A1F81D34D64300288490 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				3AB89E061D3F7A6A005F1B2B /* ShareTool */,
 				3A3667631D3D7AFF001CDD24 /* Scan(扫一扫) */,
 				3AFF8CC41D3D419C00B3120B /* save */,
 				3AFF8CB61D3D413100B3120B /* Guide(选择窗口根控制器) */,
@@ -848,6 +859,8 @@
 				3AA57C4B1D3A0E4100AC5802 /* CategoryCell.xib */,
 				3AA57C511D3A4D3B00AC5802 /* SupermarketHeadView.h */,
 				3AA57C521D3A4D3B00AC5802 /* SupermarketHeadView.m */,
+				3AB89E0A1D3F9093005F1B2B /* StandardsView.h */,
+				3AB89E0B1D3F9093005F1B2B /* StandardsView.m */,
 			);
 			path = V;
 			sourceTree = "<group>";
@@ -915,6 +928,15 @@
 				3AB7C1961D3E645C00D7F790 /* Aditem.m */,
 			);
 			path = M;
+			sourceTree = "<group>";
+		};
+		3AB89E061D3F7A6A005F1B2B /* ShareTool */ = {
+			isa = PBXGroup;
+			children = (
+				3AB89E071D3F7A8D005F1B2B /* ShareTool.h */,
+				3AB89E081D3F7A8D005F1B2B /* ShareTool.m */,
+			);
+			path = ShareTool;
 			sourceTree = "<group>";
 		};
 		3AD590DE1D3B58B200BCD7AA /* UMSocial_Sdk_5.2.1 */ = {
@@ -1077,6 +1099,8 @@
 		3AED5D491D3531300045CF64 /* image */ = {
 			isa = PBXGroup;
 			children = (
+				3AB89E0D1D3FAE6A005F1B2B /* StandarsAdd@2x.png */,
+				3AB89E0E1D3FAE6A005F1B2B /* StandarsDel@2x.png */,
 				3AED5D751D3565F90045CF64 /* ming1.jpg */,
 				3AED5D791D356C270045CF64 /* ming2.jpg */,
 				3AED5D761D3565F90045CF64 /* ming3.jpg */,
@@ -1257,6 +1281,7 @@
 				3AED5D661D354AF50045CF64 /* 首页新鲜热卖 in Resources */,
 				3AD591451D3B976900BCD7AA /* placeholder.png in Resources */,
 				3AD590FF1D3B58B300BCD7AA /* UMShareEditViewControlleriPad.xib in Resources */,
+				3AB89E0F1D3FAE6A005F1B2B /* StandarsAdd@2x.png in Resources */,
 				3A64A1DA1D34D4D200288490 /* LaunchScreen.storyboard in Resources */,
 				3AD5912A1D3B5A1700BCD7AA /* README.txt in Resources */,
 				3AE1BD941D38E3330069E1B9 /* MBProgressHUD.bundle in Resources */,
@@ -1267,6 +1292,7 @@
 				3AD590FB1D3B58B300BCD7AA /* UMSCommentDetailController.xib in Resources */,
 				3AE1BDB11D38FC480069E1B9 /* Info.plist in Resources */,
 				3AED5D4B1D3531300045CF64 /* 12.png in Resources */,
+				3AB89E101D3FAE6A005F1B2B /* StandarsDel@2x.png in Resources */,
 				3AED5D7B1D356C270045CF64 /* ming2.jpg in Resources */,
 				3AD591011D3B58B300BCD7AA /* UMSnsAccountViewController.xib in Resources */,
 				3AED5D641D354AF50045CF64 /* 促销 in Resources */,
@@ -1355,6 +1381,7 @@
 				3AADC9F81D36A80300DDEE87 /* MessageModel.m in Sources */,
 				3AFF8CC31D3D413B00B3120B /* LYMCollectionViewCell.m in Sources */,
 				3A64A1D51D34D4D200288490 /* MGLoveFreshBeen.xcdatamodeld in Sources */,
+				3AB89E0C1D3F9093005F1B2B /* StandardsView.m in Sources */,
 				3AB7C1941D3E625600D7F790 /* AdvertiseVC.m in Sources */,
 				3AE1BDB91D38FC480069E1B9 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
 				3A64A2241D34FF1200288490 /* TableHeadView.m in Sources */,
@@ -1386,6 +1413,7 @@
 				3AD591551D3BD83600BCD7AA /* HomeWebVC.m in Sources */,
 				3AED5D501D3541E70045CF64 /* OrderVC.m in Sources */,
 				3AE1BDBA1D38FC480069E1B9 /* View+MASAdditions.m in Sources */,
+				3AB89E091D3F7A8D005F1B2B /* ShareTool.m in Sources */,
 				3AE1BD951D38E3330069E1B9 /* MBProgressHUD.m in Sources */,
 				3AED5D821D35802F0045CF64 /* QuestionVC.m in Sources */,
 				3AE1BDB41D38FC480069E1B9 /* MASConstraintMaker.m in Sources */,

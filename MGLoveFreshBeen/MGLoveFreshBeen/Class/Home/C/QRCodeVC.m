@@ -23,6 +23,7 @@
 /**  扫描的的结果 */
 @property (weak, nonatomic) IBOutlet UILabel *resultLabel;
 
+#pragma mark - 约束
 /**  容器高度 */
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *containViewHCon;
 /**  容器顶部的约束 适配4s */
@@ -30,7 +31,7 @@
 /**  扫描的View顶部的约束 */
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *scanViewTopCon;
 
-
+#pragma mark - 自定义
 /** session */
 @property (nonatomic,strong) AVCaptureSession *session;
 /** preViewLayer */
@@ -39,14 +40,18 @@
 @property (nonatomic,strong) CAShapeLayer *shapeLayer;
 
 /** 定时器 */
-@property (weak, nonatomic) NSTimer *timer;
+//@property (weak, nonatomic) NSTimer *timer;
 @end
 
 @implementation QRCodeVC
 #pragma mark - 开启定时器
 - (void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
-//    [self.timer invalidate];
+    // 5.停止扫描
+    [self.session stopRunning];
+
+    // 6.移除layer
+    [self.preViewLayer removeFromSuperlayer];
 }
 
 - (void)viewWillAppear:(BOOL)animated{
@@ -152,16 +157,21 @@
         // 4.画边框
         [self drawBorder:newObject];
         
-//        // 5.停止扫描
+        // 5.停止扫描
 //        [self.session stopRunning];
 //        
 //        // 6.移除layer
 //        [self.preViewLayer removeFromSuperlayer];
-
-        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:object.stringValue]];
+        
+        // 如果是网址就跳转
+        if ([object.stringValue containsString:@"http:"] || [object.stringValue containsString:@"https:"] ) {
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:object.stringValue]];
+        }else{ // 其他信息 弹框显示
+            [MBProgressHUD showSuccess:object.stringValue];
+        }
     }else{
         [self.shapeLayer removeFromSuperlayer];
-        MGPE(@"没有扫描到结果");
+//        MGPE(@"没有扫描到结果");
     }
 }
 
@@ -217,7 +227,6 @@
     [self.navigationController dismissViewControllerAnimated:YES completion:nil];
 }
 
-
 /// 点击导航栏右边照片的操作
 - (IBAction)photoItemClick:(id)sender {
     // 1.判断照片源是否可用
@@ -260,7 +269,12 @@
     
     // 3.遍历扫描结果
     for (CIQRCodeFeature *f in features) {
-        MGPS(f.messageString);
+        // 如果是网址就跳转
+        if ([f.messageString containsString:@"http:"] || [f.messageString containsString:@"https:"] ) {
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:f.messageString]];
+        }else{ // 其他信息 弹框显示
+            [MBProgressHUD showSuccess:f.messageString];
+        }
     }
 }
 

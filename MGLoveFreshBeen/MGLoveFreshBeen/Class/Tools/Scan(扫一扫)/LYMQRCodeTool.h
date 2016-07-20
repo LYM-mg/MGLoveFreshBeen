@@ -12,5 +12,6 @@
 /**
  *  请输入二维码包含的网址 ，以及二维码的颜色
  */
-+ (UIImage *)creatCIQRWithText:(NSString *)text withR:(CGFloat)R G:(CGFloat)g B:(CGFloat)b;
++ (UIImage *)creatQRCodeWithText:(NSString *)text withR:(CGFloat)R G:(CGFloat)g B:(CGFloat)b;
+
 @end
