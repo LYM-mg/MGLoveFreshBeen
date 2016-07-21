@@ -81,6 +81,11 @@ CGFloat headViewHeight = 150;
         MGPS(@"客服🐯哥已经收到你的意见了,我们会改进的,放心吧~~")
         _iderVCSendIderSuccess = false;
     }
+}
+
+- (void)viewDidDisappear:(BOOL)animated{
+    [super viewDidDisappear:animated];
+    
     [self.navigationController setNavigationBarHidden:NO animated:animated];
 }
 

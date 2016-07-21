@@ -57,6 +57,8 @@ typedef  enum {
 }
 /** HotGoods */
 @property (nonatomic,strong) HotGoods *goods;
+/** shopCar */
+@property (nonatomic,strong) UIButton *shopCar;
 @end
 
 @implementation ProductDetailVC
@@ -294,8 +296,10 @@ typedef  enum {
         StandardsView *mystandardsView = [self buildStandardView:productImageView.image andIndex:sender.tag];
         mystandardsView.GoodDetailView = self.view;//设置该属性 对应的view 会缩小    }else{ // 立即购买商品 (跳转到 购买支付界面)
         
-        mystandardsView.showAnimationType = StandsViewShowAnimationFlash;
-        mystandardsView.dismissAnimationType = StandsViewDismissAnimationFlash;
+        mystandardsView.showAnimationType = StandsViewShowAnimationShowFromLeft;
+        mystandardsView.dismissAnimationType = StandsViewDismissAnimationDisToRight;
+//        mystandardsView.showAnimationType = StandsViewShowAnimationFlash;
+//        mystandardsView.dismissAnimationType = StandsViewDismissAnimationFlash;
         [mystandardsView show];
     }
 }
@@ -340,7 +344,10 @@ typedef  enum {
 {
     if (sender.tag == ProductTypeAdd) {
         //将商品图片抛到指定点
-        [standardView ThrowGoodTo:CGPointMake(200, 100) andDuration:1.6 andHeight:150 andScale:20];
+        [standardView ThrowGoodTo:CGPointMake(_shopCar.x, _shopCar.y-50) andDuration:1.6 andHeight:150 andScale:20];
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.6 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [standardView dismiss];
+        });
     }
     else
     {
@@ -371,15 +378,27 @@ typedef  enum {
 
 
 
-
-
-
-
 #pragma mark - 分享
 - (void)setUpNavigationItem:(NSString *)titleText {
     self.navigationItem.title = titleText;
     
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"分享" style:UIBarButtonItemStylePlain target:self action:@selector(shareItemClick)];
+    // 分享
+    UIBarButtonItem *shareItem = [[UIBarButtonItem alloc] initWithTitle:@"分享" style:UIBarButtonItemStylePlain target:self action:@selector(shareItemClick)];
+    
+    // 购物车
+    UIButton *carBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 35, 35)];
+    [carBtn setImage:[UIImage imageNamed:@"v2_whiteShopSmall"] forState:UIControlStateNormal];
+    [carBtn addTarget:self action:@selector(carBtnClick) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *carItem = [[UIBarButtonItem alloc] initWithCustomView:carBtn];
+    _shopCar = carBtn;
+    self.navigationItem.rightBarButtonItems = @[shareItem,carItem];
+}
+
+// MARK: - 购物车Action
+- (void)carBtnClick{
+    [UIView animateWithDuration:1.0 animations:^{
+        self.tabBarController.selectedIndex = 2;
+    }];
 }
 
 // MARK: - 分享Action
