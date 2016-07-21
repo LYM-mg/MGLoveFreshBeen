@@ -291,31 +291,82 @@ typedef  enum {
 #pragma mark - 购物车
 - (void)addOrBuyProduct:(UIButton *)sender{
     if (sender.tag == ProductTypeAdd) { // 添加商品
-        StandardsView *mystandardsView = [[StandardsView alloc] initWithFrame:self.view.bounds];
-        mystandardsView.shopImageView.image = productImageView.image;
-        mystandardsView.delegate = self;
-//        mystandardsView.GoodDetailView = self.view;//设置该属性 对应的view 会缩小
+        StandardsView *mystandardsView = [self buildStandardView:productImageView.image andIndex:sender.tag];
+        mystandardsView.GoodDetailView = self.view;//设置该属性 对应的view 会缩小    }else{ // 立即购买商品 (跳转到 购买支付界面)
         
-//        mystandardsView.showAnimationType = StandsViewShowAnimationShowFromLeft;
-//        mystandardsView.dismissAnimationType = StandsViewDismissAnimationDisToRight;
         mystandardsView.showAnimationType = StandsViewShowAnimationFlash;
         mystandardsView.dismissAnimationType = StandsViewDismissAnimationFlash;
-        [self.view addSubview:mystandardsView];
-        
         [mystandardsView show];
-    }else{ // 立即购买商品 (跳转到 购买支付界面)
-        
     }
 }
 
+-(StandardsView *)buildStandardView:(UIImage *)img andIndex:(NSInteger)index
+{
+    StandardsView *standview = [[StandardsView alloc] init];
+    standview.tag = index;
+    standview.delegate = self;
+    
+    standview.mainImgView.image = img;
+    standview.mainImgView.backgroundColor = [UIColor whiteColor];
+    standview.priceLab.text = priceLabel.text;
+    standview.tipLab.text = @"请选择规格";
+    standview.goodNum.text = [NSString stringWithFormat:@"库存 %d 件",arc4random_uniform(100)];
+    
+    
+    standview.customBtns = @[@"确定"];
+    
+    
+    standardClassInfo *tempClassInfo1 = [standardClassInfo StandardClassInfoWith:@"100" andStandClassName:@"红色"];
+    standardClassInfo *tempClassInfo2 = [standardClassInfo StandardClassInfoWith:@"101" andStandClassName:@"蓝色"];
+    NSArray *tempClassInfoArr = @[tempClassInfo1,tempClassInfo2];
+    StandardModel *tempModel = [StandardModel StandardModelWith:tempClassInfoArr andStandName:@"颜色"];
+    
+    
+    
+    standardClassInfo *tempClassInfo3 = [standardClassInfo StandardClassInfoWith:@"102" andStandClassName:@"XL"];
+    standardClassInfo *tempClassInfo4 = [standardClassInfo StandardClassInfoWith:@"103" andStandClassName:@"XXL"];
+    standardClassInfo *tempClassInfo5 = [standardClassInfo StandardClassInfoWith:@"104" andStandClassName:@"XXXXXXXXXXXXXL"];
+    NSArray *tempClassInfoArr2 = @[tempClassInfo3,tempClassInfo4,tempClassInfo5];
+    StandardModel *tempModel2 = [StandardModel StandardModelWith:tempClassInfoArr2 andStandName:@"尺寸"];
+    standview.standardArr = @[tempModel,tempModel2];
+    
+    return standview;
+}
+
+
 #pragma mark - standardView  delegate
 //点击自定义按键
--(void)Standards:(StandardsView *)standardView SelectBtnClick:(UIButton *)sender
+-(void)StandardsView:(StandardsView *)standardView CustomBtnClickAction:(UIButton *)sender
 {
-    [UIView animateWithDuration:0.7 animations:^{
+    if (sender.tag == ProductTypeAdd) {
+        //将商品图片抛到指定点
+        [standardView ThrowGoodTo:CGPointMake(200, 100) andDuration:1.6 andHeight:150 andScale:20];
+    }
+    else
+    {
         [standardView dismiss];
-    }];
+    }
 }
+
+//点击规格代理
+-(void)Standards:(StandardsView *)standardView SelectBtnClick:(UIButton *)sender andSelectID:(NSString *)selectID andStandName:(NSString *)standName andIndex:(NSInteger)index
+{
+    
+    MGLog(@"selectID = %@ standName = %@ index = %ld",selectID,standName,(long)index);
+    
+}
+//设置自定义btn的属性
+-(void)StandardsView:(StandardsView *)standardView SetBtn:(UIButton *)btn
+{
+    if (btn.tag == 0) {
+        btn.backgroundColor = [UIColor yellowColor];
+    }
+    else if (btn.tag == 1)
+    {
+        btn.backgroundColor = [UIColor orangeColor];
+    }
+}
+
 
 
 
