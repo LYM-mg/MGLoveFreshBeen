@@ -72,7 +72,6 @@
 		3AB7C1971D3E645C00D7F790 /* Aditem.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AB7C1961D3E645C00D7F790 /* Aditem.m */; settings = {ASSET_TAGS = (); }; };
 		3AB7C19B1D3E70AD00D7F790 /* AdvertiseVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AB7C19A1D3E70AD00D7F790 /* AdvertiseVC.xib */; settings = {ASSET_TAGS = (); }; };
 		3AB89E091D3F7A8D005F1B2B /* ShareTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AB89E081D3F7A8D005F1B2B /* ShareTool.m */; settings = {ASSET_TAGS = (); }; };
-		3AB89E0C1D3F9093005F1B2B /* StandardsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AB89E0B1D3F9093005F1B2B /* StandardsView.m */; settings = {ASSET_TAGS = (); }; };
 		3AB89E0F1D3FAE6A005F1B2B /* StandarsAdd@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3AB89E0D1D3FAE6A005F1B2B /* StandarsAdd@2x.png */; settings = {ASSET_TAGS = (); }; };
 		3AB89E101D3FAE6A005F1B2B /* StandarsDel@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3AB89E0E1D3FAE6A005F1B2B /* StandarsDel@2x.png */; settings = {ASSET_TAGS = (); }; };
 		3AD590F91D3B58B300BCD7AA /* UMSocialLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3AD590DF1D3B58B200BCD7AA /* UMSocialLocalizable.strings */; settings = {ASSET_TAGS = (); }; };
@@ -282,8 +281,6 @@
 		3AB7C19A1D3E70AD00D7F790 /* AdvertiseVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AdvertiseVC.xib; sourceTree = "<group>"; };
 		3AB89E071D3F7A8D005F1B2B /* ShareTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShareTool.h; sourceTree = "<group>"; };
 		3AB89E081D3F7A8D005F1B2B /* ShareTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShareTool.m; sourceTree = "<group>"; };
-		3AB89E0A1D3F9093005F1B2B /* StandardsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StandardsView.h; sourceTree = "<group>"; };
-		3AB89E0B1D3F9093005F1B2B /* StandardsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StandardsView.m; sourceTree = "<group>"; };
 		3AB89E0D1D3FAE6A005F1B2B /* StandarsAdd@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "StandarsAdd@2x.png"; sourceTree = "<group>"; };
 		3AB89E0E1D3FAE6A005F1B2B /* StandarsDel@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "StandarsDel@2x.png"; sourceTree = "<group>"; };
 		3AD590E01D3B58B200BCD7AA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/UMSocialLocalizable.strings; sourceTree = "<group>"; };
@@ -859,8 +856,6 @@
 				3AA57C4B1D3A0E4100AC5802 /* CategoryCell.xib */,
 				3AA57C511D3A4D3B00AC5802 /* SupermarketHeadView.h */,
 				3AA57C521D3A4D3B00AC5802 /* SupermarketHeadView.m */,
-				3AB89E0A1D3F9093005F1B2B /* StandardsView.h */,
-				3AB89E0B1D3F9093005F1B2B /* StandardsView.m */,
 			);
 			path = V;
 			sourceTree = "<group>";
@@ -1381,7 +1376,6 @@
 				3AADC9F81D36A80300DDEE87 /* MessageModel.m in Sources */,
 				3AFF8CC31D3D413B00B3120B /* LYMCollectionViewCell.m in Sources */,
 				3A64A1D51D34D4D200288490 /* MGLoveFreshBeen.xcdatamodeld in Sources */,
-				3AB89E0C1D3F9093005F1B2B /* StandardsView.m in Sources */,
 				3AB7C1941D3E625600D7F790 /* AdvertiseVC.m in Sources */,
 				3AE1BDB91D38FC480069E1B9 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
 				3A64A2241D34FF1200288490 /* TableHeadView.m in Sources */,
