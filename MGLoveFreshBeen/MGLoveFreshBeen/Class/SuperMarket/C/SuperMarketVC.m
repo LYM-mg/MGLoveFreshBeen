@@ -261,6 +261,6 @@
 //    // 拼接路径名称
 ////    NSString *filePath = [path2 stringByAppendingString:@"array.plist"];
 //    NSString *filePath = [path2 stringByAppendingPathComponent:@"array.plist"];
-//    MGLog(@"%@",path2);
+//    // MGLog(@"%@",path2);
 //    //把数组写入到文件
 //    [dict writeToFile:filePath atomically:YES];

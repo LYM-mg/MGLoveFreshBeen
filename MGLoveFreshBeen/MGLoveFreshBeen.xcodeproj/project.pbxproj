@@ -72,8 +72,6 @@
 		3AB7C1971D3E645C00D7F790 /* Aditem.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AB7C1961D3E645C00D7F790 /* Aditem.m */; settings = {ASSET_TAGS = (); }; };
 		3AB7C19B1D3E70AD00D7F790 /* AdvertiseVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AB7C19A1D3E70AD00D7F790 /* AdvertiseVC.xib */; settings = {ASSET_TAGS = (); }; };
 		3AB89E091D3F7A8D005F1B2B /* ShareTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AB89E081D3F7A8D005F1B2B /* ShareTool.m */; settings = {ASSET_TAGS = (); }; };
-		3AB89E0F1D3FAE6A005F1B2B /* StandarsAdd@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3AB89E0D1D3FAE6A005F1B2B /* StandarsAdd@2x.png */; settings = {ASSET_TAGS = (); }; };
-		3AB89E101D3FAE6A005F1B2B /* StandarsDel@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3AB89E0E1D3FAE6A005F1B2B /* StandarsDel@2x.png */; settings = {ASSET_TAGS = (); }; };
 		3AC1A6361D407E9100759851 /* StandardModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AC1A62F1D407E9100759851 /* StandardModel.m */; settings = {ASSET_TAGS = (); }; };
 		3AC1A6371D407E9100759851 /* StandardsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AC1A6311D407E9100759851 /* StandardsView.m */; settings = {ASSET_TAGS = (); }; };
 		3AC1A6381D407E9100759851 /* StandarsAdd@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3AC1A6321D407E9100759851 /* StandarsAdd@2x.png */; settings = {ASSET_TAGS = (); }; };
@@ -286,8 +284,6 @@
 		3AB7C19A1D3E70AD00D7F790 /* AdvertiseVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AdvertiseVC.xib; sourceTree = "<group>"; };
 		3AB89E071D3F7A8D005F1B2B /* ShareTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShareTool.h; sourceTree = "<group>"; };
 		3AB89E081D3F7A8D005F1B2B /* ShareTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShareTool.m; sourceTree = "<group>"; };
-		3AB89E0D1D3FAE6A005F1B2B /* StandarsAdd@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "StandarsAdd@2x.png"; sourceTree = "<group>"; };
-		3AB89E0E1D3FAE6A005F1B2B /* StandarsDel@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "StandarsDel@2x.png"; sourceTree = "<group>"; };
 		3AC1A62E1D407E9100759851 /* StandardModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StandardModel.h; sourceTree = "<group>"; };
 		3AC1A62F1D407E9100759851 /* StandardModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StandardModel.m; sourceTree = "<group>"; };
 		3AC1A6301D407E9100759851 /* StandardsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StandardsView.h; sourceTree = "<group>"; };
@@ -1123,8 +1119,6 @@
 		3AED5D491D3531300045CF64 /* image */ = {
 			isa = PBXGroup;
 			children = (
-				3AB89E0D1D3FAE6A005F1B2B /* StandarsAdd@2x.png */,
-				3AB89E0E1D3FAE6A005F1B2B /* StandarsDel@2x.png */,
 				3AED5D751D3565F90045CF64 /* ming1.jpg */,
 				3AED5D791D356C270045CF64 /* ming2.jpg */,
 				3AED5D761D3565F90045CF64 /* ming3.jpg */,
@@ -1305,7 +1299,6 @@
 				3AED5D661D354AF50045CF64 /* 首页新鲜热卖 in Resources */,
 				3AD591451D3B976900BCD7AA /* placeholder.png in Resources */,
 				3AD590FF1D3B58B300BCD7AA /* UMShareEditViewControlleriPad.xib in Resources */,
-				3AB89E0F1D3FAE6A005F1B2B /* StandarsAdd@2x.png in Resources */,
 				3A64A1DA1D34D4D200288490 /* LaunchScreen.storyboard in Resources */,
 				3AD5912A1D3B5A1700BCD7AA /* README.txt in Resources */,
 				3AC1A6391D407E9100759851 /* StandarsDel@2x.png in Resources */,
@@ -1317,7 +1310,6 @@
 				3AD590FB1D3B58B300BCD7AA /* UMSCommentDetailController.xib in Resources */,
 				3AE1BDB11D38FC480069E1B9 /* Info.plist in Resources */,
 				3AED5D4B1D3531300045CF64 /* 12.png in Resources */,
-				3AB89E101D3FAE6A005F1B2B /* StandarsDel@2x.png in Resources */,
 				3AED5D7B1D356C270045CF64 /* ming2.jpg in Resources */,
 				3AD591011D3B58B300BCD7AA /* UMSnsAccountViewController.xib in Resources */,
 				3AED5D641D354AF50045CF64 /* 促销 in Resources */,
@@ -1525,6 +1517,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
@@ -1544,10 +1537,11 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = NO;
 			};
 			name = Debug;
 		};
@@ -1568,6 +1562,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -1581,7 +1576,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -1595,12 +1590,22 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = BrandAsset;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Peizhuang Liu (F3U44CZGQR)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Peizhuang Liu (F3U44CZGQR)";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/MGLoveFreshBeen/Class/Other/UMSocial_Sdk_Extra_Frameworks/TencentOpenAPI",
 				);
 				GCC_PREFIX_HEADER = "$(SRCROOT)/MGLoveFreshBeen/PrefixHeader.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/AFNetworking\"",
+					"\"${PODS_ROOT}/Headers/Public/SDWebImage\"",
+					"\"${PODS_ROOT}/Headers/Public/SVProgressHUD\"",
+					/usr/include/libxml2,
+				);
 				INFOPLIST_FILE = MGLoveFreshBeen/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1611,9 +1616,11 @@
 					"$(PROJECT_DIR)/MGLoveFreshBeen/Class/Other/UMSocial_Sdk_Extra_Frameworks/TencentOpenAPI",
 					"$(PROJECT_DIR)/MGLoveFreshBeen/Class/Other/UMSocial_Sdk_Extra_Frameworks/Wechat",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.ming.MGLoveFreshBeen;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ming.MGLoveFreshBeen2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VALIDATE_PRODUCT = NO;
 			};
 			name = Debug;
 		};
@@ -1624,12 +1631,22 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = BrandAsset;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/MGLoveFreshBeen/Class/Other/UMSocial_Sdk_Extra_Frameworks/TencentOpenAPI",
 				);
 				GCC_PREFIX_HEADER = "$(SRCROOT)/MGLoveFreshBeen/PrefixHeader.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/AFNetworking\"",
+					"\"${PODS_ROOT}/Headers/Public/SDWebImage\"",
+					"\"${PODS_ROOT}/Headers/Public/SVProgressHUD\"",
+					/usr/include/libxml2,
+				);
 				INFOPLIST_FILE = MGLoveFreshBeen/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1640,8 +1657,9 @@
 					"$(PROJECT_DIR)/MGLoveFreshBeen/Class/Other/UMSocial_Sdk_Extra_Frameworks/TencentOpenAPI",
 					"$(PROJECT_DIR)/MGLoveFreshBeen/Class/Other/UMSocial_Sdk_Extra_Frameworks/Wechat",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.ming.MGLoveFreshBeen;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ming.MGLoveFreshBeen2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

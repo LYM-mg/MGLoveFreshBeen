@@ -284,7 +284,7 @@ static NSString *const KHomeFooterIdentifier = @"Footer";
         
         NSInteger index = [[note.userInfo valueForKey:@"index"] integerValue];
         
-        MGLog(@"%@",[note.userInfo valueForKey:@"index"]);
+        // MGLog(@"%@",[note.userInfo valueForKey:@"index"]);
         
         HomeWebVC *webVC = [[HomeWebVC alloc] initWithNavigationTitle:[_headData.data.focus[index] valueForKeyPath:@"name"] withUrlStr:array[index]];
         [weakSelf.navigationController pushViewController:webVC animated:YES];
@@ -293,7 +293,6 @@ static NSString *const KHomeFooterIdentifier = @"Footer";
 
 - (void)dealloc{
     [MGNotificationCenter removeObserver:self];
-    MGLogFunc;
 }
 
 @end

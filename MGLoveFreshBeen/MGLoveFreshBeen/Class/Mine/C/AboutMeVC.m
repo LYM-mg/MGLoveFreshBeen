@@ -69,7 +69,7 @@
 }
 
 - (void)stopAni:(NSString *)aniID{
-//    MGLogFunc;
+//    // MGLogFunc;
 }
 
 @end

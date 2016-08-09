@@ -79,10 +79,10 @@
 
 //日志输出
 #ifdef DEBUG  //log
-#define MGLog(...) NSLog(__VA_ARGS__)
+#define  MGLog(...) NSLog(__VA_ARGS__)
 // 方法输出
-#define MGLogFunc MGLog(@"%s", __func__)
-#else // 发布阶段-上线阶段:移除Log
+#define  MGLogFunc  MGLog(@"%s", __func__)
+#else  // 发布阶段-上线阶段:移除Log
 #define MGLogLog(...)
 #endif
 

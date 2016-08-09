@@ -147,7 +147,7 @@
     } failure:^(NSURLSessionDataTask * _Nonnull task, NSError * _Nonnull error) {
 //        NSString *errorStr = [NSString stringWithFormat:@"%@",error];
 //        MGPE(errorStr);
-        MGLog(@"%@",error);
+        // MGLog(@"%@",error);
     }];
     
 }

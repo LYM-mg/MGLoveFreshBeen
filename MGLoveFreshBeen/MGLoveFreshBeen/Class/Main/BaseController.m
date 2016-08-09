@@ -48,7 +48,7 @@
 }
 - (BaseController*)pushController:(Class)controller withInfo:(id)info withTitle:(NSString*)title withOther:(id)other withModel:(BOOL)animation
 {
-//    MGLog(@"\n======\nUserInfo:%@\n=======\notherInfo %@\n=======\ncontroller:%@\n==\ntitle:%@\n===\n",info,other,controller,title);
+//    // MGLog(@"\n======\nUserInfo:%@\n=======\notherInfo %@\n=======\ncontroller:%@\n==\ntitle:%@\n===\n",info,other,controller,title);
     BaseController *base = [[controller alloc] init];
     if ([(NSObject*)base respondsToSelector:@selector(setUserInfo:)]) {
         base.userInfo = info;
