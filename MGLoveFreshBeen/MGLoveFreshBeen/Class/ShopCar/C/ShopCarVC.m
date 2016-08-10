@@ -13,6 +13,8 @@
 #import "ShopCarTableViewBottomView.h"
 
 #import "ShopCarCell.h"
+#import "OrderPayWayVC.h"
+#import "MyAddressVC.h"
 
 @interface ShopCarVC ()<UITableViewDataSource,UITableViewDelegate>
 {
@@ -105,7 +107,6 @@
     [UIView animateWithDuration:0.3 delay:0.0 options:UIViewAnimationOptionTransitionCrossDissolve animations:^{
          self.tabBarController.selectedIndex = 0;
     } completion:nil];
-   
 }
 
 - (void)showProductView {
@@ -114,25 +115,47 @@
 
 
 - (void)setUpshopCarTableView{
-    UITableView *shopCarTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, MGSCREEN_width, MGSCREEN_height - 64 - 50) style:UITableViewStylePlain];
+    __weak typeof(self) weakSelf = self;
+    
+    UITableView *shopCarTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, MGSCREEN_width, MGSCREEN_height - MGNavHeight - MGShopCartRowHeight - MGTabBarHeight) style:UITableViewStylePlain];
     
     // 顶部
     ShopCarHeaderView *tableHearderView = [[ShopCarHeaderView alloc] initWithFrame:CGRectMake(0, 0, self.view.width, 250)];
     tableHearderView.backgroundColor = MGRGBColor(240, 240, 240);
     shopCarTableView.tableHeaderView = tableHearderView;
-    // 底部
-    ShopCarTableViewBottomView *tableBottomView = [[ShopCarTableViewBottomView alloc] initWithFrame:CGRectMake(0, MGSCREEN_height - MGNavHeight - MGShopCartRowHeight, MGSCREEN_width, MGShopCartRowHeight)];
-    [self.view addSubview:tableBottomView];
-    [self.view bringSubviewToFront:tableBottomView];
-    _tableBottomView = tableBottomView;
-
+    
     shopCarTableView.delegate = self;
     shopCarTableView.dataSource = self;
     shopCarTableView.contentInset = UIEdgeInsetsMake(0, 0, 15, 0);
-    shopCarTableView.rowHeight = 50;
-    shopCarTableView.backgroundColor = self.view.backgroundColor;
+    shopCarTableView.rowHeight = MGShopCartRowHeight;
+    shopCarTableView.backgroundColor = MGRGBColor(243, 243, 243);
+    shopCarTableView.tableFooterView = [[UIView alloc] init];
     [self.view addSubview:shopCarTableView];
     _shopCarTableView = shopCarTableView;
+    /**
+     *  修改收货地址
+     */
+    tableHearderView.changeUserInfoClickCallBack = ^{
+        MyAddressVC *addressVC = [[MyAddressVC alloc] initWithSelectedAdressCallback:^(AddressCellModel *address) {
+             weakSelf.tableHearderView.addressModel = address;
+        }];
+        [weakSelf.navigationController pushViewController:addressVC animated:YES];
+    };
+    
+    
+    
+    // 底部
+    ShopCarTableViewBottomView *tableBottomView = [[ShopCarTableViewBottomView alloc] initWithFrame:CGRectMake(0, MGSCREEN_height - MGNavHeight - MGShopCartRowHeight - MGTabBarHeight, MGSCREEN_width, MGShopCartRowHeight)];
+    [self.view addSubview:tableBottomView];
+    [self.view bringSubviewToFront:tableBottomView];
+    _tableBottomView = tableBottomView;
+    /**
+     *  确定订单，跳转到支付界面
+     */
+    tableBottomView.sureProductsButtonClickWoothBlock = ^{
+        OrderPayWayVC *orderPayVC = [[OrderPayWayVC alloc] init];
+        [self.navigationController pushViewController:orderPayVC animated:YES];
+    };
 }
 
 /**
@@ -178,16 +201,16 @@
 #pragma mark - 通知
 - (void)addNSNotification{
     /**
-     *  移除所有商品
+     *  价格改变
      */
-    [MGNotificationCenter addObserverForName:MGShopCarDidRemoveProductNSNotification object:self queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification * _Nonnull note) {
+    [MGNotificationCenter addObserverForName:MGShopCarBuyPriceDidChangeNotification object:nil queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification * _Nonnull note) {
         self.tableBottomView.priceLabel.text = [[UserShopCarTool shareUserShopCarTool]getAllProductsPrice];
     }];
     
     /**
-     *  价格改变
+     *  移除所有商品
      */
-    [MGNotificationCenter addObserverForName:MGShopCarBuyPriceDidChangeNotification object:self queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification * _Nonnull note) {
+    [MGNotificationCenter addObserverForName:MGShopCarDidRemoveProductNSNotification object:nil queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification * _Nonnull note) {
         
         if ([[UserShopCarTool shareUserShopCarTool] isEmpty]) {
             [self showshopCarEmptyUI]; // 没有商品时的UI界面
@@ -197,6 +220,7 @@
     }];
 }
 - (void)dealloc{
+    MGLogFunc;
     [MGNotificationCenter removeObserver:self];
 }
 

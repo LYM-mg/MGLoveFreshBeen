@@ -68,10 +68,6 @@
         self.categoryTableView.layoutMargins = UIEdgeInsetsZero;
     }
     
-//    CGPoint orgin = self.productsTableView.orgin ;
-//    orgin.y = MGNavHeight;
-//    self.productsTableView.orgin = orgin;
-    
     [self.productsTableView registerClass:[SupermarketHeadView class] forHeaderFooterViewReuseIdentifier:@"MGKSupermarketHeadView"];
 }
 

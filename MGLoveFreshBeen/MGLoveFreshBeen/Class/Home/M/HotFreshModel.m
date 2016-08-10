@@ -9,7 +9,11 @@
 #import "HotFreshModel.h"
 
 @implementation HotGoods
-
++ (NSDictionary *)replacedKeyFromPropertyName{
+    return @{
+             @"goodsID":@"id"
+            };
+}
 @end
 
 

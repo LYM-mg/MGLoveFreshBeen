@@ -34,7 +34,7 @@ implementationSingle(UserShopCarTool);
  */
 - (void)addSupermarkProductToShopCar:(HotGoods *)goods{
     for (HotGoods *everyGoods in self.supermarketProducts) {
-        if (everyGoods.id == goods.id) {
+        if (everyGoods.goodsID == goods.goodsID) {
             return;
         }
     }
@@ -50,7 +50,7 @@ implementationSingle(UserShopCarTool);
 - (void)removeSupermarketProduct:(HotGoods *)goods{
     for (int i = 0; i < self.supermarketProducts.count;i++) {
         HotGoods *everyGoods = self.supermarketProducts[i];
-        if (everyGoods.id == goods.id) {
+        if (everyGoods.goodsID == goods.goodsID) {
             [self.supermarketProducts removeObjectAtIndex:i];
             [MGNotificationCenter postNotificationName:MGShopCarDidRemoveProductNSNotification object:nil userInfo: nil];
             return;
@@ -108,7 +108,7 @@ implementationSingle(UserShopCarTool);
     NSString *prictStr = [NSString stringWithFormat:@"%f",allPrice];
     
     return [self cleanDecimalPointZear:prictStr];
-
+//
 }
 
 /// 清除字符串小数点末尾的0

@@ -7,7 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+@class AddressCellModel;
 
 @interface ShopCarHeaderView : UIView
+/** 地址模型 */
+@property (nonatomic,strong) AddressCellModel *addressModel;
+/** 修改用户收货信息 */
+@property (nonatomic,copy) void (^changeUserInfoClickCallBack)();
+
 
 @end

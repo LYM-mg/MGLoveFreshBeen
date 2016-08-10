@@ -49,6 +49,7 @@
 		3A64A2481D350EF100288490 /* NSObject+MJProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A64A23D1D350EF100288490 /* NSObject+MJProperty.m */; settings = {ASSET_TAGS = (); }; };
 		3A64A2491D350EF100288490 /* NSString+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A64A23F1D350EF100288490 /* NSString+MJExtension.m */; settings = {ASSET_TAGS = (); }; };
 		3A84FF8C1D39E6DB00EDA949 /* CouponRuleVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A84FF8B1D39E6DB00EDA949 /* CouponRuleVC.m */; settings = {ASSET_TAGS = (); }; };
+		3A9E720D1D5B82B700FB246D /* OrderPayWayVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A9E720C1D5B82B700FB246D /* OrderPayWayVC.m */; settings = {ASSET_TAGS = (); }; };
 		3AA57C431D3A0BD000AC5802 /* SuperMarketVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AA57C421D3A0BD000AC5802 /* SuperMarketVC.xib */; settings = {ASSET_TAGS = (); }; };
 		3AA57C471D3A0E2A00AC5802 /* ProductsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AA57C451D3A0E2A00AC5802 /* ProductsCell.m */; settings = {ASSET_TAGS = (); }; };
 		3AA57C481D3A0E2A00AC5802 /* ProductsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AA57C461D3A0E2A00AC5802 /* ProductsCell.xib */; settings = {ASSET_TAGS = (); }; };
@@ -254,6 +255,8 @@
 		3A64A23F1D350EF100288490 /* NSString+MJExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MJExtension.m"; sourceTree = "<group>"; };
 		3A84FF8A1D39E6DB00EDA949 /* CouponRuleVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CouponRuleVC.h; sourceTree = "<group>"; };
 		3A84FF8B1D39E6DB00EDA949 /* CouponRuleVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CouponRuleVC.m; sourceTree = "<group>"; };
+		3A9E720B1D5B82B700FB246D /* OrderPayWayVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderPayWayVC.h; sourceTree = "<group>"; };
+		3A9E720C1D5B82B700FB246D /* OrderPayWayVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderPayWayVC.m; sourceTree = "<group>"; };
 		3AA57C421D3A0BD000AC5802 /* SuperMarketVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SuperMarketVC.xib; sourceTree = "<group>"; };
 		3AA57C441D3A0E2A00AC5802 /* ProductsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductsCell.h; sourceTree = "<group>"; };
 		3AA57C451D3A0E2A00AC5802 /* ProductsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductsCell.m; sourceTree = "<group>"; };
@@ -842,6 +845,8 @@
 			children = (
 				3A64A20F1D34E15400288490 /* ShopCarVC.h */,
 				3A64A2101D34E15400288490 /* ShopCarVC.m */,
+				3A9E720B1D5B82B700FB246D /* OrderPayWayVC.h */,
+				3A9E720C1D5B82B700FB246D /* OrderPayWayVC.m */,
 			);
 			path = C;
 			sourceTree = "<group>";
@@ -1514,6 +1519,7 @@
 				3A09CBB01D377BD6007BD1FD /* MyShopVC.m in Sources */,
 				3AA57C471D3A0E2A00AC5802 /* ProductsCell.m in Sources */,
 				3AE1BDB31D38FC480069E1B9 /* MASConstraint.m in Sources */,
+				3A9E720D1D5B82B700FB246D /* OrderPayWayVC.m in Sources */,
 				3A64A2451D350EF100288490 /* NSObject+MJClass.m in Sources */,
 				3AA57C591D3AB1FE00AC5802 /* ProductDetailVC.m in Sources */,
 				3A64A2461D350EF100288490 /* NSObject+MJCoding.m in Sources */,
@@ -1681,7 +1687,7 @@
 					/usr/include/libxml2,
 				);
 				INFOPLIST_FILE = MGLoveFreshBeen/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1722,7 +1728,7 @@
 					/usr/include/libxml2,
 				);
 				INFOPLIST_FILE = MGLoveFreshBeen/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",

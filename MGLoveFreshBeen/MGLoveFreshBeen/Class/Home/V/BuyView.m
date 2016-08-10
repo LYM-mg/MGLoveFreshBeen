@@ -116,7 +116,7 @@
     }
 #warning 通知
     [[ShopCarRedDotView shareShopCarRedDotView] addProductToRedDotView:YES];
-    [[UserShopCarTool shareUserShopCarTool] addSupermarkProductToShopCar:_goods];
+    [[UserShopCarTool shareUserShopCarTool] addSupermarkProductToShopCar:self.goods];
     [MGNotificationCenter postNotificationName:MGShopCarBuyPriceDidChangeNotification object:nil userInfo:nil];
 }
 
@@ -134,14 +134,14 @@
         _reduceGoodsButton.hidden = YES && !self.zearIsShow;
         _buyCountLabel.hidden = YES && !self.zearIsShow;
         _buyCountLabel.text = self.zearIsShow ? @"0" : @"";
-        [[UserShopCarTool shareUserShopCarTool] removeSupermarketProduct:_goods];
+        [[UserShopCarTool shareUserShopCarTool] removeSupermarketProduct:self.goods];
     } else {
-        _buyCountLabel.text = [NSString stringWithFormat:@"%d",_buyNumber];
+        _buyCountLabel.text = [NSString stringWithFormat:@"%d",self.buyNumber];
     }
     
     [[ShopCarRedDotView shareShopCarRedDotView] addProductToRedDotView:YES];
     // 价格
-    [MGNotificationCenter postNotificationName:MGShopCarDidRemoveProductNSNotification object:nil userInfo:nil];
+    [MGNotificationCenter postNotificationName:MGShopCarBuyPriceDidChangeNotification object:nil userInfo:nil];
 }
 
 #pragma mark - 重写

@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+@class AddressCellModel;
 @interface MyAddressVC : BaseController
+
+- (instancetype)initWithSelectedAdressCallback:(void (^)(AddressCellModel *address))selectedAdressCallback;
+
 
 @end

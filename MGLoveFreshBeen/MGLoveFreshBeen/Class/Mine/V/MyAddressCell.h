@@ -8,7 +8,19 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AddressCellModel : UITableViewCell
+@class AddressCellModel;
+@interface MyAddressCell : UITableViewCell
+
+/** 地址模型 */
+@property (nonatomic,strong) AddressCellModel *addressModel;
+
+/** 快速创建cell的构造方法 */
++ (instancetype)myAddressCellWithTableView:(UITableView *)tableView withEditTapClick:(void(^)())block;
+
+@end
+
+
+@interface AddressCellModel : NSObject
 
 /** 接收人 */
 @property (nonatomic,copy) NSString *accept_name;
@@ -25,15 +37,7 @@
 @property (nonatomic,copy) NSString * lng;
 @property (nonatomic,copy) NSString * lat;
 @property (nonatomic,copy) NSString * gender;
-@end
-
-
-@interface MyAddressCell : UITableViewCell
-
-/** 地址模型 */
-@property (nonatomic,strong) AddressCellModel *addressModel;
-
-/** 快速创建cell的构造方法 */
-+ (instancetype)myAddressCellWithTableView:(UITableView *)tableView withEditTapClick:(void(^)())block;
 
 @end
+
+

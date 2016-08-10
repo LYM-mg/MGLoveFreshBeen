@@ -18,8 +18,12 @@
 /** 修改用户收货信息 */
 @property (nonatomic,copy) void (^changeUserInfoClickCallBack)();
 
-- (instancetype)initWithFrame:(CGRect)frame changeUserInfoClickCallBack:(void (^)())changeUserInfoClickCallBack;
-
+//- (instancetype)initWithFrame:(CGRect)frame changeUserInfoClickCallBack:(void (^)())changeUserInfoClickCallBack;
+/**
+ *  快速从xib创建 ReceiveAddressView
+ *
+ *  @return ReceiveAddressView
+ */
 + (instancetype)receiveAddressView;
 
 @end

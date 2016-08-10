@@ -37,7 +37,7 @@
     if (cell == nil) {
         cell = [[MyAddressCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:KMyAddressCellIdentifier];
         cell.editTapClickCompletion = block;
-        cell.backgroundColor = [UIColor clearColor];
+        cell.selectionStyle = UITableViewCellSelectionStyleBlue;
     }
     return cell;
 }
@@ -120,7 +120,6 @@
     self.nameLabel.text = [NSString stringWithFormat:@"姓名：%@",addressModel.accept_name];
     self.phoneLabel.text = [NSString stringWithFormat:@"Tel：%@",addressModel.telphone];
     self.addressLabel.text = [NSString stringWithFormat:@"地址：%@",addressModel.address];
-//    self
 }
 
 #pragma mark - 编辑手势点击
@@ -130,18 +129,19 @@
     }
 }
 
+
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
-    if (selected) {
-        self.backgroundColor= [UIColor clearColor];
-    }
+    self.contentView.backgroundColor = selected ? [UIColor orangeColor] : [UIColor whiteColor];
 }
 
 @end
+
 
 
 @implementation AddressCellModel
 
 
 @end
+
 

@@ -21,6 +21,9 @@
 
 /** 当前的索引 */
 @property (nonatomic,assign) long addressIndexRow;
+
+/** 选中地址cell的回调 */
+@property (nonatomic,strong) void (^selectedAdressCallback)(AddressCellModel *address);
 @end
 
 @implementation MyAddressVC
@@ -31,6 +34,13 @@
         _myAddressData = [NSMutableArray array];
     }
     return _myAddressData;
+}
+
+- (instancetype)initWithSelectedAdressCallback:(void (^)(AddressCellModel *))selectedAdressCallback{
+    if (self = [super initWithNibName:nil bundle:nil]) {
+        self.selectedAdressCallback = selectedAdressCallback;
+    }
+    return self;
 }
 
 - (void)viewDidLoad {
@@ -48,23 +58,24 @@
 }
 #pragma mark - 通知
 - (void)addObserveNOtification{
+    __weak typeof(self) weakSelf = self;
     // 1.添加地址
     [MGNotificationCenter addObserverForName:MGAddAddressNotification object:nil queue:nil usingBlock:^(NSNotification *note) {
         AddressCellModel *model = note.userInfo[@"address"];
-        [self.myAddressData insertObject:model atIndex:0];
-        [self.addressTableView reloadData];
+        [weakSelf.myAddressData insertObject:model atIndex:0];
+        [weakSelf.addressTableView reloadData];
     }];
     
     // 2.编辑地址
     [MGNotificationCenter addObserverForName:MGEditAddressNotification object:nil queue:nil usingBlock:^(NSNotification *note) {
         AddressCellModel *model = note.userInfo[@"address"];
-        self.myAddressData[_addressIndexRow] = model;
-        [self.addressTableView reloadData];
+        weakSelf.myAddressData[_addressIndexRow] = model;
+        [weakSelf.addressTableView reloadData];
     }];
 }
 
 - (void)dealloc{
-//    // MGLogFunc;
+    NSLog(@"dealloc");
     [MGNotificationCenter removeObserver:self];
 }
 
@@ -129,6 +140,7 @@
 
 // 2.加载地址数据
 - (void)loadAddressData{
+    __weak typeof(self) weakSelf = self;
     [[[NSOperationQueue alloc] init] addOperationWithBlock:^{
         NSString *path = [[NSBundle mainBundle] pathForResource:@"MyAdress" ofType: nil];
         
@@ -137,11 +149,11 @@
         NSDictionary *dictArr = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
         
         NSArray *arr = [AddressCellModel objectArrayWithKeyValuesArray:[dictArr valueForKey:@"data"]];
-        [self.myAddressData addObjectsFromArray:arr];
+        [weakSelf.myAddressData addObjectsFromArray:arr];
         
         // 回到主线程刷新UI
         [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-            [self.addressTableView reloadData];
+            [weakSelf.addressTableView reloadData];
         }];
         
     }];
@@ -162,11 +174,11 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    
+    __weak typeof(self) weakSelf = self;
     // 1创建cell
     MyAddressCell *cell = [MyAddressCell myAddressCellWithTableView:tableView withEditTapClick:^{
-        _addressIndexRow = indexPath.row;
-        [self pushController:[EditAddressVC class] withInfo:self.myAddressData[indexPath.row] withTitle:@"修改地址"];
+        weakSelf.addressIndexRow = indexPath.row;
+        [weakSelf pushController:[EditAddressVC class] withInfo:self.myAddressData[indexPath.row] withTitle:@"修改地址"];
     }];
     
     // 2.取得模型赋值
@@ -177,6 +189,19 @@
 }
 
 
-#pragma mark - 代理
+#pragma mark - UITableViewDelegate代理
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    NSLog(@"%ld",indexPath.row);
+    
+    if (self.selectedAdressCallback) {
+        self.selectedAdressCallback(self.myAddressData[indexPath.row]);
+        [self.navigationController popViewControllerAnimated:YES];
+    }
+}
+
+- (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath{
+    NSLog(@"取消选中");
+}
+
 
 @end

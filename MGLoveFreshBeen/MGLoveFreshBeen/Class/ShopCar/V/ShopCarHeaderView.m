@@ -42,12 +42,12 @@
 - (void)buildReceiptAddress{
     ReceiveAddressView *receiptAdressView = [ReceiveAddressView receiveAddressView];
     receiptAdressView.frame = CGRectMake(0, 10, self.width, 75);
+    receiptAdressView.addressModel = self.addressModel;
     receiptAdressView.changeUserInfoClickCallBack = ^{
-         MGPS(@"收获地址");
+        if (self.changeUserInfoClickCallBack) {            
+            self.changeUserInfoClickCallBack();
+        }
     };
-//    ReceiveAddressView *receiptAdressView = [[ReceiveAddressView alloc] initWithFrame:CGRectMake(0, 10, self.width, 75) changeUserInfoClickCallBack:^{
-//        MGPS(@"收获地址");
-//    }];
     [self addSubview:receiptAdressView];
 }
 

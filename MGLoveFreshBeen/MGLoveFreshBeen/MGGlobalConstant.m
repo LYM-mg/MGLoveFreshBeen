@@ -51,8 +51,10 @@ NSString * const MGDidEndDisplayingHeaderViewNotification = @"MGDidEndDisplaying
 /** 通知：hotView点击的的通知 */
 NSString * const MGHotPanClickNotification = @"MGHotPanClickNotification";
 
+/** 通知：轮播器图片被点击的点击的的通知 */
 NSString * const MGCarouseViewImageClickNotification = @"MGCarouseViewImageClickNotification";
 
+// 购物车相关
 /** 通知：购物车商品被清空的通知 */
 NSString * const MGShopCarDidRemoveProductNSNotification = @"MGShopCarDidRemoveProductNSNotification";
 

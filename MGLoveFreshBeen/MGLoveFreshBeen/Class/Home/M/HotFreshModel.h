@@ -12,7 +12,7 @@
 @interface HotGoods : NSObject
 //*************************商品模型默认属性**********************************
 /** 商品ID */
-@property (nonatomic,copy) NSString *id;
+@property (nonatomic,copy) NSString *goodsID;
 /** 商品姓名 */
 @property (nonatomic,copy) NSString *name;
 @property (nonatomic,copy) NSString *brand_id;
