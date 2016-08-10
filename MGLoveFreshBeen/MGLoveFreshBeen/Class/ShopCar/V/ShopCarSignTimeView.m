@@ -9,9 +9,9 @@
 #import "ShopCarSignTimeView.h"
 
 @interface ShopCarSignTimeView ()
-/**  */
+/** 时间选择器 */
 @property (nonatomic,strong) UIDatePicker *timePicker;
-/** <#注释#> */
+/** 时间 */
 @property (nonatomic,copy) NSString *timeStr;
 @end
 
@@ -44,13 +44,13 @@
     signTimeTitleLabel.frame = CGRectMake(15, 0, signTimeTitleLabel.width, MGShopCartRowHeight);
     [self addSubview:signTimeTitleLabel];
     
-    UITextField *signTimeField = [UITextField new];
-    signTimeField.frame = CGRectMake(CGRectGetMaxX(signTimeTitleLabel.frame) + 10, 0, MGSCREEN_width * 0.5, MGShopCartRowHeight);
+    UITextField *signTimeField = [[UITextField alloc] init];
+    signTimeField.frame = CGRectMake(CGRectGetMaxX(signTimeTitleLabel.frame) + 10, 0, MGSCREEN_width * 0.7, MGShopCartRowHeight);
     signTimeField.textColor = [UIColor redColor];
     signTimeField.font = MGFont(15);
-    signTimeField.text = @"闪电送,及时达";
+    signTimeField.placeholder = @"闪电送,及时达";
     [self addSubview:signTimeField];
-    signTimeField = signTimeField;
+    _signTimeField = signTimeField;
     signTimeField.inputView = self.timePicker;
     // 创建附加键盘的确定取消按钮
     signTimeField.inputAccessoryView = [self buildInputView];
@@ -100,14 +100,14 @@
     [toolBar addSubview:titleLabel];
     
     UIButton *cancleButton = [[UIButton alloc] initWithFrame: CGRectMake(0, 0, 80, toolBar.height)];
-    cancleButton.tag = 10;
+    cancleButton.tag = 12;
     [cancleButton addTarget:self action:@selector(selectedCityTextFieldDidChange:) forControlEvents:UIControlEventTouchUpInside];
     [cancleButton setTitle:@"取消"  forState: UIControlStateNormal];
     [cancleButton setTitleColor:MGRGBColor(88, 233, 168) forState:UIControlStateNormal];
     [toolBar addSubview:cancleButton];
     
     UIButton *determineButton = [[UIButton alloc] initWithFrame:CGRectMake(MGSCREEN_width - 80, 0, 80, toolBar.height)];
-    determineButton.tag = 11;
+    determineButton.tag = 13;
     [determineButton addTarget:self action:@selector(selectedCityTextFieldDidChange:) forControlEvents:UIControlEventTouchUpInside];
     [determineButton setTitle:@"确定"  forState: UIControlStateNormal];
     [determineButton setTitleColor:MGRGBColor(82, 203, 238) forState:UIControlStateNormal];
@@ -117,16 +117,16 @@
 }
 
 - (void)selectedCityTextFieldDidChange:(UIButton *)sender{
-    if (sender.tag == 11) {
+    if (sender.tag == 13) {
         self.signTimeField.text = self.timeStr;
     }
-    [self.signTimeField endEditing:YES];
+    [self endEditing:YES];
 }
 
-- (UIDatePicker *)timePickerView{
+- (UIDatePicker *)timePicker{
     if (!_timePicker) {
         _timePicker = [[UIDatePicker alloc] init];
-        _timePicker.datePickerMode = UIDatePickerModeDate;// @"h:mm a";
+        _timePicker.datePickerMode = UIDatePickerModeDateAndTime;// @"h:mm a";
         [_timePicker addTarget:self action:@selector(changeDate:) forControlEvents:UIControlEventValueChanged];
     }
     return _timePicker;
@@ -136,8 +136,9 @@
  */
 - (void)changeDate:(UIDatePicker *)datePick{
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    formatter.dateFormat = @"hh:mm";
+    formatter.dateFormat = @"MM-dd hh:mm a";
     self.timeStr = [formatter stringFromDate:datePick.date];
+    MGLog(@"%@",_timeStr);
 }
 
 /**
