@@ -43,7 +43,7 @@
     [self addSubview:marketTitleLabel];
     
     UILabel *marketLabel = [[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMaxX(redDotImaegView.frame) + 5, CGRectGetMaxY(rocketImageView.frame), MGSCREEN_width * 0.7, 60 - CGRectGetMaxY(rocketImageView.frame))];
-    marketLabel.text = @"   22:00前满$30免运费,22:00后满$50面运费";
+    marketLabel.text = @"   20:00前满“$30”免运费, 20:00后满“$50”免运费";
     marketLabel.textColor = [UIColor lightGrayColor];
     marketLabel.font = MGFont(12);
     [self addSubview:marketLabel];

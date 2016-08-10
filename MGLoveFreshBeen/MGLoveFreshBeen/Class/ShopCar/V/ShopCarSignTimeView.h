@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface ShopCarSignTimeView : UIView
-
+/** 收货时间 */
+@property (nonatomic,weak) UITextField *signTimeField;
 @end
