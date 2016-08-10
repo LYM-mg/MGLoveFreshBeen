@@ -63,6 +63,9 @@
 		3AADC9F51D36A19200DDEE87 /* MessageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AADC9F41D36A19200DDEE87 /* MessageVC.m */; settings = {ASSET_TAGS = (); }; };
 		3AADC9F81D36A80300DDEE87 /* MessageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AADC9F71D36A80300DDEE87 /* MessageModel.m */; settings = {ASSET_TAGS = (); }; };
 		3AB44BAD1D5B26C4000AB615 /* UserShopCarTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AB44BAC1D5B26C4000AB615 /* UserShopCarTool.m */; settings = {ASSET_TAGS = (); }; };
+		3AB44BB01D5B45A6000AB615 /* ShopCarHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AB44BAF1D5B45A6000AB615 /* ShopCarHeaderView.m */; settings = {ASSET_TAGS = (); }; };
+		3AB44BB31D5B47BA000AB615 /* ReceiveAddressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AB44BB21D5B47BA000AB615 /* ReceiveAddressView.m */; settings = {ASSET_TAGS = (); }; };
+		3AB44BB51D5B47E0000AB615 /* ReceiveAddressView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AB44BB41D5B47E0000AB615 /* ReceiveAddressView.xib */; settings = {ASSET_TAGS = (); }; };
 		3AB7C17A1D3E01EC00D7F790 /* LYMScanTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AB7C1791D3E01EC00D7F790 /* LYMScanTool.m */; settings = {ASSET_TAGS = (); }; };
 		3AB7C17D1D3E086D00D7F790 /* UIBarButtonItem+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AB7C17C1D3E086D00D7F790 /* UIBarButtonItem+Extension.m */; settings = {ASSET_TAGS = (); }; };
 		3AB7C1801D3E0E0F00D7F790 /* QRCodeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AB7C17F1D3E0E0F00D7F790 /* QRCodeVC.m */; settings = {ASSET_TAGS = (); }; };
@@ -73,6 +76,10 @@
 		3AB7C1971D3E645C00D7F790 /* Aditem.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AB7C1961D3E645C00D7F790 /* Aditem.m */; settings = {ASSET_TAGS = (); }; };
 		3AB7C19B1D3E70AD00D7F790 /* AdvertiseVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AB7C19A1D3E70AD00D7F790 /* AdvertiseVC.xib */; settings = {ASSET_TAGS = (); }; };
 		3AB89E091D3F7A8D005F1B2B /* ShareTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AB89E081D3F7A8D005F1B2B /* ShareTool.m */; settings = {ASSET_TAGS = (); }; };
+		3AC16F181D5B5A300043E769 /* ShopCartMarkerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AC16F171D5B5A300043E769 /* ShopCartMarkerView.m */; settings = {ASSET_TAGS = (); }; };
+		3AC16F1E1D5B5FB50043E769 /* ShopCarSignTimeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AC16F1D1D5B5FB50043E769 /* ShopCarSignTimeView.m */; settings = {ASSET_TAGS = (); }; };
+		3AC16F211D5B60C00043E769 /* ShopCarCommentsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AC16F201D5B60C00043E769 /* ShopCarCommentsView.m */; settings = {ASSET_TAGS = (); }; };
+		3AC16F241D5B63F00043E769 /* ShopCarTableViewBottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AC16F231D5B63F00043E769 /* ShopCarTableViewBottomView.m */; settings = {ASSET_TAGS = (); }; };
 		3AC1A6361D407E9100759851 /* StandardModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AC1A62F1D407E9100759851 /* StandardModel.m */; settings = {ASSET_TAGS = (); }; };
 		3AC1A6371D407E9100759851 /* StandardsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AC1A6311D407E9100759851 /* StandardsView.m */; settings = {ASSET_TAGS = (); }; };
 		3AC1A6381D407E9100759851 /* StandarsAdd@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3AC1A6321D407E9100759851 /* StandarsAdd@2x.png */; settings = {ASSET_TAGS = (); }; };
@@ -271,6 +278,11 @@
 		3AADC9F71D36A80300DDEE87 /* MessageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageModel.m; sourceTree = "<group>"; };
 		3AB44BAB1D5B26C4000AB615 /* UserShopCarTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserShopCarTool.h; sourceTree = "<group>"; };
 		3AB44BAC1D5B26C4000AB615 /* UserShopCarTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserShopCarTool.m; sourceTree = "<group>"; };
+		3AB44BAE1D5B45A6000AB615 /* ShopCarHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShopCarHeaderView.h; sourceTree = "<group>"; };
+		3AB44BAF1D5B45A6000AB615 /* ShopCarHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShopCarHeaderView.m; sourceTree = "<group>"; };
+		3AB44BB11D5B47BA000AB615 /* ReceiveAddressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReceiveAddressView.h; sourceTree = "<group>"; };
+		3AB44BB21D5B47BA000AB615 /* ReceiveAddressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReceiveAddressView.m; sourceTree = "<group>"; };
+		3AB44BB41D5B47E0000AB615 /* ReceiveAddressView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReceiveAddressView.xib; sourceTree = "<group>"; };
 		3AB7C1781D3E01EC00D7F790 /* LYMScanTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYMScanTool.h; sourceTree = "<group>"; };
 		3AB7C1791D3E01EC00D7F790 /* LYMScanTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYMScanTool.m; sourceTree = "<group>"; };
 		3AB7C17B1D3E086D00D7F790 /* UIBarButtonItem+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+Extension.h"; sourceTree = "<group>"; };
@@ -289,6 +301,14 @@
 		3AB7C19A1D3E70AD00D7F790 /* AdvertiseVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AdvertiseVC.xib; sourceTree = "<group>"; };
 		3AB89E071D3F7A8D005F1B2B /* ShareTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShareTool.h; sourceTree = "<group>"; };
 		3AB89E081D3F7A8D005F1B2B /* ShareTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShareTool.m; sourceTree = "<group>"; };
+		3AC16F161D5B5A300043E769 /* ShopCartMarkerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShopCartMarkerView.h; sourceTree = "<group>"; };
+		3AC16F171D5B5A300043E769 /* ShopCartMarkerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShopCartMarkerView.m; sourceTree = "<group>"; };
+		3AC16F1C1D5B5FB50043E769 /* ShopCarSignTimeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShopCarSignTimeView.h; sourceTree = "<group>"; };
+		3AC16F1D1D5B5FB50043E769 /* ShopCarSignTimeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShopCarSignTimeView.m; sourceTree = "<group>"; };
+		3AC16F1F1D5B60C00043E769 /* ShopCarCommentsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShopCarCommentsView.h; sourceTree = "<group>"; };
+		3AC16F201D5B60C00043E769 /* ShopCarCommentsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShopCarCommentsView.m; sourceTree = "<group>"; };
+		3AC16F221D5B63F00043E769 /* ShopCarTableViewBottomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShopCarTableViewBottomView.h; sourceTree = "<group>"; };
+		3AC16F231D5B63F00043E769 /* ShopCarTableViewBottomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShopCarTableViewBottomView.m; sourceTree = "<group>"; };
 		3AC1A62E1D407E9100759851 /* StandardModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StandardModel.h; sourceTree = "<group>"; };
 		3AC1A62F1D407E9100759851 /* StandardModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StandardModel.m; sourceTree = "<group>"; };
 		3AC1A6301D407E9100759851 /* StandardsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StandardsView.h; sourceTree = "<group>"; };
@@ -835,6 +855,19 @@
 			children = (
 				3AE5B15D1D5AF8630056AB44 /* ShopCarRedDotView.h */,
 				3AE5B15E1D5AF8630056AB44 /* ShopCarRedDotView.m */,
+				3AB44BAE1D5B45A6000AB615 /* ShopCarHeaderView.h */,
+				3AB44BAF1D5B45A6000AB615 /* ShopCarHeaderView.m */,
+				3AB44BB11D5B47BA000AB615 /* ReceiveAddressView.h */,
+				3AB44BB21D5B47BA000AB615 /* ReceiveAddressView.m */,
+				3AB44BB41D5B47E0000AB615 /* ReceiveAddressView.xib */,
+				3AC16F161D5B5A300043E769 /* ShopCartMarkerView.h */,
+				3AC16F171D5B5A300043E769 /* ShopCartMarkerView.m */,
+				3AC16F1C1D5B5FB50043E769 /* ShopCarSignTimeView.h */,
+				3AC16F1D1D5B5FB50043E769 /* ShopCarSignTimeView.m */,
+				3AC16F1F1D5B60C00043E769 /* ShopCarCommentsView.h */,
+				3AC16F201D5B60C00043E769 /* ShopCarCommentsView.m */,
+				3AC16F221D5B63F00043E769 /* ShopCarTableViewBottomView.h */,
+				3AC16F231D5B63F00043E769 /* ShopCarTableViewBottomView.m */,
 			);
 			path = V;
 			sourceTree = "<group>";
@@ -1309,6 +1342,7 @@
 				3A64A1FC1D34D64300288490 /* MinePlist.plist in Resources */,
 				3AED5D6B1D354AF50045CF64 /* MyCoupon in Resources */,
 				3AB7C1871D3E108A00D7F790 /* QRCode.storyboard in Resources */,
+				3AB44BB51D5B47E0000AB615 /* ReceiveAddressView.xib in Resources */,
 				3AD591001D3B58B300BCD7AA /* UMSLoginViewController.xib in Resources */,
 				3AD591031D3B58B300BCD7AA /* UMSocialSDKResourcesNew.bundle in Resources */,
 				3A64A2261D34FF7000288490 /* TableHeadView.xib in Resources */,
@@ -1412,8 +1446,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				3AD5913D1D3B7FA100BCD7AA /* HomeCollectionHeaderView.m in Sources */,
+				3AC16F211D5B60C00043E769 /* ShopCarCommentsView.m in Sources */,
 				3A09CBE61D37EF78007BD1FD /* MGGlobalConstant.m in Sources */,
 				3A64A20E1D34E14000288490 /* SuperMarketVC.m in Sources */,
+				3AB44BB31D5B47BA000AB615 /* ReceiveAddressView.m in Sources */,
 				3A64A2401D350EF100288490 /* MJExtensionConst.m in Sources */,
 				3A64A2211D34F5EF00288490 /* SettingVC.m in Sources */,
 				3A64A21A1D34E53200288490 /* MineHeadView.m in Sources */,
@@ -1437,6 +1473,7 @@
 				3A84FF8C1D39E6DB00EDA949 /* CouponRuleVC.m in Sources */,
 				3AED5D541D3542520045CF64 /* OrderCell.m in Sources */,
 				3A09CBB31D377C69007BD1FD /* MyAddressVC.m in Sources */,
+				3AC16F1E1D5B5FB50043E769 /* ShopCarSignTimeView.m in Sources */,
 				3A06A7921D39BD3C00D9C22B /* OrderDetailVC.m in Sources */,
 				3AE1BDBB1D38FC480069E1B9 /* ViewController+MASAdditions.m in Sources */,
 				3A06A7951D39C5BF00D9C22B /* CouponVC.m in Sources */,
@@ -1457,6 +1494,8 @@
 				3AD591551D3BD83600BCD7AA /* HomeWebVC.m in Sources */,
 				3AED5D501D3541E70045CF64 /* OrderVC.m in Sources */,
 				3AE1BDBA1D38FC480069E1B9 /* View+MASAdditions.m in Sources */,
+				3AC16F241D5B63F00043E769 /* ShopCarTableViewBottomView.m in Sources */,
+				3AB44BB01D5B45A6000AB615 /* ShopCarHeaderView.m in Sources */,
 				3AB89E091D3F7A8D005F1B2B /* ShareTool.m in Sources */,
 				3AE1BD951D38E3330069E1B9 /* MBProgressHUD.m in Sources */,
 				3AED5D821D35802F0045CF64 /* QuestionVC.m in Sources */,
@@ -1477,6 +1516,7 @@
 				3AED5D8C1D358A200045CF64 /* LYMTextViewWithLabel.m in Sources */,
 				3AE1BDB61D38FC480069E1B9 /* MASViewAttribute.m in Sources */,
 				3AE1BDB71D38FC480069E1B9 /* MASViewConstraint.m in Sources */,
+				3AC16F181D5B5A300043E769 /* ShopCartMarkerView.m in Sources */,
 				3AE5B15F1D5AF8630056AB44 /* ShopCarRedDotView.m in Sources */,
 				3A09CBB91D37870A007BD1FD /* EditAddressVC.m in Sources */,
 				3A64A2431D350EF100288490 /* MJPropertyKey.m in Sources */,

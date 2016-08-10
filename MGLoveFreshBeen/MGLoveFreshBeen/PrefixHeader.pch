@@ -70,6 +70,8 @@
 #define iPone5   ([UIScreen mainScreen].bounds.size.height == 568)
 #define iPone4  ([UIScreen mainScreen].bounds.size.height == 480)
 
+#define MGShopCartRowHeight 50
+
 // 快速创建弱指针
 #define __weakSelf (__weak typeof(self) weakSelf = self)
 

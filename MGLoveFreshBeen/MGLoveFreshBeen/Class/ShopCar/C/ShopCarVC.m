@@ -9,6 +9,8 @@
 #import "ShopCarVC.h"
 #import "UserShopCarTool.h"
 
+#import "ShopCarHeaderView.h"
+#import "ShopCarTableViewBottomView.h"
 
 @interface ShopCarVC ()<UITableViewDataSource,UITableViewDelegate>
 {
@@ -18,6 +20,8 @@
 }
 /** tableView */
 @property (nonatomic,weak) UITableView *shopCarTableView;
+/** tableView顶部 */
+@property (nonatomic,weak) ShopCarHeaderView *tableHearderView;
 /** 是否是第一次加载数据 */
 @property (nonatomic, assign,getter=isFristLoadData) BOOL fristLoadData;
 
@@ -112,10 +116,14 @@
 - (void)setUpshopCarTableView{
     UITableView *shopCarTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, MGSCREEN_width, MGSCREEN_height - 64 - 50) style:UITableViewStylePlain];
     
-//    shopCarTableView.tableHeaderView = tableHeadView;
-//    tableFooterView.frame = CGRectMake(0, ScreenHeight - 64 - 50, ScreenWidth, 50)
-//    view.addSubview(tableFooterView)
-//    tableFooterView.delegate = self
+    // 顶部
+    ShopCarHeaderView *tableHearderView = [[ShopCarHeaderView alloc] initWithFrame:CGRectMake(0, 0, self.view.width, 250)];
+    tableHearderView.backgroundColor = [UIColor whiteColor];
+    shopCarTableView.tableHeaderView = tableHearderView;
+    // 底部
+    ShopCarTableViewBottomView *tableBottomView = [[ShopCarTableViewBottomView alloc] initWithFrame:CGRectMake(0, MGSCREEN_height - 64 - 50, MGSCREEN_width, 50)];
+    [self.view addSubview:tableBottomView];
+
     shopCarTableView.delegate = self;
     shopCarTableView.dataSource = self;
     shopCarTableView.contentInset = UIEdgeInsetsMake(0, 0, 15, 0);
@@ -123,8 +131,6 @@
     shopCarTableView.backgroundColor = self.view.backgroundColor;
     [self.view addSubview:shopCarTableView];
 }
-
-
 
 /**
  *  tableView头部
@@ -134,7 +140,7 @@
 }
 
 /**
- *  购物车空的时候的UI
+ *  购物车为空的时候的UI
  */
 - (void)showshopCarEmptyUI {
     shopImageView.hidden = NO;
