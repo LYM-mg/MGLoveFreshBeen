@@ -184,19 +184,31 @@
     // 2.取得模型赋值
     cell.addressModel = self.myAddressData[indexPath.row];
     
+    UILongPressGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(longPressClick:)];
+    [cell addGestureRecognizer:longPress];
+    
     // 3.返回cell
     return  cell;
 }
 
+- (void)longPressClick:(UILongPressGestureRecognizer *)longPress{
+    if (self.selectedAdressCallback) {
+        MyAddressCell *cell = (MyAddressCell *)longPress.view;
+        NSIndexPath *indexPath = [self.addressTableView indexPathForCell:cell];
+        
+        self.selectedAdressCallback(self.myAddressData[indexPath.row]);
+        [self.navigationController popViewControllerAnimated:YES];
+    }
+}
 
 #pragma mark - UITableViewDelegate代理
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     NSLog(@"%ld",indexPath.row);
     
-    if (self.selectedAdressCallback) {
-        self.selectedAdressCallback(self.myAddressData[indexPath.row]);
-        [self.navigationController popViewControllerAnimated:YES];
-    }
+//    if (self.selectedAdressCallback) {
+//        self.selectedAdressCallback(self.myAddressData[indexPath.row]);
+//        [self.navigationController popViewControllerAnimated:YES];
+//    }
 }
 
 - (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath{

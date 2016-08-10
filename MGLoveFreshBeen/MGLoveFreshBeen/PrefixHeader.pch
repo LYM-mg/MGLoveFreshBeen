@@ -83,7 +83,7 @@
 // 方法输出
 #define  MGLogFunc  MGLog(@"%s", __func__)
 #else  // 发布阶段-上线阶段:移除Log
-#define MGLogLog(...)
+#define MGLog(...)
 #endif
 
 

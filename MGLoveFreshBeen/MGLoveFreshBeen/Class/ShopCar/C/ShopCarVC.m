@@ -137,7 +137,7 @@
      */
     tableHearderView.changeUserInfoClickCallBack = ^{
         MyAddressVC *addressVC = [[MyAddressVC alloc] initWithSelectedAdressCallback:^(AddressCellModel *address) {
-             weakSelf.tableHearderView.addressModel = address;
+             _tableHearderView.addressModel = address;
         }];
         [weakSelf.navigationController pushViewController:addressVC animated:YES];
     };

@@ -38,6 +38,7 @@
         cell = [[MyAddressCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:KMyAddressCellIdentifier];
         cell.editTapClickCompletion = block;
         cell.selectionStyle = UITableViewCellSelectionStyleBlue;
+        cell.userInteractionEnabled = YES;
     }
     return cell;
 }
@@ -132,7 +133,7 @@
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
-    self.contentView.backgroundColor = selected ? [UIColor orangeColor] : [UIColor whiteColor];
+    self.contentView.backgroundColor = selected ? [UIColor grayColor] : [UIColor whiteColor];
 }
 
 @end
