@@ -47,6 +47,14 @@ UIKIT_EXTERN NSString * const MGHotPanClickNotification;
 /** 通知：轮播器图片被点击的点击的的通知 */
 UIKIT_EXTERN NSString * const MGCarouseViewImageClickNotification;
 
+/** 通知：购物车商品被清空的通知 */
+UIKIT_EXTERN NSString * const MGShopCarDidRemoveProductNSNotification;
+
+/** 通知：商品价格变动的通知 */
+UIKIT_EXTERN NSString * const MGShopCarBuyPriceDidChangeNotification;
+
+/** 通知：首页商品库存不足的通知 */
+UIKIT_EXTERN NSString * const MGHomeGoodsInventoryProblem;
 
 #pragma mark - 友盟分享APPKey
 UIKIT_EXTERN NSString * const MGUmengAppkey;

@@ -49,6 +49,15 @@ NSString * const MGHotPanClickNotification = @"MGHotPanClickNotification";
 
 NSString * const MGCarouseViewImageClickNotification = @"MGCarouseViewImageClickNotification";
 
+/** 通知：购物车商品被清空的通知 */
+NSString * const MGShopCarDidRemoveProductNSNotification = @"MGShopCarDidRemoveProductNSNotification";
+
+/** 通知：商品价格变动的通知 */
+NSString * const MGShopCarBuyPriceDidChangeNotification = @"MGShopCarBuyPriceDidChangeNotification";
+
+/** 通知：首页商品库存不足的通知 */
+NSString * const MGHomeGoodsInventoryProblem = @"MGHomeGoodsInventoryProblem";
+
 #pragma mark - 友盟分享APPKey
 NSString * const MGUmengAppkey = @"578b2021e0f55af6c9000e65";
 

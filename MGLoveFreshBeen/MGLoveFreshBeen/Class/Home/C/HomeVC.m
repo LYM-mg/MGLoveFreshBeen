@@ -204,7 +204,7 @@ static NSString *const KHomeFooterIdentifier = @"Footer";
     if (0 == indexPath.section) {
         return  CGSizeMake(MGSCREEN_width - MGMargin * 2, 140);
     } else if (1 == indexPath.section) {
-        return  CGSizeMake((MGSCREEN_width - MGMargin * 2) * 0.5 - 4, 250);
+        return  CGSizeMake((MGSCREEN_width - MGMargin) * 0.5, 260);
     }
     return CGSizeZero;
 }

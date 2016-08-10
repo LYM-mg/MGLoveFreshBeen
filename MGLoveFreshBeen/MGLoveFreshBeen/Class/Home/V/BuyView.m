@@ -8,6 +8,8 @@
 
 #import "BuyView.h"
 #import "HotFreshModel.h"
+#import "ShopCarRedDotView.h"
+#import "UserShopCarTool.h"
 
 @interface BuyView ()
 /** 添加按钮 */
@@ -99,7 +101,7 @@
  */
 - (void)addGoodsButtonClick{
     if (self.buyNumber >= [self.goods number]) {
-        [[NSNotificationCenter defaultCenter] postNotificationName:@"HomeGoodsInventoryProblem" object:self.goods.name];
+        [[NSNotificationCenter defaultCenter] postNotificationName:MGHomeGoodsInventoryProblem object:self.goods.name];
         return;
     }
     
@@ -113,9 +115,9 @@
         self.clickAddShopCar();
     }
 #warning 通知
-//    ShopCarRedDotView.sharedRedDotView.addProductToRedDotView(true)
-//    UserShopCarTool.sharedUserShopCar.addSupermarkProductToShopCar(goods!)
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"MGShopCarBuyPriceDidChangeNotification" object:nil userInfo:nil];
+    [[ShopCarRedDotView shareShopCarRedDotView] addProductToRedDotView:YES];
+    [[UserShopCarTool shareUserShopCarTool] addSupermarkProductToShopCar:_goods];
+    [MGNotificationCenter postNotificationName:MGShopCarBuyPriceDidChangeNotification object:nil userInfo:nil];
 }
 
 /**
@@ -132,13 +134,14 @@
         _reduceGoodsButton.hidden = YES && !self.zearIsShow;
         _buyCountLabel.hidden = YES && !self.zearIsShow;
         _buyCountLabel.text = self.zearIsShow ? @"0" : @"";
-//        UserShopCarTool.sharedUserShopCar.removeSupermarketProduct(goods!)
+        [[UserShopCarTool shareUserShopCarTool] removeSupermarketProduct:_goods];
     } else {
         _buyCountLabel.text = [NSString stringWithFormat:@"%d",_buyNumber];
     }
     
-//    ShopCarRedDotView.sharedRedDotView.reduceProductToRedDotView(true)
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"MGShopCarBuyPriceDidChangeNotification" object:nil userInfo:nil];
+    [[ShopCarRedDotView shareShopCarRedDotView] addProductToRedDotView:YES];
+    // 价格
+    [MGNotificationCenter postNotificationName:MGShopCarDidRemoveProductNSNotification object:nil userInfo:nil];
 }
 
 #pragma mark - 重写

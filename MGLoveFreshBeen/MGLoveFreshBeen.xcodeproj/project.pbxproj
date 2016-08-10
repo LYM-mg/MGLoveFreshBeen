@@ -62,6 +62,7 @@
 		3AADC9F21D361DCA00DDEE87 /* QuestionSectionHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AADC9F11D361DCA00DDEE87 /* QuestionSectionHeader.m */; settings = {ASSET_TAGS = (); }; };
 		3AADC9F51D36A19200DDEE87 /* MessageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AADC9F41D36A19200DDEE87 /* MessageVC.m */; settings = {ASSET_TAGS = (); }; };
 		3AADC9F81D36A80300DDEE87 /* MessageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AADC9F71D36A80300DDEE87 /* MessageModel.m */; settings = {ASSET_TAGS = (); }; };
+		3AB44BAD1D5B26C4000AB615 /* UserShopCarTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AB44BAC1D5B26C4000AB615 /* UserShopCarTool.m */; settings = {ASSET_TAGS = (); }; };
 		3AB7C17A1D3E01EC00D7F790 /* LYMScanTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AB7C1791D3E01EC00D7F790 /* LYMScanTool.m */; settings = {ASSET_TAGS = (); }; };
 		3AB7C17D1D3E086D00D7F790 /* UIBarButtonItem+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AB7C17C1D3E086D00D7F790 /* UIBarButtonItem+Extension.m */; settings = {ASSET_TAGS = (); }; };
 		3AB7C1801D3E0E0F00D7F790 /* QRCodeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AB7C17F1D3E0E0F00D7F790 /* QRCodeVC.m */; settings = {ASSET_TAGS = (); }; };
@@ -126,6 +127,7 @@
 		3AE1BDB91D38FC480069E1B9 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AE1BDAB1D38FC480069E1B9 /* NSLayoutConstraint+MASDebugAdditions.m */; settings = {ASSET_TAGS = (); }; };
 		3AE1BDBA1D38FC480069E1B9 /* View+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AE1BDAD1D38FC480069E1B9 /* View+MASAdditions.m */; settings = {ASSET_TAGS = (); }; };
 		3AE1BDBB1D38FC480069E1B9 /* ViewController+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AE1BDB01D38FC480069E1B9 /* ViewController+MASAdditions.m */; settings = {ASSET_TAGS = (); }; };
+		3AE5B15F1D5AF8630056AB44 /* ShopCarRedDotView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AE5B15E1D5AF8630056AB44 /* ShopCarRedDotView.m */; settings = {ASSET_TAGS = (); }; };
 		3AE964601D5ACFFC0021D3A5 /* BuyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AE9645F1D5ACFFC0021D3A5 /* BuyView.m */; settings = {ASSET_TAGS = (); }; };
 		3AED5D471D35306E0045CF64 /* AboutMeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AED5D451D35306E0045CF64 /* AboutMeVC.m */; settings = {ASSET_TAGS = (); }; };
 		3AED5D4B1D3531300045CF64 /* 12.png in Resources */ = {isa = PBXBuildFile; fileRef = 3AED5D4A1D3531300045CF64 /* 12.png */; settings = {ASSET_TAGS = (); }; };
@@ -267,6 +269,8 @@
 		3AADC9F41D36A19200DDEE87 /* MessageVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageVC.m; sourceTree = "<group>"; };
 		3AADC9F61D36A80300DDEE87 /* MessageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageModel.h; sourceTree = "<group>"; };
 		3AADC9F71D36A80300DDEE87 /* MessageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageModel.m; sourceTree = "<group>"; };
+		3AB44BAB1D5B26C4000AB615 /* UserShopCarTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserShopCarTool.h; sourceTree = "<group>"; };
+		3AB44BAC1D5B26C4000AB615 /* UserShopCarTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserShopCarTool.m; sourceTree = "<group>"; };
 		3AB7C1781D3E01EC00D7F790 /* LYMScanTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYMScanTool.h; sourceTree = "<group>"; };
 		3AB7C1791D3E01EC00D7F790 /* LYMScanTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYMScanTool.m; sourceTree = "<group>"; };
 		3AB7C17B1D3E086D00D7F790 /* UIBarButtonItem+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+Extension.h"; sourceTree = "<group>"; };
@@ -394,6 +398,9 @@
 		3AE1BDAE1D38FC480069E1B9 /* View+MASShorthandAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "View+MASShorthandAdditions.h"; sourceTree = "<group>"; };
 		3AE1BDAF1D38FC480069E1B9 /* ViewController+MASAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ViewController+MASAdditions.h"; sourceTree = "<group>"; };
 		3AE1BDB01D38FC480069E1B9 /* ViewController+MASAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ViewController+MASAdditions.m"; sourceTree = "<group>"; };
+		3AE5B15D1D5AF8630056AB44 /* ShopCarRedDotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShopCarRedDotView.h; sourceTree = "<group>"; };
+		3AE5B15E1D5AF8630056AB44 /* ShopCarRedDotView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShopCarRedDotView.m; sourceTree = "<group>"; };
+		3AE5B1601D5AF8B30056AB44 /* Single.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Single.h; sourceTree = "<group>"; };
 		3AE9645E1D5ACFFC0021D3A5 /* BuyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuyView.h; sourceTree = "<group>"; };
 		3AE9645F1D5ACFFC0021D3A5 /* BuyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BuyView.m; sourceTree = "<group>"; };
 		3AED5D441D35306E0045CF64 /* AboutMeVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutMeVC.h; sourceTree = "<group>"; };
@@ -787,6 +794,7 @@
 		3A64A1F81D34D64300288490 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				3AE5B1601D5AF8B30056AB44 /* Single.h */,
 				3AB89E061D3F7A6A005F1B2B /* ShareTool */,
 				3A3667631D3D7AFF001CDD24 /* Scan(扫一扫) */,
 				3AFF8CC41D3D419C00B3120B /* save */,
@@ -801,6 +809,7 @@
 				3A64A2051D34E11E00288490 /* C */,
 				3A64A2061D34E11E00288490 /* M */,
 				3A64A2071D34E11E00288490 /* V */,
+				3AB44BAA1D5B2695000AB615 /* T */,
 			);
 			path = ShopCar;
 			sourceTree = "<group>";
@@ -824,6 +833,8 @@
 		3A64A2071D34E11E00288490 /* V */ = {
 			isa = PBXGroup;
 			children = (
+				3AE5B15D1D5AF8630056AB44 /* ShopCarRedDotView.h */,
+				3AE5B15E1D5AF8630056AB44 /* ShopCarRedDotView.m */,
 			);
 			path = V;
 			sourceTree = "<group>";
@@ -910,6 +921,15 @@
 				3A64A23F1D350EF100288490 /* NSString+MJExtension.m */,
 			);
 			path = MJExtension;
+			sourceTree = "<group>";
+		};
+		3AB44BAA1D5B2695000AB615 /* T */ = {
+			isa = PBXGroup;
+			children = (
+				3AB44BAB1D5B26C4000AB615 /* UserShopCarTool.h */,
+				3AB44BAC1D5B26C4000AB615 /* UserShopCarTool.m */,
+			);
+			path = T;
 			sourceTree = "<group>";
 		};
 		3AB7C18F1D3E61DA00D7F790 /* AD */ = {
@@ -1398,6 +1418,7 @@
 				3A64A2211D34F5EF00288490 /* SettingVC.m in Sources */,
 				3A64A21A1D34E53200288490 /* MineHeadView.m in Sources */,
 				3A64A2471D350EF100288490 /* NSObject+MJKeyValue.m in Sources */,
+				3AB44BAD1D5B26C4000AB615 /* UserShopCarTool.m in Sources */,
 				3A64A21E1D34EC8C00288490 /* UIView+Extension.m in Sources */,
 				3AE1BDB81D38FC480069E1B9 /* NSArray+MASAdditions.m in Sources */,
 				3AE1BDB21D38FC480069E1B9 /* MASCompositeConstraint.m in Sources */,
@@ -1456,6 +1477,7 @@
 				3AED5D8C1D358A200045CF64 /* LYMTextViewWithLabel.m in Sources */,
 				3AE1BDB61D38FC480069E1B9 /* MASViewAttribute.m in Sources */,
 				3AE1BDB71D38FC480069E1B9 /* MASViewConstraint.m in Sources */,
+				3AE5B15F1D5AF8630056AB44 /* ShopCarRedDotView.m in Sources */,
 				3A09CBB91D37870A007BD1FD /* EditAddressVC.m in Sources */,
 				3A64A2431D350EF100288490 /* MJPropertyKey.m in Sources */,
 				3AADC9EC1D36018900DDEE87 /* questionCellModel.m in Sources */,
