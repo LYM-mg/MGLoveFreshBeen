@@ -81,7 +81,6 @@
                             </connections>
                         </button>
                     </subviews>
-                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstItem="nD5-IU-kFo" firstAttribute="width" secondItem="1Kj-pM-UdN" secondAttribute="width" id="0dY-VO-Nrh"/>
                         <constraint firstItem="Xcu-ux-4I4" firstAttribute="centerY" secondItem="X1o-V1-lre" secondAttribute="centerY" id="2c0-xM-XZM"/>

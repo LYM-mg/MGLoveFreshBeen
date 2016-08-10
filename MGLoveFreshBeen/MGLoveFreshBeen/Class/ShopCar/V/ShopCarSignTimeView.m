@@ -55,7 +55,17 @@
     UIImageView *arrowImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed: @"icon_go"]];
     arrowImageView.frame = CGRectMake(self.width - 15, (MGShopCartRowHeight - arrowImageView.height) * 0.5, arrowImageView.width, arrowImageView.height);
     [self addSubview:arrowImageView];
+    
+    [self addSubview:[self lineView:CGRectMake(0, MGShopCartRowHeight - 0.5, MGSCREEN_width, 0.5)]];
 }
+
+- (UIView *)lineView:(CGRect)frame {
+    UIView *lineView = [[UIView alloc] initWithFrame:frame];
+    lineView.backgroundColor = [UIColor blackColor];
+    lineView.alpha = 0.1;
+    return lineView;
+}
+
 
 /**
  *  手势点击

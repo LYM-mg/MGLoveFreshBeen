@@ -18,25 +18,28 @@
 @property (weak, nonatomic) IBOutlet UILabel *receiveUserAddress;
 
 //
-/** <#注释#> */
-@property (nonatomic,copy) void (^changeUserInfoClickCallBack)();
+
 
 @end
 
 @implementation ReceiveAddressView
 
-- (instancetype)initWithFrame:(CGRect)frame changeUserInfoClickCallBack:(void (^)())changeUserInfoClickCallBack{
-    if (self = [super init]) {
-        self.changeUserInfoClickCallBack = changeUserInfoClickCallBack;
-    }
-    return self;
-}
+//- (instancetype)initWithFrame:(CGRect)frame changeUserInfoClickCallBack:(void (^)())changeUserInfoClickCallBack{
+//    if (self = [super init]) {
+//        self.changeUserInfoClickCallBack = changeUserInfoClickCallBack;
+//    }
+//    return self;
+//}
+//
+//- (instancetype)initWithFrame:(CGRect)frame{
+//    if (self = [super initWithFrame:frame]) {
+//        
+//    }
+//    return self;
+//}
 
-- (instancetype)initWithFrame:(CGRect)frame{
-    if (self = [super initWithFrame:frame]) {
-        
-    }
-    return self;
++ (instancetype)receiveAddressView{
+    return [[NSBundle mainBundle] loadNibNamed:NSStringFromClass([ReceiveAddressView class]) owner:nil options:nil].lastObject;
 }
 
 - (void)awakeFromNib{

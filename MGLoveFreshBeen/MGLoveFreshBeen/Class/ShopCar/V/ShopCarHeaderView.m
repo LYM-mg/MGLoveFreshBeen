@@ -40,9 +40,14 @@
  *  收获地址
  */
 - (void)buildReceiptAddress{
-    ReceiveAddressView *receiptAdressView = [[ReceiveAddressView alloc] initWithFrame:CGRectMake(0, 10, self.width, 75) changeUserInfoClickCallBack:^{
-        MGPS(@"收获地址");
-    }];
+    ReceiveAddressView *receiptAdressView = [ReceiveAddressView receiveAddressView];
+    receiptAdressView.frame = CGRectMake(0, 10, self.width, 75);
+    receiptAdressView.changeUserInfoClickCallBack = ^{
+         MGPS(@"收获地址");
+    };
+//    ReceiveAddressView *receiptAdressView = [[ReceiveAddressView alloc] initWithFrame:CGRectMake(0, 10, self.width, 75) changeUserInfoClickCallBack:^{
+//        MGPS(@"收获地址");
+//    }];
     [self addSubview:receiptAdressView];
 }
 

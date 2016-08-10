@@ -25,7 +25,11 @@ CGFloat const MGSmallMargin = 5;
 /** 默认导航栏的高度64 */
 CGFloat const MGNavHeight = 64;
 
+/** 默认TabBar的高度48 */
+CGFloat const MGTabBarHeight = 48;
 
+/** 购物车cell的高度50 */
+CGFloat const MGShopCartRowHeight = 50;
 
 #pragma mark - 通知
 

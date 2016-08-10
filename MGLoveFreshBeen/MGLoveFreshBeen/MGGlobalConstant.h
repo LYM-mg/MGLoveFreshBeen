@@ -24,6 +24,12 @@ UIKIT_EXTERN CGFloat const MGSmallMargin;
 /** 默认导航栏的高度64 */
 UIKIT_EXTERN CGFloat const MGNavHeight;
 
+/** 默认TabBar的高度48 */
+UIKIT_EXTERN CGFloat const MGTabBarHeight;
+
+/** 购物车cell的高度50 */
+UIKIT_EXTERN CGFloat const MGShopCartRowHeight;
+
 
 #pragma mark - 通知
 /** 通知：添加地址的通知 */

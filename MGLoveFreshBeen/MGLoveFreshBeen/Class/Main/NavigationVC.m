@@ -112,7 +112,6 @@
     
     // 这句super的push要放在后面, 让viewController可以覆盖上面设置的leftBarButtonItem
     [super pushViewController:viewController animated:animated];
-    
 }
 
 // 监听按钮的点击

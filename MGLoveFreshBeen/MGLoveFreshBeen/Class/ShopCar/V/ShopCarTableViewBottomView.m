@@ -12,8 +12,7 @@
 @interface ShopCarTableViewBottomView ()
 /** titleLabel */
 @property (nonatomic,weak) UILabel *titleLabel;
-/** priceLabel */
-@property (nonatomic,weak) UILabel *priceLabel;
+
 /** sureButton */
 @property (nonatomic,weak) UIButton *sureButton;
 /** 背景View */
@@ -35,7 +34,7 @@
  *  创建UI
  */
 - (void)setUpUI{
-    self.backgroundColor = [UIColor whiteColor];
+    self.backgroundColor = MGRGBColor(240, 240, 240);
     
     [self addSubview:[self lineView:CGRectMake(0, 0, MGSCREEN_width, 0.5)]];
     

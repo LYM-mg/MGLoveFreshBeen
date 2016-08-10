@@ -38,14 +38,14 @@
     
     UILabel *marketTitleLabel = [[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMaxX(rocketImageView.frame) + 10, 5, MGSCREEN_width * 0.6, 20)];
     marketTitleLabel.text = @"闪电超市";
-    marketTitleLabel.font = MGFont(12);
+    marketTitleLabel.font = MGFont(14);
     marketTitleLabel.textColor = [UIColor lightGrayColor];
     [self addSubview:marketTitleLabel];
     
     UILabel *marketLabel = [[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMaxX(redDotImaegView.frame) + 5, CGRectGetMaxY(rocketImageView.frame), MGSCREEN_width * 0.7, 60 - CGRectGetMaxY(rocketImageView.frame))];
     marketLabel.text = @"   22:00前满$30免运费,22:00后满$50面运费";
     marketLabel.textColor = [UIColor lightGrayColor];
-    marketLabel.font = MGFont(10);
+    marketLabel.font = MGFont(12);
     [self addSubview:marketLabel];
     
     [self addSubview:[self lineView:CGRectMake(0, marketHeight - 0.5, MGSCREEN_width, 0.5)]];

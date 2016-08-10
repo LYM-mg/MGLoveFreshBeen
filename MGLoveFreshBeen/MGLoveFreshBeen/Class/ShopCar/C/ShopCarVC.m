@@ -12,6 +12,8 @@
 #import "ShopCarHeaderView.h"
 #import "ShopCarTableViewBottomView.h"
 
+#import "ShopCarCell.h"
+
 @interface ShopCarVC ()<UITableViewDataSource,UITableViewDelegate>
 {
     UIImageView *shopImageView;
@@ -22,6 +24,8 @@
 @property (nonatomic,weak) UITableView *shopCarTableView;
 /** tableView顶部 */
 @property (nonatomic,weak) ShopCarHeaderView *tableHearderView;
+/** tableView底部 */
+@property (nonatomic,weak) ShopCarTableViewBottomView *tableBottomView;
 /** 是否是第一次加载数据 */
 @property (nonatomic, assign,getter=isFristLoadData) BOOL fristLoadData;
 
@@ -35,11 +39,11 @@
     if ([[UserShopCarTool shareUserShopCarTool] isEmpty]) {
         [self showshopCarEmptyUI];
     } else {
-        [SVProgressHUD showInfoWithStatus:@"正在加载商品信息"];
-        
-        dispatch_time_t time = dispatch_time(DISPATCH_TIME_NOW, (int64_t)0.5*NSEC_PER_SEC);
+        dispatch_time_t time = dispatch_time(DISPATCH_TIME_NOW, (int64_t)0.8*NSEC_PER_SEC);
         dispatch_after(time, dispatch_get_main_queue(), ^{
-            [self showProductView];
+//            [self showProductView];
+            [self hideshopCarEmptyUI];
+            [self.shopCarTableView reloadData];
         });
     }
 }
@@ -52,8 +56,11 @@
     // 2.通知
     [self addNSNotification];
     
-    // 3.
+    // 3.设置购物车数据为nil时的UI
     [self setUpEmptyUI];
+    
+    // 4.有数据时的界面
+    [self setUpshopCarTableView];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -102,14 +109,7 @@
 }
 
 - (void)showProductView {
-    if (!self.isFristLoadData) {
-        
-        [self setUpTableHeadView];
-        
-        [self setUpshopCarTableView];
-        
-        self.fristLoadData = YES;
-    }
+    [self setUpshopCarTableView];
 }
 
 
@@ -118,11 +118,13 @@
     
     // 顶部
     ShopCarHeaderView *tableHearderView = [[ShopCarHeaderView alloc] initWithFrame:CGRectMake(0, 0, self.view.width, 250)];
-    tableHearderView.backgroundColor = [UIColor whiteColor];
+    tableHearderView.backgroundColor = MGRGBColor(240, 240, 240);
     shopCarTableView.tableHeaderView = tableHearderView;
     // 底部
-    ShopCarTableViewBottomView *tableBottomView = [[ShopCarTableViewBottomView alloc] initWithFrame:CGRectMake(0, MGSCREEN_height - 64 - 50, MGSCREEN_width, 50)];
+    ShopCarTableViewBottomView *tableBottomView = [[ShopCarTableViewBottomView alloc] initWithFrame:CGRectMake(0, MGSCREEN_height - MGNavHeight - MGShopCartRowHeight, MGSCREEN_width, MGShopCartRowHeight)];
     [self.view addSubview:tableBottomView];
+    [self.view bringSubviewToFront:tableBottomView];
+    _tableBottomView = tableBottomView;
 
     shopCarTableView.delegate = self;
     shopCarTableView.dataSource = self;
@@ -130,13 +132,7 @@
     shopCarTableView.rowHeight = 50;
     shopCarTableView.backgroundColor = self.view.backgroundColor;
     [self.view addSubview:shopCarTableView];
-}
-
-/**
- *  tableView头部
- */
-- (void)setUpTableHeadView {
-    
+    _shopCarTableView = shopCarTableView;
 }
 
 /**
@@ -147,6 +143,17 @@
     emptyButton.hidden = NO;
     emptyLabel.hidden = NO;
     self.shopCarTableView.hidden = YES;
+    self.tableBottomView.hidden  = YES;
+}
+/**
+ *  隐藏购物车为空的时候的UI
+ */
+- (void)hideshopCarEmptyUI {
+    shopImageView.hidden = YES;
+    emptyButton.hidden = YES;
+    emptyLabel.hidden = YES;
+    self.shopCarTableView.hidden = NO;
+    self.tableBottomView.hidden  = NO;
 }
 
 #pragma mark - UITableViewDataSource
@@ -156,14 +163,17 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    UITableViewCell *cell = [[UITableViewCell alloc] init];
-    cell.textLabel.text = [NSString stringWithFormat:@"%ld",indexPath.row];
+    ShopCarCell *cell = [ShopCarCell shopCarCellWithTableView:tableView];
+    
+    cell.goods = [[UserShopCarTool shareUserShopCarTool] getShopCarProducts][indexPath.row];
     
     return cell;
 }
 
 #pragma mark - UITableViewDelegate
-
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView{
+    [self.view endEditing:YES];
+}
 
 #pragma mark - 通知
 - (void)addNSNotification{
@@ -171,7 +181,7 @@
      *  移除所有商品
      */
     [MGNotificationCenter addObserverForName:MGShopCarDidRemoveProductNSNotification object:self queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification * _Nonnull note) {
-//        tableFooterView.priceLabel.text = [[UserShopCarTool shareUserShopCarTool]getAllProductsPrice];
+        self.tableBottomView.priceLabel.text = [[UserShopCarTool shareUserShopCarTool]getAllProductsPrice];
     }];
     
     /**
@@ -180,7 +190,7 @@
     [MGNotificationCenter addObserverForName:MGShopCarBuyPriceDidChangeNotification object:self queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification * _Nonnull note) {
         
         if ([[UserShopCarTool shareUserShopCarTool] isEmpty]) {
-//            [self showshopCarEmptyUI]; // 没有商品时的UI界面
+            [self showshopCarEmptyUI]; // 没有商品时的UI界面
         }
         
         [self.shopCarTableView reloadData];

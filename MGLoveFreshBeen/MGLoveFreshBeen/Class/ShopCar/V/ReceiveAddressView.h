@@ -15,6 +15,11 @@
 /** 地址模型 */
 @property (nonatomic,strong) AddressCellModel *addressModel;
 
+/** 修改用户收货信息 */
+@property (nonatomic,copy) void (^changeUserInfoClickCallBack)();
+
 - (instancetype)initWithFrame:(CGRect)frame changeUserInfoClickCallBack:(void (^)())changeUserInfoClickCallBack;
+
++ (instancetype)receiveAddressView;
 
 @end

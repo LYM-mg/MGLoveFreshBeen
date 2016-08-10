@@ -80,6 +80,7 @@
 		3AC16F1E1D5B5FB50043E769 /* ShopCarSignTimeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AC16F1D1D5B5FB50043E769 /* ShopCarSignTimeView.m */; settings = {ASSET_TAGS = (); }; };
 		3AC16F211D5B60C00043E769 /* ShopCarCommentsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AC16F201D5B60C00043E769 /* ShopCarCommentsView.m */; settings = {ASSET_TAGS = (); }; };
 		3AC16F241D5B63F00043E769 /* ShopCarTableViewBottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AC16F231D5B63F00043E769 /* ShopCarTableViewBottomView.m */; settings = {ASSET_TAGS = (); }; };
+		3AC16F271D5B6B930043E769 /* ShopCarCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AC16F261D5B6B930043E769 /* ShopCarCell.m */; settings = {ASSET_TAGS = (); }; };
 		3AC1A6361D407E9100759851 /* StandardModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AC1A62F1D407E9100759851 /* StandardModel.m */; settings = {ASSET_TAGS = (); }; };
 		3AC1A6371D407E9100759851 /* StandardsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AC1A6311D407E9100759851 /* StandardsView.m */; settings = {ASSET_TAGS = (); }; };
 		3AC1A6381D407E9100759851 /* StandarsAdd@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3AC1A6321D407E9100759851 /* StandarsAdd@2x.png */; settings = {ASSET_TAGS = (); }; };
@@ -309,6 +310,8 @@
 		3AC16F201D5B60C00043E769 /* ShopCarCommentsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShopCarCommentsView.m; sourceTree = "<group>"; };
 		3AC16F221D5B63F00043E769 /* ShopCarTableViewBottomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShopCarTableViewBottomView.h; sourceTree = "<group>"; };
 		3AC16F231D5B63F00043E769 /* ShopCarTableViewBottomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShopCarTableViewBottomView.m; sourceTree = "<group>"; };
+		3AC16F251D5B6B930043E769 /* ShopCarCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShopCarCell.h; sourceTree = "<group>"; };
+		3AC16F261D5B6B930043E769 /* ShopCarCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShopCarCell.m; sourceTree = "<group>"; };
 		3AC1A62E1D407E9100759851 /* StandardModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StandardModel.h; sourceTree = "<group>"; };
 		3AC1A62F1D407E9100759851 /* StandardModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StandardModel.m; sourceTree = "<group>"; };
 		3AC1A6301D407E9100759851 /* StandardsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StandardsView.h; sourceTree = "<group>"; };
@@ -868,6 +871,8 @@
 				3AC16F201D5B60C00043E769 /* ShopCarCommentsView.m */,
 				3AC16F221D5B63F00043E769 /* ShopCarTableViewBottomView.h */,
 				3AC16F231D5B63F00043E769 /* ShopCarTableViewBottomView.m */,
+				3AC16F251D5B6B930043E769 /* ShopCarCell.h */,
+				3AC16F261D5B6B930043E769 /* ShopCarCell.m */,
 			);
 			path = V;
 			sourceTree = "<group>";
@@ -1499,6 +1504,7 @@
 				3AB89E091D3F7A8D005F1B2B /* ShareTool.m in Sources */,
 				3AE1BD951D38E3330069E1B9 /* MBProgressHUD.m in Sources */,
 				3AED5D821D35802F0045CF64 /* QuestionVC.m in Sources */,
+				3AC16F271D5B6B930043E769 /* ShopCarCell.m in Sources */,
 				3AE1BDB41D38FC480069E1B9 /* MASConstraintMaker.m in Sources */,
 				3AED5D471D35306E0045CF64 /* AboutMeVC.m in Sources */,
 				3A64A2111D34E15400288490 /* ShopCarVC.m in Sources */,

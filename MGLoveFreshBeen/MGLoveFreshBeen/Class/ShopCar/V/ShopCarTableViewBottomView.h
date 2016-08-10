@@ -9,7 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface ShopCarTableViewBottomView : UIView
-
+/** priceLabel */
+@property (nonatomic,weak) UILabel *priceLabel;
 
 /** 确认订单Block */
 @property (nonatomic,copy) void (^sureProductsButtonClickWoothBlock)();
