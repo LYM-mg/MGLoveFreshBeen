@@ -45,11 +45,11 @@
     [self addSubview:signTimeTitleLabel];
     
     UITextField *signTimeField = [[UITextField alloc] init];
-    signTimeField.frame = CGRectMake(CGRectGetMaxX(signTimeTitleLabel.frame) + 10, 0, MGSCREEN_width * 0.7, MGShopCartRowHeight);
-    signTimeField.textColor = [UIColor orangeColor];
+    signTimeField.frame = CGRectMake(CGRectGetMaxX(signTimeTitleLabel.frame) + 10, 0, MGSCREEN_width * 0.5, MGShopCartRowHeight);
+    signTimeField.textColor = [UIColor redColor];
     signTimeField.font = MGFont(15);
     signTimeField.placeholder = @"闪电送,及时达";
-    [signTimeField setValue:[UIColor redColor] forKey:@"placeholderLabel.textColor"];
+    [signTimeField setValue:[UIColor orangeColor] forKeyPath:@"placeholderLabel.textColor"];
     [self addSubview:signTimeField];
     _signTimeField = signTimeField;
     signTimeField.inputView = self.timePicker;
@@ -146,7 +146,7 @@
  *  手势点击
  */
 - (void)changeTimeClick:(UITapGestureRecognizer *)tap {
-    
+    [self.signTimeField becomeFirstResponder];
 }
 
 @end

@@ -137,6 +137,7 @@ static NSString *const KHomeFooterIdentifier = @"Footer";
     // 2.创建CollectionView
     UICollectionView *collectionView = ({
         UICollectionView *collectionView = [[UICollectionView alloc] initWithFrame:self.view.bounds collectionViewLayout:layout];
+        collectionView.height = MGSCREEN_height - MGTabBarHeight;
         collectionView.backgroundColor = [UIColor clearColor];
         collectionView.dataSource = self;
         collectionView.delegate = self;
@@ -150,6 +151,7 @@ static NSString *const KHomeFooterIdentifier = @"Footer";
     // 3.注册
     // cell
     [homeCollectionView registerClass:[HomeCollectionCell class] forCellWithReuseIdentifier:KHomeCellIdentifier];
+    
     // 头部和尾部
 //    [homeCollectionView registerClass:[HomeCollectionHeaderView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:KHomeHeaderIdentifier];
 //    [homeCollectionView registerClass:[HomeCollectionHeaderView class] forSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:KHomeFooterIdentifier];
@@ -236,7 +238,7 @@ static NSString *const KHomeFooterIdentifier = @"Footer";
     if (0 == section) {
         return UIEdgeInsetsMake(_headView.height, 0, 0, 0);
     }
-    return UIEdgeInsetsZero;
+    return UIEdgeInsetsMake(0, 0, MGMargin, 0);;
 }
 #pragma mark - UICollectionViewDelegate
 /**
