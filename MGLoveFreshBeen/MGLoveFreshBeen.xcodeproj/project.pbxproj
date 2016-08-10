@@ -126,6 +126,7 @@
 		3AE1BDB91D38FC480069E1B9 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AE1BDAB1D38FC480069E1B9 /* NSLayoutConstraint+MASDebugAdditions.m */; settings = {ASSET_TAGS = (); }; };
 		3AE1BDBA1D38FC480069E1B9 /* View+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AE1BDAD1D38FC480069E1B9 /* View+MASAdditions.m */; settings = {ASSET_TAGS = (); }; };
 		3AE1BDBB1D38FC480069E1B9 /* ViewController+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AE1BDB01D38FC480069E1B9 /* ViewController+MASAdditions.m */; settings = {ASSET_TAGS = (); }; };
+		3AE964601D5ACFFC0021D3A5 /* BuyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AE9645F1D5ACFFC0021D3A5 /* BuyView.m */; settings = {ASSET_TAGS = (); }; };
 		3AED5D471D35306E0045CF64 /* AboutMeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AED5D451D35306E0045CF64 /* AboutMeVC.m */; settings = {ASSET_TAGS = (); }; };
 		3AED5D4B1D3531300045CF64 /* 12.png in Resources */ = {isa = PBXBuildFile; fileRef = 3AED5D4A1D3531300045CF64 /* 12.png */; settings = {ASSET_TAGS = (); }; };
 		3AED5D4D1D353AFF0045CF64 /* AboutMeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AED5D4C1D353AFF0045CF64 /* AboutMeVC.xib */; settings = {ASSET_TAGS = (); }; };
@@ -393,6 +394,8 @@
 		3AE1BDAE1D38FC480069E1B9 /* View+MASShorthandAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "View+MASShorthandAdditions.h"; sourceTree = "<group>"; };
 		3AE1BDAF1D38FC480069E1B9 /* ViewController+MASAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ViewController+MASAdditions.h"; sourceTree = "<group>"; };
 		3AE1BDB01D38FC480069E1B9 /* ViewController+MASAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ViewController+MASAdditions.m"; sourceTree = "<group>"; };
+		3AE9645E1D5ACFFC0021D3A5 /* BuyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuyView.h; sourceTree = "<group>"; };
+		3AE9645F1D5ACFFC0021D3A5 /* BuyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BuyView.m; sourceTree = "<group>"; };
 		3AED5D441D35306E0045CF64 /* AboutMeVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutMeVC.h; sourceTree = "<group>"; };
 		3AED5D451D35306E0045CF64 /* AboutMeVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutMeVC.m; sourceTree = "<group>"; };
 		3AED5D4A1D3531300045CF64 /* 12.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 12.png; sourceTree = "<group>"; };
@@ -591,6 +594,8 @@
 				3AD591481D3B9A9C00BCD7AA /* HomeHotView.m */,
 				3AFF8CB31D3CA41C00B3120B /* HomeCollectionCell.h */,
 				3AFF8CB41D3CA41C00B3120B /* HomeCollectionCell.m */,
+				3AE9645E1D5ACFFC0021D3A5 /* BuyView.h */,
+				3AE9645F1D5ACFFC0021D3A5 /* BuyView.m */,
 			);
 			path = V;
 			sourceTree = "<group>";
@@ -1464,6 +1469,7 @@
 				3A64A2031D34E0AE00288490 /* HomeVC.m in Sources */,
 				3AC1A63A1D407E9100759851 /* ThrowLineTool.m in Sources */,
 				3A64A1F91D34D64300288490 /* AppDelegate.m in Sources */,
+				3AE964601D5ACFFC0021D3A5 /* BuyView.m in Sources */,
 				3AB7C1971D3E645C00D7F790 /* Aditem.m in Sources */,
 				3A64A2171D34E23A00288490 /* NavigationVC.m in Sources */,
 				3AFF8CB51D3CA41C00B3120B /* HomeCollectionCell.m in Sources */,

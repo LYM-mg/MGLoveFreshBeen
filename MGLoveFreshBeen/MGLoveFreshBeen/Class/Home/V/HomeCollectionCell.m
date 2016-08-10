@@ -9,6 +9,7 @@
 #import "HomeCollectionCell.h"
 #import "HeadReosurce.h"
 #import "HotFreshModel.h"
+#import "BuyView.h"
 
 typedef enum{
     HomeCellTypeHorizontal, // 一行显示1个item
@@ -27,6 +28,7 @@ typedef enum{
     UIView *discountPriceView;  // 打折的view
     UILabel *marketPriceLabel; // 超市价格
     UILabel *priceLabel; // 商品价格
+    BuyView *buyView;
 }
 
 /** // cell类型type */
@@ -76,6 +78,14 @@ typedef enum{
     nameLabel.font = MGFont(14);
     nameLabel.textAlignment = NSTextAlignmentLeft;
     [self addSubview:nameLabel];
+    
+    __weak typeof(self) weakSelf = self;
+    buyView = [[BuyView alloc] initWithFrame:CGRectZero withBlock:^{
+        if (weakSelf.addButtonClick != nil) {
+            weakSelf.addButtonClick(goodsImageView);
+        }
+    }];
+    [self addSubview:buyView];
 }
 
 #pragma mark - 布局
@@ -89,7 +99,7 @@ typedef enum{
     specificsLabel.frame = CGRectMake(nameLabel.x, CGRectGetMaxY(fineImageView.frame), self.contentView.width, 20);
     
     discountPriceView.frame = CGRectMake(nameLabel.x, CGRectGetMaxY(specificsLabel.frame), 80, self.contentView.height - CGRectGetMaxY(specificsLabel.frame));
-//    buyView.frame = CGRectMake(self.width - 85, self.height - 30, 80, 25);
+    buyView.frame = CGRectMake(self.width - 85, self.height - 30, 80, 20);
 }
 
 
@@ -106,7 +116,7 @@ typedef enum{
     giveImageView.hidden = (type == HomeCellTypeHorizontal);
     specificsLabel.hidden = (type == HomeCellTypeHorizontal);
     discountPriceView.hidden = (type == HomeCellTypeHorizontal);
-//    buyView.hidden = (type == Horizontal);
+    buyView.hidden = (type == HomeCellTypeHorizontal);
 }
 
 /**
@@ -138,7 +148,7 @@ typedef enum{
     marketPriceLabel.hidden = [priceLabel.text isEqualToString:marketPriceLabel.text];
     
     specificsLabel.text = goodModel.specifics;
-
+    buyView.goods = goodModel;
 }
 
 /**

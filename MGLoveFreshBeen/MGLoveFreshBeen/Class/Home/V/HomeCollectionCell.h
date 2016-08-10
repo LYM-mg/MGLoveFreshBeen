@@ -17,4 +17,7 @@
 @property (nonatomic,strong) Activities *Activity;
 
 @property (nonatomic,strong) HotGoods *goodModel;
+
+/** addButtonClick */
+@property (nonatomic,copy) void (^addButtonClick)(UIImageView* imageView);
 @end
