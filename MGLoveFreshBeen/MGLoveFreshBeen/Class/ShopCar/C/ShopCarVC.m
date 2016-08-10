@@ -123,6 +123,7 @@
     ShopCarHeaderView *tableHearderView = [[ShopCarHeaderView alloc] initWithFrame:CGRectMake(0, 0, self.view.width, 250)];
     tableHearderView.backgroundColor = MGRGBColor(240, 240, 240);
     shopCarTableView.tableHeaderView = tableHearderView;
+    _tableHearderView = tableHearderView;
     
     shopCarTableView.delegate = self;
     shopCarTableView.dataSource = self;
@@ -137,7 +138,7 @@
      */
     tableHearderView.changeUserInfoClickCallBack = ^{
         MyAddressVC *addressVC = [[MyAddressVC alloc] initWithSelectedAdressCallback:^(AddressCellModel *address) {
-             _tableHearderView.addressModel = address;
+             weakSelf.tableHearderView.addressModel = address;
         }];
         [weakSelf.navigationController pushViewController:addressVC animated:YES];
     };
