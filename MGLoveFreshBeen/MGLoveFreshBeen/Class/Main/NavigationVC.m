@@ -85,15 +85,16 @@
 
     if (self.childViewControllers.count != 0) {
         // 判断当前控制器是否为根控制器，如果不是，就执行下列代码 backBtn.setImage(UIImage(named: "v2_goback"), forState: .Normal)
-        UIButton *leftBtn = [[UIButton alloc] init];
+        UIButton *leftBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 48, 30)];
         [leftBtn setTitle:@"返回" forState:UIControlStateNormal];
         [leftBtn setImage:[UIImage imageNamed:@"v2_goback"] forState:UIControlStateNormal];
-        [leftBtn sizeToFit];
+//        [leftBtn sizeToFit];
         /** 想让 导航栏的左按钮向左偏一点的方法 */
         leftBtn.contentEdgeInsets = UIEdgeInsetsMake(0, -10, 0, 0);
+        leftBtn.imageEdgeInsets = UIEdgeInsetsMake(0, -5, 0, 0);
+        leftBtn.titleEdgeInsets = UIEdgeInsetsMake(0, -7, 0, 0);
         /** 想让按钮的内容水平居左 */
         leftBtn.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;  /** 想让按钮的内容水平居左 */
-        leftBtn.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
         [leftBtn addTarget:self action:@selector(leftBtnClick) forControlEvents:UIControlEventTouchUpInside];
         UIBarButtonItem *leftItem = [[UIBarButtonItem alloc] initWithCustomView:leftBtn];
         

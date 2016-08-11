@@ -201,8 +201,11 @@
     }
 }
 
+
+#warning 不执行代理方法，不知道为什么   后来搞了个长按手势代替 （有精力的研究一下）
 #pragma mark - UITableViewDelegate代理
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+
     NSLog(@"%ld",indexPath.row);
     
 //    if (self.selectedAdressCallback) {

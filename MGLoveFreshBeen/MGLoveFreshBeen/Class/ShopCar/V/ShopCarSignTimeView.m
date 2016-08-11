@@ -82,6 +82,11 @@
 
 
 #pragma mark - 日期选择
+/**
+ *  辅助键盘
+ *
+ *  @return 辅助键盘
+ */
 - (UIView *)buildInputView  {
     UIToolbar *toolBar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, MGSCREEN_width, 40)];
     toolBar.backgroundColor = [UIColor whiteColor];
@@ -117,6 +122,11 @@
     return toolBar;
 }
 
+/**
+ *  辅助键盘按钮点击
+ *
+ *  @param sender 按钮
+ */
 - (void)selectedCityTextFieldDidChange:(UIButton *)sender{
     if (sender.tag == 13) {
         self.signTimeField.text = self.timeStr;
@@ -124,20 +134,49 @@
     [self endEditing:YES];
 }
 
+/**
+ *  懒加载时间选择器
+ *
+ *  @return 时间选择器
+ */
 - (UIDatePicker *)timePicker{
     if (!_timePicker) {
         _timePicker = [[UIDatePicker alloc] init];
-        _timePicker.datePickerMode = UIDatePickerModeDateAndTime;// @"h:mm a";
+//        _timePicker.datePickerMode = UIDatePickerModeDateAndTime;
         [_timePicker addTarget:self action:@selector(changeDate:) forControlEvents:UIControlEventValueChanged];
+        
+        //设置显示格式
+        //默认根据手机本地设置显示为中文还是其他语言
+        NSLocale *locale = [[NSLocale alloc] initWithLocaleIdentifier:@"zh_CN"];//设置为中文显示
+        _timePicker.locale = locale;
+        
+        //当前时间创建NSDate
+        NSDate *localDate = [NSDate date];
+        //在当前时间加上的时间：格里高利历
+        NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierChinese];
+        NSDateComponents *offsetComponents = [[NSDateComponents alloc] init];
+        //设置时间
+        [offsetComponents setYear:0];
+        [offsetComponents setMonth:0];
+        [offsetComponents setDay:5];
+        [offsetComponents setHour:20];
+        [offsetComponents setMinute:0];
+        [offsetComponents setSecond:0];
+        //设置最大值时间
+        NSDate *maxDate = [gregorian dateByAddingComponents:offsetComponents toDate:localDate options:0];
+        //设置属性
+        _timePicker.minimumDate = localDate;
+        _timePicker.maximumDate = maxDate;
     }
     return _timePicker;
 }
 /**
+ *  时间选择器的监听方法
  *  修改收货时间
  */
 - (void)changeDate:(UIDatePicker *)datePick{
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    formatter.dateFormat = @"MM-dd hh:mm a";
+    formatter.dateFormat = @"yyyy年MM月dd日(EEEE)   HH:mm:ss";
     self.timeStr = [formatter stringFromDate:datePick.date];
     MGLog(@"%@",_timeStr);
 }

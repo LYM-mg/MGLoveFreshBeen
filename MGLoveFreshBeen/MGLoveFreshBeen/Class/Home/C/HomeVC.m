@@ -18,6 +18,7 @@
 
 #import "UIBarButtonItem+Extension.h"
 #import "QRCodeVC.h"
+#import "HomeSearchVC.h"
 
 @interface HomeVC ()<UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout>
 {
@@ -69,6 +70,7 @@ static NSString *const KHomeFooterIdentifier = @"Footer";
     [super didReceiveMemoryWarning];
     
 }
+
 #pragma mark - 导航栏
 - (void)setUpNavigationItem{
     self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithImage:[UIImage imageNamed:@"icon_black_scancode"] highImage:nil norColor:[UIColor whiteColor] selColor:MGProductBackGray title:@"扫一扫" target:self action:@selector(scanClick)];
@@ -76,12 +78,18 @@ static NSString *const KHomeFooterIdentifier = @"Footer";
     self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithImage:[UIImage imageNamed:@"icon_search"] highImage:nil norColor:[UIColor whiteColor] selColor:MGProductBackGray title:@"搜 索" target:self action:@selector(searchClick)];
 }
 
+/**
+ *  扫一扫
+ */
 - (void)scanClick{
     [self.navigationController presentViewController:[UIStoryboard storyboardWithName:@"QRCode" bundle:nil].instantiateInitialViewController animated:YES completion:nil];
 }
 
+/**
+ *  搜索功能
+ */
 - (void)searchClick{
-    MGPS(@"还没有做🔍功能");
+    [self.navigationController pushViewController:[[HomeSearchVC alloc] init] animated:YES];
 }
 
 #pragma mark - HomeHeaderView

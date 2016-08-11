@@ -48,6 +48,8 @@
 		3A64A2471D350EF100288490 /* NSObject+MJKeyValue.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A64A23B1D350EF100288490 /* NSObject+MJKeyValue.m */; settings = {ASSET_TAGS = (); }; };
 		3A64A2481D350EF100288490 /* NSObject+MJProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A64A23D1D350EF100288490 /* NSObject+MJProperty.m */; settings = {ASSET_TAGS = (); }; };
 		3A64A2491D350EF100288490 /* NSString+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A64A23F1D350EF100288490 /* NSString+MJExtension.m */; settings = {ASSET_TAGS = (); }; };
+		3A711D991D5BE39600F554EA /* HomeSearchVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A711D981D5BE39600F554EA /* HomeSearchVC.m */; settings = {ASSET_TAGS = (); }; };
+		3A711D9C1D5BEF8B00F554EA /* HotSearchView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A711D9B1D5BEF8B00F554EA /* HotSearchView.m */; settings = {ASSET_TAGS = (); }; };
 		3A84FF8C1D39E6DB00EDA949 /* CouponRuleVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A84FF8B1D39E6DB00EDA949 /* CouponRuleVC.m */; settings = {ASSET_TAGS = (); }; };
 		3A9E720D1D5B82B700FB246D /* OrderPayWayVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A9E720C1D5B82B700FB246D /* OrderPayWayVC.m */; settings = {ASSET_TAGS = (); }; };
 		3AA57C431D3A0BD000AC5802 /* SuperMarketVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AA57C421D3A0BD000AC5802 /* SuperMarketVC.xib */; settings = {ASSET_TAGS = (); }; };
@@ -253,6 +255,10 @@
 		3A64A23D1D350EF100288490 /* NSObject+MJProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+MJProperty.m"; sourceTree = "<group>"; };
 		3A64A23E1D350EF100288490 /* NSString+MJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MJExtension.h"; sourceTree = "<group>"; };
 		3A64A23F1D350EF100288490 /* NSString+MJExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MJExtension.m"; sourceTree = "<group>"; };
+		3A711D971D5BE39600F554EA /* HomeSearchVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeSearchVC.h; sourceTree = "<group>"; };
+		3A711D981D5BE39600F554EA /* HomeSearchVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeSearchVC.m; sourceTree = "<group>"; };
+		3A711D9A1D5BEF8B00F554EA /* HotSearchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotSearchView.h; sourceTree = "<group>"; };
+		3A711D9B1D5BEF8B00F554EA /* HotSearchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotSearchView.m; sourceTree = "<group>"; };
 		3A84FF8A1D39E6DB00EDA949 /* CouponRuleVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CouponRuleVC.h; sourceTree = "<group>"; };
 		3A84FF8B1D39E6DB00EDA949 /* CouponRuleVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CouponRuleVC.m; sourceTree = "<group>"; };
 		3A9E720B1D5B82B700FB246D /* OrderPayWayVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderPayWayVC.h; sourceTree = "<group>"; };
@@ -601,6 +607,8 @@
 				3AB7C1841D3E108A00D7F790 /* QRCode.storyboard */,
 				3AB7C1891D3E226E00D7F790 /* MyCardVC.h */,
 				3AB7C18A1D3E226E00D7F790 /* MyCardVC.m */,
+				3A711D971D5BE39600F554EA /* HomeSearchVC.h */,
+				3A711D981D5BE39600F554EA /* HomeSearchVC.m */,
 			);
 			path = C;
 			sourceTree = "<group>";
@@ -629,6 +637,8 @@
 				3AFF8CB41D3CA41C00B3120B /* HomeCollectionCell.m */,
 				3AE9645E1D5ACFFC0021D3A5 /* BuyView.h */,
 				3AE9645F1D5ACFFC0021D3A5 /* BuyView.m */,
+				3A711D9A1D5BEF8B00F554EA /* HotSearchView.h */,
+				3A711D9B1D5BEF8B00F554EA /* HotSearchView.m */,
 			);
 			path = V;
 			sourceTree = "<group>";
@@ -1496,6 +1506,7 @@
 				3AE1BD931D38E3330069E1B9 /* MBProgressHUD+XMG.m in Sources */,
 				3AC1A6371D407E9100759851 /* StandardsView.m in Sources */,
 				3AB7C17D1D3E086D00D7F790 /* UIBarButtonItem+Extension.m in Sources */,
+				3A711D991D5BE39600F554EA /* HomeSearchVC.m in Sources */,
 				3AED5D741D354BCD0045CF64 /* OrderCellModel.m in Sources */,
 				3A09CBE21D37B106007BD1FD /* BaseController.m in Sources */,
 				3A64A1C91D34D4D200288490 /* main.m in Sources */,
@@ -1539,6 +1550,7 @@
 				3AED5D7F1D357D9F0045CF64 /* HelpVC.m in Sources */,
 				3AADC9F21D361DCA00DDEE87 /* QuestionSectionHeader.m in Sources */,
 				3AFF8CB91D3D413100B3120B /* LYMGuideTool.m in Sources */,
+				3A711D9C1D5BEF8B00F554EA /* HotSearchView.m in Sources */,
 				3A64A2141D34E16C00288490 /* MineVC.m in Sources */,
 				3A64A2031D34E0AE00288490 /* HomeVC.m in Sources */,
 				3AC1A63A1D407E9100759851 /* ThrowLineTool.m in Sources */,
