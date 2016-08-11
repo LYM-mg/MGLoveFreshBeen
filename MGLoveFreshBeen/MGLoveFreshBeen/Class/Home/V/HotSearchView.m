@@ -40,7 +40,7 @@
 - (void)setUpUI{
     UILabel *searchTitleLabel = [[UILabel alloc] init];
     searchTitleLabel.frame = CGRectMake(MGMargin, 0, self.width - 30, 35);
-    searchTitleLabel.font = MGFont(15);
+    searchTitleLabel.font = [UIFont boldSystemFontOfSize:17];
     searchTitleLabel.textAlignment = NSTextAlignmentLeft;
     searchTitleLabel.textColor = MGRGBColor(140, 140, 140);
     [self addSubview:searchTitleLabel];

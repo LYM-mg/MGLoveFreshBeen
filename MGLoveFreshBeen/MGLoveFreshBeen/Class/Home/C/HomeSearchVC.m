@@ -71,13 +71,15 @@
     searchBar.placeholder = @"请输入商品名称";
     searchBar.barTintColor = [UIColor whiteColor];
     searchBar.keyboardType = UIKeyboardTypeDefault;
-    searchBar.barTintColor = [UIColor lightGrayColor];
-    searchBar.tintColor = [UIColor grayColor];
+    
     /**
         UISearchBarStyleProminent,  // used my Mail, Messages and Contacts
         UISearchBarStyleMinimal
     */
     searchBar.searchBarStyle = UISearchBarStyleProminent;
+    searchBar.barTintColor = [UIColor lightGrayColor];
+    searchBar.tintColor = [UIColor grayColor];
+    searchBar.prompt = @"你可以这么搜";
     
 //    for (UIView *subsView in searchBar.subviews) {
 //        NSLog(@"%@",subsView);
@@ -238,9 +240,9 @@
         [UIView animateWithDuration:1.0 animations:^{
             backImageView.alpha = 0.0;
             backImageView.transform = CGAffineTransformMakeScale(1.3, 1.3);
+            contentScrollView.hidden = NO;
         } completion:^(BOOL finished) {
             [backImageView removeFromSuperview];
-             contentScrollView.hidden = NO;
         }];
     });
 }
