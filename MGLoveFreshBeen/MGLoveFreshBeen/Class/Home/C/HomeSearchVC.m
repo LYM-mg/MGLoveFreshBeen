@@ -28,7 +28,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor whiteColor];
+    self.view.backgroundColor = [UIColor magentaColor];
     
     // 0.创建ScrollView
     [self buildContentScrollView];
@@ -105,7 +105,7 @@
  */
 - (void)buildCleanHistorySearchButton {
     cleanHistoryBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    [cleanHistoryBtn setTitle:@"清空🔍历史" forState: UIControlStateNormal];
+    [cleanHistoryBtn setTitle:@"清 空 🔍 历 史" forState: UIControlStateNormal];
     [cleanHistoryBtn setTitleColor:[UIColor redColor] forState: UIControlStateNormal];
     cleanHistoryBtn.titleLabel.font = MGFont(14);
     cleanHistoryBtn.backgroundColor = self.view.backgroundColor;
@@ -139,7 +139,6 @@
             }];
             
             hotSearchView.height = hotSearchView.searchHeight;
-            hotSearchView.backgroundColor = [UIColor orangeColor];
             [contentScrollView addSubview:hotSearchView];
         }
     }
@@ -165,7 +164,6 @@
             [weakSelf loadProductsWithKeyword:str];
         }];
         historySearchView.height = historySearchView.searchHeight;
-        historySearchView.backgroundColor = [UIColor cyanColor];
         [contentScrollView addSubview:historySearchView];
         [self updateCleanHistoryButton:NO];
     }
