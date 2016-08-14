@@ -17,12 +17,17 @@
 @property (weak, nonatomic) IBOutlet UIView *mainPanel;
 // 登录按钮
 @property (weak, nonatomic) IBOutlet UIButton *loginButton;
+
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *mainViewTopLayout;
+
 @end
 
 @implementation MineLoginVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.mainViewTopLayout.constant = IS_IPHONE4 ? 74 : 174;
     
     // 设置输入框左边的图片
     self.loginTextField.leftIcon = @"icon_people";
