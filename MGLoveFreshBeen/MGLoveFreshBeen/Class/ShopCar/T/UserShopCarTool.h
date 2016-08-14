@@ -37,11 +37,16 @@ interfaceSingle(UserShopCarTool);
 - (NSMutableArray *)getShopCarProducts;
 
 /**
- *  获取购物车中的商品个数
+ *  获取购物车中的商品类型个数
  *
  *  @return 购物车的数组个数
  */
 - (NSInteger)getShopCarProductsClassCount;
+
+/**
+ *  商品总个数
+ */
+- (int)userShopCarProductsNumber;
 
 /**
  *  获取购物车中的商品是否为空

@@ -78,7 +78,7 @@ implementationSingle(UserShopCarTool);
 }
 
 /**
- *  获取购物车中的商品个数
+ *  获取购物车中的商品类型个数
  *
  *  @return 购物车的数组个数
  */

@@ -88,6 +88,8 @@
     [self addChildViewController:[[NavigationVC alloc] initWithRootViewController:vc]];
 }
 
+
+#pragma markr - 购物车商品购买数量改变的通知
 - (void)addNotication{
     [MGNotificationCenter addObserver:self selector:@selector(shopCarBuyNumberChanged) name:MGShopCarBuyNumberDidChangeNotification object:nil];
 }
@@ -95,7 +97,7 @@
 - (void)shopCarBuyNumberChanged {
     UIViewController *controller = self.childViewControllers[2];
     UITabBarItem *item = controller.tabBarItem;
-    NSInteger goodsNumer = [[UserShopCarTool shareUserShopCarTool] getShopCarProductsClassCount];
+    NSInteger goodsNumer = [[UserShopCarTool shareUserShopCarTool] userShopCarProductsNumber];
     if (goodsNumer == 0) {
         item.badgeValue = nil;
         return;
