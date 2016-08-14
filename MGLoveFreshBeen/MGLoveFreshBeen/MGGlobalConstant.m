@@ -58,6 +58,9 @@ NSString * const MGCarouseViewImageClickNotification = @"MGCarouseViewImageClick
 /** 通知：购物车商品被清空的通知 */
 NSString * const MGShopCarDidRemoveProductNSNotification = @"MGShopCarDidRemoveProductNSNotification";
 
+/** 通知：购物车商品购买数量改变的通知 */
+NSString * const MGShopCarBuyNumberDidChangeNotification = @"MGShopCarBuyNumberDidChangeNotification";
+
 /** 通知：商品价格变动的通知 */
 NSString * const MGShopCarBuyPriceDidChangeNotification = @"MGShopCarBuyPriceDidChangeNotification";
 

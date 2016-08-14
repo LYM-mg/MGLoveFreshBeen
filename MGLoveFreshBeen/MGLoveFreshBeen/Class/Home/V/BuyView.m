@@ -118,6 +118,7 @@
     [[ShopCarRedDotView shareShopCarRedDotView] addProductToRedDotView:YES];
     [[UserShopCarTool shareUserShopCarTool] addSupermarkProductToShopCar:self.goods];
     [MGNotificationCenter postNotificationName:MGShopCarBuyPriceDidChangeNotification object:nil userInfo:nil];
+    [MGNotificationCenter postNotificationName:MGShopCarBuyNumberDidChangeNotification object:nil];
 }
 
 /**
@@ -142,6 +143,7 @@
     [[ShopCarRedDotView shareShopCarRedDotView] addProductToRedDotView:YES];
     // 价格
     [MGNotificationCenter postNotificationName:MGShopCarBuyPriceDidChangeNotification object:nil userInfo:nil];
+    [MGNotificationCenter postNotificationName:MGShopCarBuyNumberDidChangeNotification object:nil];
 }
 
 #pragma mark - 重写

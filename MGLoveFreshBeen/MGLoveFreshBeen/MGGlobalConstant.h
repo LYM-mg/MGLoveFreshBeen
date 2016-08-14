@@ -56,6 +56,9 @@ UIKIT_EXTERN NSString * const MGCarouseViewImageClickNotification;
 /** 通知：购物车商品被清空的通知 */
 UIKIT_EXTERN NSString * const MGShopCarDidRemoveProductNSNotification;
 
+/** 通知：购物车商品购买数量改变的通知 */
+UIKIT_EXTERN NSString * const MGShopCarBuyNumberDidChangeNotification;
+
 /** 通知：商品价格变动的通知 */
 UIKIT_EXTERN NSString * const MGShopCarBuyPriceDidChangeNotification;
 
@@ -64,6 +67,7 @@ UIKIT_EXTERN NSString * const MGHomeGoodsInventoryProblem;
 
 /** 通知：成功登录的通知 */
 UIKIT_EXTERN NSString * const MGLoginSuccessNotification;
+
 
 #pragma mark - 友盟分享APPKey
 UIKIT_EXTERN NSString * const MGUmengAppkey;

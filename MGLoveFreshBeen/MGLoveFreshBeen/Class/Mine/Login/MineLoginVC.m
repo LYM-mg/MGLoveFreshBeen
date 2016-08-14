@@ -69,7 +69,7 @@
     if ([_loginTextField.text  isEqual:@"ming"] && [_pwdTextField.text  isEqual:@"234567"]) {
         [self dismissViewControllerAnimated:YES completion:^{
             [MBProgressHUD hideHUD];
-            // 成功登陆的 通知
+            // 成功登录的 通知
             [MGNotificationCenter postNotificationName:MGLoginSuccessNotification object:nil];
         }];
     }

@@ -13,6 +13,8 @@
 #import "ShopCarVC.h"
 #import "MineVC.h"
 
+#import "UserShopCarTool.h"
+
 @interface TabBarVC ()
 
 @end
@@ -28,6 +30,8 @@
     // 2.初始化所有的自控制器
     [self setUpAllChildController];
     
+    // 3.监听通知
+    [self addNotication];
 }
 
 #pragma mark ========= initialize ===========
@@ -84,5 +88,23 @@
     [self addChildViewController:[[NavigationVC alloc] initWithRootViewController:vc]];
 }
 
+- (void)addNotication{
+    [MGNotificationCenter addObserver:self selector:@selector(shopCarBuyNumberChanged) name:MGShopCarBuyNumberDidChangeNotification object:nil];
+}
+
+- (void)shopCarBuyNumberChanged {
+    UIViewController *controller = self.childViewControllers[2];
+    UITabBarItem *item = controller.tabBarItem;
+    NSInteger goodsNumer = [[UserShopCarTool shareUserShopCarTool] getShopCarProductsClassCount];
+    if (goodsNumer == 0) {
+        item.badgeValue = nil;
+        return;
+    }
+    item.badgeValue = [NSString stringWithFormat:@"%ld",(long)goodsNumer];
+}
+
+- (void)dealloc{
+    [MGNotificationCenter removeObserver:self];
+}
 
 @end
