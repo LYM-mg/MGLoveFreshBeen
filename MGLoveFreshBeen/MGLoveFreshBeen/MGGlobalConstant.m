@@ -64,6 +64,9 @@ NSString * const MGShopCarBuyPriceDidChangeNotification = @"MGShopCarBuyPriceDid
 /** 通知：首页商品库存不足的通知 */
 NSString * const MGHomeGoodsInventoryProblem = @"MGHomeGoodsInventoryProblem";
 
+/** 通知：成功登录的通知 */
+NSString * const MGLoginSuccessNotification = @"MGLoginSuccessNotification";
+
 #pragma mark - 友盟分享APPKey
 NSString * const MGUmengAppkey = @"578b2021e0f55af6c9000e65";
 

@@ -21,6 +21,7 @@
 
 #import "HelpVC.h"
 #import "IdeaVC.h"
+#import "MineLoginVC.h"
 
 #import "UMSocial.h"
 
@@ -31,6 +32,9 @@
 
 /** tableView */
 @property (nonatomic,weak) UITableView *tableView;
+
+/** 登录按钮 */
+@property (nonatomic,weak) UIButton *loginBtn;
 
 /** 数据源 */
 @property (nonatomic,strong) NSArray *mineData;
@@ -59,13 +63,21 @@ CGFloat headViewHeight = 150;
 #pragma mark - 生命周期
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // 通知
-    [[NSNotificationCenter defaultCenter] addObserverForName:@"sendIdeaSussessNotification" object:nil queue:nil usingBlock:^(NSNotification * _Nonnull note) {
+    /// 0.通知
+    // 反馈意见
+    [MGNotificationCenter addObserverForName:@"sendIdeaSussessNotification" object:nil queue:nil usingBlock:^(NSNotification * _Nonnull note) {
         self.iderVCSendIderSuccess = YES;
     }];
+    // 成功登录
+    [MGNotificationCenter addObserverForName:MGLoginSuccessNotification object:nil queue:nil usingBlock:^(NSNotification * _Nonnull note) {
+        [_loginBtn setTitle:@"退 出 登 录" forState:UIControlStateNormal];
+    }];
+
     
+    /// 1.头部
     [self setUpHeaderView];
     
+    /// 2.tableView
     [self setUpTableView];
 }
 
@@ -169,6 +181,7 @@ CGFloat headViewHeight = 150;
 
 // 2.tableView
 -(void)setUpTableView{
+    // 1.tableView
     UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, headViewHeight, MGSCREEN_width, MGSCREEN_height - headViewHeight) style:UITableViewStyleGrouped];
     tableView.delegate = self;
     tableView.dataSource = self;
@@ -176,39 +189,61 @@ CGFloat headViewHeight = 150;
     self.tableView = tableView;
     [self.view addSubview:tableView];
     
+    // 2.tableView头部
     TableHeadView *tableHead = [TableHeadView tableHeadView];
     tableHead.frame = CGRectMake(0, 0, MGSCREEN_width, 70);
     tableView.tableHeaderView = tableHead;
     
     /// 我的订单/优惠券/我的消息 回调
-    tableHead.orderBtnClickBlock = ^{
+    [tableHead tableHeadViewOrderBtnClickBlock:^{
         OrderVC *orderVC = [[OrderVC alloc] init];
         [self.navigationController pushViewController:orderVC animated:YES];
-    };
-    tableHead.CouponBtnClickBlock = ^{
+    }];
+    [tableHead tableHeadViewCouponBtnClickBlock:^{
         CouponVC *couponVC = [[CouponVC alloc] init];
         [self.navigationController pushViewController:couponVC animated:YES];
-    };
-    tableHead.messageBtnClickBlock = ^{
+    }];
+    [tableHead tableHeadViewMessageBtnClickBlock:^{
         MessageVC *messageVC = [[MessageVC alloc] init];
         [self.navigationController pushViewController:messageVC animated:YES];
-    };
+    }];
+    
+    // 3.tableView尾部
+    UIView *tableFoot = [[UIView alloc] initWithFrame:CGRectMake(0, MGMargin, MGSCREEN_width, 60)];
+    tableView.tableFooterView = tableFoot;
+    UIButton *loginBtn = [[UIButton alloc] initWithFrame:CGRectMake(MGMargin, (tableFoot.height-30)*0.5, MGSCREEN_width - 2*MGMargin, 30)];
+    [loginBtn setTitle:@"登 录" forState:UIControlStateNormal];
+    [loginBtn setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+    [loginBtn setTitleColor:MGRandomColor forState:UIControlStateHighlighted];
+    loginBtn.backgroundColor = self.view.backgroundColor;
+    loginBtn.layer.cornerRadius = 5;
+    loginBtn.layer.borderColor = MGRandomColor.CGColor;
+    loginBtn.layer.borderWidth = 0.5;
+    [loginBtn addTarget:self action:@selector(loginBtnClick:) forControlEvents:UIControlEventTouchUpInside];
+    [tableFoot addSubview:loginBtn];
+    _loginBtn = loginBtn;
 }
 
+/**
+ *  present登录界面
+ */
+- (void)loginBtnClick:(UIButton *)loginBtn{
+    NSString *text = [loginBtn titleForState:UIControlStateNormal];
+    if ([text isEqualToString:@"登 录"]) {
+        [self presentViewController:[UIStoryboard storyboardWithName:@"Login" bundle:nil].instantiateInitialViewController animated:YES completion:nil];
+    }else{
+        [loginBtn setTitle:@"登 录" forState:UIControlStateNormal];
+    }
+}
 
 #pragma mark - UITableViewDataSource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return 3;
+    return self.mineData.count;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    if (section == 0) {
-        return 2;
-    }else if (section == 1){
-        return 1;
-    }else{
-        return 2;
-    }
+     NSArray *groupArr = self.mineData[section];
+    return groupArr.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -219,31 +254,11 @@ CGFloat headViewHeight = 150;
     }
     
     // 设置数据
-    NSString *text = nil;
-    NSString *imageName = nil;
-    if (0 == indexPath.section) {
-        MineCellModel *model = self.mineData[indexPath.row];
-        text = model.title;
-        imageName = model.iconName;
-        
-    } else if (1 == indexPath.section) {
-        MineCellModel *model = self.mineData[2];
-        text = model.title;
-        imageName = model.iconName;
-    } else {
-        if (indexPath.row == 0) {
-            MineCellModel *model = self.mineData[3];
-            text = model.title;
-            imageName = model.iconName;
-        } else {
-            MineCellModel *model = self.mineData[4];
-            text = model.title;
-            imageName = model.iconName;
-        }
-    }
-    
-    cell.textLabel.text = text;
-    cell.imageView.image =[UIImage imageNamed:imageName];
+    NSArray *groupArr = self.mineData[indexPath.section];
+    MineCellModel *model = groupArr[indexPath.row];
+
+    cell.textLabel.text = model.title;
+    cell.imageView.image =[UIImage imageNamed:model.iconName];
     return cell;
 }
 

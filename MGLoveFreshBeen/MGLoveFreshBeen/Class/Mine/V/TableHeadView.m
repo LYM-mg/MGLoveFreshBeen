@@ -11,6 +11,12 @@
 
 @interface TableHeadView ()
 
+/** 我的订单按钮的点击回调 */
+@property (nonatomic,strong) void (^orderBtnClickBlock)();
+/** 优惠券按钮的点击回调 */
+@property (nonatomic,strong) void (^couponBtnClickBlock)();
+/** 我的消息按钮的点击回调 */
+@property (nonatomic,strong) void (^messageBtnClickBlock)();
 
 @end
 
@@ -36,12 +42,18 @@
         self.orderBtnClickBlock();
     }
 }
+- (void)tableHeadViewOrderBtnClickBlock:(void (^)())orderBtnClickBlock{
+    _orderBtnClickBlock = orderBtnClickBlock;
+}
 
 // 我的优惠券的点击
 - (IBAction)CouponBtnClick:(MGButton *)sender {
-    if (_CouponBtnClickBlock) {
-         self.CouponBtnClickBlock();
+    if (_couponBtnClickBlock) {
+         self.couponBtnClickBlock();
     }
+}
+- (void)tableHeadViewCouponBtnClickBlock:(void (^)())couponBtnClickBlock{
+    _couponBtnClickBlock = couponBtnClickBlock;
 }
 
 // 我的消息按钮的点击
@@ -49,6 +61,9 @@
     if (_messageBtnClickBlock) {
         self.messageBtnClickBlock();
     }
+}
+- (void)tableHeadViewMessageBtnClickBlock:(void (^)())messageBtnClickBlock{
+    _messageBtnClickBlock = messageBtnClickBlock;
 }
 
 

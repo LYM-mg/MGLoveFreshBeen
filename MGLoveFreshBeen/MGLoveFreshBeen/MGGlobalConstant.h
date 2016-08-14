@@ -62,6 +62,9 @@ UIKIT_EXTERN NSString * const MGShopCarBuyPriceDidChangeNotification;
 /** 通知：首页商品库存不足的通知 */
 UIKIT_EXTERN NSString * const MGHomeGoodsInventoryProblem;
 
+/** 通知：成功登录的通知 */
+UIKIT_EXTERN NSString * const MGLoginSuccessNotification;
+
 #pragma mark - 友盟分享APPKey
 UIKIT_EXTERN NSString * const MGUmengAppkey;
 

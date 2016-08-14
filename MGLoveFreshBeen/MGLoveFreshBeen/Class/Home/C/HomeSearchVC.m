@@ -142,6 +142,11 @@
             [contentScrollView addSubview:hotSearchView];
         }
     }
+    // 分割线
+    UIView *lineView = [[UIView alloc] initWithFrame:CGRectMake(10, CGRectGetMaxY(hotSearchView.frame) + MGMargin, self.view.width - 20, 0)];
+    lineView.backgroundColor = [UIColor blackColor];
+    lineView.alpha = 0.1;
+    [contentScrollView addSubview:lineView];
 }
 
 /**

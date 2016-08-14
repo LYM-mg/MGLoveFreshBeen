@@ -13,13 +13,13 @@
 /** 快速创建tableHeadView */
 + (instancetype)tableHeadView;
 
-
 /** 我的订单按钮的点击回调 */
-@property (nonatomic,strong) void (^orderBtnClickBlock)();
-/** 优惠券按钮的点击回调 */
-@property (nonatomic,strong) void (^CouponBtnClickBlock)();
-/** 我的消息按钮的点击回调 */
-@property (nonatomic,strong) void (^messageBtnClickBlock)();
+- (void)tableHeadViewOrderBtnClickBlock:(void (^)())orderBtnClickBlock;
 
+/** 优惠券按钮的点击回调 */
+- (void)tableHeadViewCouponBtnClickBlock:(void (^)())couponBtnClickBlock;
+
+/** 我的消息按钮的点击回调 */
+- (void)tableHeadViewMessageBtnClickBlock:(void (^)())messageBtnClickBlock;
 
 @end
