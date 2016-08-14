@@ -144,16 +144,16 @@
         return;
     }
     
-    __block SMSGetCodeMethod method = SMSGetCodeMethodVoice;
-    UIAlertController *alertVC = [UIAlertController alertControllerWithTitle:@"验证类型/默认是语音" message:nil preferredStyle:UIAlertControllerStyleAlert];
+//    __block SMSGetCodeMethod method = SMSGetCodeMethodVoice;
+    UIAlertController *alertVC = [UIAlertController alertControllerWithTitle:@"验证类型" message:nil preferredStyle:UIAlertControllerStyleAlert];
     // 语音
-    UIAlertAction *cameraAction = [UIAlertAction actionWithTitle:@"相机" style:UIAlertActionStyleDefault  handler:^(UIAlertAction * _Nonnull action) {
-        method = SMSGetCodeMethodVoice;
+    UIAlertAction *cameraAction = [UIAlertAction actionWithTitle:@"语音" style:UIAlertActionStyleDefault  handler:^(UIAlertAction * _Nonnull action) {
+        [self sendVerificationByMethod:SMSGetCodeMethodVoice phoneNumber:phoneTextField.text];
     }];
     
     // 短信
-    UIAlertAction *photoAction = [UIAlertAction actionWithTitle:@"相册" style:UIAlertActionStyleDefault  handler:^(UIAlertAction * _Nonnull action) {
-        method = SMSGetCodeMethodSMS;
+    UIAlertAction *photoAction = [UIAlertAction actionWithTitle:@"短信" style:UIAlertActionStyleDefault  handler:^(UIAlertAction * _Nonnull action) {
+        [self sendVerificationByMethod:SMSGetCodeMethodSMS phoneNumber:phoneTextField.text];
     }];
     
     UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
@@ -162,10 +162,12 @@
     [alertVC addAction:photoAction];
     [alertVC addAction:cancelAction];
     [self.navigationController presentViewController:alertVC animated:YES completion:nil];
-    
+}
+
+- (void)sendVerificationByMethod:(SMSGetCodeMethod)method phoneNumber:(NSString *)phoneNumber{
     // 必须要输入正确的手机号码才能来到下面的代码
-    [SMSSDK getVerificationCodeByMethod:method phoneNumber:phoneTextField.text zone:@"86" customIdentifier:nil result:^(NSError *error) {
-        sender.userInteractionEnabled = NO;
+    [SMSSDK getVerificationCodeByMethod:method phoneNumber:phoneNumber zone:@"86" customIdentifier:nil result:^(NSError *error) {
+        receiveBtn.userInteractionEnabled = NO;
         timer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(onTimer:) userInfo:nil repeats:YES];
         
         if (error != nil) { //有错误
@@ -178,6 +180,7 @@
         UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"验证码发送成功"  message:nil delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
         [alertView show];
     }];
+
 }
 /**
  *  正则表达式 判断是否是手机号码
@@ -204,10 +207,9 @@
         receiveBtn.userInteractionEnabled = YES;
         [receiveBtn  setTitle:@"获取验证码" forState:(UIControlStateNormal)];
         seconds = 60;
-        [sender invalidate];
         timer = nil;
     }else{
-        [receiveBtn setTitle:[NSString stringWithFormat:@"已发送(%li)",seconds] forState:(UIControlStateNormal)];
+        [receiveBtn setTitle:[NSString stringWithFormat:@"已发送(%ld)",seconds] forState:(UIControlStateNormal)];
     }
 }
 

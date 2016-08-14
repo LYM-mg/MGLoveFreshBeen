@@ -39,6 +39,7 @@
    UITableView *orderTableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
     orderTableView.delegate = self;
     orderTableView.dataSource = self;
+    orderTableView.height = self.view.height - MGTabBarHeight;
     self.orderTableView.rowHeight = 160;
     self.orderTableView = orderTableView;
     self.orderTableView.separatorStyle = UITableViewCellSeparatorStyleNone;

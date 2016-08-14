@@ -105,7 +105,8 @@
     [self.view addSubview:tableView];
     
     [tableView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.mas_equalTo(self.view);
+        make.left.right.top.mas_equalTo(self.view);
+        make.bottom.mas_equalTo(self.view).mas_offset(2*MGMargin);
     }];
 }
 

@@ -28,9 +28,9 @@
 - (NSMutableArray *)oneData{
     if (_oneData == nil) {
         _oneData = [NSMutableArray array];
-        for (NSUInteger i = 0; i < 7; i++)
+        for (NSInteger i = 0; i < 7; i++)
         {
-            NSString *title = [NSString stringWithFormat:@"MG明明就是你：row=%ld",i];
+            NSString *title = [NSString stringWithFormat:@"MG明明就是你：row=%d",i];
             [_oneData addObject:title];
         }
     }
@@ -40,9 +40,9 @@
 - (NSMutableArray *)twoData{
     if (_twoData == nil) {
         _twoData = [NSMutableArray array];
-        for (NSUInteger j = 0; j < 23; j++)
+        for (NSInteger j = 0; j < 23; j++)
         {
-            NSString *title = [NSString stringWithFormat:@"商品详情：row=%ld", j];
+            NSString *title = [NSString stringWithFormat:@"商品详情：row=%d", j];
             [_twoData addObject:title];
         }
 

@@ -182,7 +182,7 @@ CGFloat headViewHeight = 150;
 // 2.tableView
 -(void)setUpTableView{
     // 1.tableView
-    UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, headViewHeight, MGSCREEN_width, MGSCREEN_height - headViewHeight) style:UITableViewStyleGrouped];
+    UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, headViewHeight, MGSCREEN_width, MGSCREEN_height - headViewHeight - MGTabBarHeight) style:UITableViewStyleGrouped];
     tableView.delegate = self;
     tableView.dataSource = self;
     tableView.rowHeight = 44;

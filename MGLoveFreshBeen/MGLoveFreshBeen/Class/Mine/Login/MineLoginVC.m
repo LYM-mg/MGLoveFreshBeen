@@ -10,7 +10,7 @@
 
 #import "RegistVC.h"
 
-@interface MineLoginVC ()
+@interface MineLoginVC ()<UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet MGTextField *loginTextField;
 @property (weak, nonatomic) IBOutlet MGTextField *pwdTextField;
 // 主面板
@@ -27,11 +27,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.mainViewTopLayout.constant = IS_IPHONE4 ? 74 : 174;
+    self.mainViewTopLayout.constant = IS_IPHONE4 ? 20 : MGSCREEN_height*0.18;
     
     // 设置输入框左边的图片
     self.loginTextField.leftIcon = @"icon_people";
     self.pwdTextField.leftIcon = @"icon_password";
+    self.pwdTextField.delegate = self;
     
     // 设置主面板的圆角
     self.mainPanel.layer.cornerRadius = 5;
@@ -93,5 +94,19 @@
     [self.view endEditing:YES];
 }
 
+#pragma mark - UITextFieldDelegate
+- (void)textFieldDidBeginEditing:(UITextField *)textField{
+    if ([textField isEqual:self.pwdTextField]) {
+        self.mainViewTopLayout.constant = IS_IPHONE4 ? -80 : 0;
+    }
+}
+
+- (void)textFieldDidEndEditing:(UITextField *)textField{
+    if ([textField isEqual:self.pwdTextField]) {
+        if (IS_IPHONE4){
+            self.mainViewTopLayout.constant = IS_IPHONE4 ? 20 : MGSCREEN_height*0.18;
+        }
+    }
+}
 
 @end

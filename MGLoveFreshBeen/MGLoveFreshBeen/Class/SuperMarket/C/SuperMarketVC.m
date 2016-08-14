@@ -69,6 +69,7 @@
     }
     
     [self.productsTableView registerClass:[SupermarketHeadView class] forHeaderFooterViewReuseIdentifier:@"MGKSupermarketHeadView"];
+    self.productsTableView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0);
 }
 
 #pragma mark - 加载数据
@@ -191,18 +192,22 @@
 #pragma mark - 用来滚动滚动滚动
 // 头部即将消失
 - (void)tableView:(UITableView *)tableView willDisplayHeaderView:(UIView *)view forSection:(NSInteger)section{
-    if (tableView == self.productsTableView && !_isScrollDown) { // 右边tableView 👉➡️
-        _productIndexPath = [NSIndexPath indexPathForRow:section inSection:0];
-        
-        [MGNotificationCenter postNotificationName:MGWillDisplayHeaderViewNotification object:nil];
+    if (tableView.isDragging) { // 是拖拽才会进去执行里面的代码，发出通知
+        if (tableView == self.productsTableView && !_isScrollDown) { // 右边tableView 👉➡️
+            _productIndexPath = [NSIndexPath indexPathForRow:section inSection:0];
+            
+            [MGNotificationCenter postNotificationName:MGWillDisplayHeaderViewNotification object:nil];
+        }
     }
 }
 
 // 头部完全消失
 - (void)tableView:(UITableView *)tableView didEndDisplayingHeaderView:(nonnull UIView *)view forSection:(NSInteger)section{
-    if (tableView == self.productsTableView && _isScrollDown) { // 右边tableView 👉➡️
+    if (tableView.isDragging) { // 是拖拽才会进去执行里面的代码，发出通知
+        if (tableView == self.productsTableView && _isScrollDown) { // 右边tableView 👉➡️
             _productIndexPath = [NSIndexPath indexPathForRow:(section+1) inSection:0];
             [MGNotificationCenter postNotificationName:MGDidEndDisplayingHeaderViewNotification object:nil];
+        }
     }
 }
 
@@ -230,13 +235,13 @@
     // 2.HeaderView即将消失的通知
     [MGNotificationCenter addObserverForName:MGDidEndDisplayingHeaderViewNotification object:nil queue:nil usingBlock:^(NSNotification * _Nonnull note) {
         [weakSelf.categoryTableView selectRowAtIndexPath:_productIndexPath animated:YES scrollPosition:UITableViewScrollPositionMiddle];
-        [weakSelf.categoryTableView scrollToRowAtIndexPath:_productIndexPath atScrollPosition:UITableViewScrollPositionNone animated:YES];
+        [weakSelf.categoryTableView scrollToRowAtIndexPath:_productIndexPath atScrollPosition:UITableViewScrollPositionTop animated:YES];
     }];
     
     // 3.HeaderView完全消失的通知
     [MGNotificationCenter addObserverForName:MGWillDisplayHeaderViewNotification object:nil queue:nil usingBlock:^(NSNotification * _Nonnull note) {
         [weakSelf.categoryTableView selectRowAtIndexPath:_productIndexPath animated:YES scrollPosition:UITableViewScrollPositionMiddle];
-        [weakSelf.categoryTableView scrollToRowAtIndexPath:_productIndexPath atScrollPosition:UITableViewScrollPositionNone animated:YES];
+        [weakSelf.categoryTableView scrollToRowAtIndexPath:_productIndexPath atScrollPosition:UITableViewScrollPositionMiddle animated:YES];
         
     }];
 }

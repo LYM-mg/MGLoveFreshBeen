@@ -27,13 +27,14 @@
     // 3DTouch
     [self setup3DTouch:application];
     
-    //短信验证，appKey和appSecret从后台申请得
+    // 短信验证，appKey和appSecret从后台申请得
     [SMSSDK registerApp:@"1611c80d9edc0"
              withSecret:@"ed8256cf1d354ca20772486ee2f2016b"];
     
     // 友盟分享
     [self setupUMSocial];
     
+    // 设置根控制器
     self.window = [[UIWindow alloc]  initWithFrame:[UIScreen mainScreen].bounds];
     
     self.window.rootViewController = [LYMGuideTool chooseRootViewController];
@@ -79,7 +80,7 @@
     [UMSocialConfig setSupportedInterfaceOrientations:UIInterfaceOrientationMaskAll];
     
     //设置微信AppId，设置分享url，默认使用友盟的网址
-//    [UMSocialWechatHandler setWXAppId:@"wxceb8ec0a6d9dc22a" appSecret:@"a393c1527aaccb95f3a4c88d6d1455f6" url:@"http://www.umeng.com/social"];
+    [UMSocialWechatHandler setWXAppId:@"wxceb8ec0a6d9dc22a" appSecret:@"a393c1527aaccb95f3a4c88d6d1455f6" url:@"http://www.umeng.com/social"];
     
     // 打开新浪微博的SSO开关
     // 将在新浪微博注册的应用appkey、redirectURL替换下面参数，并在info.plist的URL Scheme中相应添加wb+appkey，如"wb3921700954"，详情请参考官方文档。
@@ -88,11 +89,10 @@
                                          RedirectURL:@"https://github.com/LYM-mg"];
 
     //    //设置分享到QQ空间的应用Id，和分享url 链接
-//    [UMSocialQQHandler setQQWithAppId:@"100424468" appKey:@"c7394704798a158208a74ab60104f0ba" url:@"http://www.umeng.com/social"];
+    [UMSocialQQHandler setQQWithAppId:@"100424468" appKey:@"c7394704798a158208a74ab60104f0ba" url:@"http://www.umeng.com/social"];
     //    //设置支持没有客户端情况下使用SSO授权
-//    [UMSocialQQHandler setSupportWebView:YES];
+    [UMSocialQQHandler setSupportWebView:YES];
     
-//    UMSocialDataService
 }
 
 /**
@@ -131,23 +131,20 @@
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
-    // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
-    // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
+   
 }
 
 - (void)applicationDidEnterBackground:(UIApplication *)application {
-    // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
-    // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+    
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
-    // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
+    
 }
 
 
 - (void)applicationWillTerminate:(UIApplication *)application {
-    // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
-    // Saves changes in the application's managed object context before the application terminates.
+  
     [self saveContext];
 }
 
@@ -158,12 +155,12 @@
 @synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
 
 - (NSURL *)applicationDocumentsDirectory {
-    // The directory the application uses to store the Core Data store file. This code uses a directory named "com.ming.MGLoveFreshBeen" in the application's documents directory.
+    
     return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
 }
 
 - (NSManagedObjectModel *)managedObjectModel {
-    // The managed object model for the application. It is a fatal error for the application not to be able to find and load its model.
+    
     if (_managedObjectModel != nil) {
         return _managedObjectModel;
     }
