@@ -140,32 +140,53 @@
     [self.view endEditing:YES];
     UITextField *phoneTextField = (UITextField *)[self.view viewWithTag:101];
     
-    if([phoneTextField.text length] == 11){
-        [SMSSDK getVerificationCodeByMethod:SMSGetCodeMethodSMS phoneNumber:phoneTextField.text zone:@"86" customIdentifier:nil result:^(NSError *error) {
-            [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(onTimer:) userInfo:nil repeats:YES];
-            NSLog(@"code:%ld,domain:%@,userInfo:%@",(long)error.code,error.domain,error.userInfo);
-            sender.userInteractionEnabled=NO;
-            if (error == nil) {
-                sender.userInteractionEnabled=YES;
-//                codeString = 
-                UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"验证码发送成功"  message:nil delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
-                [alertView show];
-            }else {//有错误
-                sender.userInteractionEnabled=YES;
-                UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"验证码发送失败" message:[NSString stringWithFormat:@"%@",[error.userInfo objectForKey:@"getVerificationCode"]] delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
-                [alertView show];
-            };
-        }];
-    }else{
+    if([phoneTextField.text length] != 11){
         MGPE(@"请输入11位手机号码");
+        return;
     }
+    
+    // 判断是否是正确的手机号!
+    if (![self validateMoblie:phoneTextField.text]) {
+        MGPE(@"请输入正确的11位手机号码");
+        return;
+    }
+    
+    // 必须要输入正确的手机号码才能来到下面的代码
+    [SMSSDK getVerificationCodeByMethod:SMSGetCodeMethodSMS phoneNumber:phoneTextField.text zone:@"86" customIdentifier:nil result:^(NSError *error) {
+        sender.userInteractionEnabled = NO;
+        [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(onTimer:) userInfo:nil repeats:YES];
+        
+        if (error != nil) { //有错误
+            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"验证码发送失败" message:[NSString stringWithFormat:@"%@",[error.userInfo objectForKey:@"getVerificationCode"]] delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+            [alertView show];
+            return ;
+        }
+        
+        
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"验证码发送成功"  message:nil delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+        [alertView show];
+    }];
 }
+/**
+ *  正则表达式 判断是否是手机号码
+ *
+ *  @param sender 返回bool
+ */
+- (BOOL)validateMoblie:(NSString *)mobile{
+    // 手机号以13，15，18开头，9个\d数字字符 (15[^4,\\D])
+    NSString *phoneRegex = @"^((13[0-9])|(15[0-3,5-9])|(18[0,0-9])|(17[0-3,5-9]))\\d{8}$";
+    
+    NSPredicate *phoneTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@",phoneRegex];
+    
+    return [phoneTest evaluateWithObject:mobile];
+}
+
 - (void)onTimer:(NSTimer *)sender{
     seconds -= 1;
     if(seconds == 0){
-        receiveBtn.userInteractionEnabled=YES;
+        receiveBtn.userInteractionEnabled = YES;
         [receiveBtn  setTitle:@"获取验证码" forState:(UIControlStateNormal)];
-        seconds=60;
+        seconds = 60;
         [sender invalidate];
     }else{
         [receiveBtn setTitle:[NSString stringWithFormat:@"已发送(%li)",seconds] forState:(UIControlStateNormal)];
@@ -178,56 +199,49 @@
     UITextField *pwtf=(UITextField *)[self.view viewWithTag:102];
     UITextField *rpw=(UITextField *)[self.view viewWithTag:103];
     UITextField *codetf=(UITextField *)[self.view viewWithTag:104];
-    if([ptf.text length]==11){
-        
-        if([pwtf.text length]>=6&&pwtf.text.length<=12){
-            
-            if([pwtf.text isEqualToString:rpw.text]){
-                
-//                if([codetf.text isEqualToString:codeString]){
-                    if(flag==NO){
-                        sender.userInteractionEnabled = NO;
-                        [SMSSDK commitVerificationCode:codetf.text phoneNumber:ptf.text zone:@"86" result:^(NSError *error) {
-                            NSLog(@"code:%ld,domain:%@,userInfo:%@",(long)error.code,error.domain,error.userInfo);
-                            
-                            if (error == nil) {
-                                MGPS(@"注册成功");
-                                [self.navigationController popViewControllerAnimated:YES];
-                                
-                                UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"验证成功"
-                                                                                    message:nil
-                                                                                   delegate:nil
-                                                                          cancelButtonTitle:@"确定"
-                                                                          otherButtonTitles:nil, nil];
-                                [alertView show];
-                            }else {//有错误
-                                UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"验证失败"
-                                                                                    message:[NSString stringWithFormat:@"%@",[error.userInfo objectForKey:@"commitVerificationCode"]]
-                                                                                   delegate:nil
-                                                                          cancelButtonTitle:@"确定"
-                                                                          otherButtonTitles:nil, nil];
-                                [alertView show];
-                            }
-                        }];
-                        sender.userInteractionEnabled = YES;
-                    }else
-                        MGPE(@"请您先同意注册协议");
-//                }else{
-//                    MGPE(@"请输入正确的验证码");
-//                }
-                
-            }else{
-                
-                MGPE(@"两次密码输入不一致");
-            }
-        }else{
-            
-            MGPE(@"密码长度为6-12位");
-        }
-    }else{
-        
-        MGPE(@"请输入11位手机号码");
+    
+    if([ptf.text length] != 11){
+         MGPE(@"请输入11位手机号码");
+        return;
     }
+    
+    if([pwtf.text length] < 6 && pwtf.text.length > 12){
+        MGPE(@"密码长度为6-12位");
+        return;
+    }
+    
+    if([pwtf.text isEqualToString:rpw.text]){
+        MGPE(@"两次密码输入不一致");
+        return;
+    }
+    
+    if(flag == YES){
+        MGPE(@"请您先同意注册协议");
+        return;
+    }
+    
+    sender.userInteractionEnabled = NO;
+    [SMSSDK commitVerificationCode:codetf.text phoneNumber:ptf.text zone:@"86" result:^(NSError *error) {
+        if (error == nil) {
+            MGPS(@"注册成功");
+            [self.navigationController popViewControllerAnimated:YES];
+            
+            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"验证成功"
+                                                                message:nil
+                                                               delegate:nil
+                                                      cancelButtonTitle:@"确定"
+                                                      otherButtonTitles:nil, nil];
+            [alertView show];
+        }else {//有错误
+            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"验证失败"
+                                                                message:[NSString stringWithFormat:@"%@",[error.userInfo objectForKey:@"commitVerificationCode"]]
+                                                               delegate:nil
+                                                      cancelButtonTitle:@"确定"
+                                                      otherButtonTitles:nil, nil];
+            [alertView show];
+        }
+    }];
+    sender.userInteractionEnabled = YES;
     sender.backgroundColor = MGNavBarTiniColor;
 }
 

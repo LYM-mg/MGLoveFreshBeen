@@ -29,7 +29,7 @@
 /** tableView底部 */
 @property (nonatomic,weak) ShopCarTableViewBottomView *tableBottomView;
 /** 是否是第一次加载数据 */
-@property (nonatomic, assign,getter=isFristLoadData) BOOL fristLoadData;
+//@property (nonatomic, assign,getter=isFristLoadData) BOOL fristLoadData;
 
 
 @end
@@ -43,7 +43,6 @@
     } else {
         dispatch_time_t time = dispatch_time(DISPATCH_TIME_NOW, (int64_t)0.8*NSEC_PER_SEC);
         dispatch_after(time, dispatch_get_main_queue(), ^{
-//            [self showProductView];
             [self hideshopCarEmptyUI];
             [self.shopCarTableView reloadData];
         });
