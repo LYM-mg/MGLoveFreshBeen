@@ -97,7 +97,7 @@
 #pragma mark - UITextFieldDelegate
 - (void)textFieldDidBeginEditing:(UITextField *)textField{
     if ([textField isEqual:self.pwdTextField]) {
-        self.mainViewTopLayout.constant = IS_IPHONE4 ? -80 : 0;
+        self.mainViewTopLayout.constant = IS_IPHONE4 ? -80 : MGMargin * 1.5;
     }
 }
 
