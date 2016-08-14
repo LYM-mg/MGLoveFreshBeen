@@ -15,6 +15,7 @@
     NSInteger seconds;//倒计时秒数
     NSString *codeString;//验证码字符串
     BOOL flag;
+    NSTimer *timer; // 定时器
 }
 
 @end
@@ -92,18 +93,18 @@
     
     
     
-    //    新注册确认
-    UIButton *loginBtn=[UIButton buttonWithType:(UIButtonTypeCustom)];
-    loginBtn.frame=CGRectMake(106/2,614/2 , MGSCREEN_width-106, 40);
-    [loginBtn addTarget:self action:@selector(registerBtnHandled:) forControlEvents:(UIControlEventTouchUpInside)];
-    [loginBtn setBackgroundColor:MGNavBarTiniColor];
-    loginBtn.titleLabel.font = MGFont(16);
-    [loginBtn setTitle:@"注册" forState:(UIControlStateNormal)];
-    [loginBtn setTitleColor:[UIColor whiteColor] forState:(UIControlStateNormal)];
-    [loginBtn addTarget:self action:@selector(btnTouchDown:) forControlEvents:(UIControlEventTouchDown)];
-    [self.view addSubview:loginBtn];
+    //  新注册确认
+    UIButton *registBtn=[UIButton buttonWithType:(UIButtonTypeCustom)];
+    registBtn.frame=CGRectMake(106/2,614/2 , MGSCREEN_width-106, 40);
+    [registBtn addTarget:self action:@selector(registerBtnHandled:) forControlEvents:(UIControlEventTouchUpInside)];
+    [registBtn setBackgroundColor:MGNavBarTiniColor];
+    registBtn.titleLabel.font = MGFont(16);
+    [registBtn setTitle:@"注册" forState:(UIControlStateNormal)];
+    [registBtn setTitleColor:[UIColor whiteColor] forState:(UIControlStateNormal)];
+    [registBtn addTarget:self action:@selector(btnTouchDown:) forControlEvents:(UIControlEventTouchDown)];
+    [self.view addSubview:registBtn];
     if(IS_IPHONE4)
-        loginBtn.y=614/2-50;
+        registBtn.y=614/2-50;
     
     
     //    注册协议
@@ -121,14 +122,6 @@
 }
 
 #pragma  mark - event response
-/**
- *  注册按钮按下改变背景
- */
-- (void)btnTouchDown:(UIButton *)sender{
-    sender.backgroundColor=[UIColor clearColor];
-    sender.layer.borderWidth = 0.5;
-    sender.layer.borderColor = MGNavBarTiniColor.CGColor;
-}
 //确认用户注册协议
 - (void)protocolBtnClicked:(UIButton *)sender{
     MGPS(@"注册协议");
@@ -154,7 +147,7 @@
     // 必须要输入正确的手机号码才能来到下面的代码
     [SMSSDK getVerificationCodeByMethod:SMSGetCodeMethodSMS phoneNumber:phoneTextField.text zone:@"86" customIdentifier:nil result:^(NSError *error) {
         sender.userInteractionEnabled = NO;
-        [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(onTimer:) userInfo:nil repeats:YES];
+        timer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(onTimer:) userInfo:nil repeats:YES];
         
         if (error != nil) { //有错误
             UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"验证码发送失败" message:[NSString stringWithFormat:@"%@",[error.userInfo objectForKey:@"getVerificationCode"]] delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
@@ -181,6 +174,11 @@
     return [phoneTest evaluateWithObject:mobile];
 }
 
+/**
+ *  倒计时
+ *
+ *  @param sender timer
+ */
 - (void)onTimer:(NSTimer *)sender{
     seconds -= 1;
     if(seconds == 0){
@@ -188,12 +186,24 @@
         [receiveBtn  setTitle:@"获取验证码" forState:(UIControlStateNormal)];
         seconds = 60;
         [sender invalidate];
+        timer = nil;
     }else{
         [receiveBtn setTitle:[NSString stringWithFormat:@"已发送(%li)",seconds] forState:(UIControlStateNormal)];
     }
 }
+
+
+/**
+ *  注册按钮按下改变背景
+ */
+- (void)btnTouchDown:(UIButton *)sender{
+    sender.backgroundColor=[UIColor clearColor];
+    sender.layer.borderWidth = 0.5;
+    sender.layer.borderColor = MGNavBarTiniColor.CGColor;
+}
 //注册完成
 - (void)registerBtnHandled:(UIButton *)sender{
+    sender.backgroundColor = MGNavBarTiniColor;
     [self.view endEditing:YES];
     UITextField *ptf=(UITextField *)[self.view viewWithTag:101];
     UITextField *pwtf=(UITextField *)[self.view viewWithTag:102];
@@ -241,8 +251,13 @@
             [alertView show];
         }
     }];
+    // 注册成功后要恢复获取验证码按钮的可交互性  还有注册按钮
     sender.userInteractionEnabled = YES;
-    sender.backgroundColor = MGNavBarTiniColor;
+    receiveBtn.userInteractionEnabled = YES;
+    [receiveBtn  setTitle:@"获取验证码" forState:(UIControlStateNormal)];
+    seconds = 60;
+    [timer invalidate];
+    timer = nil;
 }
 
 -(void)clearBtnHandled:(UIButton *)sender{
@@ -300,7 +315,6 @@
         if( [textField.text length]!=11)
             MGPE(@"请输入11位手机号码");
     }
-    
 }
 
 
