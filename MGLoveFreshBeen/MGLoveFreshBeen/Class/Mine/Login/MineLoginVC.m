@@ -8,6 +8,8 @@
 #import "MineLoginVC.h"
 #import "MGTextField.h"
 
+#import "RegistVC.h"
+
 @interface MineLoginVC ()
 @property (weak, nonatomic) IBOutlet MGTextField *loginTextField;
 @property (weak, nonatomic) IBOutlet MGTextField *pwdTextField;
@@ -48,6 +50,9 @@
     button.selected = !button.isSelected;
 }
 
+/**
+ *  登录
+ */
 - (IBAction)loginClick:(id)sender {
     if (_loginTextField.text == nil || _loginTextField.text.length == 0 || _pwdTextField.text == nil || _pwdTextField.text.length == 0) {
         MGPE(@"你输入的账号/密码有误");
@@ -63,6 +68,14 @@
         }];
     }
 }
+
+/**
+ *  注册
+ */
+- (IBAction)registClick:(UIButton *)sender {
+    [self.navigationController pushViewController:[[RegistVC alloc] init] animated:YES];
+}
+
 
 /**
  *  dismiss

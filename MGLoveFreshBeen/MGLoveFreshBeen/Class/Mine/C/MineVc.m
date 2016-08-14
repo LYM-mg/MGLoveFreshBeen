@@ -232,7 +232,21 @@ CGFloat headViewHeight = 150;
     if ([text isEqualToString:@"登 录"]) {
         [self presentViewController:[UIStoryboard storyboardWithName:@"Login" bundle:nil].instantiateInitialViewController animated:YES completion:nil];
     }else{
-        [loginBtn setTitle:@"登 录" forState:UIControlStateNormal];
+        UIAlertController *alertVC = [UIAlertController alertControllerWithTitle:@"确定要退出吗？" message:nil preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *sureAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault  handler:^(UIAlertAction * _Nonnull action) {
+            [MBProgressHUD showMessage:@"正在退出"];
+            
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                 [MBProgressHUD hideHUD];
+                 [loginBtn setTitle:@"登 录" forState:UIControlStateNormal];
+            });
+        }];
+        
+        UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
+        
+        [alertVC addAction:sureAction];
+        [alertVC addAction:cancelAction];
+        [self.navigationController presentViewController:alertVC animated:YES completion:nil];
     }
 }
 

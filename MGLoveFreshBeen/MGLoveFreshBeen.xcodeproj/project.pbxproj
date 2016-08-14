@@ -18,6 +18,14 @@
 		3A09CBB91D37870A007BD1FD /* EditAddressVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A09CBB81D37870A007BD1FD /* EditAddressVC.m */; settings = {ASSET_TAGS = (); }; };
 		3A09CBE21D37B106007BD1FD /* BaseController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A09CBE11D37B106007BD1FD /* BaseController.m */; settings = {ASSET_TAGS = (); }; };
 		3A09CBE61D37EF78007BD1FD /* MGGlobalConstant.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A09CBE51D37EF78007BD1FD /* MGGlobalConstant.m */; settings = {ASSET_TAGS = (); }; };
+		3A11F1C11D60910300ACF3D6 /* RegistVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A11F1C01D60910300ACF3D6 /* RegistVC.m */; settings = {ASSET_TAGS = (); }; };
+		3A11F1C41D60988400ACF3D6 /* UITextField+placeholderColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A11F1C31D60988400ACF3D6 /* UITextField+placeholderColor.m */; settings = {ASSET_TAGS = (); }; };
+		3A11F1C81D609EF900ACF3D6 /* MOBFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A11F1C61D609EF900ACF3D6 /* MOBFoundation.framework */; settings = {ASSET_TAGS = (); }; };
+		3A11F1C91D609EFA00ACF3D6 /* SMS_SDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A11F1C71D609EF900ACF3D6 /* SMS_SDK.framework */; settings = {ASSET_TAGS = (); }; };
+		3A11F1CB1D609F7500ACF3D6 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A11F1CA1D609F7500ACF3D6 /* MessageUI.framework */; };
+		3A11F1CD1D609F8300ACF3D6 /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A11F1CC1D609F8300ACF3D6 /* JavaScriptCore.framework */; };
+		3A11F1CF1D609F9F00ACF3D6 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A11F1CE1D609F9F00ACF3D6 /* AddressBook.framework */; };
+		3A11F1D11D609FAF00ACF3D6 /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A11F1D01D609FAF00ACF3D6 /* AddressBookUI.framework */; };
 		3A64A1C91D34D4D200288490 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A64A1C81D34D4D200288490 /* main.m */; };
 		3A64A1D51D34D4D200288490 /* MGLoveFreshBeen.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3A64A1D31D34D4D200288490 /* MGLoveFreshBeen.xcdatamodeld */; };
 		3A64A1D71D34D4D200288490 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A64A1D61D34D4D200288490 /* Assets.xcassets */; };
@@ -202,6 +210,16 @@
 		3A09CBE11D37B106007BD1FD /* BaseController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseController.m; sourceTree = "<group>"; };
 		3A09CBE41D37EF78007BD1FD /* MGGlobalConstant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGGlobalConstant.h; sourceTree = "<group>"; };
 		3A09CBE51D37EF78007BD1FD /* MGGlobalConstant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGGlobalConstant.m; sourceTree = "<group>"; };
+		3A11F1BF1D60910300ACF3D6 /* RegistVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegistVC.h; sourceTree = "<group>"; };
+		3A11F1C01D60910300ACF3D6 /* RegistVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegistVC.m; sourceTree = "<group>"; };
+		3A11F1C21D60988400ACF3D6 /* UITextField+placeholderColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+placeholderColor.h"; sourceTree = "<group>"; };
+		3A11F1C31D60988400ACF3D6 /* UITextField+placeholderColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+placeholderColor.m"; sourceTree = "<group>"; };
+		3A11F1C61D609EF900ACF3D6 /* MOBFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MOBFoundation.framework; sourceTree = "<group>"; };
+		3A11F1C71D609EF900ACF3D6 /* SMS_SDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SMS_SDK.framework; sourceTree = "<group>"; };
+		3A11F1CA1D609F7500ACF3D6 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		3A11F1CC1D609F8300ACF3D6 /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		3A11F1CE1D609F9F00ACF3D6 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
+		3A11F1D01D609FAF00ACF3D6 /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
 		3A64A1C41D34D4D200288490 /* MGLoveFreshBeen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MGLoveFreshBeen.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A64A1C81D34D4D200288490 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		3A64A1D41D34D4D200288490 /* MGLoveFreshBeen.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MGLoveFreshBeen.xcdatamodel; sourceTree = "<group>"; };
@@ -501,9 +519,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A11F1D11D609FAF00ACF3D6 /* AddressBookUI.framework in Frameworks */,
+				3A11F1CF1D609F9F00ACF3D6 /* AddressBook.framework in Frameworks */,
+				3A11F1CD1D609F8300ACF3D6 /* JavaScriptCore.framework in Frameworks */,
+				3A11F1CB1D609F7500ACF3D6 /* MessageUI.framework in Frameworks */,
 				3AD591361D3B5C2100BCD7AA /* CoreTelephony.framework in Frameworks */,
 				3AD5913A1D3B5C3700BCD7AA /* libz.tbd in Frameworks */,
 				3AD591381D3B5C2B00BCD7AA /* libstdc++.tbd in Frameworks */,
+				3A11F1C91D609EFA00ACF3D6 /* SMS_SDK.framework in Frameworks */,
 				3AD591341D3B5C1A00BCD7AA /* libsqlite3.tbd in Frameworks */,
 				3AD591321D3B5C1200BCD7AA /* CoreGraphics.framework in Frameworks */,
 				3AD591301D3B5C0800BCD7AA /* SystemConfiguration.framework in Frameworks */,
@@ -516,6 +539,7 @@
 				0AC56EECE693106A7BF07F31 /* libPods-MGLoveFreshBeen.a in Frameworks */,
 				3AD591221D3B5A1700BCD7AA /* libSocialSinaSSO.a in Frameworks */,
 				3AD591231D3B5A1700BCD7AA /* libWeiboSDK.a in Frameworks */,
+				3A11F1C81D609EF900ACF3D6 /* MOBFoundation.framework in Frameworks */,
 				3AD591281D3B5A1700BCD7AA /* libSocialWechat.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -523,6 +547,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3A11F1C51D609EF800ACF3D6 /* SMS_SDK */ = {
+			isa = PBXGroup;
+			children = (
+				3A11F1C61D609EF900ACF3D6 /* MOBFoundation.framework */,
+				3A11F1C71D609EF900ACF3D6 /* SMS_SDK.framework */,
+			);
+			path = SMS_SDK;
+			sourceTree = "<group>";
+		};
 		3A3667631D3D7AFF001CDD24 /* Scan(扫一扫) */ = {
 			isa = PBXGroup;
 			children = (
@@ -756,6 +789,7 @@
 		3A64A1ED1D34D64300288490 /* Other */ = {
 			isa = PBXGroup;
 			children = (
+				3A11F1C51D609EF800ACF3D6 /* SMS_SDK */,
 				3AD591411D3B976900BCD7AA /* XRCarouselView */,
 				3AD591041D3B5A1700BCD7AA /* UMSocial_Sdk_Extra_Frameworks */,
 				3AD590DE1D3B58B200BCD7AA /* UMSocial_Sdk_5.2.1 */,
@@ -1211,6 +1245,8 @@
 				3AEB09581D60177D00623484 /* MineLoginVC.m */,
 				3AEB09591D60177D00623484 /* MGTextField.h */,
 				3AEB095A1D60177D00623484 /* MGTextField.m */,
+				3A11F1BF1D60910300ACF3D6 /* RegistVC.h */,
+				3A11F1C01D60910300ACF3D6 /* RegistVC.m */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -1230,6 +1266,8 @@
 		3AED5D861D358A1F0045CF64 /* UITextView(附加placeholder功能) */ = {
 			isa = PBXGroup;
 			children = (
+				3A11F1C21D60988400ACF3D6 /* UITextField+placeholderColor.h */,
+				3A11F1C31D60988400ACF3D6 /* UITextField+placeholderColor.m */,
 				3AED5D891D358A200045CF64 /* LYMTextViewWithLabel.h */,
 				3AED5D8A1D358A200045CF64 /* LYMTextViewWithLabel.m */,
 			);
@@ -1292,6 +1330,10 @@
 		AE889D3491237DC59BD043D8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3A11F1D01D609FAF00ACF3D6 /* AddressBookUI.framework */,
+				3A11F1CE1D609F9F00ACF3D6 /* AddressBook.framework */,
+				3A11F1CC1D609F8300ACF3D6 /* JavaScriptCore.framework */,
+				3A11F1CA1D609F7500ACF3D6 /* MessageUI.framework */,
 				3AD591391D3B5C3700BCD7AA /* libz.tbd */,
 				3AD591371D3B5C2B00BCD7AA /* libstdc++.tbd */,
 				3AD591351D3B5C2100BCD7AA /* CoreTelephony.framework */,
@@ -1506,6 +1548,7 @@
 				3A64A1D51D34D4D200288490 /* MGLoveFreshBeen.xcdatamodeld in Sources */,
 				3AB7C1941D3E625600D7F790 /* AdvertiseVC.m in Sources */,
 				3AE1BDB91D38FC480069E1B9 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
+				3A11F1C41D60988400ACF3D6 /* UITextField+placeholderColor.m in Sources */,
 				3A64A2241D34FF1200288490 /* TableHeadView.m in Sources */,
 				3AFF8CC71D3D419C00B3120B /* LYMSaveTool.m in Sources */,
 				3AA57C501D3A1C3F00AC5802 /* SuperMarketModel.m in Sources */,
@@ -1547,6 +1590,7 @@
 				3AC16F271D5B6B930043E769 /* ShopCarCell.m in Sources */,
 				3AE1BDB41D38FC480069E1B9 /* MASConstraintMaker.m in Sources */,
 				3AED5D471D35306E0045CF64 /* AboutMeVC.m in Sources */,
+				3A11F1C11D60910300ACF3D6 /* RegistVC.m in Sources */,
 				3A64A2111D34E15400288490 /* ShopCarVC.m in Sources */,
 				3AD591461D3B976900BCD7AA /* XRCarouselView.m in Sources */,
 				3A64A2441D350EF100288490 /* MJPropertyType.m in Sources */,
@@ -1656,6 +1700,10 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-licucore",
+				);
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = NO;
 			};
@@ -1694,6 +1742,10 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-licucore",
+				);
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -1712,6 +1764,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/MGLoveFreshBeen/Class/Other/UMSocial_Sdk_Extra_Frameworks/TencentOpenAPI",
+					"$(PROJECT_DIR)/MGLoveFreshBeen/Class/Other/SMS_SDK",
 				);
 				GCC_PREFIX_HEADER = "$(SRCROOT)/MGLoveFreshBeen/PrefixHeader.pch";
 				HEADER_SEARCH_PATHS = (
@@ -1753,6 +1806,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/MGLoveFreshBeen/Class/Other/UMSocial_Sdk_Extra_Frameworks/TencentOpenAPI",
+					"$(PROJECT_DIR)/MGLoveFreshBeen/Class/Other/SMS_SDK",
 				);
 				GCC_PREFIX_HEADER = "$(SRCROOT)/MGLoveFreshBeen/PrefixHeader.pch";
 				HEADER_SEARCH_PATHS = (

@@ -27,6 +27,10 @@
     // 3DTouch
     [self setup3DTouch:application];
     
+    //短信验证，appKey和appSecret从后台申请得
+    [SMSSDK registerApp:@"1611c80d9edc0"
+             withSecret:@"ed8256cf1d354ca20772486ee2f2016b"];
+    
     // 友盟分享
     [self setupUMSocial];
     
