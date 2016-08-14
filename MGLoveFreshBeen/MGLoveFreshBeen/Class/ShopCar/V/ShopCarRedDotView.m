@@ -56,7 +56,6 @@ implementationSingle(ShopCarRedDotView)
         self.hidden = NO;
         NSString *str = [NSString stringWithFormat:@"%d",buyNumber];
         [self.redDotBtn setTitle:str forState:UIControlStateNormal];
-        
     }
 }
 

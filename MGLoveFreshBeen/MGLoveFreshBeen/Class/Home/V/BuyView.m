@@ -140,7 +140,7 @@
         _buyCountLabel.text = [NSString stringWithFormat:@"%d",self.buyNumber];
     }
     
-    [[ShopCarRedDotView shareShopCarRedDotView] addProductToRedDotView:YES];
+    [[ShopCarRedDotView shareShopCarRedDotView] reduceProductToRedDotView:YES];
     // 价格
     [MGNotificationCenter postNotificationName:MGShopCarBuyPriceDidChangeNotification object:nil userInfo:nil];
     [MGNotificationCenter postNotificationName:MGShopCarBuyNumberDidChangeNotification object:nil];
