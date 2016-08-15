@@ -20,4 +20,5 @@
 
 /** addButtonClick */
 @property (nonatomic,copy) void (^addButtonClick)(UIImageView* imageView);
+
 @end

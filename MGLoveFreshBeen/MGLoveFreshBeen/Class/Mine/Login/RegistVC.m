@@ -145,7 +145,7 @@
     }
     
 //    __block SMSGetCodeMethod method = SMSGetCodeMethodVoice;
-    UIAlertController *alertVC = [UIAlertController alertControllerWithTitle:@"验证类型" message:nil preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertController *alertVC = [UIAlertController alertControllerWithTitle:@"验证类型" message:nil preferredStyle:UIAlertControllerStyleActionSheet];
     // 语音
     UIAlertAction *cameraAction = [UIAlertAction actionWithTitle:@"语音" style:UIAlertActionStyleDefault  handler:^(UIAlertAction * _Nonnull action) {
         [self sendVerificationByMethod:SMSGetCodeMethodVoice phoneNumber:phoneTextField.text];

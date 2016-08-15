@@ -37,7 +37,7 @@
 
 - (instancetype)initWithFrame:(CGRect)frame{
     if (self = [super initWithFrame:frame]) {
-        self.zearIsShow = NO;
+        self.buyViewShowWhenBuyCountLabelZero = NO;
         self.buyNumber = 0;
         
         [self setUpUI];
@@ -106,10 +106,10 @@
     }
     
     _reduceGoodsButton.hidden = NO;
+    self.buyCountLabel.hidden = NO;
     self.buyNumber++;
     self.goods.userBuyNumber = self.buyNumber;
     self.buyCountLabel.text = [NSString stringWithFormat:@"%d",_buyNumber];
-    self.buyCountLabel.hidden = NO;
     
     if (self.clickAddShopCar != nil) {
         self.clickAddShopCar();
@@ -130,11 +130,12 @@
     }
     
     _buyNumber--;
-    self.goods.userBuyNumber = _buyNumber;
+    self.goods.userBuyNumber = self.buyNumber;
+    
     if (self.buyNumber == 0) {
-        _reduceGoodsButton.hidden = YES && !self.zearIsShow;
-        _buyCountLabel.hidden = YES && !self.zearIsShow;
-        _buyCountLabel.text = self.zearIsShow ? @"0" : @"";
+        _reduceGoodsButton.hidden = YES && !self.buyViewShowWhenBuyCountLabelZero;
+        _buyCountLabel.hidden = YES && !self.buyViewShowWhenBuyCountLabelZero;
+        _buyCountLabel.text = self.isBuyViewShowWhenBuyCountLabelZero ? @"0" : @"";
         [[UserShopCarTool shareUserShopCarTool] removeSupermarketProduct:self.goods];
     } else {
         _buyCountLabel.text = [NSString stringWithFormat:@"%d",self.buyNumber];
@@ -154,36 +155,30 @@
  */
 - (void)setGoods:(HotGoods *)goods{
     _goods = goods;
-    self.buyNumber = goods.userBuyNumber;
-    
     if (goods.number <= 0) { // 库存没有了
-        [self showSupplementLabel];
+        [self showSupplementLabel:YES];
     } else {
-        [self hideSupplementLabel];
+        [self showSupplementLabel:NO];
     }
-    if (0 == self.buyNumber) {
-        _reduceGoodsButton.hidden = YES && !self.zearIsShow;
-        _buyCountLabel.hidden = YES && !self.zearIsShow;
-    } else {
-        _reduceGoodsButton.hidden = NO;
-        _buyCountLabel.hidden = NO;
-    }
+    
+    
+    self.buyNumber = goods.userBuyNumber;
 }
 
 /// 显示补货中
-- (void)showSupplementLabel {
-    _supplementLabel.hidden = NO;
-    _addGoodsButton.hidden = YES;
-    _reduceGoodsButton.hidden = YES;
-    _buyCountLabel.hidden = YES;
-}
-
-/// 隐藏补货中,显示添加按钮
-- (void)hideSupplementLabel {
-    _supplementLabel.hidden = YES;
-    _addGoodsButton.hidden = NO;
-    _reduceGoodsButton.hidden = NO;
-    _buyCountLabel.hidden = NO;
+- (void)showSupplementLabel:(BOOL)hidden {
+    if (hidden) { /// 显示补货中
+        _supplementLabel.hidden = NO;
+        _addGoodsButton.hidden = YES;
+        _reduceGoodsButton.hidden = YES;
+        _buyCountLabel.hidden = YES;
+    }else{
+        /// 隐藏补货中,显示添加按钮
+        _supplementLabel.hidden = YES;
+        _addGoodsButton.hidden = NO;
+        _reduceGoodsButton.hidden = NO;
+        _buyCountLabel.hidden = NO;
+    }
 }
 
 
@@ -195,11 +190,17 @@
 - (void)setBuyNumber:(int)buyNumber{
     _buyNumber = buyNumber;
     
-    if (buyNumber > 0) {
-        _reduceGoodsButton.hidden = NO;
-    } else {
-        _reduceGoodsButton.hidden = YES;
-        _buyCountLabel.hidden = NO;
+    if (self.buyViewShowWhenBuyCountLabelZero) {
+        self.reduceGoodsButton.hidden = YES;
+        self.buyCountLabel.hidden = YES;
+    }else {
+        if (buyNumber > 0) {
+            _reduceGoodsButton.hidden = NO;
+            _buyCountLabel.hidden = NO;
+        } else {
+            _reduceGoodsButton.hidden = YES && !self.buyViewShowWhenBuyCountLabelZero;
+            _buyCountLabel.hidden = YES && !self.buyViewShowWhenBuyCountLabelZero;
+        }
     }
 
     _buyCountLabel.text = [NSString stringWithFormat:@"%d",buyNumber];

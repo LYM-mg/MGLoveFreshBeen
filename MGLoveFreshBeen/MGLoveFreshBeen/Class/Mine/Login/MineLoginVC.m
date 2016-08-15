@@ -9,10 +9,13 @@
 #import "MGTextField.h"
 
 #import "RegistVC.h"
+#import "ForgetPasswordVC.h"
 
 @interface MineLoginVC ()<UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet MGTextField *loginTextField;
 @property (weak, nonatomic) IBOutlet MGTextField *pwdTextField;
+@property (weak, nonatomic) IBOutlet UIButton *rememberPwdBtn; // 记住密码
+
 // 主面板
 @property (weak, nonatomic) IBOutlet UIView *mainPanel;
 // 登录按钮
@@ -52,8 +55,8 @@
  *
  *  @param button 按钮
  */
-- (IBAction)autoLoginClick:(UIButton *)button {
-    button.selected = !button.isSelected;
+- (IBAction)autoLoginClick:(UIButton *)rememberPwdBtn {
+    rememberPwdBtn.selected = !rememberPwdBtn.isSelected;
 }
 
 /**
@@ -82,6 +85,12 @@
     [self.navigationController pushViewController:[[RegistVC alloc] init] animated:YES];
 }
 
+/**
+ *  忘记密码
+ */
+- (IBAction)forgetPasswordClick:(UIButton *)sender {
+    [self.navigationController pushViewController:[[ForgetPasswordVC alloc] init] animated:YES];
+}
 
 /**
  *  dismiss
@@ -108,5 +117,20 @@
         }
     }
 }
+
+#pragma mark - 第三方 社交账号登录
+// QQ
+- (IBAction)socialQQLoginClick:(UIButton *)sender {
+}
+
+// 新浪微博
+- (IBAction)socialSinaLoginClick:(UIButton *)sender {
+}
+
+// 微信
+- (IBAction)socialWeChatLoginClick:(UIButton *)sender {
+}
+
+
 
 @end

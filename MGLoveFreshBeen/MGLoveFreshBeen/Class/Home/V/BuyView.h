@@ -11,11 +11,11 @@
 
 @interface BuyView : UIView
 
-/** <#注释#> */
-@property (nonatomic, assign) BOOL zearIsShow;
-
 /** 购买数量 */
 @property (nonatomic, assign) int buyNumber;
+
+/** 辅助属性,购买数为0时 */
+@property (nonatomic, assign,getter=isBuyViewShowWhenBuyCountLabelZero) BOOL buyViewShowWhenBuyCountLabelZero;
 
 /** 商品模型 */
 @property (nonatomic,strong) HotGoods *goods;

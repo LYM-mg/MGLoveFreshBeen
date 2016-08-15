@@ -120,6 +120,9 @@
                                                 <state key="normal" title="忘记密码?">
                                                     <color key="titleColor" red="0.81537285049999997" green="0.81537285049999997" blue="0.81537285049999997" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="forgetPasswordClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BE7-wN-GdC"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <animations/>
@@ -185,6 +188,9 @@
                                                 <state key="normal" title="QQ" image="qq">
                                                     <color key="titleColor" red="0.81537285049999997" green="0.81537285049999997" blue="0.81537285049999997" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="socialQQLoginClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5EK-ob-8aM"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kAd-7U-flV" userLabel="Sina">
                                                 <rect key="frame" x="152" y="3" width="30" height="30"/>
@@ -197,6 +203,9 @@
                                                 <state key="normal" title="QQ" image="sina">
                                                     <color key="titleColor" red="0.81537285049999997" green="0.81537285049999997" blue="0.81537285049999997" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="socialSinaLoginClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nfm-tt-0uQ"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7v2-aq-43A" userLabel="WeChat">
                                                 <rect key="frame" x="192" y="3" width="30" height="30"/>
@@ -211,6 +220,9 @@
                                                 <state key="normal" title="QQ" image="weixin">
                                                     <color key="titleColor" red="0.81537285049999997" green="0.81537285049999997" blue="0.81537285049999997" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="socialWeChatLoginClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mlw-Ba-DBx"/>
+                                                </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="社交账号登录:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bUg-vg-GS4">
                                                 <rect key="frame" x="0.0" y="7" width="107" height="21"/>
@@ -316,6 +328,7 @@
                         <outlet property="mainPanel" destination="zBV-Ua-L5v" id="fPQ-q0-bCs"/>
                         <outlet property="mainViewTopLayout" destination="2p0-o3-Duj" id="Drf-q5-1BH"/>
                         <outlet property="pwdTextField" destination="KrZ-Qa-5hM" id="aVv-fI-OOB"/>
+                        <outlet property="rememberPwdBtn" destination="4rT-Gy-Ofb" id="ZKO-En-hn4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -339,7 +352,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CXC-jA-ctQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="764" y="290"/>
+            <point key="canvasLocation" x="724" y="290"/>
         </scene>
     </scenes>
     <resources>

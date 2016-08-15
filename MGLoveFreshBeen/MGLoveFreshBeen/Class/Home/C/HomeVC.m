@@ -25,8 +25,6 @@
     /** collectionView */
     UICollectionView *homeCollectionView;
 }
-/** 数据 */
-@property (nonatomic, strong) NSMutableArray *dataArr;
 /** 顶部View */
 @property (nonatomic,strong) HomeHeaderView *headView;
 
@@ -34,6 +32,12 @@
 @property (nonatomic,strong) HeadReosurce *headData;
 /** 热点模型 */
 @property (nonatomic,strong) HotFreshModel *hotFreshData;
+
+/** tableView第一组数据源 */
+@property (nonatomic, strong) NSArray *activitiesArr;
+
+/** tableView第二组数据源 */
+@property (nonatomic, strong) NSArray *goodsArr;
 
 
 /** <#注释#> */
@@ -47,6 +51,22 @@
 static NSString *const KHomeCellIdentifier = @"KHomeCellIdentifier";
 static NSString *const KHomeHeaderIdentifier = @"Hearder";
 static NSString *const KHomeFooterIdentifier = @"Footer";
+
+#pragma mark - lazy
+- (NSArray *)activitiesArr{
+    if (_activitiesArr == nil) {
+        _activitiesArr = [NSArray arrayWithArray:[Activities objectArrayWithKeyValuesArray:_headData.data.activities]];
+    }
+    return _activitiesArr;
+}
+
+- (NSArray *)goodsArr{
+    if (_goodsArr == nil) {
+        _goodsArr = [NSArray arrayWithArray:[HotGoods objectArrayWithKeyValuesArray:_hotFreshData.data]];
+    }
+    return _goodsArr;
+}
+
 
 #pragma mark - HomeVC声明周期
 - (void)viewDidLoad {
@@ -191,14 +211,10 @@ static NSString *const KHomeFooterIdentifier = @"Footer";
     HomeCollectionCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:KHomeCellIdentifier forIndexPath:indexPath];
     
     if (0 == indexPath.section) {
-        NSArray *tmpArr = [NSArray array];
-        tmpArr = [Activities objectArrayWithKeyValuesArray:_headData.data.activities];
-        cell.Activity = tmpArr[indexPath.row];
+        cell.Activity = self.activitiesArr[indexPath.row];
 
     } else if (1 == indexPath.section) {
-        NSArray *tmpArr2 = [NSArray array];
-        tmpArr2 = [HotGoods objectArrayWithKeyValuesArray:_hotFreshData.data];
-        cell.goodModel = tmpArr2[indexPath.row];
+        cell.goodModel = self.goodsArr[indexPath.row];
         
         __weak typeof(self) weakSelf = self;
         cell.addButtonClick = ^(UIImageView *imageView){
