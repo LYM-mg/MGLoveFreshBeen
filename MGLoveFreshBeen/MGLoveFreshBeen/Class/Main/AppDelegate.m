@@ -27,10 +27,6 @@
     // 3DTouch
     [self setup3DTouch:application];
     
-    // 短信验证，appKey和appSecret从后台申请得
-    [SMSSDK registerApp:@"1611c80d9edc0"
-             withSecret:@"ed8256cf1d354ca20772486ee2f2016b"];
-    
     // 友盟分享
     [self setupUMSocial];
     
@@ -70,16 +66,20 @@
 
 #pragma mark - 友盟分享
 - (void)setupUMSocial{
-    //设置友盟社会化组件appkey
+    // 短信验证，appKey和appSecret从后台申请得
+    [SMSSDK registerApp:@"1611c80d9edc0"
+             withSecret:@"ed8256cf1d354ca20772486ee2f2016b"];
+    
+    // 设置友盟社会化组件appkey
     [UMSocialData setAppKey:MGUmengAppkey];
     
-    //打开调试log的开关
+    // 打开调试log的开关
     [UMSocialData openLog:NO];
     
-    //如果你要支持不同的屏幕方向，需要这样设置，否则在iPhone只支持一个竖屏方向
+    // 如果你要支持不同的屏幕方向，需要这样设置，否则在iPhone只支持一个竖屏方向
     [UMSocialConfig setSupportedInterfaceOrientations:UIInterfaceOrientationMaskAll];
     
-    //设置微信AppId，设置分享url，默认使用友盟的网址
+    // 设置微信AppId，设置分享url，默认使用友盟的网址
     [UMSocialWechatHandler setWXAppId:@"wxceb8ec0a6d9dc22a" appSecret:@"a393c1527aaccb95f3a4c88d6d1455f6" url:@"http://www.umeng.com/social"];
     
     // 打开新浪微博的SSO开关
@@ -88,9 +88,9 @@
                                               secret:@"f1a443691c88263068c4a33eb37fde1b"
                                          RedirectURL:@"https://github.com/LYM-mg"];
 
-    //    //设置分享到QQ空间的应用Id，和分享url 链接
+    // 设置分享到QQ空间的应用Id，和分享url 链接
     [UMSocialQQHandler setQQWithAppId:@"100424468" appKey:@"c7394704798a158208a74ab60104f0ba" url:@"http://www.umeng.com/social"];
-    //    //设置支持没有客户端情况下使用SSO授权
+    // 设置支持没有客户端情况下使用SSO授权
     [UMSocialQQHandler setSupportWebView:YES];
     
 }

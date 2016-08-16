@@ -11,7 +11,9 @@
 #import "RegistVC.h"
 #import "ForgetPasswordVC.h"
 
-@interface MineLoginVC ()<UITextFieldDelegate>
+#import "UMSocial.h"
+
+@interface MineLoginVC ()<UITextFieldDelegate,UMSocialUIDelegate>
 @property (weak, nonatomic) IBOutlet MGTextField *loginTextField;
 @property (weak, nonatomic) IBOutlet MGTextField *pwdTextField;
 @property (weak, nonatomic) IBOutlet UIButton *rememberPwdBtn; // 记住密码
@@ -121,15 +123,42 @@
 #pragma mark - 第三方 社交账号登录
 // QQ
 - (IBAction)socialQQLoginClick:(UIButton *)sender {
+    [self loginWithSocialPlatformWithName:UMShareToQQ];
 }
 
 // 新浪微博
 - (IBAction)socialSinaLoginClick:(UIButton *)sender {
+    [self loginWithSocialPlatformWithName:UMShareToSina];
 }
 
 // 微信
 - (IBAction)socialWeChatLoginClick:(UIButton *)sender {
+    [self loginWithSocialPlatformWithName:UMShareToWechatSession];
 }
+
+- (void)loginWithSocialPlatformWithName:(NSString *)socialPlatformWithName{
+    // 获取不同的平台名称
+    UMSocialSnsPlatform *snsPlatform = [UMSocialSnsPlatformManager getSocialPlatformWithName:socialPlatformWithName];
+
+    // 授权
+    snsPlatform.loginClickHandler(self,[UMSocialControllerService defaultControllerService],YES,^(UMSocialResponseEntity *response){
+        /**
+         *  这里获取到用户的信息   并保存登录（一般有一个专门保存userInfo的工具类）
+         *
+         *  @param 如果项目一进来就是登录界面的，就在这里跳转到首页
+         *
+         */
+        //  获取用户名、uid、token等
+        if (response.responseCode == UMSResponseCodeSuccess) {
+            
+            NSDictionary *dict = [UMSocialAccountManager socialAccountDictionary];
+            UMSocialAccountEntity *snsAccount = [[UMSocialAccountManager socialAccountDictionary] valueForKey:snsPlatform.platformName];
+            NSLog(@"\nusername = %@,\n usid = %@,\n token = %@ iconUrl = %@,\n unionId = %@,\n thirdPlatformUserProfile = %@,\n thirdPlatformResponse = %@ \n, message = %@",snsAccount.userName,snsAccount.usid,snsAccount.accessToken,snsAccount.iconURL, snsAccount.unionId, response.thirdPlatformUserProfile, response.thirdPlatformResponse, response.message);
+            MGLog(@"%@",dict);
+        }});
+}
+
+#pragma mark - UMSocialUIDelegate
 
 
 
