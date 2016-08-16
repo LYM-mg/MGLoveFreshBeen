@@ -47,6 +47,9 @@
     
     // 5.创建显示数据的界面 （tableView或者collectionView 是具体情况而定）
     
+    
+    // 6.设置contentScrollView的滚动范围
+    contentScrollView.contentSize = CGSizeMake(MGSCREEN_width, historySearchView != nil ?CGRectGetMaxY(cleanHistoryBtn.frame) + MGNavHeight + 2*MGMargin : MGSCREEN_height);
 }
 
 
@@ -113,7 +116,7 @@
     cleanHistoryBtn.layer.borderColor = MGRGBColor(200, 200, 200).CGColor;
     cleanHistoryBtn.layer.borderWidth = 0.5;
     cleanHistoryBtn.hidden = YES;
-    [cleanHistoryBtn addTarget:self action:@selector(cleanSearchHistorySearch) forControlEvents:UIControlEventTouchUpInside];
+    [cleanHistoryBtn addTarget:self action:@selector(cleanSearchHistorySearchBtnClick) forControlEvents:UIControlEventTouchUpInside];
     [contentScrollView addSubview:cleanHistoryBtn];
 }
 
@@ -188,7 +191,7 @@
 /**
  *  清除历史搜索
  */
-- (void)cleanSearchHistorySearch{
+- (void)cleanSearchHistorySearchBtnClick{
     NSArray *historySearch = [[NSUserDefaults standardUserDefaults] objectForKey:MGSearchViewControllerHistorySearchArray];
     NSMutableArray *historyArr;
     if (historyArr == nil) {
@@ -246,6 +249,9 @@
             contentScrollView.hidden = NO;
         } completion:^(BOOL finished) {
             [backImageView removeFromSuperview];
+            
+            // 3.重新设置contentScrollView的滚动范围
+            contentScrollView.contentSize = CGSizeMake(MGSCREEN_width, historySearchView != nil ?CGRectGetMaxY(cleanHistoryBtn.frame) + MGNavHeight + 2*MGMargin : MGSCREEN_height);
         }];
     });
 }
@@ -253,18 +259,16 @@
 
 #pragma mark - <UISearchBarDelegate>
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar4{
-    // 1。写入搜索历史
+    // 1.写入搜索历史
     [self writeHistorySearchToUserDefault:searchBar4.text];
     
     // 2.根据关键字去搜索
     [self loadProductsWithKeyword:searchBar4.text];
-
 }
 
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText{
     if (searchText.length == 0) {
-//        searchCollectionView.hidden = YES;
-//        yellowShopCar.hidden = YES;
+
     }
 }
 
