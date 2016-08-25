@@ -1,7 +1,17 @@
 # MGLoveFreshBeen
 
 -  [MGLoveFreshBeen介绍 github下载](http://www.jianshu.com/writer#/notebooks/2919816/notes/3828997)
--  
+
+- 一款电商App，实现首页功能以及个人中心和分类，购物车模块。
+  - 1.MVC设计模式
+  - 2.使用纯代码和Xib混合开发，使用Masonry和AutoLayout做UI布局 
+  - 3.集成友盟分享，第三方登录
+  - 4.使用SDWebImage进行图片加载
+  - 5.SVProessHUD和MBProessHUD进行遮盖提示 
+  - 6.UITableView的联动效果 
+  - 7.首页UICollectionView进行数据显示
+  - 8.UIWebView加载网页等技术
+  - 9.Mob短信验证^_^ 
 
 ![](http://upload-images.jianshu.io/upload_images/1429890-e33a6e0e6878a36d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 ![](http://upload-images.jianshu.io/upload_images/1429890-bba7bc539e384608.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
