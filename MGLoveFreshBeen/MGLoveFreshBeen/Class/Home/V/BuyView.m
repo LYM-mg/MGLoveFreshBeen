@@ -45,6 +45,12 @@
     return self;
 }
 
+- (void)awakeFromNib {
+    [super awakeFromNib];
+    [self setUpUI];
+    self.buyCountLabel.text = [NSString stringWithFormat:@"%d",self.buyNumber];
+}
+
 
 #pragma mark - 私有方法
 - (void)setUpUI{
@@ -155,7 +161,7 @@
  */
 - (void)setGoods:(HotGoods *)goods{
     _goods = goods;
-    if (goods.number <= 0) { // 库存没有了
+    if (_goods.number <= 0) { // 库存没有了
         [self showSupplementLabel:YES];
     } else {
         [self showSupplementLabel:NO];

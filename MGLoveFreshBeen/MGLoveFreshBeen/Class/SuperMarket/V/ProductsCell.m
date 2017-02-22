@@ -9,6 +9,7 @@
 #import "ProductsCell.h"
 #import "SuperMarketModel.h"
 #import "HotFreshModel.h"
+#import "BuyView.h"
 
 @interface ProductsCell ()
 @property (weak, nonatomic) IBOutlet UIImageView *productImageView;
@@ -19,13 +20,14 @@
 @property (weak, nonatomic) IBOutlet UILabel *originPriceLabel;
 @property (weak, nonatomic) IBOutlet UIView *discountPriceView;
 @property (weak, nonatomic) IBOutlet UILabel *specialLabel;
+@property (weak, nonatomic) IBOutlet BuyView *buyView;
 
 @end
 
 @implementation ProductsCell
 
 - (void)awakeFromNib {
-    // Initialization code
+    [super awakeFromNib];
 }
 
 /**
@@ -45,6 +47,8 @@
  */
 - (void)setHotGood:(HotGoods *)hotGood{
     _hotGood = hotGood;
+    self.buyView.goods = _hotGood;
+    
     [_productImageView sd_setImageWithURL:[NSURL URLWithString:[hotGood valueForKeyPath:@"img"]] placeholderImage:[UIImage imageNamed:@"v2_placeholder_square"]];
     
     _productName.text = [hotGood valueForKeyPath:@"name"];

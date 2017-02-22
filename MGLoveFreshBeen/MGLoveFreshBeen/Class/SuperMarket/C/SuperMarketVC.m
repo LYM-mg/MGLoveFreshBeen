@@ -13,6 +13,7 @@
 #import "SupermarketHeadView.h"
 
 #import "ProductDetailVC.h"
+#import "HotFreshModel.h"
 
 
 @interface SuperMarketVC ()<UITableViewDataSource,UITableViewDelegate>
@@ -91,7 +92,8 @@
         
         ProductstModel *productsModel = self.superMarketData.data.products;
         for (CategoriesModel *cModel in self.superMarketData.data.categories) {
-            NSArray *goodsArr = (NSArray *)[productsModel valueForKeyPath:[cModel valueForKey:@"id"]];
+            NSArray *arr = (NSArray *)[productsModel valueForKeyPath:[cModel valueForKey:@"id"]];
+            NSArray *goodsArr = [NSArray arrayWithArray:[HotGoods objectArrayWithKeyValuesArray:arr]];
             [self.goodsArr addObject:goodsArr];
         }
         
@@ -130,7 +132,6 @@
 }
 
 
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     if (tableView == self.categoryTableView) { // 左边tableView 👈⬅️
         CategoryCell *cell = [CategoryCell categoryCellWithTableView:tableView];
@@ -138,10 +139,8 @@
         return cell;
     }else { // 右边tableView 👉➡️
         ProductsCell *cell = [ProductsCell productsCellWithTableView:tableView];
-      
         HotGoods *hotGood = self.goodsArr[indexPath.section][indexPath.row];
         cell.hotGood = hotGood;
-        
         return cell;
     }
 }
@@ -229,7 +228,7 @@
     
     // 1.左边选中的通知
     [MGNotificationCenter addObserverForName:MGCategortsSelectedIndexPathNotification object:nil queue:nil usingBlock:^(NSNotification * _Nonnull note) {
-        [weakSelf.productsTableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:_categortsSelectedIndexPath.row] atScrollPosition:UITableViewScrollPositionNone animated:YES];
+        [weakSelf.productsTableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:_categortsSelectedIndexPath.row] atScrollPosition:UITableViewScrollPositionTop animated:YES];
     }];
     
     // 2.HeaderView即将消失的通知

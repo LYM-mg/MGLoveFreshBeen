@@ -176,7 +176,7 @@
  */
 - (void)changeDate:(UIDatePicker *)datePick{
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    formatter.dateFormat = @"yyyy年MM月dd日(EEEE)   HH:mm:ss";
+    formatter.dateFormat = @"MM月dd日(EEEE) HH点"; // "yyyy年MM月dd日(EEEE)   HH:mm:ss"
     self.timeStr = [formatter stringFromDate:datePick.date];
     MGLog(@"%@",_timeStr);
 }

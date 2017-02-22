@@ -20,7 +20,7 @@
 #import "QRCodeVC.h"
 #import "HomeSearchVC.h"
 
-@interface HomeVC ()<UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout>
+@interface HomeVC ()<UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout,CAAnimationDelegate>
 {
     /** collectionView */
     UICollectionView *homeCollectionView;
@@ -230,7 +230,7 @@ static NSString *const KHomeFooterIdentifier = @"Footer";
     if (0 == indexPath.section) {
         return  CGSizeMake(MGSCREEN_width - MGMargin * 2, 140);
     } else if (1 == indexPath.section) {
-        return  CGSizeMake((MGSCREEN_width - MGMargin) * 0.5, 260);
+        return  CGSizeMake((MGSCREEN_width - MGMargin) * 0.5, 280);
     }
     return CGSizeZero;
 }
@@ -416,7 +416,11 @@ static NSString *const KHomeFooterIdentifier = @"Footer";
 }
 
 
-- (void)animationDidStop:(CAAnimation *)anim finished:(BOOL)flag{
+- (void)animationDidStart:(CAAnimation *)anim {
+    NSLog(@"开始动画");
+}
+
+- (void)animationDidStop:(CAAnimation *)anim finished:(BOOL)flag {
     if (self.animationLayers.count > 0) {
         CALayer *transitionLayer = self.animationLayers[0];
         transitionLayer.hidden = YES;
@@ -432,9 +436,6 @@ static NSString *const KHomeFooterIdentifier = @"Footer";
         [self.animationLayers removeObjectAtIndex:0];
         [self.view.layer removeAnimationForKey:@"BigShopCarAnimation"];
     }
-
 }
-
-
 
 @end

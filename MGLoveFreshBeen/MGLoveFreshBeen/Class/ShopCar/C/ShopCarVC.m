@@ -185,7 +185,6 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    
     ShopCarCell *cell = [ShopCarCell shopCarCellWithTableView:tableView];
     
     cell.goods = [[UserShopCarTool shareUserShopCarTool] getShopCarProducts][indexPath.row];

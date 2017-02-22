@@ -88,16 +88,14 @@
     [iderTextView setValue:placeHolderLabel forKey:@"_placeholderLabel"];
     iderTextView.font =  placeHolderLabel.font;
     
-    //        LYMTextViewWithLabel *iderTextView = [[LYMTextViewWithLabel alloc] initWithFrame:CGRectMake(margin, CGRectGetMaxY(tipLabel.frame) + margin, MGSCREEN_width - 2 * margin, height)];
-//        iderTextView.backgroundColor = [UIColor whiteColor];
-//        iderTextView.placeholder = @"请输入宝贵意见(300字以内)";
-//        iderTextView.placeholderColor = MGRandomColor;
-//        [iderTextView becomeFirstResponder];
-//        self.iderTextView.scrollEnabled = YES;
-//        self.iderTextView.scrollsToTop = YES;
-//        self.iderTextView.keyboardDismissMode = UIScrollViewKeyboardDismissModeOnDrag;
-//        self.iderTextView = iderTextView;
-//        [self.view addSubview:iderTextView];
+    UIButton *sendBtn = [[UIButton alloc] init];
+    sendBtn.frame = CGRectMake(margin, CGRectGetMaxY(iderTextView.frame) + margin, MGSCREEN_width - 2 * margin, 35);
+    sendBtn.backgroundColor = [UIColor redColor];
+    [sendBtn setTitle:@"发送意见" forState:UIControlStateNormal];
+    [sendBtn setTintColor:[UIColor whiteColor]];
+    sendBtn.layer.cornerRadius = 17;
+    [sendBtn addTarget:self action:@selector(rightItemClick) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:sendBtn];
 }
 
 #pragma mark - 私有方法

@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="kjK-jd-eEs">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="kjK-jd-eEs">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Mine LoginVC-->
@@ -18,51 +19,38 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login_register_background" translatesAutoresizingMaskIntoConstraints="NO" id="GhV-Kf-ksN" userLabel="背景图片">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <animations/>
-                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login_register_background" translatesAutoresizingMaskIntoConstraints="NO" id="GhV-Kf-ksN" userLabel="背景图片"/>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zBV-Ua-L5v" userLabel="主面板">
-                                <rect key="frame" x="20" y="174" width="335" height="368"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="欢迎登录爱鲜蜂" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zvW-qV-NcU" userLabel="欢迎登录爱鲜蜂">
-                                        <rect key="frame" x="0.0" y="30" width="335" height="21"/>
-                                        <animations/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="ttW-pV-OHa"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KM5-Fh-RVD" userLabel="顶部的线条">
-                                        <rect key="frame" x="20" y="66" width="295" height="1"/>
-                                        <animations/>
-                                        <color key="backgroundColor" red="0.87748397440000003" green="0.87748397440000003" blue="0.87748397440000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.87748397440000003" green="0.87748397440000003" blue="0.87748397440000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="oOk-dr-u72"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p47-ch-yXq" userLabel="底部的线条">
-                                        <rect key="frame" x="20" y="302" width="295" height="1"/>
-                                        <animations/>
-                                        <color key="backgroundColor" red="0.87748397440000003" green="0.87748397440000003" blue="0.87748397440000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.87748397440000003" green="0.87748397440000003" blue="0.87748397440000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="Htj-lv-X7K"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9i1-Ox-Yha" userLabel="输入框面板">
-                                        <rect key="frame" x="20" y="67" width="295" height="115"/>
                                         <subviews>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="234567" borderStyle="roundedRect" placeholder="请输入密码" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="KrZ-Qa-5hM" customClass="MGTextField">
-                                                <rect key="frame" x="0.0" y="65" width="295" height="35"/>
-                                                <animations/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="35" id="S19-xF-m5o"/>
                                                 </constraints>
@@ -70,8 +58,6 @@
                                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                             </textField>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="ming" borderStyle="roundedRect" placeholder="您的手机号/用户名" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="SKf-xL-f3M" customClass="MGTextField">
-                                                <rect key="frame" x="0.0" y="15" width="295" height="35"/>
-                                                <animations/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="35" id="Nof-5o-vAh"/>
                                                 </constraints>
@@ -79,7 +65,6 @@
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                         </subviews>
-                                        <animations/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="SKf-xL-f3M" secondAttribute="trailing" id="Eeu-3Q-sZm"/>
                                             <constraint firstItem="SKf-xL-f3M" firstAttribute="top" secondItem="9i1-Ox-Yha" secondAttribute="top" constant="15" id="VIe-CZ-vqB"/>
@@ -91,11 +76,8 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Dv-mm-fUE" userLabel="设置面板">
-                                        <rect key="frame" x="20" y="182" width="295" height="20"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4rT-Gy-Ofb" userLabel="自动登录选择框">
-                                                <rect key="frame" x="0.0" y="4" width="12" height="12"/>
-                                                <animations/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="12" id="835-Oy-It1"/>
                                                     <constraint firstAttribute="width" constant="12" id="8kt-GO-e90"/>
@@ -106,26 +88,23 @@
                                                     <action selector="autoLoginClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GhU-cZ-bjh"/>
                                                 </connections>
                                             </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="下次自动登录" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jwJ-Ll-y7q">
-                                                <rect key="frame" x="15" y="2" width="72" height="15"/>
-                                                <animations/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="下次自动登录" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jwJ-Ll-y7q">
+                                                <frame key="frameInset" minX="15" minY="2" width="72" height="15"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                <color key="textColor" red="0.81537285049999997" green="0.81537285049999997" blue="0.81537285049999997" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="textColor" red="0.81537285049999997" green="0.81537285049999997" blue="0.81537285049999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="04p-YO-ITo" userLabel="忘记密码">
-                                                <rect key="frame" x="240" y="-4" width="55" height="27"/>
-                                                <animations/>
+                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="04p-YO-ITo" userLabel="忘记密码">
+                                                <frame key="frameInset" minX="240" minY="-4" width="55" height="27"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                 <state key="normal" title="忘记密码?">
-                                                    <color key="titleColor" red="0.81537285049999997" green="0.81537285049999997" blue="0.81537285049999997" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="titleColor" red="0.81537285049999997" green="0.81537285049999997" blue="0.81537285049999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="forgetPasswordClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BE7-wN-GdC"/>
                                                 </connections>
                                             </button>
                                         </subviews>
-                                        <animations/>
                                         <constraints>
                                             <constraint firstItem="04p-YO-ITo" firstAttribute="centerY" secondItem="8Dv-mm-fUE" secondAttribute="centerY" id="09K-vv-YFY"/>
                                             <constraint firstItem="4rT-Gy-Ofb" firstAttribute="leading" secondItem="8Dv-mm-fUE" secondAttribute="leading" id="JAO-2w-5kC"/>
@@ -136,35 +115,32 @@
                                             <constraint firstAttribute="trailing" secondItem="04p-YO-ITo" secondAttribute="trailing" id="sOv-7S-Uuk"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zQl-Mi-IeT" userLabel="登录按钮下方的面板">
-                                        <rect key="frame" x="111" y="272" width="113" height="20"/>
+                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zQl-Mi-IeT" userLabel="登录按钮下方的面板">
+                                        <frame key="frameInset" minX="111" minY="272" width="113" height="20"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="还没账号?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k5w-3r-xeS">
-                                                <rect key="frame" x="0.0" y="0.0" width="59" height="20"/>
-                                                <animations/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="还没账号?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k5w-3r-xeS">
+                                                <frame key="frameInset" width="59" height="20"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="20" id="Lqj-bN-CsJ"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                <color key="textColor" red="0.81537285049999997" green="0.81537285049999997" blue="0.81537285049999997" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="textColor" red="0.81537285049999997" green="0.81537285049999997" blue="0.81537285049999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xFS-tb-hfw">
-                                                <rect key="frame" x="61" y="0.0" width="52" height="20"/>
-                                                <animations/>
+                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xFS-tb-hfw">
+                                                <frame key="frameInset" minX="61" width="52" height="20"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="20" id="pDB-60-pOb"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                 <state key="normal" title="立即注册">
-                                                    <color key="titleColor" red="0.96668320109999994" green="0.42208741719999998" blue="0.02366527333" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="titleColor" red="0.96668320109999994" green="0.42208741719999998" blue="0.02366527333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="registClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PmA-P0-CMC"/>
                                                 </connections>
                                             </button>
                                         </subviews>
-                                        <animations/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="xFS-tb-hfw" secondAttribute="trailing" id="5Jo-uc-OoD"/>
                                             <constraint firstItem="xFS-tb-hfw" firstAttribute="centerY" secondItem="zQl-Mi-IeT" secondAttribute="centerY" id="Gva-Kd-nlQ"/>
@@ -175,41 +151,37 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vh7-Mt-78E" userLabel="最底部的view">
-                                        <rect key="frame" x="20" y="313" width="295" height="35"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="awb-z7-XCH">
-                                                <rect key="frame" x="112" y="3" width="30" height="30"/>
-                                                <animations/>
+                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="awb-z7-XCH">
+                                                <frame key="frameInset" minX="112" minY="3" width="30" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="30" id="Njx-eJ-4Pc"/>
                                                     <constraint firstAttribute="height" constant="30" id="xVQ-YH-YGy"/>
                                                 </constraints>
                                                 <inset key="titleEdgeInsets" minX="0.0" minY="20" maxX="0.0" maxY="0.0"/>
                                                 <state key="normal" title="QQ" image="qq">
-                                                    <color key="titleColor" red="0.81537285049999997" green="0.81537285049999997" blue="0.81537285049999997" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="titleColor" red="0.81537285049999997" green="0.81537285049999997" blue="0.81537285049999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="socialQQLoginClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5EK-ob-8aM"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kAd-7U-flV" userLabel="Sina">
-                                                <rect key="frame" x="152" y="3" width="30" height="30"/>
-                                                <animations/>
+                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kAd-7U-flV" userLabel="Sina">
+                                                <frame key="frameInset" minX="152" minY="3" width="30" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="AMr-4v-bId"/>
                                                     <constraint firstAttribute="width" constant="30" id="jvZ-l9-6bm"/>
                                                 </constraints>
                                                 <inset key="titleEdgeInsets" minX="0.0" minY="20" maxX="0.0" maxY="0.0"/>
                                                 <state key="normal" title="QQ" image="sina">
-                                                    <color key="titleColor" red="0.81537285049999997" green="0.81537285049999997" blue="0.81537285049999997" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="titleColor" red="0.81537285049999997" green="0.81537285049999997" blue="0.81537285049999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="socialSinaLoginClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nfm-tt-0uQ"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7v2-aq-43A" userLabel="WeChat">
-                                                <rect key="frame" x="192" y="3" width="30" height="30"/>
-                                                <animations/>
+                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7v2-aq-43A" userLabel="WeChat">
+                                                <frame key="frameInset" minX="192" minY="3" width="30" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="8gW-Z4-47B"/>
                                                     <constraint firstAttribute="height" constant="30" id="8gg-yz-pF0"/>
@@ -218,24 +190,22 @@
                                                 </constraints>
                                                 <inset key="titleEdgeInsets" minX="0.0" minY="20" maxX="0.0" maxY="0.0"/>
                                                 <state key="normal" title="QQ" image="weixin">
-                                                    <color key="titleColor" red="0.81537285049999997" green="0.81537285049999997" blue="0.81537285049999997" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="titleColor" red="0.81537285049999997" green="0.81537285049999997" blue="0.81537285049999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="socialWeChatLoginClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mlw-Ba-DBx"/>
                                                 </connections>
                                             </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="社交账号登录:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bUg-vg-GS4">
-                                                <rect key="frame" x="0.0" y="7" width="107" height="21"/>
-                                                <animations/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="社交账号登录:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bUg-vg-GS4">
+                                                <frame key="frameInset" minY="7" width="107" height="21"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="21" id="G8s-aF-qRI"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
-                                        <animations/>
                                         <constraints>
                                             <constraint firstItem="kAd-7U-flV" firstAttribute="width" secondItem="awb-z7-XCH" secondAttribute="width" id="5z3-6W-J2L"/>
                                             <constraint firstItem="kAd-7U-flV" firstAttribute="leading" secondItem="awb-z7-XCH" secondAttribute="trailing" constant="10" id="9h8-7i-cX5"/>
@@ -252,9 +222,7 @@
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z55-9c-mZ3">
-                                        <rect key="frame" x="20" y="222" width="295" height="35"/>
-                                        <animations/>
-                                        <color key="backgroundColor" red="0.96668320109999994" green="0.42208741719824872" blue="0.023665273326962961" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.96668320109999994" green="0.42208741719824872" blue="0.023665273326962961" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="35" id="mMH-Cv-igu"/>
                                         </constraints>
@@ -265,8 +233,7 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <animations/>
-                                <color key="backgroundColor" red="0.60000002379999995" green="0.40000000600000002" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.60000002379999995" green="0.40000000600000002" blue="0.20000000300000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="KM5-Fh-RVD" firstAttribute="top" secondItem="zvW-qV-NcU" secondAttribute="bottom" constant="15" id="2RY-Kn-BZ9"/>
                                     <constraint firstItem="z55-9c-mZ3" firstAttribute="top" secondItem="8Dv-mm-fUE" secondAttribute="bottom" constant="20" id="34J-3k-Mm3"/>
@@ -295,8 +262,7 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="zBV-Ua-L5v" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="174" id="2p0-o3-Duj"/>
                             <constraint firstItem="zBV-Ua-L5v" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="48b-lw-UoA"/>
@@ -321,7 +287,6 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="loginButton" destination="z55-9c-mZ3" id="nlg-Q8-xy4"/>
                         <outlet property="loginTextField" destination="SKf-xL-f3M" id="0Rh-Yi-aDF"/>
@@ -333,14 +298,13 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1141" y="290"/>
+            <point key="canvasLocation" x="1231" y="283"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="XiO-oF-DOl">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="kjK-jd-eEs" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="IT1-Nn-XUU">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
