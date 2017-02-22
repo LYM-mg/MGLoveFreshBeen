@@ -12,11 +12,15 @@
   - 7.首页UICollectionView进行数据显示
   - 8.UIWebView加载网页等技术
   - 9.Mob短信验证^_^ 
----
--![](http://upload-images.jianshu.io/upload_images/1429890-c37c86a9955226e5.gif?imageMogr2/auto-orient/strip)
--![](http://upload-images.jianshu.io/upload_images/1429890-0e65b967be715aed.gif?imageMogr2/auto-orient/strip)
--![](http://upload-images.jianshu.io/upload_images/1429890-6d3d41d08fd6c572.gif?imageMogr2/auto-orient/strip)
----
+
+
+
+![](http://upload-images.jianshu.io/upload_images/1429890-c37c86a9955226e5.gif?imageMogr2/auto-orient/strip)
+![](http://upload-images.jianshu.io/upload_images/1429890-0e65b967be715aed.gif?imageMogr2/auto-orient/strip)
+![](http://upload-images.jianshu.io/upload_images/1429890-6d3d41d08fd6c572.gif?imageMogr2/auto-orient/strip)
+
+
+
 ![](http://upload-images.jianshu.io/upload_images/1429890-39537c47d25f7088.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 ![](http://upload-images.jianshu.io/upload_images/1429890-de6fe48004ba0752.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 ![](http://upload-images.jianshu.io/upload_images/1429890-c94c7a02c2e01165.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
